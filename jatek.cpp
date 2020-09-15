@@ -58,9 +58,9 @@ public:
     //Simple method for printing one's status
     void printStatus() {
         cout << getName()
-            +": [HP: " << to_string(getHP())
-            +"] [DMG:" << to_string(getATK()) 
-        +"]" << endl;
+            + ": [HP: " << to_string(getHP())
+            + "] [DMG:" << to_string(getATK())
+            + "]" << endl;
     }
 
     //Code piece responsible for handling a hit - we use a pointer to be able to do something like this:
@@ -74,19 +74,20 @@ public:
     //Fight function - the enemy's reference is passed as an argument
     void Fight(Character enemy) {
 
-        //We initialize a new seed for the random generator
-        srand(time(NULL));
+        bool myTurn = true;
 
         while (!enemy.isDead() && !isDead()) {
 
-            //Random hit chance - it's 50/50 right now, can be adjusted later if hit chances get introduced to the game
-            switch (rand() % 2)
+            switch (myTurn)
             {
             case 0: hit(&enemy); //we create a pointer to reference the enemy and hit it
                 break;
             case 1: enemy.hit(this); //the enemy hits us - 'this' gives us a pointer to this specific object of the Character class
                 break;
             }
+
+            //We swap the state of 'myTurn'
+            myTurn = !myTurn;
 
             //We print the status of each fighter, just to know what's up after every round
             printStatus();
@@ -109,15 +110,15 @@ public:
 class Utilities
 {
 public:
-    static Utilities *instance;
+    static Utilities* instance;
     /*Constructor*/
     Utilities() {
-    
+
     };
 
 
 public:
-    static Utilities *getInstance() {
+    static Utilities* getInstance() {
         if (!instance)
             instance = new Utilities;
         return instance;
@@ -135,16 +136,16 @@ public:
     }
 };
 
-Utilities *Utilities::instance = 0;
+Utilities* Utilities::instance = 0;
 
 
 int main(int argc, char* argv[])
 {
 
-    Utilities *util = util->getInstance();
+    Utilities* util = util->getInstance();
 
-    
-    if (util->isNumber(argv[2])&&util->isNumber(argv[3])&&util->isNumber(argv[5])&&util->isNumber(argv[6]))
+
+    if (util->isNumber(argv[2]) && util->isNumber(argv[3]) && util->isNumber(argv[5]) && util->isNumber(argv[6]))
     {
         Character player(argv[1], std::stoi(argv[2]), std::stoi(argv[3]));
         Character enemy(argv[4], std::stoi(argv[5]), std::stoi(argv[6]));
