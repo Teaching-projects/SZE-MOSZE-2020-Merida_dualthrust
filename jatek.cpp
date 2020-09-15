@@ -76,7 +76,7 @@ public:
 
         //We initialize a new seed for the random generator
         srand(time(NULL));
-        
+
         while (!enemy.isDead() && !isDead()) {
 
             //Random hit chance - it's 50/50 right now, can be adjusted later if hit chances get introduced to the game
@@ -106,12 +106,50 @@ public:
 
 };
 
-
-int main()
+class Utilities
 {
-    Character player("Maple", 10, 1);
-    Character enemy("Sally", 10, 1);
-    player.Fight(enemy);
+public:
+    static Utilities *instance;
+    /*Constructor*/
+    Utilities() {
     
+    };
+
+
+public:
+    static Utilities *getInstance() {
+        if (!instance)
+            instance = new Utilities;
+        return instance;
+    }
+
+
+    bool isNumber(string Input) {
+        if (Input.size() == 0) return false;
+        for (int i = 0; i < Input.size(); i++) {
+            if ((Input[i] >= '0' && Input[i] <= '9') == false) {
+                return false;
+            }
+        }
+        return true;
+    }
+};
+
+Utilities *Utilities::instance = 0;
+
+
+int main(int argc, char* argv[])
+{
+
+    Utilities *util = util->getInstance();
+
+    
+    if (util->isNumber(argv[2])&&util->isNumber(argv[3])&&util->isNumber(argv[5])&&util->isNumber(argv[6]))
+    {
+        Character player(argv[1], std::stoi(argv[2]), std::stoi(argv[3]));
+        Character enemy(argv[4], std::stoi(argv[5]), std::stoi(argv[6]));
+        player.Fight(enemy);
+    };
+
     return 0;
 }
