@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <time.h>
-
+#include <ctype.h>
 using namespace std;
 
 class Character
@@ -125,10 +125,10 @@ public:
     }
 
 
-    bool isNumber(string Input) {
-        if (Input.size() == 0) return false;
-        for (int i = 0; i < Input.size(); i++) {
-            if ((Input[i] >= '0' && Input[i] <= '9') == false) {
+    bool isNumber(string input) {
+        if (input.size() == 0) return false;
+        for (char c:input){
+            if (!isdigit(c)) {
                 return false;
             }
         }
@@ -150,6 +150,9 @@ int main(int argc, char* argv[])
         Character player(argv[1], std::stoi(argv[2]), std::stoi(argv[3]));
         Character enemy(argv[4], std::stoi(argv[5]), std::stoi(argv[6]));
         player.Fight(enemy);
+    }
+    else {
+        cout << "Incorrect input parameters. Please use the following pattern: Name1(string) HP1(int) ATK1(int) Name2(string) HP2(int) ATK2(int)" <<endl;
     };
 
     return 0;
