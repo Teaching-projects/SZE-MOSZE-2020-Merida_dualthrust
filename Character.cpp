@@ -2,16 +2,8 @@
 #include <iostream>
 #include <string>
 
-    Character::Character(const std::string characterName, int characterHP, const int characterATK){
-        this->setName(characterName);
-        this->setHP(characterHP);
-        this->setATK(characterATK);
-    }
-
-    /*Getter and setter for CharacterName*/
-    void Character::setName(std::string value)
-    {
-        this->name = value;
+    Character::Character(const std::string characterName,const int characterHP, const int characterATK):name(characterName),HP(characterHP),ATK(characterATK){
+      
     }
 
     std::string Character::getName()
@@ -19,21 +11,12 @@
         return this->name;
     }
 
-    /*Getter and setter for CharacterHP*/
-    void Character::setHP(int value)
-    {
-        this->HP = value;
-    }
+
     int Character::getHP()
     {
         return this->HP;
     }
 
-    /*Getter and setter for CharacterATK*/
-    void Character::setATK(const int value)
-    {
-        this->ATK = value;
-    }
     int Character::getATK()
     {
         return this->ATK;
@@ -53,7 +36,7 @@
     }
 
     void Character::sufferDamage(int atk) {
-        this->setHP(this->getHP() - atk);
+        this->HP = (this->getHP() - atk);
     }
 
     //Code piece responsible for handling a hit - we use a pointer to be able to do something like this:

@@ -5,24 +5,21 @@
 
 class Character {
 
-    public:
-        Character(const std::string, const int, const int);
-        std::string getName();
-        void sufferDamage(const int);
-        void hit(Character*);
-        void fight(Character*);
-        bool isDead();
-        void setATK(int);
-        int getATK();
-        void setHP(const int value);
-        int getHP();
-        void printStatus();
-        void setName(std::string);
+public:
+    Character(const std::string, const int, const int);
+    std::string getName();
+    int getATK();
+    int getHP();
+    void sufferDamage(const int);
+    void hit(Character*);
+    void fight(Character*);
+    bool isDead();
+    void printStatus();
 
-    protected:
-        std::string name;
-        int HP;
-        int ATK;
+protected:
+    const std::string name;
+    const int ATK;
+    int HP;
 };
 
 #endif // CHARACTER_HEADER
