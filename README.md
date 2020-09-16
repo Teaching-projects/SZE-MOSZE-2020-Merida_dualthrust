@@ -18,4 +18,4 @@ Helyes input esetén a létrehozott karakterek 'oda-vissza' módon támadják eg
 ## Csapattagok
 Krisztián Lapat\
 Lilik Ferenc\
-Nemes Tamás\
+Nemes Tamás
