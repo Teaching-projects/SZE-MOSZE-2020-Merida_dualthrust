@@ -27,5 +27,8 @@ int main(int argc, char* argv[])
         cout << "Incorrect input parameters. Please use the following pattern: Name1(string) HP1(int) ATK1(int) Name2(string) HP2(int) ATK2(int)" << endl;
     };
 
+    delete util;
+    delete player;
+    delete enemy;
     return 0;
 }
