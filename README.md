@@ -10,7 +10,7 @@ a modern szoftverfejlesztési eszközök használatával.
 A projekt keretein belül készített program két játékos harcát játssza le.
 Futásához összesen hat darab bemeneti paramétert vár, a következő séma alapján:
 
-**KarakterNev(string) KarakterHP(int) KarakterATK(int) EllensegNev(int) EllensegHP(int) EllensegATK(int)**
+**KarakterNev(string) KarakterHP(int) KarakterATK(int) EllensegNev(string) EllensegHP(int) EllensegATK(int)**
 
 Helytelen input esetén a program a parancssorba printeli a helyes sémát, majd kilép.
 Helyes input esetén a létrehozott karakterek 'oda-vissza' módon támadják egymást, amíg egyikőjük életereje el nem fogy.
