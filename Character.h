@@ -3,6 +3,11 @@
 
 #include <string>
 
+/* Character class (Singleton)
+   This class contains basic methods and data members of the Character class.
+   Character objects in the game can have different HP/ATK values and fight each other.
+*/
+
 class Character {
 
 public:

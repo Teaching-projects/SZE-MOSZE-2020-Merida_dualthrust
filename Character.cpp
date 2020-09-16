@@ -2,10 +2,10 @@
 #include <iostream>
 #include <string>
 
-    Character::Character(const std::string characterName,const int characterHP, const int characterATK):name(characterName),HP(characterHP),ATK(characterATK){
-      
-    }
+    //Constructor
+    Character::Character(const std::string characterName,const int characterHP, const int characterATK):name(characterName),HP(characterHP),ATK(characterATK){}
 
+    //Getters
     std::string Character::getName()
     {
         return this->name;
@@ -35,13 +35,13 @@
             + "]" << std::endl;
     }
 
+    //Instead of using an HP setter from outside of the class, we declare a 'sufferDamage' method
+    //The Character object's hp gets lowered based on the output 
     void Character::sufferDamage(int atk) {
         this->HP = (this->getHP() - atk);
     }
 
-    //Code piece responsible for handling a hit - we use a pointer to be able to do something like this:
-    // enemy.hit(this) - the class references itself in this case, which means that a pointer is passed as the argument ('this' keyword returns a pointer)
-    //We later use this in the 'Fight' function, this is why we use pointers in this method, although we don't do that anywhere else in the class (yet)
+    //Code piece responsible for handling a hit 
     void Character::hit(Character* enemy) {
         std::cout << this->getName() << " -> " << enemy->getName() << std::endl;
         enemy->sufferDamage(this->getATK());
@@ -50,15 +50,16 @@
     //Fight function - the enemy's reference is passed as an argument
     void Character::fight(Character* enemy) {
 
+        //Variable to keep track of who's turn it is currently - 'my' in this case refers to the Character object that called the 'fight' method
         bool myTurn = true;
 
         while (!enemy->isDead() && !this->isDead()) {
 
             switch (myTurn)
             {
-            case 0: this->hit(enemy); //we create a pointer to reference the enemy and hit it
+            case 0: this->hit(enemy); //we hit the enemy
                 break;
-            case 1: enemy->hit(this); //the enemy hits us - 'this' gives us a pointer to this specific object of the Character class
+            case 1: enemy->hit(this); //the enemy hits us
                 break;
             }
 
