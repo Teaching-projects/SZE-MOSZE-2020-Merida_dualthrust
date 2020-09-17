@@ -6,29 +6,29 @@
     Character::Character(const std::string characterName,const int characterHP, const int characterATK):name(characterName),HP(characterHP),ATK(characterATK){}
 
     //Getters
-    std::string Character::getName()
+    std::string Character::getName() const
     {
         return this->name;
     }
 
 
-    int Character::getHP()
+    int Character::getHP() const
     {
         return this->HP;
     }
 
-    int Character::getATK()
+    int Character::getATK() const
     {
         return this->ATK;
     }
 
     //Convenience method for simple checking
-    bool Character::isDead() {
+    bool Character::isDead() const {
         return this->getHP() <= 0;
     }
 
     //Simple method for printing one's status
-    void Character::printStatus() {
+    void Character::printStatus() const {
         std::cout << this->getName()
             + ": [HP: " << std::to_string(this->getHP())
             + "] [DMG:" << std::to_string(this->getATK())

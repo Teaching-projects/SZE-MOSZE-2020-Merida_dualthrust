@@ -12,14 +12,15 @@ class Character {
 
 public:
     Character(const std::string, const int, const int);
-    std::string getName();
-    int getATK();
-    int getHP();
+    std::string getName() const;
+    int getATK() const;
+    int getHP() const;
     void sufferDamage(const int);
+    bool isDead() const;
+    void printStatus() const;
     void hit(Character*);
     void fight(Character*);
-    bool isDead();
-    void printStatus();
+
 
 protected:
     const std::string name;
