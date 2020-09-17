@@ -39,6 +39,7 @@
     //The Character object's hp gets lowered based on the output 
     void Character::sufferDamage(int atk) {
         this->HP = (this->getHP() - atk);
+        if (this->HP < 0) { this->HP = 0; }
     }
 
     //Code piece responsible for handling a hit 
@@ -50,6 +51,10 @@
     //Fight function - the enemy's reference is passed as an argument
     void Character::fight(Character* enemy) {
 
+        //We print the status of the two fighters before starting the loop
+        this->printStatus();
+        enemy->printStatus();
+
         //Variable to keep track of who's turn it is currently - 'my' in this case refers to the Character object that called the 'fight' method
         bool myTurn = true;
 
@@ -57,9 +62,10 @@
 
             switch (myTurn)
             {
-            case 0: this->hit(enemy); //we hit the enemy
+                
+            case 0: enemy->hit(this); //the enemy hits us
                 break;
-            case 1: enemy->hit(this); //the enemy hits us
+            case 1: this->hit(enemy); //we hit the enemy 
                 break;
             }
 
