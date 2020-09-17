@@ -74,10 +74,5 @@
             std::cout << "======================================================" << std::endl;
         }
         //We announce the winner
-        if (enemy->isDead()) {
-            std::cout << enemy->getName() << " died. " << this->getName() << " wins." << std::endl;
-        }
-        else {
-            std::cout << this->getName() << " died. " << enemy->getName() << " wins." << std::endl;
-        }
+        std::cout << (!this->isDead() ? enemy->getName() + " died. " + this->getName() + " wins." : this->getName() + " died. " + enemy->getName() + " wins.");
     }
