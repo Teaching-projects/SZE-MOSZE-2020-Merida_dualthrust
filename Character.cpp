@@ -29,7 +29,7 @@
     }
 
     //Instead of using an HP setter from outside of the class, we declare a 'sufferDamage' method
-    //The Character object's hp gets lowered based on the output 
+    //The Character object's HP gets lowered based on the output 
     void Character::sufferDamage(Character* enemy) {
         std::cout << enemy->getName() << " -> " << this->getName() << std::endl;
         this->HP = (this->getHP() - enemy->getATK());
@@ -48,7 +48,7 @@
 
         //Character stats of the two fighters are printed out before starting the loop with an overloaded << operator
         std::cout << *this << std::endl;
-        std::cout << *enemy<< std::endl;
+        std::cout << *enemy << "\n"<< std::endl;
 
         //Variable to keep track of who's turn it is currently - 'my' in this case refers to the Character object that called the 'fight' method
         bool myTurn = true;

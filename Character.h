@@ -19,8 +19,8 @@ public:
     bool isDead() const;
     void printStatus() const;
     void fight(Character*);
-
-friend std::ostream& operator<<(std::ostream& os, const Character& character);
+    //'<<'operator overload
+    friend std::ostream& operator<<(std::ostream& os, const Character& character);
 
 protected:
     const std::string name;
