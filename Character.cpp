@@ -5,12 +5,12 @@
     //Constructor
     Character::Character(const std::string characterName,const int characterHP, const int characterATK):name(characterName),HP(characterHP),ATK(characterATK){}
 
+
     //Getters
     std::string Character::getName() const
     {
         return this->name;
     }
-
 
     int Character::getHP() const
     {
@@ -22,10 +22,12 @@
         return this->ATK;
     }
 
+
     //Convenience method for simple checking
     bool Character::isDead() const {
         return this->getHP() <= 0;
     }
+
 
     //Simple method for printing one's status
     void Character::printStatus() const {
@@ -35,6 +37,7 @@
             + "]" << std::endl;
     }
 
+
     //Instead of using an HP setter from outside of the class, we declare a 'sufferDamage' method
     //The Character object's hp gets lowered based on the output 
     void Character::sufferDamage(Character* enemy) {
@@ -42,6 +45,7 @@
         this->HP = (this->getHP() - enemy->getATK());
         if (this->HP < 0) { this->HP = 0; }
     }
+
 
     //Fight function - a pointer to the enemy is passed as an argument
     void Character::fight(Character* enemy) {
