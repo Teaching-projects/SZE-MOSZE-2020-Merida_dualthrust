@@ -28,16 +28,6 @@
         return this->getHP() <= 0;
     }
 
-
-    //Simple method for printing one's status
-    void Character::printStatus() const {
-        std::cout << this->getName()
-            + ": [HP: " << std::to_string(this->getHP())
-            + "] [DMG:" << std::to_string(this->getATK())
-            + "]" << std::endl;
-    }
-
-
     //Instead of using an HP setter from outside of the class, we declare a 'sufferDamage' method
     //The Character object's hp gets lowered based on the output 
     void Character::sufferDamage(Character* enemy) {
@@ -47,12 +37,18 @@
     }
 
 
+    //Printing a characters status
+    std::ostream& operator<<(std::ostream& os, const Character& character){
+    os << character.getName() << ": [HP: "  << character.getHP() << "] [DMG:" << character.getATK() << "]";
+    return os;
+    }
+
     //Fight function - a pointer to the enemy is passed as an argument
     void Character::fight(Character* enemy) {
 
-        //We print the status of the two fighters before starting the loop
-        this->printStatus();
-        enemy->printStatus();
+        //Character stats of the two fighters are printed out before starting the loop with an overloaded << operator
+        std::cout << *this << std::endl;
+        std::cout << *enemy<< std::endl;
 
         //Variable to keep track of who's turn it is currently - 'my' in this case refers to the Character object that called the 'fight' method
         bool myTurn = true;
@@ -71,8 +67,8 @@
             myTurn = !myTurn;
 
             //We print the status of each fighter, just to know what's up after every round
-            this->printStatus();
-            enemy->printStatus();
+            std::cout << *this << std::endl;
+            std::cout << *enemy<< std::endl;
 
             //Simple visual line break, makes it easier to follow the fight in the console
             std::cout << "======================================================" << std::endl;
