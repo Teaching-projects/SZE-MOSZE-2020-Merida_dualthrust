@@ -37,18 +37,13 @@
 
     //Instead of using an HP setter from outside of the class, we declare a 'sufferDamage' method
     //The Character object's hp gets lowered based on the output 
-    void Character::sufferDamage(int atk) {
-        this->HP = (this->getHP() - atk);
+    void Character::sufferDamage(Character* enemy) {
+        std::cout << enemy->getName() << " -> " << this->getName() << std::endl;
+        this->HP = (this->getHP() - enemy->getATK());
         if (this->HP < 0) { this->HP = 0; }
     }
 
-    //Code piece responsible for handling a hit 
-    void Character::hit(Character* enemy) {
-        std::cout << this->getName() << " -> " << enemy->getName() << std::endl;
-        enemy->sufferDamage(this->getATK());
-    }
-
-    //Fight function - the enemy's reference is passed as an argument
+    //Fight function - a pointer to the enemy is passed as an argument
     void Character::fight(Character* enemy) {
 
         //We print the status of the two fighters before starting the loop
@@ -62,10 +57,9 @@
 
             switch (myTurn)
             {
-                
-            case 0: enemy->hit(this); //the enemy hits us
+            case true: enemy->sufferDamage(this); //we hit the enemy
                 break;
-            case 1: this->hit(enemy); //we hit the enemy 
+            case false: this->sufferDamage(enemy); //the enemy hits us
                 break;
             }
 

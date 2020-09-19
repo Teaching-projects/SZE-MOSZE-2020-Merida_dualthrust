@@ -15,10 +15,9 @@ public:
     std::string getName() const;
     int getATK() const;
     int getHP() const;
-    void sufferDamage(const int);
+    void sufferDamage(Character*);
     bool isDead() const;
     void printStatus() const;
-    void hit(Character*);
     void fight(Character*);
 
 
