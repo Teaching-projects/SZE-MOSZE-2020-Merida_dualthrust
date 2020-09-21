@@ -25,13 +25,15 @@
 
 
     //Convenience method for simple checking
-    bool Character::isDead() const {
+    bool Character::isDead() const 
+    {
         return this->getHP() <= 0;
     }
 
     //Instead of using an HP setter from outside of the class, we declare a 'sufferDamage' method
     //The Character object's HP gets lowered based on the output 
-    void Character::sufferDamage(Character* enemy) {
+    void Character::sufferDamage(Character* enemy) 
+    {
         //std::cout << enemy->getName() << " -> " << this->getName() << std::endl;
         this->HP = (this->getHP() - enemy->getATK());
         if (this->HP < 0) { this->HP = 0; }
@@ -39,19 +41,20 @@
 
 
     //Printing a characters status
-    std::ostream& operator<<(std::ostream& os, const Character& character){
-    os << character.getName() << ": [HP: "  << character.getHP() << "] [DMG:" << character.getATK() << "]";
-    return os;
+    std::ostream& operator<<(std::ostream& os, const Character& character)
+    {
+        os << character.getName() << ": [HP: "  << character.getHP() << "] [DMG:" << character.getATK() << "]";
+        return os;
     }
 
     //Function that prints a fight results to a file
-    void Character::fightToFile (std::string resultsToFile) 
-        {
+    void Character::fightToFile (std::string output, Character* enemy) 
+    {
         std::ofstream resultsfile;
-        resultsfile.open ("file.txt");
-        resultsfile << resultsToFile;
+        resultsfile.open (this->getName()+ enemy->getName()+".txt");
+        resultsfile << output;
         resultsfile.close();
-        }
+    }
 
     //Fight function - a pointer to the enemy is passed as an argument
     void Character::fight(Character* enemy) {
@@ -59,8 +62,8 @@
         //Variable to keep track of who's turn it is currently - 'my' in this case refers to the Character object that called the 'fight' method
         bool myTurn = true;
 
-        while (!enemy->isDead() && !this->isDead()) {
-
+        while (!enemy->isDead() && !this->isDead()) 
+        {
             switch (myTurn)
             {
             case true: enemy->sufferDamage(this); //we hit the enemy
@@ -75,9 +78,7 @@
         }
 
         //We announce the winner and print the results to a file
-        std::string results;
-        results=(!this->isDead() ? this->getName() + " wins. Remaining HP: " + std::to_string(this->getHP()) :  enemy->getName() + " wins." + std::to_string(enemy->getHP()) );
+        std::string results=(!this->isDead() ? this->getName() + " wins. Remaining HP: " + std::to_string(this->getHP()) :  enemy->getName() + " wins." + std::to_string(enemy->getHP()) );
         std::cout << results;
-        fightToFile(results);
-        results="";
+        fightToFile(results, enemy);
     }
