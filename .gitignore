@@ -1,0 +1,8 @@
+# Ignore everything
+*
+
+#except
+!*.cpp
+!*.h
+!*.gitignore
+!README.md
