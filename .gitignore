@@ -7,4 +7,4 @@
 !*.gitignore
 !README.md
 !*.json
-*.txt
+!*.txt
