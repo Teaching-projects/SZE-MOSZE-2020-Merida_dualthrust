@@ -16,6 +16,6 @@ Helytelen input esetén a program a parancssorba printeli a helyes sémát, majd
 Helyes input esetén a létrehozott karakterek 'oda-vissza' módon támadják egymást, amíg egyikőjük életereje el nem fogy.
 
 ## Csapattagok
-Krisztián Lapat\
+Lapat Krisztián\
 Lilik Ferenc\
 Nemes Tamás

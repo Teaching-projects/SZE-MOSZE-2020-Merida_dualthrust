@@ -21,6 +21,7 @@ public:
     void fight(Character*);
     //'<<'operator overload
     friend std::ostream& operator<<(std::ostream& os, const Character& character);
+    void fightToFile(std::string resultsToFile);
 
 protected:
     const std::string name;
