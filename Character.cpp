@@ -77,14 +77,6 @@
         return os;
     }
 
-    //Function that prints a fight results to a file
-    void Character::fightToFile (std::string output, Character* enemy) 
-    {
-        std::ofstream resultsfile;
-        resultsfile.open (this->getName()+ enemy->getName()+".txt");
-        resultsfile << output;
-        resultsfile.close();
-    }
 
     //Fight function - a pointer to the enemy is passed as an argument
     void Character::fight(Character* enemy) {
@@ -109,6 +101,7 @@
 
         //We announce the winner and print the results to a file
         std::string results=(!this->isDead() ? this->getName() + " wins. Remaining HP: " + std::to_string(this->getHP()) :  enemy->getName() + " wins. Remaining HP: " + std::to_string(enemy->getHP()) );
+        std::string filePath = "results/"+this->getName() + "_" +enemy->getName() + ".txt";
         std::cout << results;
-        fightToFile(results, enemy);
+        Utility::writeToFile(filePath, results);
     }
