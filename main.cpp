@@ -11,23 +11,27 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-    
-    if (Utility::isNumber(argv[2]) && Utility::isNumber(argv[3]) && Utility::isNumber(argv[5]) && Utility::isNumber(argv[6]))
-    {
-        //If the input parameters are correct, we create two objects of the Character class based on the input data
-        Character* player = new Character(argv[1], std::stoi(argv[2]), std::stoi(argv[3]));
-        Character* enemy = new Character(argv[4], std::stoi(argv[5]), std::stoi(argv[6]));
-        
+
+    Character* player1 = NULL;
+    Character* player2 = NULL;
+
+    //If we have enough arguments given, we create two units from the given input files
+    if(argc > 2){
+        player1 = Character::parseUnit(argv[1]);
+        player2 = Character::parseUnit(argv[2]);
+    }
+
+    if (player1 && player2) {
         //The fight method is called, this is where all the logic happens
-        player->fight(enemy);
+        player1->fight(player2);
 
         //After the fight, we delete the objects we've created
-        delete player;
-        delete enemy;
+        delete player1;
+        delete player2;
     }
     else {
         //If the input parameters are not correct, we print a helper to the console
-        cout << "Incorrect input parameters. Please use the following pattern: Name1(string) HP1(int) ATK1(int) Name2(string) HP2(int) ATK2(int)" << endl;
+        cout << "Incorrect input parameters. Please check if the input file paths you entered were correct." << endl;
     };
 
     return 0;
