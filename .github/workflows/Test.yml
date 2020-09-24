@@ -9,4 +9,5 @@ jobs:
     steps: 
       - uses: actions/checkout@v2
       - run: g++ *.cpp
+      - run: chmod +x run_test.sh
       - run: ./run_test.sh
