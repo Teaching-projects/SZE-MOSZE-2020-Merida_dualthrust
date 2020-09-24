@@ -9,4 +9,4 @@ jobs:
     steps: 
       - uses: actions/checkout@v2
       - run: g++ *.cpp
-      - run: ./input_test.sh
+      - run: ./run_test.sh
