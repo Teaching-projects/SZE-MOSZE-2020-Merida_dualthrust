@@ -1,6 +1,7 @@
 # Ignore everything
-*
-
+/*
+/*/
+/results/*
 #except
 !*.cpp
 !*.h
@@ -9,3 +10,9 @@
 !*.json
 !*.txt
 !*.yml
+!*.sh
+#folders
+!/.github/
+!/units/
+!/results/
+!/results_correct/

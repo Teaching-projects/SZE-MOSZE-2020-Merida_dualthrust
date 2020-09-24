@@ -1,0 +1,12 @@
+name: Test workflow
+
+on:
+  push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2
+      - run: g++ *.cpp
+      - run: ./input_test.sh
