@@ -44,12 +44,3 @@ std::vector<std::string> Utility::split(std::string s, char splitChar)
 	}
 	return output;
 }
-
-//Function that prints a fight results to a file
-void Utility::writeToFile(std::string filePath, std::string output)
-{
-	std::ofstream resultsfile;
-	resultsfile.open(filePath);
-	resultsfile << output;
-	resultsfile.close();
-}
