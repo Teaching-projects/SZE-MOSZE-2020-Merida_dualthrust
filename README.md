@@ -14,6 +14,8 @@ Futásához összesen hat darab bemeneti paramétert vár, a következő séma a
 
 Helytelen input esetén a program a parancssorba printeli a helyes sémát, majd kilép.
 Helyes input esetén a létrehozott karakterek 'oda-vissza' módon támadják egymást, amíg egyikőjük életereje el nem fogy.
+Ez utóbbi esetben egy szkript leteszteli, hogy a kapott kimenet a valós értékeket közli-e.
+A program parancssorba printeli, hogy a kimenet helyes, vagy sem.
 
 ## Csapattagok
 Lapat Krisztián\
