@@ -1,9 +1,10 @@
 #!/bin/bash
 
-IFS=$'\n'
+./a.out units/Tolvaj.json units/Robin.json >> results.txt
+./a.out units/Tolvaj.json units/Tomcat.json >> results.txt
+./a.out units/Robin.json units/Tolvaj.json >> results.txt
+./a.out units/Robin.json units/Tomcat.json >> results.txt
+./a.out units/Tomcat.json units/Tolvaj.json >> results.txt
+./a.out units/Tomcat.json units/Robin.json >> results.txt
 
-for i in 'cat input.txt';
-do
-    echo "Input parameters: $i, results:"
-    echo "$i" | ./a.out 
-done
+diff results.txt results_correct.txt
