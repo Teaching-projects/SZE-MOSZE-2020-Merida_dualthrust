@@ -1,6 +1,6 @@
-units/Robin.json units/Tolvaj.json
-units/Robin.json units/Tomcat.json
-units/Tolvaj.json units/Robin.json
-units/Tolvaj.json units/Tomcat.json
-units/Tomcat.json units/Robin.json
-units/Tomcat.json units/Tolvaj.json
+Robin.json Tolvaj.json
+Robin.json Tomcat.json
+Tolvaj.json Robin.json
+Tolvaj.json Tomcat.json
+Tomcat.json Robin.json
+Tomcat.json Tolvaj.json
