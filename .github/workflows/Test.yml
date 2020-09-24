@@ -11,10 +11,4 @@ jobs:
       - run: g++ *.cpp
       - run: chmod +x run_test.sh
       - run: ./run_test.sh
-      - run: diff Tolvaj_Robin.txt Tolvaj_Robin_Correct.txt
-      - run: diff Tolvaj_Tomcat.txt Tolvaj_Tomcat_Correct.txt
-      - run: diff Robin_Tolvaj.txt Robin_Tolvaj_Correct.txt
-      - run: diff Robin_Tomcat.txt Robin_Tomcat_Correct.txt
-      - run: diff Tomcat_Tolvaj.txt Tomcat_Tolvaj_Correct.txt
-      - run: diff Tomcat_Robin.txt Tomcat_Robin_Correct.txt
         

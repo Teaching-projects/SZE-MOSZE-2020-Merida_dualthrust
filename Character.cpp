@@ -107,6 +107,6 @@
         //We announce the winner and print the results to a file
         std::string results=(!this->isDead() ? this->getName() + " wins. Remaining HP: " + std::to_string(this->getHP()) :  enemy->getName() + " wins. Remaining HP: " + std::to_string(enemy->getHP()) );
         std::string filePath = "results/"+this->getName() + "_" +enemy->getName() + ".txt";
-        std::cout << results;
+        std::cout << results << std::endl;
         Utility::writeToFile(filePath, results);
     }
