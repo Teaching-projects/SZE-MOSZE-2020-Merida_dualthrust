@@ -1,8 +1,6 @@
 #include "Utility.h"
 #include <iostream>
-#include <string>
-#include <ctype.h>
-#include <vector>
+#include <cctype>
 #include <fstream>
 
 //Method for checking if a given input is a number or not
@@ -24,7 +22,7 @@ bool Utility::isNumber(std::string input)
 std::vector<std::string> Utility::split(std::string s, char splitChar) 
 {
 	std::vector<std::string> output;
-	std::string current_value = "";
+	std::string current_value;
 	
 	for (int i = 0; i < s.length(); i++) 
 	{

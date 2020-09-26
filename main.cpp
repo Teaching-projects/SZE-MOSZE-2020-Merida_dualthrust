@@ -35,6 +35,7 @@ int main(int argc, char* argv[])
     {
         //If the input parameters are not correct, we print a helper to the console
         cout << "Incorrect input parameters. Please check if the input file paths you entered were correct." << endl;
+        return 1;
     };
 
     return 0;
