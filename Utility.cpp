@@ -3,7 +3,7 @@
 #include <cctype>
 
 //Method for checking if a given input is a number or not
-bool Utility::isNumber(std::string input) 
+bool Utility::isNumber(const std::string& input) 
 {
     if (input.size() == 0) return false;
     for (char c : input) 
@@ -18,7 +18,7 @@ bool Utility::isNumber(std::string input)
 
 //Method for splitting a string by specific characters - similar to other programming languages' string.split methods
 //Used for conveniently handling the input JSON files
-std::vector<std::string> Utility::split(std::string s, char splitChar) 
+std::vector<std::string> Utility::split(const std::string& s, char splitChar) 
 {
 	std::vector<std::string> output;
 	std::string current_value;
@@ -43,7 +43,7 @@ std::vector<std::string> Utility::split(std::string s, char splitChar)
 }
 
 //Delete every existing Character object given as input
-void Utility::safeDeleteCharacters(std::vector<Character*> characters) {
+void Utility::safeDeleteCharacters(const std::vector<Character*>& characters) {
 	for (Character* c : characters) {
 		if (c) delete c;
 	}

@@ -12,21 +12,21 @@
     //Getters
     std::string Character::getName() const
     {
-        return this->name;
+        return name;
     }
 
     int Character::getHP() const
     {
-        return this->HP;
+        return HP;
     }
 
     int Character::getATK() const
     {
-        return this->ATK;
+        return ATK;
     }
 
     //JSON parse method for creating a Character object based on a given JSON input file
-    Character* Character::parseUnit(const std::string path) 
+    Character* Character::parseUnit(const std::string& path) 
     {
         std::ifstream f(path);
         //We check if the file given as input exists
@@ -59,7 +59,7 @@
     //Convenience method for simple checking
     bool Character::isDead() const 
     {
-        return this->getHP() <= 0;
+        return getHP() <= 0;
     }
 
     //Instead of using an HP setter from outside of the class, we declare a 'sufferDamage' method
@@ -67,10 +67,10 @@
     void Character::sufferDamage(Character* enemy) 
     {
         //std::cout << enemy->getName() << " -> " << this->getName() << std::endl;
-        this->HP = (this->getHP() - enemy->getATK());
-        if (this->HP < 0)
+        HP = (getHP() - enemy->getATK());
+        if (HP < 0)
         {
-            this->HP = 0; 
+            HP = 0; 
         }
     }
 
@@ -104,5 +104,5 @@
         }
 
         //We announce the winner
-        std::cout << (!this->isDead() ? this->getName() + " wins. Remaining HP: " + std::to_string(this->getHP()) :  enemy->getName() + " wins. Remaining HP: " + std::to_string(enemy->getHP()) ) << std::endl;
+        std::cout << (!isDead() ? getName() + " wins. Remaining HP: " + std::to_string(getHP()) :  enemy->getName() + " wins. Remaining HP: " + std::to_string(enemy->getHP()) ) << std::endl;
     }

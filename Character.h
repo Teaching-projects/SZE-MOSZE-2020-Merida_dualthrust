@@ -12,7 +12,7 @@ class Character {
 
 public:
     Character(const std::string, const int, const int);
-    static Character* parseUnit(const std::string);
+    static Character* parseUnit(const std::string&);
     std::string getName() const;
     int getATK() const;
     int getHP() const;
