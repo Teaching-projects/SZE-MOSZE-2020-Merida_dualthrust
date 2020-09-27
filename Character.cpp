@@ -56,7 +56,6 @@
         //Character* player = new Character("Maple",10,1);
     }
 
-
     //Convenience method for simple checking
     bool Character::isDead() const 
     {

@@ -1,7 +1,6 @@
 #include "Utility.h"
 #include <iostream>
 #include <cctype>
-#include <fstream>
 
 //Method for checking if a given input is a number or not
 bool Utility::isNumber(std::string input) 
@@ -41,4 +40,11 @@ std::vector<std::string> Utility::split(std::string s, char splitChar)
 		}
 	}
 	return output;
+}
+
+//Delete every existing Character object given as input
+void Utility::safeDeleteCharacters(std::vector<Character*> characters) {
+	for (Character* c : characters) {
+		if (c) delete c;
+	}
 }

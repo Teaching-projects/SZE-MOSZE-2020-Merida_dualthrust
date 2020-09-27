@@ -4,10 +4,8 @@
 #include <ctype.h>
 
 #include "Utility.h"
-#include "Character.h"
 
 using namespace std;
-
 
 int main(int argc, char* argv[])
 {
@@ -26,15 +24,15 @@ int main(int argc, char* argv[])
     {
         //The fight method is called, this is where all the logic happens
         player1->fight(player2);
-        
-        //After the fight, we delete the objects we've created
-        delete player1;
-        delete player2;
+        //We delete existing objects
+        Utility::safeDeleteCharacters({ player1, player2 });
     }
     else 
     {
         //If the input parameters are not correct, we print a helper to the console
         cout << "Incorrect input parameters. Please check if the input file paths you entered were correct." << endl;
+        //We delete existing objects
+        Utility::safeDeleteCharacters({ player1,player2 });
         return 1;
     };
 
