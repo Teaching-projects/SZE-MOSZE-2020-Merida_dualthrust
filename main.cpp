@@ -25,14 +25,14 @@ int main(int argc, char* argv[])
         //The fight method is called, this is where all the logic happens
         player1->fight(player2);
         //We delete existing objects
-        Utility::safeDeleteCharacters({ player1, player2 });
+        Utility::deleteCharacters({ player1, player2 });
     }
     else 
     {
         //If the input parameters are not correct, we print a helper to the console
         cout << "Incorrect input parameters. Please check if the input file paths you entered were correct." << endl;
         //We delete existing objects
-        Utility::safeDeleteCharacters({ player1,player2 });
+        Utility::deleteCharacters({ player1,player2 });
         return 1;
     };
 
