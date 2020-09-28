@@ -43,8 +43,8 @@ std::vector<std::string> Utility::split(const std::string& s, char splitChar)
 }
 
 //Delete every existing Character object given as input
-void Utility::safeDeleteCharacters(const std::vector<Character*>& characters) {
+void Utility::deleteCharacters(const std::vector<Character*>& characters) {
 	for (Character* c : characters) {
-		if (c) delete c;
+		delete c;
 	}
 }

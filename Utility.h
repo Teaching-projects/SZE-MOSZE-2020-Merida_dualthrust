@@ -11,7 +11,7 @@ class Utility {
     public:
         static bool isNumber(const std::string&);
         static std::vector<std::string> split(const std::string&, char);
-        static void safeDeleteCharacters(const std::vector<Character*>&);
+        static void deleteCharacters(const std::vector<Character*>&);
 };
 
 #endif // UTILITY_HEADER
