@@ -1,8 +1,4 @@
 #include <iostream>
-#include <string>
-#include <time.h>
-#include <ctype.h>
-
 #include "Utility.h"
 
 using namespace std;
