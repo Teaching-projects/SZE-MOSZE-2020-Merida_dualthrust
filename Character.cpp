@@ -10,17 +10,17 @@
 
 
     //Getters
-    std::string Character::getName() const
+    std::string const & Character::getName() const
     {
         return name;
     }
 
-    int Character::getHP() const
+    int const & Character::getHP() const
     {
         return HP;
     }
 
-    int Character::getATK() const
+    int const & Character::getATK() const
     {
         return ATK;
     }
