@@ -12,12 +12,12 @@ class Character {
 
 public:
     Character(const std::string, const int, const int);
-    std::string getName() const;
-    int getATK() const;
-    int getHP() const;
+    static Character* parseUnit(const std::string&);
+    std::string const & getName() const;
+    int const & getATK() const;
+    int const & getHP() const;
     void sufferDamage(Character*);
     bool isDead() const;
-    void printStatus() const;
     void fight(Character*);
     //'<<'operator overload
     friend std::ostream& operator<<(std::ostream& os, const Character& character);
