@@ -17,6 +17,7 @@ public:
     int const & getATK() const;
     int const & getHP() const;
     void sufferDamage(Character*);
+    virtual void deliverHit(Character* enemy);
     bool isDead() const;
     void fight(Character*);
     //'<<'operator overload

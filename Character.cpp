@@ -1,4 +1,5 @@
 #include "Character.h"
+#include "Player.h"
 #include "Utility.h"
 #include <iostream>
 #include <string>
@@ -74,6 +75,10 @@
         }
     }
 
+    void Character::deliverHit(Character* enemy) 
+    {
+        enemy -> sufferDamage(this);
+    }
 
     //Printing a characters status
     std::ostream& operator<<(std::ostream& os, const Character& character)
@@ -92,17 +97,17 @@
         {
             switch (myTurn)
             {
-            case true: enemy->sufferDamage(this); //we hit the enemy
+            case true: enemy->deliverHit(this); //we hit the enemy
                 break;
-            case false: this->sufferDamage(enemy); //the enemy hits us
+            case false: this->deliverHit(enemy); //the enemy hits us
                 break;
             }
 
             //We swap the state of 'myTurn'
             myTurn = !myTurn;
-
+            
         }
 
         //We announce the winner
         std::cout << (!isDead() ? getName() + " wins. Remaining HP: " + std::to_string(getHP()) :  enemy->getName() + " wins. Remaining HP: " + std::to_string(enemy->getHP()) ) << std::endl;
-    }
+    }    
