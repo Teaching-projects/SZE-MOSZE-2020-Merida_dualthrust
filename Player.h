@@ -4,33 +4,17 @@
 #include <string>
 #include "Character.h"
 
-    /* Minden 100 XP osszegyujtese utan szintet lep, aminek a kovetkezo hatasai vannak:
-
-    max HP megno 10%-kal (egeszre kerekitve)
-    DMG megno 10%-kal
-    az aktualis HP felmegy max HP-ra */
-
 class Player : public Character{
     protected:
-        int ATK; // újradefiniálva, mert a character.cpp-ben const
-        int LVL;
-        int maxHP;
-        int XP;
-        void lvlUp();
+        int ATK;        ///<Redefined here, Character.cpp has it as a const, but the levelups change the value
+        int LVL;        ///<Tracking the units current level
+        int maxHP;      ///<Tracking the maximum HP, lvlUp() uses this to raise a units HP after a level up, and uses it to set the current up to max
+        int XP;         ///<Tracking the units current XP. When using the deliverHit() method XP is given to a unit based on its damage inflicted to the enemy, from which levelups are calculated
+        void lvlUp();   ///<lvlUp() method is used by in the deliverHit() method. When a units XP is above or equal to 100, it is called - how many times is dependant on XP, if it has N times 100 XP it is called N times. Sets a units maximumHP and ATK to 1.1 times the current value. Also it sets current HP to maximumHP.
     public:
-    /*  Ezek a  character.h-ban szerepelnek már   
-        Character(const std::string, const int, const int);
-        static Character* parseUnit(const std::string&);
-        std::string const & getName() const;
-        int const & getATK() const;
-        int const & getHP() const;
-        void sufferDamage(Character*);
-        bool isDead() const;
-        void fight(Character*);
-        //'<<'operator overload
-        friend std::ostream& operator<<(std::ostream& os, const Character& character); */
-        Player(const std::string, const int, const int);
-        void deliverHit(Character* enemy) ;
-};
+        Player(const std::string, const int, const int);    ///<Constructor for our Player class. Uses the same inputs as a Character class.
+        static Player* parseUnit(const std::string&);       ///<The parseUnit() method provides data for our constructor. Same as the Character class's, only difference is that it returns a Player object instead of a Character.
+        void deliverHit(Character* enemy) ;                 ///<The deliverHit() method calls the enemy units sufferDamage() method, and handles the Player units XP gain. It also calls the lvlUp() method when sufficient XP is gained for a levelup.
+    };
 
 #endif // PLAYER_HEADER

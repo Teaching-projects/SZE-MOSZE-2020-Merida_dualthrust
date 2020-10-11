@@ -3,8 +3,6 @@
 #include "Utility.h"
 #include <iostream>
 #include <string>
-#include <fstream>
-#include <sstream>
 
     /* Egy levelup branchen keszuljon egy olyan Kalandor/Player osztaly, mely a korabbi harcoshoz hasonlit, azonban minden utes utan kap annyi XP-t, 
     amennyi sebzest bevitt. Minden 100 XP osszegyujtese utan szintet lep, aminek a kovetkezo hatasai vannak:
@@ -27,9 +25,25 @@
 
     void Player::lvlUp(){
         maxHP *= 1.1;
-        ATK *= 1.1;
+        this ->ATK*=1.1;
         HP = maxHP;
         LVL+=1;
+        
+    }
+
+    //JSON parse method for creating a Character object based on a given JSON input file
+    Player* Player::parseUnit(const std::string& path)
+    {
+        std::vector<std::string> unit_data = Utility::getJsonData(path);
+
+        if (unit_data.size() > 0) {
+            return new Player(unit_data[0], std::stoi(unit_data[1]), std::stoi(unit_data[2]));
+        }
+        else
+        {
+            //If the input file doesn't exist, we return null
+            return NULL;
+        }
     }
 
     void Player::deliverHit(Character* enemy) 
@@ -48,8 +62,6 @@
 
         enemy -> sufferDamage(this);
 
-        std::cout<<"XP_toGain: "+std::to_string(XP_ToGain);
-
         XP+=XP_ToGain;
         
         if (XP>=100)
@@ -61,6 +73,14 @@
             }
             XP -= LVL_ToGain * 100;            
         }
-        std::cout<<this->getName() + " jumped to level: " + std::to_string(this->LVL) + ".";
+        std::cout<< this->getName() 
+                    + " jumped to level: " 
+                    + std::to_string(this->LVL) 
+                    + ". \tWith this, it's HP is increased to "
+                    + std::to_string(maxHP)
+                    + ", and it's ATK is increased to "
+                    + std::to_string(getATK())+"."/* 
+                    + " \tCurrent HP is "+std::to_string(getHP()) */
+                    + "\n";
         
     }
