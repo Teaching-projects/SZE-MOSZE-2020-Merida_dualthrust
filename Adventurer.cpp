@@ -7,6 +7,8 @@
     Adventurer::Adventurer(const std::string characterName,const int characterHP, int characterATK) : Character(characterName, characterHP, characterATK) 
     { 
         maxHP   =   characterHP;
+        XP      =   0;
+        LVL     =   0;
     }   
 
     void Adventurer::lvlUp(){

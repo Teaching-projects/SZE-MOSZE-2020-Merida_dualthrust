@@ -6,7 +6,6 @@
 
 class Adventurer : public Character{
     protected:
-        int ATK;        ///<Redefined here, Character.cpp has it as a const, but the levelups change the value
         int LVL;        ///<Tracking the units current level
         int maxHP;      ///<Tracking the maximum HP, lvlUp() uses this to raise a units HP after a level up, and uses it to set the current up to max
         int XP;         ///<Tracking the units current XP. When using the deliverHit() method XP is given to a unit based on its damage inflicted to the enemy, from which levelups are calculated
