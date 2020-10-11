@@ -25,7 +25,7 @@ public:
 
 protected:
     const std::string name;
-    const int ATK;
+    int ATK;
     int HP;
 };
 

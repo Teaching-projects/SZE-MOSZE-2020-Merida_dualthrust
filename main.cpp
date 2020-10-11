@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Utility.h"
 #include "Character.h"
-#include "Player.h"
+#include "Adventurer.h"
 
 using namespace std;
 
@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
     //If we have enough arguments given, we create two units from the given input files
     if(argc > 2)
     {
-        player1 = Player::parseUnit(argv[1]);
+        player1 = Adventurer::parseUnit(argv[1]);
         player2 = Character::parseUnit(argv[2]);
     }
 
