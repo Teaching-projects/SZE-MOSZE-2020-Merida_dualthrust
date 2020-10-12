@@ -6,7 +6,7 @@
 #include <sstream>
 
     //Constructor
-    Character::Character(const std::string characterName,const int characterHP, const int characterATK):name(characterName),HP(characterHP),ATK(characterATK){}
+    Character::Character(const std::string characterName,const int characterHP, const int characterATK, const double characterACD):name(characterName),HP(characterHP),ATK(characterATK),ACD(characterACD){}
 
 
     //Getters
@@ -24,6 +24,13 @@
     {
         return ATK;
     }
+
+    double const & Character::getACD() const
+    {
+        return ACD;
+    }
+
+
 
     //JSON parse method for creating a Character object based on a given JSON input file
     Character* Character::parseUnit(const std::string& path) 
@@ -43,9 +50,10 @@
             //We save the values we need - this could be inlined into the Character constructor call, but the code is clearer this way
             std::string name = Utility::split(fileContents,'"')[3]; //We get the name from the file
             int HP = std::stoi(Utility::split(Utility::split(fileContents, ',')[1],':')[1]); //We get the HP value from the file - we split the string between the second ',' character and ':' character, and parse it into an integer
-            int DMG = std::stoi(Utility::split(Utility::split(fileContents, ':')[3], '}')[0]); //We get the DMG value from the file - we split the string between the third ':' character and '}' character, and parse it into an integer
+            int DMG = std::stoi(Utility::split(Utility::split(fileContents, ',')[2], ':')[1]); //We get the DMG value from the file - we split the string between the third ',' character and ':' character, and parse it into an integer
+            double ACD = std::stoi(Utility::split(Utility::split(fileContents, ':')[4], '}')[0]); //We get the ACD value from the file - we split the string between the fourth ':' character and '}' character, and parse it into an integer
 
-            return new Character(name, HP, DMG);
+            return new Character(name, HP, DMG, ACD);
         }
         else 
         {
@@ -85,21 +93,33 @@
     //Fight function - a pointer to the enemy is passed as an argument
     void Character::fight(Character* enemy) 
     {
-        //Variable to keep track of who's turn it is currently - 'my' in this case refers to the Character object that called the 'fight' method
-        bool myTurn = true;
+        //We initialize the countdown variables - these keep track of the cooldown until a hit
+        int attacker_hitCountdown=0;
+        int enemy_hitCountdown=0;
 
+
+        //Attacker hits the enemy first, then the other way around
+        enemy->sufferDamage(this);
+        this->sufferDamage(enemy); //the enemy hits us
+        
+        
+        //The fight keeps on going until somebody is dead
         while (!enemy->isDead() && !this->isDead()) 
         {
-            switch (myTurn)
-            {
-            case true: enemy->sufferDamage(this); //we hit the enemy
-                break;
-            case false: this->sufferDamage(enemy); //the enemy hits us
-                break;
+
+            if(attacker_hitCountdown >= getACD()){
+                enemy->sufferDamage(this);
+                attacker_hitCountdown = 0;
+            }else{
+                attacker_hitCountdown++;
             }
 
-            //We swap the state of 'myTurn'
-            myTurn = !myTurn;
+            if(enemy_hitCountdown >= enemy->getACD()){
+                this->sufferDamage(enemy);
+                enemy_hitCountdown = 0;
+            }else{
+                enemy_hitCountdown++;
+            }
 
         }
 
