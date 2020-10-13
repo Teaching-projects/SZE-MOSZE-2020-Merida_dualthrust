@@ -11,15 +11,15 @@ jobs:
       - name: Install dependencies
         run: sudo apt install -y cppcheck && sudo apt install -y valgrind 
       - name: Cppcheck code analysis
-        run: cppcheck *.cpp --enable=all --output-file=cppcheck_results.txt
+        run: cppcheck *.cpp --enable=all --output-file=cppcheck_results.txt && chmod +x warning_check.sh && ./warning_check.sh && chmod +x error_check.sh && ./error_check.sh
       - name: Upload Cppcheck result 
         uses: actions/upload-artifact@v2  
         with:
           name: cppcheck_results
           path: cppcheck_results.txt
       - name: Build
-        run: g++ -Wall -Werror -std=c++17 *.cpp -o a.out
+        run: g++ -Wall -Werror -Wextra -std=c++17 *.cpp -o a.out
       - name: Valgrind check
-        run: valgrind ./a.out units/Robin.json units/Tolvaj.json
+        run: valgrind --error-exitcode=1 ./a.out units/Robin.json units/Tolvaj.json
       - name: In-out tests
         run: chmod +x run_test.sh && ./run_test.sh
