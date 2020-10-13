@@ -5,8 +5,9 @@
 #include <string>
 
     //Constructor
-    Character::Character(const std::string characterName,const int characterHP, const int characterATK):name(characterName),HP(characterHP),ATK(characterATK){}
+    Character::Character(const std::string& characterName,const int characterHP, const int characterATK):name(characterName),HP(characterHP),ATK(characterATK){}
 
+    Character::~Character(){};
 
     //Getters
     std::string const & Character::getName() const
@@ -29,7 +30,7 @@
     {
         std::vector<std::string> unit_data = Utility::getJsonData(path);
 
-        if (unit_data.size() > 0){
+        if (unit_data.size() == 3){
             return new Character(unit_data[0], std::stoi(unit_data[1]), std::stoi(unit_data[2]));
         }
         else 

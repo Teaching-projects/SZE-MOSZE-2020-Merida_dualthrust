@@ -11,7 +11,8 @@
 class Character {
 
 public:
-    Character(const std::string, const int, const int);
+    Character(const std::string&, const int, const int);
+    virtual ~Character();
     static Character* parseUnit(const std::string&);
     std::string const & getName() const;
     int const & getATK() const;
@@ -24,9 +25,9 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const Character& character);
 
 protected:
-    const std::string name;
-    int ATK;
+    const std::string name; 
     int HP;
+    int ATK;
 };
 
 #endif // CHARACTER_HEADER
