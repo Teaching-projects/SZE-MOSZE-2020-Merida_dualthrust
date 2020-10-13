@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-    Adventurer::Adventurer(const std::string characterName,const int characterHP, int characterATK) : Character(characterName, characterHP, characterATK) 
+    Adventurer::Adventurer(const std::string& characterName,const int characterHP, int characterATK) : Character(characterName, characterHP, characterATK) 
     { 
         maxHP   =   characterHP;
         XP      =   0;
@@ -23,7 +23,7 @@
     {
         std::vector<std::string> unit_data = Utility::getJsonData(path);
 
-        if (unit_data.size() > 0) 
+        if (unit_data.size() == 3) 
         {
             return new Adventurer(unit_data[0], std::stoi(unit_data[1]), std::stoi(unit_data[2]));
         }
@@ -61,12 +61,4 @@
             }
             XP  -=  LVL_ToGain * 100;            
         }
-        std::cout<< this->getName() 
-                    + " jumped to level: " 
-                    + std::to_string(this->LVL) 
-                    + ". \tWith this, it's HP is increased to "
-                    + std::to_string(maxHP)
-                    + ", and it's ATK is increased to "
-                    + std::to_string(getATK())+".\n";
-        
     }
