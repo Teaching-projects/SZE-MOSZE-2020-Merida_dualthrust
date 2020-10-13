@@ -8,25 +8,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - name: Install dependencies
-      - run: sudo apt install -y cppcheck
-      - run: sudo apt install -y valgrind 
+        run: sudo apt install -y cppcheck && sudo apt install -y valgrind 
       
       - name: Cppcheck code analysis
-      - run: cppcheck *.cpp --enable=all --output-file=cppcheck_results.txt
-      
-      - name: Upload cppcheck_results.txt as an artifact
-        - uses: actions/upload-artifact@v2  
+        run: cppcheck *.cpp --enable=all --output-file=cppcheck_results.txt
+
+      - name: Upload Cppcheck result 
+      - uses: actions/upload-artifact@v2  
         with:
           name: cppcheck_results
           path: cppcheck_results.txt
 
       - name: Build
-      - run: g++ -Wall -Werror -std=c++17 *.cpp -o output
+        run: g++ -Wall -Werror -std=c++17 *.cpp -o output
 
       - name: Valgrind check
-      - run: valgrind --error-exitcode=1 ./output
+        run: valgrind --error-exitcode=1 ./output
 
       - name: In-out tests
-      - run: chmod +x run_test.sh
-      - run: ./run_test.sh
+        run: chmod +x run_test.sh && ./run_test.sh
