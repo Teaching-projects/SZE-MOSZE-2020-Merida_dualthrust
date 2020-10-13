@@ -16,7 +16,7 @@ jobs:
       - run: cppcheck *.cpp --enable=all --output-file=cppcheck_results.txt
       
       - name: Upload cppcheck_results.txt as an artifact
-        uses: actions/upload-artifact@v2  
+        - uses: actions/upload-artifact@v2  
         with:
           name: cppcheck_results
           path: cppcheck_results.txt
