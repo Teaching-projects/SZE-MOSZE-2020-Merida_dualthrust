@@ -2,12 +2,11 @@ name: Push DOCS
 
 on:
   push:
-    branches:
-      - attackspeed
-      - gh-pages
+
 
 jobs:
   deploy:
+    name: Deploy to github pages
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -16,7 +15,8 @@ jobs:
     - run: sudo apt-get install graphviz
     - run: doxygen doxyconf
 
-    - uses: s0/git-publish-subdir-action@v2.4.0
+    - name: Push git subdir as branch
+      uses: s0/git-publish-subdir-action@v2.4.0
 
     env:
       REPO: self
