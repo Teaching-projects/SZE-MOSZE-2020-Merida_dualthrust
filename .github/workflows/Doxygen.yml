@@ -3,7 +3,7 @@ name: Push DOCS
 on:
   push:
     branches:
-      - master
+      - attackspeed
       - gh-pages
 
 jobs:
