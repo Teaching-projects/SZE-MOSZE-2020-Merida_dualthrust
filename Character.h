@@ -5,7 +5,7 @@
  * 
  * This class contains basic methods and data members of the Character class. Character objects in the game can have different HP/ATK values and fight each other.
  * 
- * @version 0.3
+ * @version 1.0
  * @date 2020-10-13
  */
 

@@ -5,7 +5,7 @@
  * 
  * @brief Utility namespace
  * 
- * @version 0.3
+ * @version 1.0
  * @date 2020-10-11
  */
 #ifndef UTILITY_HEADER
