@@ -80,7 +80,6 @@ std::map<std::string, std::any> Utility::parseString(std::string json_string)
 
 	}
    
-	std::cout << "HP: " << std::any_cast<float>(parsedMap["hp"]);
 	return parsedMap;
 }
 

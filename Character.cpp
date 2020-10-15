@@ -6,7 +6,7 @@
 #include <sstream>
 
     //Constructor
-    Character::Character(const std::string characterName,const int characterHP, const int characterATK):name(characterName),HP(characterHP),ATK(characterATK){}
+    Character::Character(const std::string characterName,const float characterHP, const float characterATK):name(characterName),HP(characterHP),ATK(characterATK){}
 
 
     //Getters
@@ -15,12 +15,12 @@
         return name;
     }
 
-    int const & Character::getHP() const
+    float const & Character::getHP() const
     {
         return HP;
     }
 
-    int const & Character::getATK() const
+    float const & Character::getATK() const
     {
         return ATK;
     }
@@ -28,28 +28,16 @@
     //JSON parse method for creating a Character object based on a given JSON input file
     Character* Character::parseUnit(const std::string& path) 
     {
-        std::ifstream f(path);
-        //We check if the file given as input exists
-        if (f.good()) 
-        {
-            //We read the whole file into a string variable using ifstream and stringstream
-            //We do this because since we'll use the split method anyway, a counter variable holding which row we're currently reading is not needed
-            //This saves us a few addition and divide operations here
-            std::stringstream s;
-            s << f.rdbuf();
-            std::string fileContents = s.str();
-            f.close();
+        std::map<std::string, std::any> parsedMap = Utility::parseFile(path);
+        if (parsedMap.size() > 0) {
 
-            //We save the values we need - this could be inlined into the Character constructor call, but the code is clearer this way
-            std::string name = Utility::split(fileContents,'"')[3]; //We get the name from the file
-            int HP = std::stoi(Utility::split(Utility::split(fileContents, ',')[1],':')[1]); //We get the HP value from the file - we split the string between the second ',' character and ':' character, and parse it into an integer
-            int DMG = std::stoi(Utility::split(Utility::split(fileContents, ':')[3], '}')[0]); //We get the DMG value from the file - we split the string between the third ':' character and '}' character, and parse it into an integer
+            std::string name = std::any_cast<std::string>(parsedMap["name"]);
+            float hp = std::any_cast<float>(parsedMap["hp"]);
+            float dmg = std::any_cast<float>(parsedMap["dmg"]);
 
-            return new Character(name, HP, DMG);
+            return new Character(name, hp, dmg);
         }
-        else 
-        {
-            //If the input file doesn't exist, we return null
+        else {
             return NULL;
         }
     }

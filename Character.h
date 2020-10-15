@@ -11,11 +11,11 @@
 class Character {
 
 public:
-    Character(const std::string, const int, const int);
+    Character(const std::string, const float, const float);
     static Character* parseUnit(const std::string&);
     std::string const & getName() const;
-    int const & getATK() const;
-    int const & getHP() const;
+    float const & getATK() const;
+    float const & getHP() const;
     void sufferDamage(Character*);
     bool isDead() const;
     void fight(Character*);
@@ -24,8 +24,8 @@ public:
 
 protected:
     const std::string name;
-    const int ATK;
-    int HP;
+    const float ATK;
+    float HP;
 };
 
 #endif // CHARACTER_HEADER
