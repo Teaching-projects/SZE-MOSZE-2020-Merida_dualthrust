@@ -11,21 +11,23 @@
 class Character {
 
 public:
-    Character(const std::string, const int, const int);
+    Character(const std::string&, const int, const int);
+    virtual ~Character();
     static Character* parseUnit(const std::string&);
     std::string const & getName() const;
     int const & getATK() const;
     int const & getHP() const;
     void sufferDamage(Character*);
+    virtual void deliverHit(Character* enemy);
     bool isDead() const;
     void fight(Character*);
     //'<<'operator overload
     friend std::ostream& operator<<(std::ostream& os, const Character& character);
 
 protected:
-    const std::string name;
-    const int ATK;
+    const std::string name; 
     int HP;
+    int ATK;
 };
 
 #endif // CHARACTER_HEADER

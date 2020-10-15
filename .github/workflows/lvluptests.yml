@@ -1,0 +1,25 @@
+name: Build test, static code analysis, memory check
+
+on:
+  push
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: sudo apt install -y cppcheck && sudo apt install -y valgrind 
+      - name: Cppcheck code analysis
+        run: cppcheck *.cpp --enable=all --output-file=cppcheck_results.txt && chmod +x warning_check.sh && ./warning_check.sh && chmod +x error_check.sh && ./error_check.sh
+      - name: Upload Cppcheck result 
+        uses: actions/upload-artifact@v2  
+        with:
+          name: cppcheck_results
+          path: cppcheck_results.txt
+      - name: Build
+        run: g++ -Wall -Werror -Wextra -std=c++17 *.cpp -o a.out
+      - name: Valgrind check
+        run: valgrind --leak-check=full --error-exitcode=1 ./a.out units/Robin.json units/Tolvaj.json
+      - name: In-out tests
+        run: chmod +x run_test.sh && ./run_test.sh

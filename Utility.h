@@ -7,9 +7,9 @@
 
 
 namespace Utility {
-    bool isNumber(const std::string&);
     std::vector<std::string> split(const std::string&, char);
     void deleteCharacters(const std::vector<Character*>&);
+    std::vector<std::string> getJsonData(const std::string&);
 };
 
 #endif // UTILITY_HEADER

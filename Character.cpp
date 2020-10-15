@@ -1,13 +1,19 @@
 #include "Character.h"
+#include "Adventurer.h"
 #include "Utility.h"
 #include <iostream>
 #include <string>
-#include <fstream>
-#include <sstream>
 
     //Constructor
-    Character::Character(const std::string characterName,const int characterHP, const int characterATK):name(characterName),HP(characterHP),ATK(characterATK){}
+    Character::Character(const std::string& characterName,const int characterHP, const int characterATK):name(characterName),HP(characterHP),ATK(characterATK)
+    {
 
+    }
+
+    Character::~Character()
+    {
+
+    }
 
     //Getters
     std::string const & Character::getName() const
@@ -26,34 +32,19 @@
     }
 
     //JSON parse method for creating a Character object based on a given JSON input file
-    Character* Character::parseUnit(const std::string& path) 
+    Character* Character::parseUnit(const std::string& path)
     {
-        std::ifstream f(path);
-        //We check if the file given as input exists
-        if (f.good()) 
+        std::vector<std::string> unit_data = Utility::getJsonData(path);
+
+        if (unit_data.size() == 3)
         {
-            //We read the whole file into a string variable using ifstream and stringstream
-            //We do this because since we'll use the split method anyway, a counter variable holding which row we're currently reading is not needed
-            //This saves us a few addition and divide operations here
-            std::stringstream s;
-            s << f.rdbuf();
-            std::string fileContents = s.str();
-            f.close();
-
-            //We save the values we need - this could be inlined into the Character constructor call, but the code is clearer this way
-            std::string name = Utility::split(fileContents,'"')[3]; //We get the name from the file
-            int HP = std::stoi(Utility::split(Utility::split(fileContents, ',')[1],':')[1]); //We get the HP value from the file - we split the string between the second ',' character and ':' character, and parse it into an integer
-            int DMG = std::stoi(Utility::split(Utility::split(fileContents, ':')[3], '}')[0]); //We get the DMG value from the file - we split the string between the third ':' character and '}' character, and parse it into an integer
-
-            return new Character(name, HP, DMG);
+            return new Character(unit_data[0], std::stoi(unit_data[1]), std::stoi(unit_data[2]));
         }
         else 
         {
             //If the input file doesn't exist, we return null
             return NULL;
         }
-
-        //Character* player = new Character("Maple",10,1);
     }
 
     //Convenience method for simple checking
@@ -74,6 +65,10 @@
         }
     }
 
+    void Character::deliverHit(Character* enemy) 
+    {
+        enemy -> sufferDamage(this);
+    }
 
     //Printing a characters status
     std::ostream& operator<<(std::ostream& os, const Character& character)
@@ -90,19 +85,17 @@
 
         while (!enemy->isDead() && !this->isDead()) 
         {
-            switch (myTurn)
+            if (myTurn)
             {
-            case true: enemy->sufferDamage(this); //we hit the enemy
-                break;
-            case false: this->sufferDamage(enemy); //the enemy hits us
-                break;
+                this->deliverHit(enemy); //we hit the enemy
             }
-
+            else
+            {
+                enemy->deliverHit(this); //the enemy hits us
+            }           
             //We swap the state of 'myTurn'
-            myTurn = !myTurn;
-
+            myTurn =! myTurn;
         }
-
         //We announce the winner
-        std::cout << (!isDead() ? getName() + " wins. Remaining HP: " + std::to_string(getHP()) :  enemy->getName() + " wins. Remaining HP: " + std::to_string(enemy->getHP()) ) << std::endl;
-    }
+        std::cout << (!isDead() ? getName() + " wins. Remaining HP: " + std::to_string(getHP()) : enemy->getName() + " wins. Remaining HP: " + std::to_string(enemy->getHP()) ) << std::endl;
+    }    
