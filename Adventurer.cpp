@@ -17,7 +17,6 @@
         ATK     *=  1.1;
         this->HP      =   maxHP;        
         LVL     +=  1;
-        std::cout << "Max HP: " << maxHP << " HP: " << HP << std::endl;
     }
     
     Adventurer* Adventurer::parseUnit(const std::string& path)  //JSON parse method for creating a Character object based on a given JSON input file

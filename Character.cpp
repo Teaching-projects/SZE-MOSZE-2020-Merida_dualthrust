@@ -13,7 +13,7 @@
     Character::~Character()
     {
 
-    };
+    }
 
     //Getters
     std::string const & Character::getName() const
@@ -94,12 +94,8 @@
                 enemy->deliverHit(this); //the enemy hits us
             }           
             //We swap the state of 'myTurn'
-            myTurn = !myTurn;
-            std::cout<<*this;
-            std::cout<<"\n";
-            std::cout<<*enemy;
-            std::cout<<"\n";            
+            myTurn =! myTurn;
         }
         //We announce the winner
-        std::cout << (!isDead() ? "\n\n" + getName() + " wins. Remaining HP: " + std::to_string(getHP()) :  "\n\n" + enemy->getName() + " wins. Remaining HP: " + std::to_string(enemy->getHP()) ) << std::endl;
+        std::cout << (!isDead() ? getName() + " wins. Remaining HP: " + std::to_string(getHP()) : enemy->getName() + " wins. Remaining HP: " + std::to_string(enemy->getHP()) ) << std::endl;
     }    
