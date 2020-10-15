@@ -78,19 +78,23 @@
 
         while (!enemy->isDead() && !this->isDead()) 
         {
-            switch (myTurn)
+            if (myTurn)
             {
-            case true: this->deliverHit(enemy); //we hit the enemy
-                break;
-            case false: enemy->deliverHit(this); //the enemy hits us
-                break;
+                this->deliverHit(enemy); //we hit the enemy
             }
-
+            else
+            {
+                enemy->deliverHit(this); //the enemy hits us
+            }           
             //We swap the state of 'myTurn'
             myTurn = !myTurn;
+            std::cout<<*this;
+            std::cout<<"\n";
+            std::cout<<*enemy;
+            std::cout<<"\n";
             
         }
 
         //We announce the winner
-        std::cout << (!isDead() ? getName() + " wins. Remaining HP: " + std::to_string(getHP()) :  enemy->getName() + " wins. Remaining HP: " + std::to_string(enemy->getHP()) ) << std::endl;
+        std::cout << (!isDead() ? "\n\n" + getName() + " wins. Remaining HP: " + std::to_string(getHP()) :  "\n\n" + enemy->getName() + " wins. Remaining HP: " + std::to_string(enemy->getHP()) ) << std::endl;
     }    
