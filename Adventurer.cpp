@@ -5,14 +5,13 @@
 #include <string>
 #include <cmath>
 
-    Adventurer::Adventurer(const std::string& characterName,const int characterHP, int characterATK) : Character(characterName, characterHP, characterATK) 
-    { 
-        maxHP   =   characterHP;
-        XP      =   0;
-        LVL     =   1;
-    }   
+    Adventurer::Adventurer(const std::string& characterName,const int characterHP, int characterATK) : Character(characterName, characterHP, characterATK), XP(0), LVL(0), maxHP(characterHP)
+    {
 
-    void Adventurer::lvlUp(){
+    }
+
+    void Adventurer::lvlUp()
+    {
         maxHP   *=  1.1;
         maxHP   =   round(maxHP);
         ATK     *=  1.1;
