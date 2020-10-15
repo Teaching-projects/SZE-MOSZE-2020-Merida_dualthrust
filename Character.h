@@ -64,7 +64,7 @@ public:
      * Winner gets announced. Puts out the results to both file and command line
      * @param[in] Character type object
      */
-    void fight(Character*);
+    Character* fight(Character*);
     /**
      * @brief Operator overload
      * Printing a characters' status

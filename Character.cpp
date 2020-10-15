@@ -90,39 +90,33 @@
         return os;
     }
 
-    //Fight function - a pointer to the enemy is passed as an argument
-    void Character::fight(Character* enemy) 
+Character* Character::fight(Character* enemy) 
     {
         //We initialize the countdown variables - these keep track of the cooldown until a hit
         int attacker_hitCountdown=0;
         int enemy_hitCountdown=0;
 
-
         //Attacker hits the enemy first, then the other way around
         enemy->sufferDamage(this);
         this->sufferDamage(enemy); //the enemy hits us
-        
+
         
         //The fight keeps on going until somebody is dead
         while (!enemy->isDead() && !this->isDead()) 
         {
-
             if(attacker_hitCountdown >= getACD()){
                 enemy->sufferDamage(this);
                 attacker_hitCountdown = 0;
             }else{
                 attacker_hitCountdown++;
             }
-
             if(enemy_hitCountdown >= enemy->getACD()){
                 this->sufferDamage(enemy);
                 enemy_hitCountdown = 0;
             }else{
                 enemy_hitCountdown++;
             }
-
         }
-
         //We announce the winner
-        std::cout << (!isDead() ? getName() + " wins. Remaining HP: " + std::to_string(getHP()) :  enemy->getName() + " wins. Remaining HP: " + std::to_string(enemy->getHP()) ) << std::endl;
+        return !isDead() ? this : enemy;
     }
