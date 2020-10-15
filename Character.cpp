@@ -52,8 +52,6 @@
             //If the input file doesn't exist, we return null
             return NULL;
         }
-
-        //Character* player = new Character("Maple",10,1);
     }
 
     //Convenience method for simple checking
