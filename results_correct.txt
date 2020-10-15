@@ -1,6 +1,5 @@
-Robin wins. Remaining HP: 500
-Tomcat wins. Remaining HP: 500
-Robin wins. Remaining HP: 750
-Tomcat wins. Remaining HP: 100
-Tomcat wins. Remaining HP: 750
-Tomcat wins. Remaining HP: 250
+Robin wins. Remaining HP: 500.000000
+Robin wins. Remaining HP: 750.000000
+Tomcat wins. Remaining HP: 100.000000
+Tomcat wins. Remaining HP: 750.000000
+Tomcat wins. Remaining HP: 250.000000
