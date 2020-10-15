@@ -5,9 +5,15 @@
 #include <string>
 
     //Constructor
-    Character::Character(const std::string& characterName,const int characterHP, const int characterATK):name(characterName),HP(characterHP),ATK(characterATK){}
+    Character::Character(const std::string& characterName,const int characterHP, const int characterATK):name(characterName),HP(characterHP),ATK(characterATK)
+    {
 
-    Character::~Character(){};
+    }
+
+    Character::~Character()
+    {
+
+    };
 
     //Getters
     std::string const & Character::getName() const
@@ -30,7 +36,8 @@
     {
         std::vector<std::string> unit_data = Utility::getJsonData(path);
 
-        if (unit_data.size() == 3){
+        if (unit_data.size() == 3)
+        {
             return new Character(unit_data[0], std::stoi(unit_data[1]), std::stoi(unit_data[2]));
         }
         else 
@@ -91,10 +98,8 @@
             std::cout<<*this;
             std::cout<<"\n";
             std::cout<<*enemy;
-            std::cout<<"\n";
-            
+            std::cout<<"\n";            
         }
-
         //We announce the winner
         std::cout << (!isDead() ? "\n\n" + getName() + " wins. Remaining HP: " + std::to_string(getHP()) :  "\n\n" + enemy->getName() + " wins. Remaining HP: " + std::to_string(enemy->getHP()) ) << std::endl;
     }    
