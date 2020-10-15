@@ -72,9 +72,6 @@ std::map<std::string, std::any> Utility::parseString(std::string json_string)
 			value = value.substr(1, value.length() - 2);
 			parsedMap.insert({ key,value});
 		}
-		else if(isNumber(value)){
-			parsedMap.insert({ key,std::stoi(value) });
-		}
 		else{
 			try {
 				parsedMap.insert({ key, std::stof(value) });
@@ -82,8 +79,44 @@ std::map<std::string, std::any> Utility::parseString(std::string json_string)
 		}
 
 	}
-    
-	//std::cout << "HP: " << std::any_cast<float>(parsedMap["hp"]);
-
+   
+	std::cout << "HP: " << std::any_cast<float>(parsedMap["hp"]);
 	return parsedMap;
+}
+
+std::map<std::string, std::any> Utility::parseStream(std::ifstream &f) {
+	if (f.good())
+	{
+		//We read the whole file into a string variable using ifstream and stringstream
+		//We do this because since we'll use the split method anyway, a counter variable holding which row we're currently reading is not needed
+		//This saves us a few addition and divide operations here
+		std::stringstream s;
+		s << f.rdbuf();
+		std::string fileContents = s.str();
+		f.close();
+
+		return parseString(fileContents);
+	}
+	else
+	{
+		//If the input file doesn't exist, we return an empty map
+		std::map<std::string, std::any> emptyMap;
+		return 	emptyMap;
+	}
+}
+
+std::map<std::string, std::any> Utility::parseFile(const std::string& path)
+{
+	std::ifstream f(path);
+	//We check if the file given as input exists
+	if (f.good())
+	{
+		return parseStream(f);
+	}
+	else
+	{
+		//If the input file doesn't exist, we return an empty map
+		std::map<std::string, std::any> emptyMap;
+		return 	emptyMap;
+	}
 }

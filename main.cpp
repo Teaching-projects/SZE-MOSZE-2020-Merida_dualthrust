@@ -32,7 +32,9 @@ int main(int argc, char* argv[])
         return 1;
     };
 
-    Utility::parseString("{\"name\" : \"Robin\",\"hp\" : 15.02,\"dmg\" : 150,\"a\" : \"asd\"}");
+    //Utility::parseString("{\"name\" : \"Robin\",\"hp\" : 15.02,\"dmg\" : 150,\"a\" : \"asd\"}");
+    //Utility::parseFile(argv[1]);
+
 
     return 0;
 }
