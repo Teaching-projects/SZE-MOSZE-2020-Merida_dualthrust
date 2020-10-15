@@ -77,18 +77,14 @@ std::map<std::string, std::any> Utility::parseString(std::string json_string)
 				parsedMap.insert({ key, std::stof(value) });
 			}catch(int ex){}
 		}
-
 	}
-   
 	return parsedMap;
 }
 
 std::map<std::string, std::any> Utility::parseStream(std::ifstream &f) {
 	if (f.good())
 	{
-		//We read the whole file into a string variable using ifstream and stringstream
-		//We do this because since we'll use the split method anyway, a counter variable holding which row we're currently reading is not needed
-		//This saves us a few addition and divide operations here
+		//We read the whole file into a string variable using ifstream and stringstream, then pass it to the parseString method
 		std::stringstream s;
 		s << f.rdbuf();
 		std::string fileContents = s.str();
