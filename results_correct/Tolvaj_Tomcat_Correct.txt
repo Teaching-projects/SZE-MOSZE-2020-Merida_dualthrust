@@ -1,1 +1,1 @@
-Tomcat wins. Remaining HP: 500
+Tomcat wins. Remaining HP: 500.000000

@@ -1,1 +1,1 @@
-Robin wins. Remaining HP: 750
+Robin wins. Remaining HP: 750.000000
