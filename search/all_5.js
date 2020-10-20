@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['operator_3c_3c',['operator&lt;&lt;',['../classCharacter.html#a3f1fcbfc4d186ac759c2f84f8bb66a1b',1,'Character']]]
+  ['isdead',['isDead',['../classCharacter.html#a6581a9a16111768ae65603d060fca9d7',1,'Character']]],
+  ['isnumber',['isNumber',['../Utility_8h.html#af90d8f82084990a39b068c3902ace72e',1,'Utility']]]
 ];

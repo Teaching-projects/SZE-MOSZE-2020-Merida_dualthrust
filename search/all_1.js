@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['deletecharacters',['deleteCharacters',['../Utility_8h.html#a6102525e4dd2d2cd66d47053543ae3de',1,'Utility']]]
+  ['character',['Character',['../classCharacter.html',1,'Character'],['../classCharacter.html#a0f9235cb0b80c5c9dac6168f94b14be5',1,'Character::Character()']]],
+  ['character_2eh',['Character.h',['../Character_8h.html',1,'']]]
 ];
