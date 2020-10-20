@@ -1,6 +1,6 @@
-Tolvaj wins. Remaining HP: 2079
-Tolvaj wins. Remaining HP: 1292
+Tolvaj wins. Remaining HP: 1929
+Tolvaj wins. Remaining HP: 1042
 Robin wins. Remaining HP: 2414
-Robin wins. Remaining HP: 3886
-Tomcat wins. Remaining HP: 1610
-Tomcat wins. Remaining HP: 4171
+Robin wins. Remaining HP: 3636
+Tomcat wins. Remaining HP: 1360
+Tomcat wins. Remaining HP: 4021

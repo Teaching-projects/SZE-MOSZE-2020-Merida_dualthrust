@@ -5,7 +5,7 @@
 #include <string>
 
     //Constructor
-    Character::Character(const std::string& characterName,const int characterHP, const int characterATK):name(characterName),HP(characterHP),ATK(characterATK)
+    Character::Character(const std::string& characterName,const int characterHP, int characterATK, const double characterACD):name(characterName),HP(characterHP),ATK(characterATK),ACD(characterACD)
     {
 
     }
@@ -31,14 +31,21 @@
         return ATK;
     }
 
+    double const & Character::getACD() const
+    {
+        return ACD;
+    }
+
+
+
     //JSON parse method for creating a Character object based on a given JSON input file
     Character* Character::parseUnit(const std::string& path)
     {
         std::vector<std::string> unit_data = Utility::getJsonData(path);
 
-        if (unit_data.size() == 3)
+        if (unit_data.size() == 4)
         {
-            return new Character(unit_data[0], std::stoi(unit_data[1]), std::stoi(unit_data[2]));
+            return new Character(unit_data[0], std::stoi(unit_data[1]), std::stoi(unit_data[2]), std::stoi(unit_data[3]));
         }
         else 
         {
@@ -77,25 +84,33 @@
         return os;
     }
 
-    //Fight function - a pointer to the enemy is passed as an argument
-    void Character::fight(Character* enemy) 
+Character* Character::fight(Character* enemy) 
     {
-        //Variable to keep track of who's turn it is currently - 'my' in this case refers to the Character object that called the 'fight' method
-        bool myTurn = true;
+        //We initialize the countdown variables - these keep track of the cooldown until a hit
+        int attacker_hitCountdown=0;
+        int enemy_hitCountdown=0;
 
+        //Attacker hits the enemy first, then the other way around
+        this->deliverHit(enemy);
+        enemy->deliverHit(this); //the enemy hits us
+
+        
+        //The fight keeps on going until somebody is dead
         while (!enemy->isDead() && !this->isDead()) 
         {
-            if (myTurn)
-            {
-                this->deliverHit(enemy); //we hit the enemy
+            if(attacker_hitCountdown >= getACD()){
+                this->deliverHit(enemy);
+                attacker_hitCountdown = 0;
+            }else{
+                attacker_hitCountdown++;
             }
-            else
-            {
-                enemy->deliverHit(this); //the enemy hits us
-            }           
-            //We swap the state of 'myTurn'
-            myTurn =! myTurn;
+            if(enemy_hitCountdown >= enemy->getACD()){
+                enemy->deliverHit(this);
+                enemy_hitCountdown = 0;
+            }else{
+                enemy_hitCountdown++;
+            }
         }
         //We announce the winner
-        std::cout << (!isDead() ? getName() + " wins. Remaining HP: " + std::to_string(getHP()) : enemy->getName() + " wins. Remaining HP: " + std::to_string(enemy->getHP()) ) << std::endl;
-    }    
+        return !isDead() ? this : enemy;
+    }

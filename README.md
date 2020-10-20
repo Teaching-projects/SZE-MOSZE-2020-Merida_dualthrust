@@ -21,3 +21,5 @@ A program parancssorba printeli, hogy a kimenet helyes, vagy sem.
 Lapat Krisztián\
 Lilik Ferenc\
 Nemes Tamás
+
+Github pages dokumentáció: https://teaching-projects.github.io/SZE-MOSZE-2020-Merida_dualthrust/index.html

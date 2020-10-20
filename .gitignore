@@ -11,6 +11,7 @@
 !*.txt
 !*.yml
 !*.sh
+!doxyconf
 #folders
 !/.github/
 !/units/
