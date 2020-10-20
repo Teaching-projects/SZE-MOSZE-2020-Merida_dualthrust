@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['adventurer',['Adventurer',['../classAdventurer.html#a89ea01cc2e165953b887962af9aad6f7',1,'Adventurer']]]
+  ['character',['Character',['../classCharacter.html#a0f9235cb0b80c5c9dac6168f94b14be5',1,'Character']]]
 ];
