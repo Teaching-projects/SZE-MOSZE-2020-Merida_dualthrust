@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['adventurer',['Adventurer',['../classAdventurer.html',1,'Adventurer'],['../classAdventurer.html#a2b9e4087413194b80601a0c7a871a302',1,'Adventurer::Adventurer()']]]
+  ['adventurer',['Adventurer',['../classAdventurer.html',1,'Adventurer'],['../classAdventurer.html#a89ea01cc2e165953b887962af9aad6f7',1,'Adventurer::Adventurer()']]]
 ];
