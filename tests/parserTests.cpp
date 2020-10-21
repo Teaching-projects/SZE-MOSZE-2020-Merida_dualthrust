@@ -7,18 +7,15 @@ TEST(parserTests, parseFile) {
 }
 
 TEST(parserTests, badFormat_missing_doubledot) {
-    std::map<std::string, std::any> parsedJson = Utility::parseString("{ \"str\" \"Robin\",\"float\" : 15.05 }");
-    ASSERT_EQ(parsedJson.size(),0);
+    ASSERT_NO_THROW(Utility::parseString("{ \"str\" \"Robin\",\"float\" : 15.05 }"));
 }
 
 TEST(parserTests, badFormat_missing_curly_bracket) {
-    std::map<std::string, std::any> parsedJson = Utility::parseString(" \"str\" : \"Robin\",\"float\" : 15.05 }");
-    ASSERT_EQ(parsedJson.size(), 0);
+    ASSERT_NO_THROW(Utility::parseString(" \"str\" : \"Robin\",\"float\" : 15.05 }"));
 }
 
 TEST(parserTests, badFormat_missing_apostrophe) {
-    std::map<std::string, std::any> parsedJson = Utility::parseString(" \"str\" : Robin,\"float\" : 15.05 }");
-    ASSERT_EQ(parsedJson.size(), 0);
+    ASSERT_NO_THROW(Utility::parseString(" \"str\" : Robin,\"float\" : 15.05 }"));
 }
 
 TEST(parserTests, TypeParseCheck) {
