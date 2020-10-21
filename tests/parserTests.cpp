@@ -6,10 +6,6 @@ TEST(parserTests, parseFile) {
     ASSERT_NO_THROW(Utility::parseFile("../units/Tolvaj.json"));
 }
 
-TEST(parserTests, badFormat_missing_doubledot) {
-    int mapSize = Utility::parseString("{ \"str\" \"Robin\",\"float\" : 15.05 }").size();
-    ASSERT_EQ(0,0);
-}
 
 TEST(parserTests, badFormat_missing_curly_bracket) {
     int mapSize = Utility::parseString(" \"str\" : \"Robin\",\"float\" : 15.05 }").size();
