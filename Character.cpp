@@ -32,10 +32,14 @@
         if (parsedMap.size() > 0) {
 
             std::string name = std::any_cast<std::string>(parsedMap["name"]);
-            float hp = std::any_cast<float>(parsedMap["hp"]);
-            float dmg = std::any_cast<float>(parsedMap["dmg"]);
-
-            return new Character(name, hp, dmg);
+            try {
+                float hp = std::any_cast<float>(parsedMap["hp"]);
+                float dmg = std::any_cast<float>(parsedMap["dmg"]);
+                return new Character(name, hp, dmg);
+            }
+            catch (std::exception ex) {
+                return NULL;
+            }
         }
         else {
             return NULL;
