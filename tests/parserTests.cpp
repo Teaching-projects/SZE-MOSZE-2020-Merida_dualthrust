@@ -8,17 +8,17 @@ TEST(parserTests, parseFile) {
 
 TEST(parserTests, badFormat_missing_doubledot) {
     std::map<std::string, std::any> parsedJson = Utility::parseString("{ \"str\" \"Robin\",\"float\" : 15.05 }");
-    ASSERT_TRUE(parsedJson.size() == 0);
+    ASSERT_EQ(parsedJson.size(),0);
 }
 
 TEST(parserTests, badFormat_missing_curly_bracket) {
     std::map<std::string, std::any> parsedJson = Utility::parseString(" \"str\" : \"Robin\",\"float\" : 15.05 }");
-    ASSERT_TRUE(parsedJson.size() == 0);
+    ASSERT_EQ(parsedJson.size(), 0);
 }
 
 TEST(parserTests, badFormat_missing_apostrophe) {
     std::map<std::string, std::any> parsedJson = Utility::parseString(" \"str\" : Robin,\"float\" : 15.05 }");
-    ASSERT_TRUE(parsedJson.size() == 0);
+    ASSERT_EQ(parsedJson.size(), 0);
 }
 
 TEST(parserTests, TypeParseCheck) {
