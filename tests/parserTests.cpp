@@ -7,15 +7,18 @@ TEST(parserTests, parseFile) {
 }
 
 TEST(parserTests, badFormat_missing_doubledot) {
-    ASSERT_NO_THROW(Utility::parseString("{ \"str\" \"Robin\",\"float\" : 15.05 }"));
+    int mapSize = Utility::parseString("{ \"str\" \"Robin\",\"float\" : 15.05 }").size();
+    ASSERT_EQ(0,0);
 }
 
 TEST(parserTests, badFormat_missing_curly_bracket) {
-    ASSERT_NO_THROW(Utility::parseString(" \"str\" : \"Robin\",\"float\" : 15.05 }"));
+    int mapSize = Utility::parseString(" \"str\" : \"Robin\",\"float\" : 15.05 }").size();
+    ASSERT_EQ(mapSize, 0);
 }
 
 TEST(parserTests, badFormat_missing_apostrophe) {
-    ASSERT_NO_THROW(Utility::parseString(" \"str\" : Robin,\"float\" : 15.05 }"));
+    int mapSize = Utility::parseString(" \"str\" : Robin,\"float\" : 15.05 }").size();
+    ASSERT_EQ(mapSize, 0);
 }
 
 TEST(parserTests, TypeParseCheck) {
