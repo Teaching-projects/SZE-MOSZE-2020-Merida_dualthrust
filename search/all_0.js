@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['character',['Character',['../classCharacter.html',1,'Character'],['../classCharacter.html#a0f9235cb0b80c5c9dac6168f94b14be5',1,'Character::Character()']]],
-  ['character_2eh',['Character.h',['../Character_8h.html',1,'']]]
+  ['adventurer',['Adventurer',['../classAdventurer.html',1,'Adventurer'],['../classAdventurer.html#ad71f3fc0256196e7be41f03195b8c033',1,'Adventurer::Adventurer()']]]
 ];
