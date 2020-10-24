@@ -22,9 +22,10 @@ std::vector<std::string> Utility::getJsonData(const std::string& path)
         //We save the values we need - this could be inlined into the Character constructor call, but the code is clearer this way
         std::string name = split(fileContents, '"')[3]; //We get the name from the file
         std::string HP = split(Utility::split(fileContents, ',')[1], ':')[1]; //We get the HP value from the file - we split the string between the second ',' character and ':' character, and parse it into an integer
-        std::string DMG = split(Utility::split(fileContents, ':')[3], '}')[0]; //We get the DMG value from the file - we split the string between the third ':' character and '}' character, and parse it into an integer
+        std::string DMG = split(Utility::split(fileContents, ',')[2], ':')[1]; //We get the DMG value from the file - we split the string between the third ',' character and ':' character, and parse it into an integer
+        std::string ACD = split(Utility::split(fileContents, ':')[4], '}')[0]; //We get the ACD value from the file - we split the string between the fourth ':' character and '}' character, and parse it into an integer
 
-        return std::vector<std::string> {name, HP, DMG};
+        return std::vector<std::string> {name, HP, DMG, ACD};
     }
     else
     {

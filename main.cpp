@@ -23,6 +23,7 @@ int main(int argc, char* argv[])
 //The fight method is called, this is where all the logic happens
         Character* winner = player1->fight(player2);
         std::cout << winner->getName() + " wins. Remaining HP: " + std::to_string(winner->getHP()) << std::endl;
+        Utility::deleteCharacters({ player1,player2 });
     }
     else 
     {
