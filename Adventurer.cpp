@@ -5,7 +5,7 @@
 #include <string>
 #include <cmath>
 
-    Adventurer::Adventurer(const std::string& characterName,const int characterHP, int characterATK) : Character(characterName, characterHP, characterATK), LVL(0), maxHP(characterHP), XP(0)
+    Adventurer::Adventurer(const std::string& characterName,const int characterHP, int characterATK, double characterACD) : Character(characterName, characterHP, characterATK, characterACD), LVL(0), maxHP(characterHP), XP(0)
     {
 
     }
@@ -23,9 +23,9 @@
     {
         std::vector<std::string> unit_data = Utility::getJsonData(path);
 
-        if (unit_data.size() == 3) 
+        if (unit_data.size() == 4) 
         {
-            return new Adventurer(unit_data[0], std::stoi(unit_data[1]), std::stoi(unit_data[2]));
+            return new Adventurer(unit_data[0], std::stoi(unit_data[1]), std::stoi(unit_data[2]), std::stoi(unit_data[3]));
         }
         else
         {
