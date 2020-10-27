@@ -1,13 +1,19 @@
 #include "Character.h"
+#include "Adventurer.h"
 #include "Utility.h"
 #include <iostream>
 #include <string>
-#include <fstream>
-#include <sstream>
 
     //Constructor
-    Character::Character(const std::string characterName,const float characterHP, const float characterATK):name(characterName),HP(characterHP),ATK(characterATK){}
+    Character::Character(const std::string& characterName,const int characterHP, int characterATK, const double characterACD):name(characterName),HP(characterHP),ATK(characterATK),ACD(characterACD)
+    {
 
+    }
+
+    Character::~Character()
+    {
+
+    }
 
     //Getters
     std::string const & Character::getName() const
@@ -25,8 +31,15 @@
         return ATK;
     }
 
+    double const & Character::getACD() const
+    {
+        return ACD;
+    }
+
+
+
     //JSON parse method for creating a Character object based on a given JSON input file
-    Character* Character::parseUnit(const std::string& path) 
+    Character* Character::parseUnit(const std::string& path)
     {
         std::map<std::string, std::any> parsedMap = Utility::parseFile(path);
         if (parsedMap.size() > 0) {
@@ -35,7 +48,8 @@
             try {
                 float hp = std::any_cast<float>(parsedMap["hp"]);
                 float dmg = std::any_cast<float>(parsedMap["dmg"]);
-                return new Character(name, hp, dmg);
+                float ACD = std::any_cast<float>(parsedMap["acd"]);
+                return new Character(name, hp, dmg, acd);
             }
             catch (std::exception ex) {
                 return NULL;
@@ -64,6 +78,10 @@
         }
     }
 
+    void Character::deliverHit(Character* enemy) 
+    {
+        enemy -> sufferDamage(this);
+    }
 
     //Printing a characters status
     std::ostream& operator<<(std::ostream& os, const Character& character)
@@ -72,27 +90,33 @@
         return os;
     }
 
-    //Fight function - a pointer to the enemy is passed as an argument
-    void Character::fight(Character* enemy) 
+Character* Character::fight(Character* enemy) 
     {
-        //Variable to keep track of who's turn it is currently - 'my' in this case refers to the Character object that called the 'fight' method
-        bool myTurn = true;
+        //We initialize the countdown variables - these keep track of the cooldown until a hit
+        int attacker_hitCountdown=0;
+        int enemy_hitCountdown=0;
 
+        //Attacker hits the enemy first, then the other way around
+        this->deliverHit(enemy);
+        enemy->deliverHit(this); //the enemy hits us
+
+        
+        //The fight keeps on going until somebody is dead
         while (!enemy->isDead() && !this->isDead()) 
         {
-            switch (myTurn)
-            {
-            case true: enemy->sufferDamage(this); //we hit the enemy
-                break;
-            case false: this->sufferDamage(enemy); //the enemy hits us
-                break;
+            if(attacker_hitCountdown >= getACD()){
+                this->deliverHit(enemy);
+                attacker_hitCountdown = 0;
+            }else{
+                attacker_hitCountdown++;
             }
-
-            //We swap the state of 'myTurn'
-            myTurn = !myTurn;
-
+            if(enemy_hitCountdown >= enemy->getACD()){
+                enemy->deliverHit(this);
+                enemy_hitCountdown = 0;
+            }else{
+                enemy_hitCountdown++;
+            }
         }
-
         //We announce the winner
-        std::cout << (!isDead() ? getName() + " wins. Remaining HP: " + std::to_string(getHP()) :  enemy->getName() + " wins. Remaining HP: " + std::to_string(enemy->getHP()) ) << std::endl;
+        return !isDead() ? this : enemy;
     }
