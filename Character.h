@@ -22,7 +22,7 @@ public:
      * @brief Construct a new Character object
      * In case of no inputs the Character object gets default values
      */
-    Character(const std::string&, const int, int, const double);
+    Character(const std::string&, int, int, const double);
     /**
      * @brief JSON parse method for creating a Character object based on a given JSON input file
      * @return Character type unit

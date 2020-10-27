@@ -5,7 +5,7 @@
 #include <string>
 #include <cmath>
 
-    Adventurer::Adventurer(const std::string& characterName,const int characterHP, int characterATK, double characterACD) : Character(characterName, characterHP, characterATK, characterACD), LVL(0), maxHP(characterHP), XP(0)
+    Adventurer::Adventurer(const std::string& characterName, int characterHP, int characterATK, double characterACD) : Character(characterName, characterHP, characterATK, characterACD), LVL(0), maxHP(characterHP), XP(0)
     {
 
     }
