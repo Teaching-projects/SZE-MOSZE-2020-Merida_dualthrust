@@ -21,15 +21,21 @@
     
     Adventurer* Adventurer::parseUnit(const std::string& path)  //JSON parse method for creating a Character object based on a given JSON input file
     {
-        std::vector<std::string> unit_data = Utility::getJsonData(path);
+        std::map<std::string, std::any> parsedMap = Utility::parseFile(path);
+        if (parsedMap.size() > 0) {
 
-        if (unit_data.size() == 4) 
-        {
-            return new Adventurer(unit_data[0], std::stoi(unit_data[1]), std::stoi(unit_data[2]), std::stoi(unit_data[3]));
+            std::string name = std::any_cast<std::string>(parsedMap["name"]);
+            try {
+                int hp = (int)std::any_cast<float>(parsedMap["hp"]);
+                int dmg = (int)std::any_cast<float>(parsedMap["dmg"]);
+                float ACD = std::any_cast<float>(parsedMap["acd"]);
+                return new Adventurer(name, hp, dmg, ACD);
+            }
+            catch (std::exception ex) {
+                return nullptr;
+            }
         }
-        else
-        {
-            //If the input file doesn't exist, we return null
+        else {
             return nullptr;
         }
     }
