@@ -5,7 +5,7 @@
 #include <string>
 
     //Constructor
-    Character::Character(const std::string& characterName,const int characterHP, int characterATK, const double characterACD):name(characterName),HP(characterHP),ATK(characterATK),ACD(characterACD)
+    Character::Character(const std::string& characterName, int characterHP, int characterATK, const double characterACD):name(characterName),HP(characterHP),ATK(characterATK),ACD(characterACD)
     {
 
     }
@@ -21,12 +21,12 @@
         return name;
     }
 
-    float const & Character::getHP() const
+    int const & Character::getHP() const
     {
         return HP;
     }
 
-    float const & Character::getATK() const
+    int const & Character::getATK() const
     {
         return ATK;
     }
@@ -46,10 +46,10 @@
 
             std::string name = std::any_cast<std::string>(parsedMap["name"]);
             try {
-                float hp = std::any_cast<float>(parsedMap["hp"]);
-                float dmg = std::any_cast<float>(parsedMap["dmg"]);
+                int hp = (int)std::any_cast<float>(parsedMap["hp"]);
+                int dmg = (int)std::any_cast<float>(parsedMap["dmg"]);
                 float ACD = std::any_cast<float>(parsedMap["acd"]);
-                return new Character(name, hp, dmg, acd);
+                return new Character(name, hp, dmg, ACD);
             }
             catch (std::exception ex) {
                 return NULL;

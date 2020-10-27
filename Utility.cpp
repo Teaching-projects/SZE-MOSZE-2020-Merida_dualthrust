@@ -75,7 +75,7 @@ void Utility::deleteCharacters(const std::vector<Character*>& characters)
 std::map<std::string, std::any> Utility::parseString(std::string json_string)
 {
 	std::map<std::string, std::any> parsedMap;
-
+	
 	//If the JSON string beginning and end characters aren't correct, we return an empty map
 	if (json_string[0] != '{' || json_string[json_string.length() - 1] != '}') {
 		return {};

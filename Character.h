@@ -22,7 +22,7 @@ public:
      * @brief Construct a new Character object
      * In case of no inputs the Character object gets default values
      */
-    Character(const std::string&, const float, float, const double);
+    Character(const std::string&, const int, int, const double);
     /**
      * @brief JSON parse method for creating a Character object based on a given JSON input file
      * @return Character type unit
@@ -79,8 +79,8 @@ public:
 
 protected:
     const std::string name; 
-    float HP;
-    float ATK;
+    int HP;
+    int ATK;
     const double ACD;
 };
 
