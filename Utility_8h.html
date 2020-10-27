@@ -69,12 +69,16 @@ $(function() {
 <div class="textblock"><code>#include &lt;string&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="Character_8h_source.html">Character.h</a>&quot;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;any&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Utility.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="Utility_8h__incl.png" border="0" usemap="#Utility_8h" alt=""/></div>
 <map name="Utility_8h" id="Utility_8h">
-<area shape="rect" id="node4" href="Character_8h.html" title="Character class. " alt="" coords="103,80,194,107"/>
+<area shape="rect" id="node4" href="Character_8h.html" title="Character class. " alt="" coords="106,80,197,107"/>
 </map>
 </div>
 </div>
@@ -88,6 +92,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a48e3f020a7628df93c19be835e72ada1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Utility_8h.html#a48e3f020a7628df93c19be835e72ada1">Utility::split</a> (const std::string &amp;, char)</td></tr>
 <tr class="memdesc:a48e3f020a7628df93c19be835e72ada1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method for splitting a string by specific characters.  <a href="Utility_8h.html#a48e3f020a7628df93c19be835e72ada1">More...</a><br /></td></tr>
 <tr class="separator:a48e3f020a7628df93c19be835e72ada1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbe4d97fbdb956f524b12d49b52be443"><td class="memItemLeft" align="right" valign="top"><a id="adbe4d97fbdb956f524b12d49b52be443"></a>
+std::map&lt; std::string, std::any &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Utility::parseString</b> (std::string)</td></tr>
+<tr class="separator:adbe4d97fbdb956f524b12d49b52be443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acda3a05bf5be241c89f9ae0775ede92b"><td class="memItemLeft" align="right" valign="top"><a id="acda3a05bf5be241c89f9ae0775ede92b"></a>
+std::map&lt; std::string, std::any &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Utility::parseStream</b> (std::ifstream &amp;)</td></tr>
+<tr class="separator:acda3a05bf5be241c89f9ae0775ede92b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b2daf40976475708717e10e24eb9192"><td class="memItemLeft" align="right" valign="top"><a id="a6b2daf40976475708717e10e24eb9192"></a>
+std::map&lt; std::string, std::any &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Utility::parseFile</b> (const std::string &amp;)</td></tr>
+<tr class="separator:a6b2daf40976475708717e10e24eb9192"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6102525e4dd2d2cd66d47053543ae3de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Utility_8h.html#a6102525e4dd2d2cd66d47053543ae3de">Utility::deleteCharacters</a> (const std::vector&lt; <a class="el" href="classCharacter.html">Character</a> *&gt; &amp;)</td></tr>
 <tr class="memdesc:a6102525e4dd2d2cd66d47053543ae3de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete every existing <a class="el" href="classCharacter.html">Character</a> object given as input.  <a href="Utility_8h.html#a6102525e4dd2d2cd66d47053543ae3de">More...</a><br /></td></tr>
 <tr class="separator:a6102525e4dd2d2cd66d47053543ae3de"><td class="memSeparator" colspan="2">&#160;</td></tr>
