@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['maxhp',['maxHP',['../classAdventurer.html#aeab28e9fb6751597fab179c8f6c9f8f5',1,'Adventurer']]]
+  ['operator_3c_3c',['operator&lt;&lt;',['../classMonster.html#aa35c4001f5786899aea7eb8168aa6f58',1,'Monster']]]
 ];

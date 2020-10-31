@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['lvl',['LVL',['../classAdventurer.html#a5022594aa5369cd6c23b21a27d1e546b',1,'Adventurer']]],
-  ['lvlup',['lvlUp',['../classAdventurer.html#a9b7fcd5eab10f347b59b2b7a8605d097',1,'Adventurer']]]
+  ['maxhp',['maxHP',['../classHero.html#a28b2bffc01d17d1df0904169acfabac7',1,'Hero']]],
+  ['monster',['Monster',['../classMonster.html',1,'Monster'],['../classMonster.html#ae1ec92052b580f3306d25bc4390c318e',1,'Monster::Monster()']]],
+  ['monster_2eh',['Monster.h',['../Monster_8h.html',1,'']]]
 ];
