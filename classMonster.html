@@ -103,9 +103,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeaebd73a726b359c29c5e54777e235ba"><td class="memItemLeft" align="right" valign="top"><a id="aeaebd73a726b359c29c5e54777e235ba"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>deliverHit</b> (<a class="el" href="classMonster.html">Monster</a> *enemy)</td></tr>
 <tr class="separator:aeaebd73a726b359c29c5e54777e235ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1757615d67eeeb07a37e1b1b2160987"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#ac1757615d67eeeb07a37e1b1b2160987">isDead</a> () const</td></tr>
-<tr class="memdesc:ac1757615d67eeeb07a37e1b1b2160987"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bool function to examine if the <a class="el" href="classMonster.html">Monster</a> is dead or alive.  <a href="#ac1757615d67eeeb07a37e1b1b2160987">More...</a><br /></td></tr>
-<tr class="separator:ac1757615d67eeeb07a37e1b1b2160987"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77ad18c44b3fb2df92b30ece4dc7847b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a77ad18c44b3fb2df92b30ece4dc7847b">isAlive</a> () const</td></tr>
+<tr class="memdesc:a77ad18c44b3fb2df92b30ece4dc7847b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bool function to examine if the <a class="el" href="classMonster.html">Monster</a> is dead or alive.  <a href="#a77ad18c44b3fb2df92b30ece4dc7847b">More...</a><br /></td></tr>
+<tr class="separator:a77ad18c44b3fb2df92b30ece4dc7847b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5684bec4542a3d573482de647e3d729e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMonster.html">Monster</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a5684bec4542a3d573482de647e3d729e">fight</a> (<a class="el" href="classMonster.html">Monster</a> *)</td></tr>
 <tr class="memdesc:a5684bec4542a3d573482de647e3d729e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fight function, performs the whole fight Winner gets announced. Puts out the results to both file and command line.  <a href="#a5684bec4542a3d573482de647e3d729e">More...</a><br /></td></tr>
 <tr class="separator:a5684bec4542a3d573482de647e3d729e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -244,14 +244,14 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="ac1757615d67eeeb07a37e1b1b2160987"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1757615d67eeeb07a37e1b1b2160987">&#9670;&nbsp;</a></span>isDead()</h2>
+<a id="a77ad18c44b3fb2df92b30ece4dc7847b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77ad18c44b3fb2df92b30ece4dc7847b">&#9670;&nbsp;</a></span>isAlive()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool Monster::isDead </td>
+          <td class="memname">bool Monster::isAlive </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -260,9 +260,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Bool function to examine if the <a class="el" href="classMonster.html">Monster</a> is dead or alive. </p>
-<dl class="section return"><dt>Returns</dt><dd>true, if the Characters' HP 0 or below 0 </dd>
+<dl class="section return"><dt>Returns</dt><dd>false, if the Characters' HP 0 or below 0 </dd>
 <dd>
-false, if the Characters' HP is more than 0 </dd></dl>
+true, if the Characters' HP is more than 0 </dd></dl>
 
 </div>
 </div>
