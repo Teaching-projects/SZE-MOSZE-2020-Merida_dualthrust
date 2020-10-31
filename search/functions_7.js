@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parseunit',['parseUnit',['../classHero.html#abec5155419015f1751b3f42d7ae2583b',1,'Hero::parseUnit()'],['../classMonster.html#a1a0b7ae11e4a60c41e18bd417e8d7efa',1,'Monster::parseUnit()']]]
+  ['parse',['parse',['../classHero.html#aac4d67bad651fbeb489905675545bb88',1,'Hero::parse()'],['../classMonster.html#a0b04445ff85b508acd45fa24732e4096',1,'Monster::parse()']]]
 ];
