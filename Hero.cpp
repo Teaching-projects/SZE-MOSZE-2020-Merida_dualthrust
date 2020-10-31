@@ -32,14 +32,11 @@
     Hero Hero::parse(const std::string& path)  //JSON parse method for creating a Monster object based on a given JSON input file
     {
         std::map<std::string, std::any> parsedMap = JSON::parseFromFile(path).content;
-        if (parsedMap.size() > 0) {
-
-            std::string name = std::any_cast<std::string>(parsedMap["name"]);
-            int hp = (int)std::any_cast<float>(parsedMap["hp"]);
-            int dmg = (int)std::any_cast<float>(parsedMap["dmg"]);
-            float ACD = std::any_cast<float>(parsedMap["acd"]);
-            return Hero(name, hp, dmg, ACD);
-        }
+        std::string name = std::any_cast<std::string>(parsedMap["name"]);
+        int hp = (int)std::any_cast<float>(parsedMap["hp"]);
+        int dmg = (int)std::any_cast<float>(parsedMap["dmg"]);
+        float ACD = std::any_cast<float>(parsedMap["acd"]);
+        return Hero(name, hp, dmg, ACD);
     }
 
     void Hero::deliverHit(Monster* enemy) 

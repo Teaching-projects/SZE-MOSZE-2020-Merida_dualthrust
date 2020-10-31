@@ -42,15 +42,11 @@
     Monster Monster::parse(const std::string& path)
     {
         std::map<std::string, std::any> parsedMap = JSON::parseFromFile(path).content;
-        if (parsedMap.size() > 0) {
-
-            std::string name = std::any_cast<std::string>(parsedMap["name"]);
-            int hp = (int)std::any_cast<float>(parsedMap["hp"]);
-            int dmg = (int)std::any_cast<float>(parsedMap["dmg"]);
-            float ACD = std::any_cast<float>(parsedMap["acd"]);
-            return Monster(name, hp, dmg, ACD);
-
-        }
+        std::string name = std::any_cast<std::string>(parsedMap["name"]);
+        int hp = (int)std::any_cast<float>(parsedMap["hp"]);
+        int dmg = (int)std::any_cast<float>(parsedMap["dmg"]);
+        float ACD = std::any_cast<float>(parsedMap["acd"]);
+        return Monster(name, hp, dmg, ACD);
     }
 
     //Convenience method for simple checking
