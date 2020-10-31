@@ -76,15 +76,9 @@ void JSON::deleteCharacters(const std::vector<Monster*>& characters)
 	}
 }
 
-JSON* JSON::parseString(std::string json_string)
+JSON JSON::parseString(std::string json_string)
 {
 	std::map<std::string, std::any> parsedMap;
-	
-	//If the JSON string beginning and end characters aren't correct, we return an empty map
-	if (json_string[0] != '{' || json_string[json_string.length() - 1] != '}') {
-		return NULL;
-	}
-
 	std::vector<std::string> rows = split(json_string, ',');
 
 	for (auto& row : rows) // access by reference to avoid copying
@@ -100,10 +94,7 @@ JSON* JSON::parseString(std::string json_string)
 			key = split(split(row, '"')[1], '"')[0];
 			value = split(row, ':')[1];
 		}
-		catch (const std::exception& ex) {
-			//If there's a ':' or a '"' character missing, we return an empty map
-			return {};
-		}
+		catch (const std::exception& ex) {}
 
 		//Delete spaces from the value
 		value.erase(remove_if(value.begin(), value.end(), isspace), value.end());
@@ -116,17 +107,15 @@ JSON* JSON::parseString(std::string json_string)
 			//If the value isn't a string, we parse it into a float
 			try {
 				parsedMap.insert({ key, std::stof(value) });
-			}catch(const std::exception& ex){
-				//If the conversion fails, we return an empty map
-				return NULL;
-			}
+			}catch(const std::exception& ex){}
 		}
 	}
-	return new JSON(parsedMap);
+
+	return JSON(parsedMap);
 }
 
 
-JSON* JSON::parseStream(std::ifstream &f) {
+JSON JSON::parseStream(std::ifstream &f) {
 	if (f.good())
 	{
 		//We read the whole file into a string variable using ifstream and stringstream, then pass it to the parseString method
@@ -137,23 +126,15 @@ JSON* JSON::parseStream(std::ifstream &f) {
 
 		return parseString(fileContents);
 	}
-	else
-	{
-		return NULL;
-	}
 }
 
-JSON* JSON::parseFromFile(const std::string& path)
+JSON JSON::parseFromFile(const std::string& path)
 {
 	std::ifstream f(path);
 	//We check if the file given as input exists
 	if (f.good())
 	{
 		return parseStream(f);
-	}
-	else
-	{
-		return nullptr;
 	}
 }
 

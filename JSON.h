@@ -43,9 +43,9 @@ public:
      */
     static std::vector<std::string> split(const std::string&, char);
 
-    static JSON* parseString(std::string);
-    static JSON* parseStream(std::ifstream&);
-    static JSON* parseFromFile(const std::string&);
+    static JSON parseString(std::string);
+    static JSON parseStream(std::ifstream&);
+    static JSON parseFromFile(const std::string&);
 
     /**
      * @brief Delete every existing Character object given as input
