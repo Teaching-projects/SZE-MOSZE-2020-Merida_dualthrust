@@ -1,45 +1,45 @@
-#include "Character.h"
-#include "Adventurer.h"
+#include "Monster.h"
+#include "Hero.h"
 #include "Utility.h"
 #include <iostream>
 #include <string>
 
     //Constructor
-    Character::Character(const std::string& characterName, int characterHP, int characterATK, const double characterACD):name(characterName),HP(characterHP),ATK(characterATK),ACD(characterACD)
+    Monster::Monster(const std::string& characterName, int characterHP, int characterATK, const double characterACD):name(characterName),HP(characterHP),ATK(characterATK),ACD(characterACD)
     {
 
     }
 
-    Character::~Character()
+    Monster::~Monster()
     {
 
     }
 
     //Getters
-    std::string const & Character::getName() const
+    std::string const & Monster::getName() const
     {
         return name;
     }
 
-    int const & Character::getHealthPoints() const
+    int const & Monster::getHealthPoints() const
     {
         return HP;
     }
 
-    int const & Character::getDamage() const
+    int const & Monster::getDamage() const
     {
         return ATK;
     }
 
-    double const & Character::getAttackCoolDown() const
+    double const & Monster::getAttackCoolDown() const
     {
         return ACD;
     }
 
 
 
-    //JSON parse method for creating a Character object based on a given JSON input file
-    Character* Character::parseUnit(const std::string& path)
+    //JSON parse method for creating a Monster object based on a given JSON input file
+    Monster* Monster::parseUnit(const std::string& path)
     {
         std::map<std::string, std::any> parsedMap = Utility::parseFile(path);
         if (parsedMap.size() > 0) {
@@ -49,9 +49,9 @@
                 int hp = (int)std::any_cast<float>(parsedMap["hp"]);
                 int dmg = (int)std::any_cast<float>(parsedMap["dmg"]);
                 float ACD = std::any_cast<float>(parsedMap["acd"]);
-                return new Character(name, hp, dmg, ACD);
+                return new Monster(name, hp, dmg, ACD);
             }
-            catch (std::exception ex) {
+            catch (const std::exception& ex) {
                 return NULL;
             }
         }
@@ -61,14 +61,14 @@
     }
 
     //Convenience method for simple checking
-    bool Character::isDead() const 
+    bool Monster::isDead() const 
     {
         return getHealthPoints() <= 0;
     }
 
     //Instead of using an HP setter from outside of the class, we declare a 'sufferDamage' method
-    //The Character object's HP gets lowered based on the output 
-    void Character::sufferDamage(Character* enemy) 
+    //The Monster object's HP gets lowered based on the output 
+    void Monster::sufferDamage(Monster* enemy) 
     {
         //std::cout << enemy->getName() << " -> " << this->getName() << std::endl;
         HP = (getHealthPoints() - enemy->getDamage());
@@ -78,19 +78,19 @@
         }
     }
 
-    void Character::deliverHit(Character* enemy) 
+    void Monster::deliverHit(Monster* enemy) 
     {
         enemy -> sufferDamage(this);
     }
 
     //Printing a characters status
-    std::ostream& operator<<(std::ostream& os, const Character& character)
+    std::ostream& operator<<(std::ostream& os, const Monster& character)
     {
         os << character.getName() << ": [HP: "  << character.getHealthPoints() << "] [DMG:" << character.getDamage() << "]";
         return os;
     }
 
-Character* Character::fight(Character* enemy) 
+Monster* Monster::fight(Monster* enemy) 
     {
         //We initialize the countdown variables - these keep track of the cooldown until a hit
         int attacker_hitCountdown=0;

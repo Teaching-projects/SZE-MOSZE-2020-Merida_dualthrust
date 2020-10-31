@@ -1,27 +1,27 @@
 #include <iostream>
 #include "Utility.h"
-#include "Character.h"
-#include "Adventurer.h"
+#include "Monster.h"
+#include "Hero.h"
 
 using namespace std;
 
 int main(int argc, char* argv[])
 {
 
-    Character* player1 = NULL;
-    Character* player2 = NULL;
+    Monster* player1 = NULL;
+    Monster* player2 = NULL;
 
     //If we have enough arguments given, we create two units from the given input files
     if(argc > 2)
     {
-        player1 = Adventurer::parseUnit(argv[1]);
-        player2 = Character::parseUnit(argv[2]);
+        player1 = Hero::parseUnit(argv[1]);
+        player2 = Monster::parseUnit(argv[2]);
     }
 
     if (player1 && player2) 
     {
         //The fight method is called, this is where all the logic happens
-        Character* winner = player1->fight(player2);
+        Monster* winner = player1->fight(player2);
         std::cout << winner->getName() + " wins. Remaining HP: " + std::to_string(winner->getHealthPoints()) << std::endl;
         Utility::deleteCharacters({ player1,player2 });
     }

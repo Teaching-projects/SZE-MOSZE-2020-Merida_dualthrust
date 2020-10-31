@@ -13,7 +13,7 @@
 
 #include <string>
 #include <vector>
-#include "Character.h"
+#include "Monster.h"
 #include <map>
 #include <any>
 #include <fstream>
@@ -42,7 +42,7 @@ namespace Utility {
      * @brief Delete every existing Character object given as input
      * @param[in] Character vector
      */
-    void deleteCharacters(const std::vector<Character*>&);
+    void deleteCharacters(const std::vector<Monster*>&);
     std::vector<std::string> getJsonData(const std::string&);
 };
 

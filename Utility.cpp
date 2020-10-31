@@ -64,9 +64,9 @@ std::vector<std::string> Utility::split(const std::string& s, char splitChar)
 }
 
 //Delete every existing Character object given as input
-void Utility::deleteCharacters(const std::vector<Character*>& characters) 
+void Utility::deleteCharacters(const std::vector<Monster*>& characters) 
 {
-	for (Character* c : characters) 
+	for (Monster* c : characters) 
     {
 		delete c;
 	}
@@ -96,7 +96,7 @@ std::map<std::string, std::any> Utility::parseString(std::string json_string)
 			key = split(split(row, '"')[1], '"')[0];
 			value = split(row, ':')[1];
 		}
-		catch (std::exception ex) {
+		catch (const std::exception& ex) {
 			//If there's a ':' or a '"' character missing, we return an empty map
 			return {};
 		}
@@ -112,7 +112,7 @@ std::map<std::string, std::any> Utility::parseString(std::string json_string)
 			//If the value isn't a string, we parse it into a float
 			try {
 				parsedMap.insert({ key, std::stof(value) });
-			}catch(std::exception ex){
+			}catch(const std::exception& ex){
 				//If the conversion fails, we return an empty map
 				return {};
 			}

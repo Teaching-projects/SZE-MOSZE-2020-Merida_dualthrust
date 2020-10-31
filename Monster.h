@@ -1,33 +1,33 @@
 /**
- * @file Character.h
+ * @file Monster.h
  * @author lapatkrisz
- * @brief Character class
+ * @brief Monster class
  * 
- * This class contains basic methods and data members of the Character class. Character objects in the game can have different HP/ATK values and fight each other.
+ * This class contains basic methods and data members of the Monster class. Monster objects in the game can have different HP/ATK values and fight each other.
  * 
  * @version 1.0
  * @date 2020-10-13
  */
 
-#ifndef CHARACTER_HEADER
-#define CHARACTER_HEADER
+#ifndef MONSTER_HEADER
+#define MONSTER_HEADER
 
 #include <string>
 
-class Character {
+class Monster {
 
 public:
-    virtual ~Character();
+    virtual ~Monster();
     /**
-     * @brief Construct a new Character object
-     * In case of no inputs the Character object gets default values
+     * @brief Construct a new Monster object
+     * In case of no inputs the Monster object gets default values
      */
-    Character(const std::string&, int, int, const double);
+    Monster(const std::string&, int, int, const double);
     /**
-     * @brief JSON parse method for creating a Character object based on a given JSON input file
-     * @return Character type unit
+     * @brief JSON parse method for creating a Monster object based on a given JSON input file
+     * @return Monster type unit
      */
-    static Character* parseUnit(const std::string&);
+    static Monster* parseUnit(const std::string&);
     /**
      * @brief Getter for the name of the character
      * @return std::string const&
@@ -51,13 +51,13 @@ public:
     /**
      * @brief Function for depleting HP-s during fight
      * Basic subtraction operation. If the HP drops below 0 we set it to 0
-     * @param[in] Character type object
+     * @param[in] Monster type object
      */
-    void sufferDamage(Character*);
-    virtual void deliverHit(Character* enemy);
+    void sufferDamage(Monster*);
+    virtual void deliverHit(Monster* enemy);
     //'<<'operator overload
     /**
-     * @brief Bool function to examine if the Character is dead or alive
+     * @brief Bool function to examine if the Monster is dead or alive
      * @return true, if the Characters' HP 0 or below 0
      * @return false, if the Characters' HP is more than 0
      */
@@ -65,9 +65,9 @@ public:
     /**
      * @brief Fight function, performs the whole fight
      * Winner gets announced. Puts out the results to both file and command line
-     * @param[in] Character type object
+     * @param[in] Monster type object
      */
-    Character* fight(Character*);
+    Monster* fight(Monster*);
     /**
      * @brief Operator overload
      * Printing a characters' status
@@ -75,7 +75,7 @@ public:
      * @param[in] character (name, HP, damage)
      * @return std::ostream& (containing Characters' status)
      */
-    friend std::ostream& operator<<(std::ostream& os, const Character& character);
+    friend std::ostream& operator<<(std::ostream& os, const Monster& character);
 
 protected:
     const std::string name; 
@@ -84,4 +84,4 @@ protected:
     const double ACD;
 };
 
-#endif
+#endif // MONSTER_HEADER
