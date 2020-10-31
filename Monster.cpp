@@ -61,9 +61,9 @@
     }
 
     //Convenience method for simple checking
-    bool Monster::isDead() const 
+    bool Monster::isAlive() const 
     {
-        return getHealthPoints() <= 0;
+        return getHealthPoints() >= 0;
     }
 
     //Instead of using an HP setter from outside of the class, we declare a 'sufferDamage' method
@@ -102,7 +102,7 @@ Monster* Monster::fight(Monster* enemy)
 
         
         //The fight keeps on going until somebody is dead
-        while (!enemy->isDead() && !this->isDead()) 
+        while (enemy->isAlive() && this->isAlive()) 
         {
             if(attacker_hitCountdown >= getAttackCoolDown()){
                 this->deliverHit(enemy);
@@ -118,5 +118,5 @@ Monster* Monster::fight(Monster* enemy)
             }
         }
         //We announce the winner
-        return !isDead() ? this : enemy;
+        return isAlive() ? this : enemy;
     }

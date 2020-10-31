@@ -58,10 +58,10 @@ public:
     //'<<'operator overload
     /**
      * @brief Bool function to examine if the Monster is dead or alive
-     * @return true, if the Characters' HP 0 or below 0
-     * @return false, if the Characters' HP is more than 0
+     * @return false, if the Characters' HP 0 or below 0
+     * @return true, if the Characters' HP is more than 0
      */
-    bool isDead(/**There's no input parameter here.*/) const;
+    bool isAlive(/**There's no input parameter here.*/) const;
     /**
      * @brief Fight function, performs the whole fight
      * Winner gets announced. Puts out the results to both file and command line
