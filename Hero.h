@@ -23,7 +23,7 @@ class Hero : public Monster{
          */
         int const & getLevel(/**There's no input parameter here.*/) const;
         
-        static Hero* parseUnit(const std::string&);       ///<The parseUnit() method provides data for our constructor. Same as the Monster class's, only difference is that it returns an Hero object instead of a Monster.
+        static Hero parse(const std::string&);       ///<The parseUnit() method provides data for our constructor. Same as the Monster class's, only difference is that it returns an Hero object instead of a Monster.
         void deliverHit(Monster* enemy) override;                 ///<The deliverHit() method calls the enemy units sufferDamage() method, and handles the Hero units XP gain. It also calls the lvlUp() method when sufficient XP is gained for a levelup.
     };
 

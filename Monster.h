@@ -27,7 +27,7 @@ public:
      * @brief JSON parse method for creating a Monster object based on a given JSON input file
      * @return Monster type unit
      */
-    static Monster* parseUnit(const std::string&);
+    static Monster parse(const std::string&);
     /**
      * @brief Getter for the name of the character
      * @return std::string const&
