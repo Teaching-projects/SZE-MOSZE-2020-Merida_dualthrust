@@ -21,17 +21,17 @@
         return name;
     }
 
-    int const & Character::getHP() const
+    int const & Character::getHealthPoints() const
     {
         return HP;
     }
 
-    int const & Character::getATK() const
+    int const & Character::getDamage() const
     {
         return ATK;
     }
 
-    double const & Character::getACD() const
+    double const & Character::getAttackCoolDown() const
     {
         return ACD;
     }
@@ -63,7 +63,7 @@
     //Convenience method for simple checking
     bool Character::isDead() const 
     {
-        return getHP() <= 0;
+        return getHealthPoints() <= 0;
     }
 
     //Instead of using an HP setter from outside of the class, we declare a 'sufferDamage' method
@@ -71,7 +71,7 @@
     void Character::sufferDamage(Character* enemy) 
     {
         //std::cout << enemy->getName() << " -> " << this->getName() << std::endl;
-        HP = (getHP() - enemy->getATK());
+        HP = (getHealthPoints() - enemy->getDamage());
         if (HP < 0)
         {
             HP = 0; 
@@ -86,7 +86,7 @@
     //Printing a characters status
     std::ostream& operator<<(std::ostream& os, const Character& character)
     {
-        os << character.getName() << ": [HP: "  << character.getHP() << "] [DMG:" << character.getATK() << "]";
+        os << character.getName() << ": [HP: "  << character.getHealthPoints() << "] [DMG:" << character.getDamage() << "]";
         return os;
     }
 
@@ -104,13 +104,13 @@ Character* Character::fight(Character* enemy)
         //The fight keeps on going until somebody is dead
         while (!enemy->isDead() && !this->isDead()) 
         {
-            if(attacker_hitCountdown >= getACD()){
+            if(attacker_hitCountdown >= getAttackCoolDown()){
                 this->deliverHit(enemy);
                 attacker_hitCountdown = 0;
             }else{
                 attacker_hitCountdown++;
             }
-            if(enemy_hitCountdown >= enemy->getACD()){
+            if(enemy_hitCountdown >= enemy->getAttackCoolDown()){
                 enemy->deliverHit(this);
                 enemy_hitCountdown = 0;
             }else{

@@ -10,6 +10,16 @@
 
     }
 
+    int const & Adventurer::getMaxHealthPoints() const
+    {
+        return maxHP;
+    }
+
+    int const & Adventurer::getLevel() const
+    {
+        return LVL;
+    }
+
     void Adventurer::lvlUp()
     {
         maxHP   *=  1.1;
@@ -42,7 +52,7 @@
 
     void Adventurer::deliverHit(Character* enemy) 
     {
-        int enemyHP     =   enemy->getHP();
+        int enemyHP     =   enemy->getHealthPoints();
         int XP_ToGain   =   0;
 
         if (enemyHP < ATK)

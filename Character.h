@@ -37,17 +37,17 @@ public:
      * @brief Getter for character name
      * @return int const& 
      */
-    int const & getATK(/**There's no input parameter here.*/) const;
+    int const & getDamage(/**There's no input parameter here.*/) const;
     /**
      * @brief Getter for character HP
      * @return int const& 
      */
-    int const & getHP(/**There's no input parameter here.*/) const;
+    int const & getHealthPoints(/**There's no input parameter here.*/) const;
     /**
      * @brief Getter for attack speed cooldown of character
      * @return  double const&
      */
-    double const & getACD(/**There's no input parameter here.*/) const;
+    double const & getAttackCoolDown(/**There's no input parameter here.*/) const;
     /**
      * @brief Function for depleting HP-s during fight
      * Basic subtraction operation. If the HP drops below 0 we set it to 0
