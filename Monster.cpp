@@ -85,33 +85,33 @@
         return os;
     }
 
-Monster* Monster::fightTilDeath(Monster* enemy) 
+Monster* Monster::fightTilDeath(Monster enemy) 
     {
         //We initialize the countdown variables - these keep track of the cooldown until a hit
         int attacker_hitCountdown=0;
         int enemy_hitCountdown=0;
 
         //Attacker hits the enemy first, then the other way around
-        this->deliverHit(enemy);
-        enemy->deliverHit(this); //the enemy hits us
+        this->deliverHit(&enemy);
+        enemy.deliverHit(this); //the enemy hits us
 
         
         //The fight keeps on going until somebody is dead
-        while (enemy->isAlive() && this->isAlive()) 
+        while (enemy.isAlive() && this->isAlive()) 
         {
             if(attacker_hitCountdown >= getAttackCoolDown()){
-                this->deliverHit(enemy);
+                this->deliverHit(&enemy);
                 attacker_hitCountdown = 0;
             }else{
                 attacker_hitCountdown++;
             }
-            if(enemy_hitCountdown >= enemy->getAttackCoolDown()){
-                enemy->deliverHit(this);
+            if(enemy_hitCountdown >= enemy.getAttackCoolDown()){
+                enemy.deliverHit(this);
                 enemy_hitCountdown = 0;
             }else{
                 enemy_hitCountdown++;
             }
         }
         //We announce the winner
-        return isAlive() ? this : enemy;
+        return isAlive() ? this : &enemy;
     }
