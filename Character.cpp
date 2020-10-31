@@ -5,7 +5,7 @@
 #include <string>
 
     //Constructor
-    Character::Character(const std::string& characterName,const int characterHP, int characterATK, const double characterACD):name(characterName),HP(characterHP),ATK(characterATK),ACD(characterACD)
+    Character::Character(const std::string& characterName, int characterHP, int characterATK, const double characterACD):name(characterName),HP(characterHP),ATK(characterATK),ACD(characterACD)
     {
 
     }
@@ -41,15 +41,21 @@
     //JSON parse method for creating a Character object based on a given JSON input file
     Character* Character::parseUnit(const std::string& path)
     {
-        std::vector<std::string> unit_data = Utility::getJsonData(path);
+        std::map<std::string, std::any> parsedMap = Utility::parseFile(path);
+        if (parsedMap.size() > 0) {
 
-        if (unit_data.size() == 4)
-        {
-            return new Character(unit_data[0], std::stoi(unit_data[1]), std::stoi(unit_data[2]), std::stoi(unit_data[3]));
+            std::string name = std::any_cast<std::string>(parsedMap["name"]);
+            try {
+                int hp = (int)std::any_cast<float>(parsedMap["hp"]);
+                int dmg = (int)std::any_cast<float>(parsedMap["dmg"]);
+                float ACD = std::any_cast<float>(parsedMap["acd"]);
+                return new Character(name, hp, dmg, ACD);
+            }
+            catch (std::exception ex) {
+                return NULL;
+            }
         }
-        else 
-        {
-            //If the input file doesn't exist, we return null
+        else {
             return NULL;
         }
     }

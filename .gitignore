@@ -15,5 +15,6 @@
 #folders
 !/.github/
 !/units/
+!/tests/
 !/results/
 !/results_correct/
