@@ -1,6 +1,6 @@
 #include "Monster.h"
 #include "Hero.h"
-#include "Utility.h"
+#include "JSON.h"
 #include <iostream>
 #include <string>
 
@@ -41,7 +41,7 @@
     //JSON parse method for creating a Monster object based on a given JSON input file
     Monster* Monster::parseUnit(const std::string& path)
     {
-        std::map<std::string, std::any> parsedMap = Utility::parseFile(path);
+        std::map<std::string, std::any> parsedMap = JSON::parseFile(path);
         if (parsedMap.size() > 0) {
 
             std::string name = std::any_cast<std::string>(parsedMap["name"]);

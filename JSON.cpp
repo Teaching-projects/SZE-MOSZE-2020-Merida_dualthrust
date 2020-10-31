@@ -1,4 +1,4 @@
-#include "Utility.h"
+#include "JSON.h"
 #include <iostream>
 #include <cctype>
 #include <algorithm>
@@ -7,7 +7,7 @@
 #include <sstream>
 
 //Method for getting data from a JSON file
-std::vector<std::string> Utility::getJsonData(const std::string& path)
+std::vector<std::string> JSON::getJsonData(const std::string& path)
 {
     std::ifstream f(path);
     //We check if the file given as input exists
@@ -23,9 +23,9 @@ std::vector<std::string> Utility::getJsonData(const std::string& path)
 
         //We save the values we need - this could be inlined into the Character constructor call, but the code is clearer this way
         std::string name = split(fileContents, '"')[3]; //We get the name from the file
-        std::string HP = split(Utility::split(fileContents, ',')[1], ':')[1]; //We get the HP value from the file - we split the string between the second ',' character and ':' character, and parse it into an integer
-        std::string DMG = split(Utility::split(fileContents, ',')[2], ':')[1]; //We get the DMG value from the file - we split the string between the third ',' character and ':' character, and parse it into an integer
-        std::string ACD = split(Utility::split(fileContents, ':')[4], '}')[0]; //We get the ACD value from the file - we split the string between the fourth ':' character and '}' character, and parse it into an integer
+        std::string HP = split(JSON::split(fileContents, ',')[1], ':')[1]; //We get the HP value from the file - we split the string between the second ',' character and ':' character, and parse it into an integer
+        std::string DMG = split(JSON::split(fileContents, ',')[2], ':')[1]; //We get the DMG value from the file - we split the string between the third ',' character and ':' character, and parse it into an integer
+        std::string ACD = split(JSON::split(fileContents, ':')[4], '}')[0]; //We get the ACD value from the file - we split the string between the fourth ':' character and '}' character, and parse it into an integer
 
         return std::vector<std::string> {name, HP, DMG, ACD};
     }
@@ -38,7 +38,7 @@ std::vector<std::string> Utility::getJsonData(const std::string& path)
 
 //Method for splitting a string by specific characters - similar to other programming languages' string.split methods
 //Used for conveniently handling the input JSON files
-std::vector<std::string> Utility::split(const std::string& s, char splitChar) 
+std::vector<std::string> JSON::split(const std::string& s, char splitChar) 
 {
 	std::vector<std::string> output;
 	std::string current_value;
@@ -64,7 +64,7 @@ std::vector<std::string> Utility::split(const std::string& s, char splitChar)
 }
 
 //Delete every existing Character object given as input
-void Utility::deleteCharacters(const std::vector<Monster*>& characters) 
+void JSON::deleteCharacters(const std::vector<Monster*>& characters) 
 {
 	for (Monster* c : characters) 
     {
@@ -72,7 +72,7 @@ void Utility::deleteCharacters(const std::vector<Monster*>& characters)
 	}
 }
 
-std::map<std::string, std::any> Utility::parseString(std::string json_string)
+std::map<std::string, std::any> JSON::parseString(std::string json_string)
 {
 	std::map<std::string, std::any> parsedMap;
 	
@@ -121,7 +121,7 @@ std::map<std::string, std::any> Utility::parseString(std::string json_string)
 	return parsedMap;
 }
 
-std::map<std::string, std::any> Utility::parseStream(std::ifstream &f) {
+std::map<std::string, std::any> JSON::parseStream(std::ifstream &f) {
 	if (f.good())
 	{
 		//We read the whole file into a string variable using ifstream and stringstream, then pass it to the parseString method
@@ -140,7 +140,7 @@ std::map<std::string, std::any> Utility::parseStream(std::ifstream &f) {
 	}
 }
 
-std::map<std::string, std::any> Utility::parseFile(const std::string& path)
+std::map<std::string, std::any> JSON::parseFile(const std::string& path)
 {
 	std::ifstream f(path);
 	//We check if the file given as input exists

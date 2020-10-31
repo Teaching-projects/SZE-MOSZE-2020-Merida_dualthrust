@@ -1,15 +1,15 @@
 /**
- * @file Utility.h
+ * @file JSON.h
  * @author lapatkrisz
- * @class Utility
+ * @class JSON
  * 
- * @brief Utility namespace
+ * @brief JSON namespace
  * 
  * @version 1.0
  * @date 2020-10-11
  */
-#ifndef UTILITY_HEADER
-#define UTILITY_HEADER
+#ifndef JSON_HEADER
+#define JSON_HEADER
 
 #include <string>
 #include <vector>
@@ -19,7 +19,7 @@
 #include <fstream>
 #include <sstream>
 
-namespace Utility {
+namespace JSON {
     /**
      * @brief Method for checking if a given input is a number or not
      * @param[in] string
