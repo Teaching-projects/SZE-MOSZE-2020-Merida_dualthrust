@@ -93,6 +93,12 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdventurer.html#afc406907a6dd66390d1395e24a783b73">Adventurer</a> (const std::string &amp;, int, int, double)</td></tr>
 <tr class="memdesc:afc406907a6dd66390d1395e24a783b73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for our <a class="el" href="classAdventurer.html">Adventurer</a> class. Uses the same inputs as a <a class="el" href="classCharacter.html">Character</a> class. <br /></td></tr>
 <tr class="separator:afc406907a6dd66390d1395e24a783b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab08a7f6d737c14187ee343165464e43b"><td class="memItemLeft" align="right" valign="top"><a id="ab08a7f6d737c14187ee343165464e43b"></a>
+int const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getMaxHealthPoints</b> () const</td></tr>
+<tr class="separator:ab08a7f6d737c14187ee343165464e43b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a738b53831ce2290dd74597ad65a9cd15"><td class="memItemLeft" align="right" valign="top">int const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdventurer.html#a738b53831ce2290dd74597ad65a9cd15">getLevel</a> () const</td></tr>
+<tr class="memdesc:a738b53831ce2290dd74597ad65a9cd15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for attack speed cooldown of character.  <a href="#a738b53831ce2290dd74597ad65a9cd15">More...</a><br /></td></tr>
+<tr class="separator:a738b53831ce2290dd74597ad65a9cd15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae68ebf12b24496a9929e8dadfdd4260c"><td class="memItemLeft" align="right" valign="top"><a id="ae68ebf12b24496a9929e8dadfdd4260c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdventurer.html#ae68ebf12b24496a9929e8dadfdd4260c">deliverHit</a> (<a class="el" href="classCharacter.html">Character</a> *enemy) override</td></tr>
 <tr class="memdesc:ae68ebf12b24496a9929e8dadfdd4260c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classAdventurer.html#ae68ebf12b24496a9929e8dadfdd4260c" title="The deliverHit() method calls the enemy units sufferDamage() method, and handles the Adventurer units...">deliverHit()</a> method calls the enemy units <a class="el" href="classCharacter.html#afa35a581841ccbea34b563c23b6ee6b9" title="Function for depleting HP-s during fight Basic subtraction operation. If the HP drops below 0 we set ...">sufferDamage()</a> method, and handles the <a class="el" href="classAdventurer.html">Adventurer</a> units XP gain. It also calls the <a class="el" href="classAdventurer.html#a9b7fcd5eab10f347b59b2b7a8605d097" title="lvlUp() method is used by in the deliverHit() method. When a units XP is above or equal to 100...">lvlUp()</a> method when sufficient XP is gained for a levelup. <br /></td></tr>
@@ -105,15 +111,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:af1c68b90d1242ffc76e4fb996a977a59 inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">std::string const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#af1c68b90d1242ffc76e4fb996a977a59">getName</a> () const</td></tr>
 <tr class="memdesc:af1c68b90d1242ffc76e4fb996a977a59 inherit pub_methods_classCharacter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the name of the character.  <a href="classCharacter.html#af1c68b90d1242ffc76e4fb996a977a59">More...</a><br /></td></tr>
 <tr class="separator:af1c68b90d1242ffc76e4fb996a977a59 inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79ba9907d6ac21e52d7dbbe06546ec87 inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">int const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a79ba9907d6ac21e52d7dbbe06546ec87">getATK</a> () const</td></tr>
-<tr class="memdesc:a79ba9907d6ac21e52d7dbbe06546ec87 inherit pub_methods_classCharacter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for character name.  <a href="classCharacter.html#a79ba9907d6ac21e52d7dbbe06546ec87">More...</a><br /></td></tr>
-<tr class="separator:a79ba9907d6ac21e52d7dbbe06546ec87 inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af89b6ecb77a5e2cba6fa2640cec0e438 inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">int const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#af89b6ecb77a5e2cba6fa2640cec0e438">getHP</a> () const</td></tr>
-<tr class="memdesc:af89b6ecb77a5e2cba6fa2640cec0e438 inherit pub_methods_classCharacter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for character HP.  <a href="classCharacter.html#af89b6ecb77a5e2cba6fa2640cec0e438">More...</a><br /></td></tr>
-<tr class="separator:af89b6ecb77a5e2cba6fa2640cec0e438 inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a332fef898590d340c3537fe7985027ca inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">double const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a332fef898590d340c3537fe7985027ca">getACD</a> () const</td></tr>
-<tr class="memdesc:a332fef898590d340c3537fe7985027ca inherit pub_methods_classCharacter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for attack speed cooldown of character.  <a href="classCharacter.html#a332fef898590d340c3537fe7985027ca">More...</a><br /></td></tr>
-<tr class="separator:a332fef898590d340c3537fe7985027ca inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00415205532022599e57a28ea547b30e inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">int const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a00415205532022599e57a28ea547b30e">getDamage</a> () const</td></tr>
+<tr class="memdesc:a00415205532022599e57a28ea547b30e inherit pub_methods_classCharacter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for character name.  <a href="classCharacter.html#a00415205532022599e57a28ea547b30e">More...</a><br /></td></tr>
+<tr class="separator:a00415205532022599e57a28ea547b30e inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a276fd8d9075f91beb2b165de6d42c5 inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">int const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#a0a276fd8d9075f91beb2b165de6d42c5">getHealthPoints</a> () const</td></tr>
+<tr class="memdesc:a0a276fd8d9075f91beb2b165de6d42c5 inherit pub_methods_classCharacter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for character HP.  <a href="classCharacter.html#a0a276fd8d9075f91beb2b165de6d42c5">More...</a><br /></td></tr>
+<tr class="separator:a0a276fd8d9075f91beb2b165de6d42c5 inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af47dfecd57db167ecf806c77fb142d52 inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">double const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#af47dfecd57db167ecf806c77fb142d52">getAttackCoolDown</a> () const</td></tr>
+<tr class="memdesc:af47dfecd57db167ecf806c77fb142d52 inherit pub_methods_classCharacter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for attack speed cooldown of character.  <a href="classCharacter.html#af47dfecd57db167ecf806c77fb142d52">More...</a><br /></td></tr>
+<tr class="separator:af47dfecd57db167ecf806c77fb142d52 inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa35a581841ccbea34b563c23b6ee6b9 inherit pub_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#afa35a581841ccbea34b563c23b6ee6b9">sufferDamage</a> (<a class="el" href="classCharacter.html">Character</a> *)</td></tr>
 <tr class="memdesc:afa35a581841ccbea34b563c23b6ee6b9 inherit pub_methods_classCharacter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for depleting HP-s during fight Basic subtraction operation. If the HP drops below 0 we set it to 0.  <a href="classCharacter.html#afa35a581841ccbea34b563c23b6ee6b9">More...</a><br /></td></tr>
 <tr class="separator:afa35a581841ccbea34b563c23b6ee6b9 inherit pub_methods_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,9 +132,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ac782d80602016e9a6d3303c2552f02a6"><td class="memItemLeft" align="right" valign="top"><a id="ac782d80602016e9a6d3303c2552f02a6"></a>
-static <a class="el" href="classAdventurer.html">Adventurer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdventurer.html#ac782d80602016e9a6d3303c2552f02a6">parseUnit</a> (const std::string &amp;)</td></tr>
-<tr class="memdesc:ac782d80602016e9a6d3303c2552f02a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classAdventurer.html#ac782d80602016e9a6d3303c2552f02a6" title="The parseUnit() method provides data for our constructor. Same as the Character class&#39;s, only difference is that it returns an Adventurer object instead of a Character. ">parseUnit()</a> method provides data for our constructor. Same as the <a class="el" href="classCharacter.html">Character</a> class's, only difference is that it returns an <a class="el" href="classAdventurer.html">Adventurer</a> object instead of a <a class="el" href="classCharacter.html">Character</a>. <br /></td></tr>
+<tr class="memitem:ac782d80602016e9a6d3303c2552f02a6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classAdventurer.html">Adventurer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdventurer.html#ac782d80602016e9a6d3303c2552f02a6">parseUnit</a> (const std::string &amp;)</td></tr>
+<tr class="memdesc:ac782d80602016e9a6d3303c2552f02a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for attack speed cooldown of character.  <a href="#ac782d80602016e9a6d3303c2552f02a6">More...</a><br /></td></tr>
 <tr class="separator:ac782d80602016e9a6d3303c2552f02a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classCharacter"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classCharacter')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classCharacter.html">Character</a></td></tr>
 <tr class="memitem:ad90099adb0418a42cf4a2451d0b939c1 inherit pub_static_methods_classCharacter"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classCharacter.html">Character</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacter.html#ad90099adb0418a42cf4a2451d0b939c1">parseUnit</a> (const std::string &amp;)</td></tr>
@@ -170,6 +175,56 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>ATK</b></td></tr>
 const double&#160;</td><td class="memItemRight" valign="bottom"><b>ACD</b></td></tr>
 <tr class="separator:a0fc411253dbad1184419a5be73e1a01b inherit pro_attribs_classCharacter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a738b53831ce2290dd74597ad65a9cd15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a738b53831ce2290dd74597ad65a9cd15">&#9670;&nbsp;</a></span>getLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int const  &amp; Adventurer::getLevel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter for attack speed cooldown of character. </p>
+<dl class="section return"><dt>Returns</dt><dd>double const&amp; </dd></dl>
+
+</div>
+</div>
+<a id="ac782d80602016e9a6d3303c2552f02a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac782d80602016e9a6d3303c2552f02a6">&#9670;&nbsp;</a></span>parseUnit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classAdventurer.html">Adventurer</a> * Adventurer::parseUnit </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for attack speed cooldown of character. </p>
+<dl class="section return"><dt>Returns</dt><dd>double const&amp;The <a class="el" href="classAdventurer.html#ac782d80602016e9a6d3303c2552f02a6" title="Getter for attack speed cooldown of character. ">parseUnit()</a> method provides data for our constructor. Same as the <a class="el" href="classCharacter.html">Character</a> class's, only difference is that it returns an <a class="el" href="classAdventurer.html">Adventurer</a> object instead of a <a class="el" href="classCharacter.html">Character</a>. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="Adventurer_8h_source.html">Adventurer.h</a></li>
 <li>Adventurer.cpp</li>
