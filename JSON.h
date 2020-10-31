@@ -19,7 +19,8 @@
 #include <fstream>
 #include <sstream>
 
-namespace JSON {
+class JSON {
+public:
     /**
      * @brief Method for checking if a given input is a number or not
      * @param[in] string
