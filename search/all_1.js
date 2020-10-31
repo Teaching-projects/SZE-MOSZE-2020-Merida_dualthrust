@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['fighttildeath',['fightTilDeath',['../classMonster.html#abdf0f2a5ac43dc3a7f8473ffaf58e1b5',1,'Monster']]]
+  ['character',['Character',['../classCharacter.html',1,'Character'],['../classCharacter.html#aeb9326123604a99217890f64f246df37',1,'Character::Character()']]],
+  ['character_2eh',['Character.h',['../Character_8h.html',1,'']]]
 ];

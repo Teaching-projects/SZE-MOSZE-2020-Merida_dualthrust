@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['lvl',['LVL',['../classHero.html#ac45bd2c34ac35ec50ffbd9d73354ca4a',1,'Hero']]],
-  ['lvlup',['lvlUp',['../classHero.html#a3ca6f160b1eccfb8d7a9852ca686f832',1,'Hero']]]
+  ['lvl',['LVL',['../classAdventurer.html#a5022594aa5369cd6c23b21a27d1e546b',1,'Adventurer']]],
+  ['lvlup',['lvlUp',['../classAdventurer.html#a9b7fcd5eab10f347b59b2b7a8605d097',1,'Adventurer']]]
 ];
