@@ -90,7 +90,7 @@
         return os;
     }
 
-Monster* Monster::fight(Monster* enemy) 
+Monster* Monster::fightTilDeath(Monster* enemy) 
     {
         //We initialize the countdown variables - these keep track of the cooldown until a hit
         int attacker_hitCountdown=0;
