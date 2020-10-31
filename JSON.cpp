@@ -107,7 +107,10 @@ JSON JSON::parseString(std::string json_string)
 			//If the value isn't a string, we parse it into a float
 			try {
 				parsedMap.insert({ key, std::stof(value) });
-			}catch(const std::exception& ex){}
+			}catch(const std::exception& ex){
+				std::map<std::string, std::any> empty_content;
+				return JSON(empty_content);
+			}
 		}
 	}
 
@@ -125,6 +128,9 @@ JSON JSON::parseStream(std::ifstream &f) {
 		f.close();
 
 		return parseString(fileContents);
+	}else{
+		std::map<std::string, std::any> empty_content;
+		return JSON(empty_content);
 	}
 }
 
@@ -135,6 +141,9 @@ JSON JSON::parseFromFile(const std::string& path)
 	if (f.good())
 	{
 		return parseStream(f);
+	}else{
+		std::map<std::string, std::any> empty_content;
+		return JSON(empty_content);
 	}
 }
 
