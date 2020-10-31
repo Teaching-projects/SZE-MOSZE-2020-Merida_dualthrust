@@ -5,6 +5,10 @@
 #include <type_traits>
 #include <fstream>
 #include <sstream>
+#include <type_traits>
+
+
+JSON::JSON(std::map<std::string, std::any> incoming_content):content(incoming_content){    }
 
 //Method for getting data from a JSON file
 std::vector<std::string> JSON::getJsonData(const std::string& path)
@@ -72,13 +76,13 @@ void JSON::deleteCharacters(const std::vector<Monster*>& characters)
 	}
 }
 
-std::map<std::string, std::any> JSON::parseString(std::string json_string)
+JSON* JSON::parseString(std::string json_string)
 {
 	std::map<std::string, std::any> parsedMap;
 	
 	//If the JSON string beginning and end characters aren't correct, we return an empty map
 	if (json_string[0] != '{' || json_string[json_string.length() - 1] != '}') {
-		return {};
+		return NULL;
 	}
 
 	std::vector<std::string> rows = split(json_string, ',');
@@ -114,14 +118,15 @@ std::map<std::string, std::any> JSON::parseString(std::string json_string)
 				parsedMap.insert({ key, std::stof(value) });
 			}catch(const std::exception& ex){
 				//If the conversion fails, we return an empty map
-				return {};
+				return NULL;
 			}
 		}
 	}
-	return parsedMap;
+	return new JSON(parsedMap);
 }
 
-std::map<std::string, std::any> JSON::parseStream(std::ifstream &f) {
+
+JSON* JSON::parseStream(std::ifstream &f) {
 	if (f.good())
 	{
 		//We read the whole file into a string variable using ifstream and stringstream, then pass it to the parseString method
@@ -134,13 +139,11 @@ std::map<std::string, std::any> JSON::parseStream(std::ifstream &f) {
 	}
 	else
 	{
-		//If the input file doesn't exist, we return an empty map
-		std::map<std::string, std::any> emptyMap;
-		return 	emptyMap;
+		return NULL;
 	}
 }
 
-std::map<std::string, std::any> JSON::parseFile(const std::string& path)
+JSON* JSON::parseFromFile(const std::string& path)
 {
 	std::ifstream f(path);
 	//We check if the file given as input exists
@@ -150,8 +153,20 @@ std::map<std::string, std::any> JSON::parseFile(const std::string& path)
 	}
 	else
 	{
-		//If the input file doesn't exist, we return an empty map
-		std::map<std::string, std::any> emptyMap;
-		return 	emptyMap;
+		return nullptr;
 	}
+}
+
+template<typename T>
+auto JSON::get(T value) {
+    if (std::is_same_v<std::decay_t<T>, int>) {
+        return std::any_cast<int>(parsedMap[value]);
+    }
+    else if (std::is_same_v<std::decay_t<T>, std::string>) {
+        return std::any_cast<std::string>(parsedMap[value]);
+    }
+}
+
+int JSON::count(std::string key){
+	return this->content.count(key);
 }

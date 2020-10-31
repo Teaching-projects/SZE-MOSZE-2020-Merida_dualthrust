@@ -19,8 +19,16 @@
 #include <fstream>
 #include <sstream>
 
+
 class JSON {
 public:
+    //constructors
+    JSON(std::map<std::string, std::any>);
+    
+    std::map<std::string, std::any> content;
+    template<typename T>
+    auto get(T value);
+    int count(std::string);
     /**
      * @brief Method for checking if a given input is a number or not
      * @param[in] string
@@ -33,11 +41,11 @@ public:
      * @param[in] string, char
      * @return Output vector which contains strings
      */
-    std::vector<std::string> split(const std::string&, char);
+    static std::vector<std::string> split(const std::string&, char);
 
-    std::map<std::string, std::any> parseString(std::string);
-    std::map<std::string, std::any> parseStream(std::ifstream&);
-    std::map<std::string, std::any> parseFile(const std::string&);
+    static JSON* parseString(std::string);
+    static JSON* parseStream(std::ifstream&);
+    static JSON* parseFromFile(const std::string&);
 
     /**
      * @brief Delete every existing Character object given as input
