@@ -27,7 +27,7 @@ public:
     
     std::map<std::string, std::any> content;
     template<typename T>
-    auto get(T value);
+    std::string get(T value);
     int count(std::string);
     /**
      * @brief Method for checking if a given input is a number or not

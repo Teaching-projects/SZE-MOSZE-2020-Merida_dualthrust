@@ -35,13 +35,10 @@
         if (parsedMap.size() > 0) {
 
             std::string name = std::any_cast<std::string>(parsedMap["name"]);
-            try {
-                int hp = (int)std::any_cast<float>(parsedMap["hp"]);
-                int dmg = (int)std::any_cast<float>(parsedMap["dmg"]);
-                float ACD = std::any_cast<float>(parsedMap["acd"]);
-                return Hero(name, hp, dmg, ACD);
-            }
-            catch (const std::exception& ex) {}
+            int hp = (int)std::any_cast<float>(parsedMap["hp"]);
+            int dmg = (int)std::any_cast<float>(parsedMap["dmg"]);
+            float ACD = std::any_cast<float>(parsedMap["acd"]);
+            return Hero(name, hp, dmg, ACD);
         }
     }
 

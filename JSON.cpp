@@ -148,11 +148,8 @@ JSON JSON::parseFromFile(const std::string& path)
 }
 
 template<typename T>
-auto JSON::get(T value) {
-    if (std::is_same_v<std::decay_t<T>, int>) {
-        return std::any_cast<int>(this->content[value]);
-    }
-    else if (std::is_same_v<std::decay_t<T>, std::string>) {
+std::string JSON::get(T value) {
+	if (std::is_same_v<std::decay_t<T>, std::string>) {
         return std::any_cast<std::string>(this->content[value]);
     }
 }
