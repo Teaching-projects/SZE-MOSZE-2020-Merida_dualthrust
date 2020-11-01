@@ -18,7 +18,7 @@ jobs:
           name: cppcheck_results
           path: cppcheck_results.txt
       - name: Build
-        run: g++-8 -Wall -Werror -Wextra -std=c++17 *.cpp -o a.out
+        run: g++ -Wall -Werror -Wextra -std=c++17 *.cpp -o a.out
       - name: Upload a.out result 
         uses: actions/upload-artifact@v2  
         with:
