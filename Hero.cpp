@@ -5,7 +5,7 @@
 #include <string>
 #include <cmath>
 
-    Hero::Hero(const std::string& characterName, int characterHP, int characterATK, double characterACD, int XPperlevel, int HPperlevel, int DMGperlevel, float ACDperlevel) : Monster(characterName, characterHP, characterATK, characterACD), level(0), maximumHealthPoint(characterHP), experience(0), experiencePerLevel(XPperlevel), healthPointBonusPerLevel(HPperlevel), damageBonusPerLevel(DMGperlevel), cooldownMultiplierPerLevel(ACDperlevel)
+    Hero::Hero(const std::string& characterName, int characterHP, int characterATK, double characterACD, int XPperlevel, int HPperlevel, int DMGperlevel, float ACDperlevel) : Monster(characterName, characterHP, characterATK, characterACD), level(1), maximumHealthPoint(characterHP), experience(0), experiencePerLevel(XPperlevel), healthPointBonusPerLevel(HPperlevel), damageBonusPerLevel(DMGperlevel), cooldownMultiplierPerLevel(ACDperlevel)
     {
 
     }
