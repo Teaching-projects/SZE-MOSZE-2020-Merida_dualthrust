@@ -52,7 +52,7 @@
     //Convenience method for simple checking
     bool Monster::isAlive() const 
     {
-        return getHealthPoints() >= 0;
+        return getHealthPoints() > 0;
     }
 
     //Instead of using an HP setter from outside of the class, we declare a 'sufferDamage' method

@@ -60,9 +60,9 @@ int main(int argc, char** argv){
 
         while (hero.isAlive() && !monsters.empty()) {
             std::cout 
-                << hero.getName() << "(" << hero.getLevel()<<")"
+                << hero.getName() << "(" << hero.getLevel() << " "  << hero.getHealthPoints() << " " << hero.getDamage() << " " << hero.getAttackCoolDown() <<")"
                 << " vs "
-                << monsters.front().getName()
+                << monsters.front().getName() << " "  << monsters.front().getHealthPoints() << " " << monsters.front().getDamage() << " " << monsters.front().getAttackCoolDown()
                 <<std::endl;
             hero.fightTilDeath(monsters.front());
             if (!monsters.front().isAlive()) monsters.pop_front();
