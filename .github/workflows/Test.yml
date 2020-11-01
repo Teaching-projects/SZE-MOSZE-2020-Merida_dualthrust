@@ -19,6 +19,11 @@ jobs:
           path: cppcheck_results.txt
       - name: Build
         run: g++-8 -Wall -Werror -Wextra -std=c++17 *.cpp -o a.out
+      - name: Upload a.out result 
+        uses: actions/upload-artifact@v2  
+        with:
+          name: a.out
+          path: a.out
       - name: Valgrind check
         run: valgrind --leak-check=full --error-exitcode=1 ./a.out scenario1.json
       - name: In-out tests
