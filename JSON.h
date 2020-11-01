@@ -49,7 +49,7 @@ public:
     static std::vector<std::string> splitRowsJSON(const std::string&);
     static std::string removeJSONSpaces(std::string);
 
-    static JSON parseString(std::string&);
+    static JSON parseString(const std::string&);
     static JSON parseStream(std::ifstream&);
     static JSON parseFromFile(const std::string&);
 
