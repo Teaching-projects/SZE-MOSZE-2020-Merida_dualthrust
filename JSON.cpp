@@ -147,13 +147,6 @@ JSON JSON::parseFromFile(const std::string& path)
 	}
 }
 
-template<typename T>
-std::string JSON::get(T value) {
-	if (std::is_same_v<std::decay_t<T>, std::string>) {
-        return std::any_cast<std::string>(this->content[value]);
-    }
-}
-
 int JSON::count(std::string key){
 	return this->content.count(key);
 }

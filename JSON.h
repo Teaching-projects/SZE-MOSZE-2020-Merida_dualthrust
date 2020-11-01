@@ -26,8 +26,12 @@ public:
     JSON(std::map<std::string, std::any>);
     
     std::map<std::string, std::any> content;
-    template<typename T>
-    std::string get(T value);
+    
+    template <typename T>
+    T get(std::string key){
+        return std::any_cast<T>(content[key]);
+    }
+
     int count(std::string);
     /**
      * @brief Method for checking if a given input is a number or not
