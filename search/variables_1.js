@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['maxhp',['maxHP',['../classHero.html#a28b2bffc01d17d1df0904169acfabac7',1,'Hero']]]
+  ['level',['level',['../classHero.html#a42f1236a8e4a3f8c7e47193e544ee01f',1,'Hero']]]
 ];

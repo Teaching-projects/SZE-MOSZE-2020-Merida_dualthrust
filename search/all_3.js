@@ -1,4 +1,9 @@
 var searchData=
 [
-  ['hero',['Hero',['../classHero.html',1,'Hero'],['../classHero.html#a4dca041ac9d1ddeee5aefef1973f875c',1,'Hero::Hero()']]]
+  ['getattackcooldown',['getAttackCoolDown',['../classMonster.html#a531f64fb22ad6b12fd99c18ae35a6f92',1,'Monster']]],
+  ['getdamage',['getDamage',['../classMonster.html#a54d07cd19b902336c1b70b4557eab14b',1,'Monster']]],
+  ['gethealthpoints',['getHealthPoints',['../classMonster.html#ae7c2e08b86328bf019a85abed4a7d133',1,'Monster']]],
+  ['getlevel',['getLevel',['../classHero.html#a0e5544268ec6fca831c2b20b1d7335f9',1,'Hero']]],
+  ['getmaxhealthpoints',['getMaxHealthPoints',['../classHero.html#a6de264188668d992ec8e47694e4b8e86',1,'Hero']]],
+  ['getname',['getName',['../classMonster.html#aa23060195f6fb1235a4293e542b0446c',1,'Monster']]]
 ];

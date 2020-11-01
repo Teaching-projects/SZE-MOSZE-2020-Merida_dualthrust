@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lvl',['LVL',['../classHero.html#ac45bd2c34ac35ec50ffbd9d73354ca4a',1,'Hero']]]
+  ['experience',['experience',['../classHero.html#ad8304002eae633bc0c32ee0980cf7d1b',1,'Hero']]]
 ];

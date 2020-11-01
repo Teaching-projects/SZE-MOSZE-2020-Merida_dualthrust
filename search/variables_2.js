@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xp',['XP',['../classHero.html#af20c6dd8d4c2acd499751ac504d6de94',1,'Hero']]]
+  ['maximumhealthpoint',['maximumHealthPoint',['../classHero.html#a0332b15316cbf518ebac8eba594d1caa',1,'Hero']]]
 ];

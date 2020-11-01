@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['sze_2dmosze_2d2020_2dmerida_5fdualthrust',['SZE-MOSZE-2020-Merida_dualthrust',['../autotoc_md0.html',1,'']]],
-  ['split',['split',['../classJSON.html#a632fd6947dc1de83bd3088c0774d1295',1,'JSON']]],
-  ['sufferdamage',['sufferDamage',['../classMonster.html#a918bd9927844b54393378574ea221021',1,'Monster']]]
+  ['parse',['parse',['../classHero.html#aac4d67bad651fbeb489905675545bb88',1,'Hero::parse()'],['../classMonster.html#a0b04445ff85b508acd45fa24732e4096',1,'Monster::parse()']]],
+  ['parseexception',['ParseException',['../classJSON_1_1ParseException.html',1,'JSON']]]
 ];

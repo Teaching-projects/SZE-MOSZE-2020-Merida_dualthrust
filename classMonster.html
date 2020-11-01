@@ -92,13 +92,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a54d07cd19b902336c1b70b4557eab14b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for character name.  <a href="#a54d07cd19b902336c1b70b4557eab14b">More...</a><br /></td></tr>
 <tr class="separator:a54d07cd19b902336c1b70b4557eab14b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7c2e08b86328bf019a85abed4a7d133"><td class="memItemLeft" align="right" valign="top">int const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#ae7c2e08b86328bf019a85abed4a7d133">getHealthPoints</a> () const</td></tr>
-<tr class="memdesc:ae7c2e08b86328bf019a85abed4a7d133"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for character HP.  <a href="#ae7c2e08b86328bf019a85abed4a7d133">More...</a><br /></td></tr>
+<tr class="memdesc:ae7c2e08b86328bf019a85abed4a7d133"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for character healthPoint.  <a href="#ae7c2e08b86328bf019a85abed4a7d133">More...</a><br /></td></tr>
 <tr class="separator:ae7c2e08b86328bf019a85abed4a7d133"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac40718fd8f4fccf5139791c3efb91b0"><td class="memItemLeft" align="right" valign="top">double const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#aac40718fd8f4fccf5139791c3efb91b0">getAttackCoolDown</a> () const</td></tr>
-<tr class="memdesc:aac40718fd8f4fccf5139791c3efb91b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for attack speed cooldown of character.  <a href="#aac40718fd8f4fccf5139791c3efb91b0">More...</a><br /></td></tr>
-<tr class="separator:aac40718fd8f4fccf5139791c3efb91b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a531f64fb22ad6b12fd99c18ae35a6f92"><td class="memItemLeft" align="right" valign="top">float const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a531f64fb22ad6b12fd99c18ae35a6f92">getAttackCoolDown</a> () const</td></tr>
+<tr class="memdesc:a531f64fb22ad6b12fd99c18ae35a6f92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for attack speed cooldown of character.  <a href="#a531f64fb22ad6b12fd99c18ae35a6f92">More...</a><br /></td></tr>
+<tr class="separator:a531f64fb22ad6b12fd99c18ae35a6f92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a918bd9927844b54393378574ea221021"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a918bd9927844b54393378574ea221021">sufferDamage</a> (<a class="el" href="classMonster.html">Monster</a> *)</td></tr>
-<tr class="memdesc:a918bd9927844b54393378574ea221021"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for depleting HP-s during fight Basic subtraction operation. If the HP drops below 0 we set it to 0.  <a href="#a918bd9927844b54393378574ea221021">More...</a><br /></td></tr>
+<tr class="memdesc:a918bd9927844b54393378574ea221021"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for depleting healthPoint-s during fight Basic subtraction operation. If the healthPoint drops below 0 we set it to 0.  <a href="#a918bd9927844b54393378574ea221021">More...</a><br /></td></tr>
 <tr class="separator:a918bd9927844b54393378574ea221021"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaebd73a726b359c29c5e54777e235ba"><td class="memItemLeft" align="right" valign="top"><a id="aeaebd73a726b359c29c5e54777e235ba"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>deliverHit</b> (<a class="el" href="classMonster.html">Monster</a> *enemy)</td></tr>
@@ -121,15 +121,15 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a4ce38cc9d6af5a37f54f90d2d7ab8ee0"><td class="memItemLeft" align="right" valign="top"><a id="a4ce38cc9d6af5a37f54f90d2d7ab8ee0"></a>
 const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
 <tr class="separator:a4ce38cc9d6af5a37f54f90d2d7ab8ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2547ecce29c3ebe93a9b370b7d7bbdd0"><td class="memItemLeft" align="right" valign="top"><a id="a2547ecce29c3ebe93a9b370b7d7bbdd0"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>HP</b></td></tr>
-<tr class="separator:a2547ecce29c3ebe93a9b370b7d7bbdd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13f169d81e17eeedc542bdefc4f66183"><td class="memItemLeft" align="right" valign="top"><a id="a13f169d81e17eeedc542bdefc4f66183"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>ATK</b></td></tr>
-<tr class="separator:a13f169d81e17eeedc542bdefc4f66183"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fec272143367a95c1877b2e111cd054"><td class="memItemLeft" align="right" valign="top"><a id="a7fec272143367a95c1877b2e111cd054"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><b>ACD</b></td></tr>
-<tr class="separator:a7fec272143367a95c1877b2e111cd054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbe6a513d7be856fc515e64823a32978"><td class="memItemLeft" align="right" valign="top"><a id="acbe6a513d7be856fc515e64823a32978"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>healthPoint</b></td></tr>
+<tr class="separator:acbe6a513d7be856fc515e64823a32978"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3819d1bf6ee6bf2a9be94f8ddd2d4cb5"><td class="memItemLeft" align="right" valign="top"><a id="a3819d1bf6ee6bf2a9be94f8ddd2d4cb5"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>damage</b></td></tr>
+<tr class="separator:a3819d1bf6ee6bf2a9be94f8ddd2d4cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3299915749c117d00b28414f669197b3"><td class="memItemLeft" align="right" valign="top"><a id="a3299915749c117d00b28414f669197b3"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>cooldown</b></td></tr>
+<tr class="separator:a3299915749c117d00b28414f669197b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -164,14 +164,14 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="aac40718fd8f4fccf5139791c3efb91b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac40718fd8f4fccf5139791c3efb91b0">&#9670;&nbsp;</a></span>getAttackCoolDown()</h2>
+<a id="a531f64fb22ad6b12fd99c18ae35a6f92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a531f64fb22ad6b12fd99c18ae35a6f92">&#9670;&nbsp;</a></span>getAttackCoolDown()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double const  &amp; Monster::getAttackCoolDown </td>
+          <td class="memname">float const  &amp; Monster::getAttackCoolDown </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -219,7 +219,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Getter for character HP. </p>
+<p>Getter for character healthPoint. </p>
 <dl class="section return"><dt>Returns</dt><dd>int const&amp; </dd></dl>
 
 </div>
@@ -260,9 +260,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Bool function to examine if the <a class="el" href="classMonster.html">Monster</a> is dead or alive. </p>
-<dl class="section return"><dt>Returns</dt><dd>false, if the Characters' HP 0 or below 0 </dd>
+<dl class="section return"><dt>Returns</dt><dd>false, if the Characters' healthPoint 0 or below 0 </dd>
 <dd>
-true, if the Characters' HP is more than 0 </dd></dl>
+true, if the Characters' healthPoint is more than 0 </dd></dl>
 
 </div>
 </div>
@@ -311,7 +311,7 @@ true, if the Characters' HP is more than 0 </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Function for depleting HP-s during fight Basic subtraction operation. If the HP drops below 0 we set it to 0. </p>
+<p>Function for depleting healthPoint-s during fight Basic subtraction operation. If the healthPoint drops below 0 we set it to 0. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="classMonster.html">Monster</a></td><td>type object </td></tr>
@@ -360,7 +360,7 @@ true, if the Characters' HP is more than 0 </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">output</td><td>stream </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">character</td><td>(name, HP, damage) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">character</td><td>(name, healthPoint, damage) </td></tr>
   </table>
   </dd>
 </dl>
