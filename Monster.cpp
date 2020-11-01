@@ -31,7 +31,7 @@
         return ATK;
     }
 
-    double const & Monster::getAttackCoolDown() const
+    float const & Monster::getAttackCoolDown() const
     {
         return ACD;
     }

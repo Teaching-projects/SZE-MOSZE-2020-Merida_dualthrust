@@ -10,8 +10,15 @@ class Hero : public Monster{
         int maxHP;      ///<Tracking the maximum HP, lvlUp() uses this to raise a units HP after a level up, and uses it to set the current up to max
         int XP;         ///<Tracking the units current XP. When using the deliverHit() method XP is given to a unit based on its damage inflicted to the enemy, from which levelups are calculated
         void lvlUp();   ///<lvlUp() method is used by in the deliverHit() method. When a units XP is above or equal to 100, it is called - how many times is dependant on XP, if it has N times 100 XP it is called N times. Sets a units maximumHP and ATK to 1.1 times the current value. Also it sets current HP to maximumHP.
+    
+        const int experience_per_level;
+        const int health_point_bonus_per_level;
+        const int damage_bonus_per_level;
+        const float cooldown_multiplier_per_level;
+        
+    
     public:
-        Hero(const std::string&, int, int, double);    ///<Constructor for our Hero class. Uses the same inputs as a Monster class.
+        Hero(const std::string&, int, int, double, const int, const int, const int, const float);    ///<Constructor for our Hero class. Uses the same inputs as a Monster class.
         /**
          * @brief Getter for maximum health points of our Hero
          * @return  double const&

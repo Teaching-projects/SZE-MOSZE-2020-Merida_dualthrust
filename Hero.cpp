@@ -5,7 +5,7 @@
 #include <string>
 #include <cmath>
 
-    Hero::Hero(const std::string& characterName, int characterHP, int characterATK, double characterACD) : Monster(characterName, characterHP, characterATK, characterACD), LVL(0), maxHP(characterHP), XP(0)
+    Hero::Hero(const std::string& characterName, int characterHP, int characterATK, double characterACD, int XPperlevel, int HPperlevel, int DMGperlevel, float ACDperlevel) : Monster(characterName, characterHP, characterATK, characterACD), LVL(0), maxHP(characterHP), XP(0), experience_per_level(XPperlevel), health_point_bonus_per_level(HPperlevel), damage_bonus_per_level(DMGperlevel), cooldown_multiplier_per_level(ACDperlevel)
     {
 
     }
@@ -22,9 +22,10 @@
 
     void Hero::lvlUp()
     {
-        maxHP   *=  1.1;
+        maxHP   +=  health_point_bonus_per_level;
         maxHP   =   round(maxHP);
-        ATK     *=  1.1;
+        ATK     += damage_bonus_per_level;
+        ACD     *= cooldown_multiplier_per_level;
         this->HP      =   maxHP;        
         LVL     +=  1;
     }
@@ -36,7 +37,13 @@
         int hp = std::stoi(parsedMap["base_health_points"]);
         int dmg = std::stoi(parsedMap["base_damage"]);
         float ACD = std::stof(parsedMap["base_attack_cooldown"]);
-        return Hero(name, hp, dmg, ACD);
+
+        int experience_per_level          = std::stoi(parsedMap["experience_per_level"]);
+        int health_point_bonus_per_level  = std::stoi(parsedMap["health_point_bonus_per_level"]);
+        int damage_bonus_per_level        = std::stoi(parsedMap["damage_bonus_per_level"]);
+        float cooldown_multiplier_per_level = std::stof(parsedMap["cooldown_multiplier_per_level"]);
+
+        return Hero(name, hp, dmg, ACD, experience_per_level, health_point_bonus_per_level, damage_bonus_per_level, cooldown_multiplier_per_level);
     }
 
     void Hero::deliverHit(Monster* enemy) 
@@ -57,13 +64,13 @@
 
         XP  +=  XP_ToGain;
         
-        if (XP>=100)
+        if (XP>=experience_per_level)
         {
-            int LVL_ToGain = XP / 100;
+            int LVL_ToGain = XP / experience_per_level;
             for (int i = 0; i < LVL_ToGain; i++)
             {
                 this->lvlUp();
             }
-            XP  -=  LVL_ToGain * 100;            
+            XP  -=  LVL_ToGain * experience_per_level;            
         }
     }

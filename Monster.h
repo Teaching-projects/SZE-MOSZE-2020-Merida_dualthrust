@@ -47,7 +47,7 @@ public:
      * @brief Getter for attack speed cooldown of character
      * @return  double const&
      */
-    double const & getAttackCoolDown(/**There's no input parameter here.*/) const;
+    float const & getAttackCoolDown(/**There's no input parameter here.*/) const;
     /**
      * @brief Function for depleting HP-s during fight
      * Basic subtraction operation. If the HP drops below 0 we set it to 0
@@ -81,7 +81,7 @@ protected:
     const std::string name; 
     int HP;
     int ATK;
-    const double ACD;
+    float ACD;
 };
 
 #endif // MONSTER_HEADER
