@@ -41,11 +41,11 @@
     //JSON parse method for creating a Monster object based on a given JSON input file
     Monster Monster::parse(const std::string& path)
     {
-        std::map<std::string, std::any> parsedMap = JSON::parseFromFile(path).content;
-        std::string name = std::any_cast<std::string>(parsedMap["name"]);
-        int hp = (int)std::any_cast<float>(parsedMap["hp"]);
-        int dmg = (int)std::any_cast<float>(parsedMap["dmg"]);
-        float ACD = std::any_cast<float>(parsedMap["acd"]);
+        std::map<std::string, std::string> parsedMap = JSON::parseFromFile(path).content;
+        std::string name = parsedMap["name"];
+        int hp = std::stoi(parsedMap["health_points"]);
+        int dmg = std::stoi(parsedMap["damage"]);
+        float ACD = std::stof(parsedMap["attack_cooldown"]);
         return Monster(name, hp, dmg, ACD);
     }
 

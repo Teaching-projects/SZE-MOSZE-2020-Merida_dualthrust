@@ -8,7 +8,7 @@
 #include <type_traits>
 
 
-JSON::JSON(const std::map<std::string, std::any>& incoming_content):content(incoming_content){    }
+JSON::JSON(const std::map<std::string, std::string>& incoming_content):content(incoming_content){    }
 
 //Method for getting data from a JSON file
 std::vector<std::string> JSON::getJsonData(const std::string& path)
@@ -67,6 +67,47 @@ std::vector<std::string> JSON::split(const std::string& s, char splitChar)
 	return output;
 }
 
+std::vector<std::string> JSON::splitRowsJSON(const std::string& s)
+{
+	std::vector<std::string> output;
+	std::string current_value;
+
+	for (unsigned int i = 0; i < s.length()-1; i++)
+	{
+		std::string remaining = s.substr(i+1, s.length());
+		remaining.erase(remove_if(remaining.begin(), remaining.end(), isspace), remaining.end());
+
+		if ((s[i] == ',' && remaining[0]=='"') || i == s.length() - 2)
+		{
+			if (i == s.length() - 1)
+			{
+				current_value += s[i];
+			}
+			output.push_back(current_value);
+			current_value = "";
+		}
+		else
+		{
+			current_value += s[i];
+		}
+	}
+
+	return output;
+}
+
+std::string JSON::removeJSONSpaces(std::string value) {
+	std::string spaceless = value;
+	spaceless.erase(remove_if(spaceless.begin(), spaceless.end(), isspace), spaceless.end());
+
+	if (spaceless[0] == '"') {
+		value = value.substr(value.find('"'), value.size());
+	}
+	else {
+		value.erase(remove_if(value.begin(), value.end(), isspace), value.end());
+	}
+	return value;
+}
+
 //Delete every existing Character object given as input
 void JSON::deleteCharacters(const std::vector<Monster*>& characters) 
 {
@@ -78,40 +119,36 @@ void JSON::deleteCharacters(const std::vector<Monster*>& characters)
 
 JSON JSON::parseString(std::string &json_string)
 {
-	std::map<std::string, std::any> parsedMap;
-	std::vector<std::string> rows = split(json_string, ',');
+std::map<std::string, std::string> parsedMap;
+	std::vector<std::string> rows = splitRowsJSON(json_string);
 
 	for (auto& row : rows) // access by reference to avoid copying
 	{
 		//Delete '{' and '}' from the raw string
 		row.erase(remove(row.begin(), row.end(), '{'), row.end());
 		row.erase(remove(row.begin(), row.end(), '}'), row.end());
+		//Delete linebreaks
+		row.erase(std::remove(row.begin(), row.end(), '\n'), row.end());
+		row = row.substr(row.find('"'), row.size());
 
 		std::string key;
 		std::string value;
 
 		try {
-			key = split(split(row, '"')[1], '"')[0];
-			value = split(row, ':')[1];
+			key = removeJSONSpaces(split(split(row, '"')[1], '"')[0]);
+			value = removeJSONSpaces(split(row, ':')[1]);
 		}
 		catch (const std::exception& ex) {}
-
-		//Delete spaces from the value
-		value.erase(remove_if(value.begin(), value.end(), isspace), value.end());
-		//If the value is a string, we remove the " characters
+		////If the value is a string, we remove the " characters
 		if (value[0] == '"') {
-			value = value.substr(1, value.length() - 2);
-			parsedMap.insert({ key,value});
+			value = value.substr(1, value.length());
+			value = value.substr(0, value.rfind('"'));
+			parsedMap.insert({ key,value });
 		}
-		else{
-			//If the value isn't a string, we parse it into a float
-			try {
-				parsedMap.insert({ key, std::stof(value) });
-			}catch(const std::exception& ex){
-				std::map<std::string, std::any> empty_content;
-				return JSON(empty_content);
-			}
+		else {
+			parsedMap.insert({ key, value });
 		}
+
 	}
 
 	return JSON(parsedMap);
@@ -129,7 +166,7 @@ JSON JSON::parseStream(std::ifstream &f) {
 
 		return parseString(fileContents);
 	}else{
-		std::map<std::string, std::any> empty_content;
+		std::map<std::string, std::string> empty_content;
 		return JSON(empty_content);
 	}
 }
@@ -142,7 +179,7 @@ JSON JSON::parseFromFile(const std::string& path)
 	{
 		return parseStream(f);
 	}else{
-		std::map<std::string, std::any> empty_content;
+		std::map<std::string, std::string> empty_content;
 		return JSON(empty_content);
 	}
 }

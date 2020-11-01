@@ -23,9 +23,9 @@
 class JSON {
 public:
     //constructors
-    JSON(const std::map<std::string, std::any>&);
+    JSON(const std::map<std::string, std::string>&);
     
-    std::map<std::string, std::any> content;
+    std::map<std::string, std::string> content;
     
     template <typename T>
     T get(std::string key){
@@ -46,6 +46,8 @@ public:
      * @return Output vector which contains strings
      */
     static std::vector<std::string> split(const std::string&, char);
+    static std::vector<std::string> splitRowsJSON(const std::string&);
+    static std::string removeJSONSpaces(std::string);
 
     static JSON parseString(std::string&);
     static JSON parseStream(std::ifstream&);

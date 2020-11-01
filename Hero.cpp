@@ -31,11 +31,11 @@
     
     Hero Hero::parse(const std::string& path)  //JSON parse method for creating a Monster object based on a given JSON input file
     {
-        std::map<std::string, std::any> parsedMap = JSON::parseFromFile(path).content;
-        std::string name = std::any_cast<std::string>(parsedMap["name"]);
-        int hp = (int)std::any_cast<float>(parsedMap["hp"]);
-        int dmg = (int)std::any_cast<float>(parsedMap["dmg"]);
-        float ACD = std::any_cast<float>(parsedMap["acd"]);
+        std::map<std::string, std::string> parsedMap = JSON::parseFromFile(path).content;
+        std::string name = parsedMap["name"];
+        int hp = std::stoi(parsedMap["base_health_points"]);
+        int dmg = std::stoi(parsedMap["base_damage"]);
+        float ACD = std::stof(parsedMap["base_attack_cooldown"]);
         return Hero(name, hp, dmg, ACD);
     }
 
