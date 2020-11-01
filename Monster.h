@@ -67,7 +67,7 @@ public:
      * Winner gets announced. Puts out the results to both file and command line
      * @param[in] Monster type object
      */
-    Monster* fightTilDeath(Monster);
+    Monster* fightTilDeath(Monster&);
     /**
      * @brief Operator overload
      * Printing a characters' status
