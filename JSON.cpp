@@ -8,7 +8,7 @@
 #include <type_traits>
 
 
-JSON::JSON(std::map<std::string, std::any> incoming_content):content(incoming_content){    }
+JSON::JSON(const std::map<std::string, std::any>& incoming_content):content(incoming_content){    }
 
 //Method for getting data from a JSON file
 std::vector<std::string> JSON::getJsonData(const std::string& path)

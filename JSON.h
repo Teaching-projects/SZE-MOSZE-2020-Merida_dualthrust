@@ -23,7 +23,7 @@
 class JSON {
 public:
     //constructors
-    JSON(std::map<std::string, std::any>);
+    JSON(const std::map<std::string, std::any>&);
     
     std::map<std::string, std::any> content;
     
