@@ -5,7 +5,7 @@
 #include <string>
 
     //Constructor
-    Monster::Monster(const std::string& characterName, int characterHP, int characterATK, const double characterACD):name(characterName),HP(characterHP),ATK(characterATK),ACD(characterACD)
+    Monster::Monster(const std::string& characterName, int characterHP, int characterATK, const double characterACD):name(characterName),healthPoint(characterHP),damage(characterATK),cooldown(characterACD)
     {
 
     }
@@ -23,17 +23,17 @@
 
     int const & Monster::getHealthPoints() const
     {
-        return HP;
+        return healthPoint;
     }
 
     int const & Monster::getDamage() const
     {
-        return ATK;
+        return damage;
     }
 
     float const & Monster::getAttackCoolDown() const
     {
-        return ACD;
+        return cooldown;
     }
 
 
@@ -43,10 +43,10 @@
     {
         std::map<std::string, std::string> parsedMap = JSON::parseFromFile(path).content;
         std::string name = parsedMap["name"];
-        int hp = std::stoi(parsedMap["health_points"]);
+        int healthPoints = std::stoi(parsedMap["health_points"]);
         int dmg = std::stoi(parsedMap["damage"]);
-        float ACD = std::stof(parsedMap["attack_cooldown"]);
-        return Monster(name, hp, dmg, ACD);
+        float cooldown = std::stof(parsedMap["attack_cooldown"]);
+        return Monster(name, healthPoints, dmg, cooldown);
     }
 
     //Convenience method for simple checking
@@ -55,15 +55,15 @@
         return getHealthPoints() > 0;
     }
 
-    //Instead of using an HP setter from outside of the class, we declare a 'sufferDamage' method
-    //The Monster object's HP gets lowered based on the output 
+    //Instead of using an healthPoint setter from outside of the class, we declare a 'sufferDamage' method
+    //The Monster object's healthPoint gets lowered based on the output 
     void Monster::sufferDamage(Monster* enemy) 
     {
         //std::cout << enemy->getName() << " -> " << this->getName() << std::endl;
-        HP = (getHealthPoints() - enemy->getDamage());
-        if (HP < 0)
+        healthPoint = (getHealthPoints() - enemy->getDamage());
+        if (healthPoint < 0)
         {
-            HP = 0; 
+            healthPoint = 0; 
         }
     }
 
@@ -75,7 +75,7 @@
     //Printing a characters status
     std::ostream& operator<<(std::ostream& os, const Monster& character)
     {
-        os << character.getName() << ": [HP: "  << character.getHealthPoints() << "] [DMG:" << character.getDamage() << "]";
+        os << character.getName() << ": [healthPoint: "  << character.getHealthPoints() << "] [DMG:" << character.getDamage() << "]";
         return os;
     }
 

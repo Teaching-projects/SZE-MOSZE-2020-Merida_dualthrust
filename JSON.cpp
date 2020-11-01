@@ -8,12 +8,16 @@
 #include <type_traits>
 
 
-JSON::JSON(const std::map<std::string, std::string>& incoming_content):content(incoming_content){    }
+JSON::JSON(const std::map<std::string, std::string>& incoming_content):content(incoming_content)
+{
+
+}
 
 //Method for getting data from a JSON file
 std::vector<std::string> JSON::getJsonData(const std::string& path)
 {
     std::ifstream f(path);
+
     //We check if the file given as input exists
     if (f.good())
     {
@@ -26,12 +30,12 @@ std::vector<std::string> JSON::getJsonData(const std::string& path)
         f.close();
 
         //We save the values we need - this could be inlined into the Character constructor call, but the code is clearer this way
-        std::string name = split(fileContents, '"')[3]; //We get the name from the file
-        std::string HP = split(JSON::split(fileContents, ',')[1], ':')[1]; //We get the HP value from the file - we split the string between the second ',' character and ':' character, and parse it into an integer
-        std::string DMG = split(JSON::split(fileContents, ',')[2], ':')[1]; //We get the DMG value from the file - we split the string between the third ',' character and ':' character, and parse it into an integer
-        std::string ACD = split(JSON::split(fileContents, ':')[4], '}')[0]; //We get the ACD value from the file - we split the string between the fourth ':' character and '}' character, and parse it into an integer
+        std::string name		= split(fileContents, '"')[3]; //We get the name from the file
+        std::string healthPoint			= split(JSON::split(fileContents, ',')[1], ':')[1]; //We get the healthPoint value from the file - we split the string between the second ',' character and ':' character, and parse it into an integer
+        std::string DMG			= split(JSON::split(fileContents, ',')[2], ':')[1]; //We get the DMG value from the file - we split the string between the third ',' character and ':' character, and parse it into an integer
+        std::string cooldown	= split(JSON::split(fileContents, ':')[4], '}')[0]; //We get the cooldown value from the file - we split the string between the fourth ':' character and '}' character, and parse it into an integer
 
-        return std::vector<std::string> {name, HP, DMG, ACD};
+        return std::vector<std::string> {name, healthPoint, DMG, cooldown};
     }
     else
     {
@@ -49,12 +53,15 @@ std::vector<std::string> JSON::split(const std::string& s, char splitChar)
 	
 	for (unsigned int i = 0; i < s.length(); i++) 
 	{
+
 		if (s[i] == splitChar || i == s.length() - 1) 
 		{
+
 			if (i == s.length() - 1) 
 			{
 				current_value += s[i];
 			}
+
 			output.push_back(current_value);
 			current_value = "";
 		}
@@ -83,6 +90,7 @@ std::vector<std::string> JSON::splitRowsJSON(const std::string& s)
 			{
 				current_value += s[i];
 			}
+
 			output.push_back(current_value);
 			current_value = "";
 		}
@@ -95,31 +103,36 @@ std::vector<std::string> JSON::splitRowsJSON(const std::string& s)
 	return output;
 }
 
-std::string JSON::removeJSONSpaces(std::string value) {
+std::string JSON::removeJSONSpaces(std::string value) 
+{
 	std::string spaceless = value;
 	spaceless.erase(remove_if(spaceless.begin(), spaceless.end(), isspace), spaceless.end());
 
-	if (spaceless[0] == '"') {
+	if (spaceless[0] == '"') 
+	{
 		value = value.substr(value.find('"'), value.size());
 	}
-	else {
+	else 
+	{
 		value.erase(remove_if(value.begin(), value.end(), isspace), value.end());
 	}
+
 	return value;
 }
 
 //Delete every existing Character object given as input
 void JSON::deleteCharacters(const std::vector<Monster*>& characters) 
 {
+
 	for (Monster* c : characters) 
     {
 		delete c;
 	}
 }
 
-JSON JSON::parseString(std::string &json_string)
+JSON JSON::parseString(std::string const &json_string)
 {
-std::map<std::string, std::string> parsedMap;
+	std::map<std::string, std::string> parsedMap;
 	std::vector<std::string> rows = splitRowsJSON(json_string);
 
 	for (auto& row : rows) // access by reference to avoid copying
@@ -127,6 +140,7 @@ std::map<std::string, std::string> parsedMap;
 		//Delete '{' and '}' from the raw string
 		row.erase(remove(row.begin(), row.end(), '{'), row.end());
 		row.erase(remove(row.begin(), row.end(), '}'), row.end());
+
 		//Delete linebreaks
 		row.erase(std::remove(row.begin(), row.end(), '\n'), row.end());
 		row = row.substr(row.find('"'), row.size());
@@ -134,18 +148,25 @@ std::map<std::string, std::string> parsedMap;
 		std::string key;
 		std::string value;
 
-		try {
+		try 
+		{
 			key = removeJSONSpaces(split(split(row, '"')[1], '"')[0]);
 			value = removeJSONSpaces(split(row, ':')[1]);
 		}
-		catch (const std::exception& ex) {}
+		catch (const std::exception& ex) 
+		{
+
+		}
+
 		////If the value is a string, we remove the " characters
-		if (value[0] == '"') {
+		if (value[0] == '"') 
+		{
 			value = value.substr(1, value.length());
 			value = value.substr(0, value.rfind('"'));
 			parsedMap.insert({ key,value });
 		}
-		else {
+		else 
+		{
 			parsedMap.insert({ key, value });
 		}
 
@@ -153,7 +174,6 @@ std::map<std::string, std::string> parsedMap;
 
 	return JSON(parsedMap);
 }
-
 
 JSON JSON::parseStream(std::ifstream &f) {
 	if (f.good())
@@ -163,9 +183,10 @@ JSON JSON::parseStream(std::ifstream &f) {
 		s << f.rdbuf();
 		std::string fileContents = s.str();
 		f.close();
-
 		return parseString(fileContents);
-	}else{
+	}
+	else
+	{
 		std::map<std::string, std::string> empty_content;
 		return JSON(empty_content);
 	}
@@ -178,12 +199,15 @@ JSON JSON::parseFromFile(const std::string& path)
 	if (f.good())
 	{
 		return parseStream(f);
-	}else{
+	}
+	else
+	{
 		std::map<std::string, std::string> empty_content;
 		return JSON(empty_content);
 	}
 }
 
-int JSON::count(std::string key){
+int JSON::count(std::string key)
+{
 	return this->content.count(key);
 }

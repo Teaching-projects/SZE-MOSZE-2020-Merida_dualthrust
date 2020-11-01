@@ -3,7 +3,7 @@
  * @author lapatkrisz
  * @brief Monster class
  * 
- * This class contains basic methods and data members of the Monster class. Monster objects in the game can have different HP/ATK values and fight each other.
+ * This class contains basic methods and data members of the Monster class. Monster objects in the game can have different healthPoint/damage values and fight each other.
  * 
  * @version 1.0
  * @date 2020-10-13
@@ -39,7 +39,7 @@ public:
      */
     int const & getDamage(/**There's no input parameter here.*/) const;
     /**
-     * @brief Getter for character HP
+     * @brief Getter for character healthPoint
      * @return int const& 
      */
     int const & getHealthPoints(/**There's no input parameter here.*/) const;
@@ -49,8 +49,8 @@ public:
      */
     float const & getAttackCoolDown(/**There's no input parameter here.*/) const;
     /**
-     * @brief Function for depleting HP-s during fight
-     * Basic subtraction operation. If the HP drops below 0 we set it to 0
+     * @brief Function for depleting healthPoint-s during fight
+     * Basic subtraction operation. If the healthPoint drops below 0 we set it to 0
      * @param[in] Monster type object
      */
     void sufferDamage(Monster*);
@@ -58,8 +58,8 @@ public:
     //'<<'operator overload
     /**
      * @brief Bool function to examine if the Monster is dead or alive
-     * @return false, if the Characters' HP 0 or below 0
-     * @return true, if the Characters' HP is more than 0
+     * @return false, if the Characters' healthPoint 0 or below 0
+     * @return true, if the Characters' healthPoint is more than 0
      */
     bool isAlive(/**There's no input parameter here.*/) const;
     /**
@@ -72,16 +72,16 @@ public:
      * @brief Operator overload
      * Printing a characters' status
      * @param[in] output stream 
-     * @param[in] character (name, HP, damage)
+     * @param[in] character (name, healthPoint, damage)
      * @return std::ostream& (containing Characters' status)
      */
     friend std::ostream& operator<<(std::ostream& os, const Monster& character);
 
 protected:
     const std::string name; 
-    int HP;
-    int ATK;
-    float ACD;
+    int healthPoint;
+    int damage;
+    float cooldown;
 };
 
 #endif // MONSTER_HEADER
