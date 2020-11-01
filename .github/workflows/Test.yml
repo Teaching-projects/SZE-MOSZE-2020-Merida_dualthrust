@@ -9,7 +9,7 @@ jobs:
     steps: 
       - uses: actions/checkout@v2
       - run: sudo apt install -y gcc g++
-      - run: g++ -std=c++17 *.cpp
+      - run: g++-8 -std=c++17 *.cpp
       - run: chmod +x run_test.sh
       - run: ./run_test.sh
         
