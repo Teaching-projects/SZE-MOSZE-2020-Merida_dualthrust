@@ -76,7 +76,7 @@ void JSON::deleteCharacters(const std::vector<Monster*>& characters)
 	}
 }
 
-JSON JSON::parseString(std::string json_string)
+JSON JSON::parseString(std::string &json_string)
 {
 	std::map<std::string, std::any> parsedMap;
 	std::vector<std::string> rows = split(json_string, ',');
