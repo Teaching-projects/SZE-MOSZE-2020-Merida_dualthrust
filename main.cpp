@@ -29,21 +29,17 @@ void bad_exit(int exitcode){
 }
 
 int main(int argc, char** argv){
-
     if (argc != 2) bad_exit(1);
     if (!std::filesystem::exists(argv[1])) bad_exit(2);
 
     std::string hero_file;
     std::list<std::string> monster_files;
-
     try {
-        JSON scenario = JSON::parseFromFile(argv[1]);
+        JSON scenario = JSON::parseFromFile(argv[1]); 
         if (!(scenario.count("hero")&&scenario.count("monsters"))) bad_exit(3);
         else {
             hero_file=scenario.get<std::string>("hero");
-
             std::istringstream monsters(scenario.get<std::string>("monsters"));
-
             std::copy(std::istream_iterator<std::string>(monsters),
                 std::istream_iterator<std::string>(),
                 std::back_inserter(monster_files));
@@ -51,18 +47,16 @@ int main(int argc, char** argv){
     } catch (const JSON::ParseException& e) {bad_exit(4);}
 
     try { 
-
         Hero hero{Hero::parse(hero_file)};
-
         std::list<Monster> monsters;
         for (const auto& monster_file : monster_files)
             monsters.push_back(Monster::parse(monster_file));        
 
         while (hero.isAlive() && !monsters.empty()) {
             std::cout 
-                << hero.getName() << "(" << hero.getLevel() << " "  << hero.getHealthPoints() << " " << hero.getDamage() << " " << hero.getAttackCoolDown() <<")"
+                << hero.getName() << "(" << hero.getLevel()<<")"
                 << " vs "
-                << monsters.front().getName() << " "  << monsters.front().getHealthPoints() << " " << monsters.front().getDamage() << " " << monsters.front().getAttackCoolDown()
+                << monsters.front().getName()
                 <<std::endl;
             hero.fightTilDeath(monsters.front());
             if (!monsters.front().isAlive()) monsters.pop_front();
