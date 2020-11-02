@@ -3,7 +3,8 @@
  * @author lapatkrisz
  * @brief Monster class
  * 
- * This class contains basic methods and data members of the Monster class. Monster objects in the game can have different healthPoint/damage values and fight each other.
+ * This class contains basic methods and data members of the Monster class.
+ * Monster objects in the game can have different healthPoint/damage values and fight each other.
  * 
  * @version 1.0
  * @date 2020-10-13
