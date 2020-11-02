@@ -1,3 +1,15 @@
+/**
+ * @file Hero.h
+ * @author lapatkrisz
+ * @brief Hero class
+ * 
+ * This class contains basic methods and data for leveling up our characters.
+ * With each level-up, the maximum HP also increases, level-ups are calculated from the acquired XP.
+ * 
+ * @version 1.0
+ * @date 2020-11-01 * 
+ */
+
 #ifndef HERO_HEADER
 #define HERO_HEADER
 
@@ -6,16 +18,46 @@
 
 class Hero : public Monster{
     protected:
-        int level;        ///<Tracking the units current level
-        int maximumHealthPoint;      ///<Tracking the maximum healthPoint, levelUp() uses this to raise a units healthPoint after a level up, and uses it to set the current up to max
-        int experience;         ///<Tracking the units current experience. When using the deliverHit() method experience is given to a unit based on its damage inflicted to the enemy, from which levelups are calculated
+        /**
+         * @brief Tracking the units current level
+         */
+        int level;
+        /**
+         * @brief Tracking the units maximum Health Points
+         * 
+         * lvlUp() uses this to raise a units HP after a level up, and uses it to set the current up to max.
+         */
+        int maximumHealthPoint;
+        /**
+         * @brief Tracking the units current Experience Points.
+         * 
+         * When using the deliverHit() method XP is given to a unit based on its damage inflicted to the enemy.
+         * The levelups are calculated from this.
+         * 
+         */
+        int experience;
+
         const int experiencePerLevel;
+
         const int healthPointBonusPerLevel;
+
         const int damageBonusPerLevel;
+
         const float cooldownMultiplierPerLevel;
-        void levelUp();   ///<levelUp() method is used by in the deliverHit() method. When a units experience is above or equal to 100, it is called - how many times is dependant on experience, if it has N times 100 experience it is called N times. Sets a units maximumHP and damage to 1.1 times the current value. Also it sets current healthPoint to maximumHP.
+        /**
+         * @brief When a units XP is above or equal to 100, it is called.
+         * 
+         * If a unit has N times 100 XP it is called N times.
+         * Sets a units maximumHP and ATK to 1.1 times the current value. Also it sets current HP to maximumHP.
+         * lvlUp() method is used by in the deliverHit() method.
+         * 
+         */
+        void levelUp();
           
     public:
+        /**
+         * @brief Constructor for our Hero class, uses the same inputs as a Monster class.
+         */
         Hero(const std::string&, int, int, double, const int, const int, const int, const float);    ///<Constructor for our Hero class. Uses the same inputs as a Monster class.
         /**
          * @brief Getter for maximum health points of our Hero
@@ -28,8 +70,22 @@ class Hero : public Monster{
          */
         int const & getLevel(/**There's no input parameter here.*/) const;
         
-        static Hero parse(const std::string&);       ///<The parseUnit() method provides data for our constructor. Same as the Monster class's, only difference is that it returns an Hero object instead of a Monster.
-        void deliverHit(Monster* enemy) override;                 ///<The deliverHit() method calls the enemy units sufferDamage() method, and handles the Hero units experience gain. It also calls the levelUp() method when sufficient experience is gained for a levelup.
+        /**
+         * @brief Provides data for our constructor.
+         * 
+         * Same as the Monster class's, only difference is that it returns a Hero object instead of a Monster.
+         * 
+         * @return Hero 
+         */
+        static Hero parse(const std::string&);
+        /**
+         * @brief Calls the enemy units sufferDamage() method, and handles the Hero units XP gain.
+         * 
+         * Also calls the lvlUp() method when sufficient XP is gained for a levelup.
+         * 
+         * @param enemy 
+         */
+        void deliverHit(Monster* enemy) override;
     };
 
 #endif // HERO_HEADER
