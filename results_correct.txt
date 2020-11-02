@@ -1,11 +1,11 @@
-Prince Aidan of Khanduras(1 30 3 1.1) vs Fallen 4 2 1.6
-Prince Aidan of Khanduras(1 26 3 1.1) vs Fallen 4 2 1.6
-Prince Aidan of Khanduras(1 22 3 1.1) vs Zombie 10 1 2.8
-Prince Aidan of Khanduras(1 19 3 1.1) vs Fallen 4 2 1.6
-Prince Aidan of Khanduras(2 33 4 0.99) vs Fallen 4 2 1.6
-Prince Aidan of Khanduras(2 31 4 0.99) vs Zombie 10 1 2.8
-Prince Aidan of Khanduras(2 29 4 0.99) vs Fallen 4 2 1.6
-Prince Aidan of Khanduras(3 38 5 0.891) vs Blood Raven 113 8 1.2
+Prince Aidan of Khanduras(1) vs Fallen
+Prince Aidan of Khanduras(1) vs Fallen
+Prince Aidan of Khanduras(1) vs Zombie
+Prince Aidan of Khanduras(1) vs Fallen
+Prince Aidan of Khanduras(2) vs Fallen
+Prince Aidan of Khanduras(2) vs Zombie
+Prince Aidan of Khanduras(2) vs Fallen
+Prince Aidan of Khanduras(3) vs Blood Raven
 The hero won.
 Prince Aidan of Khanduras: LVL8
    HP: 57/65
