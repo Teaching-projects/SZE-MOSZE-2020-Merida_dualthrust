@@ -22,7 +22,10 @@
 
 class JSON {
 public:
-    //constructors
+    /**
+     * @brief Constructor for JSON object
+     * 
+     */
     JSON(const std::map<std::string, std::string>&);
     
     std::map<std::string, std::string> content;
