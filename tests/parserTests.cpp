@@ -3,7 +3,7 @@
 #include <gtest/gtest.h>
 
 TEST(parserTests, parseFile) {
-    ASSERT_NO_THROW(JSON::parseFile("../units/Tolvaj.json"));
+    ASSERT_NO_THROW(JSON::parseFromFile("../units/Tolvaj.json"));
 }
 
 TEST(parserTests, ParseFromStream) {
