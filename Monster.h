@@ -99,9 +99,25 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const Monster& character);
 
 protected:
+    /**
+     * @brief Name of the unit
+     * 
+     */
     const std::string name;
+    /**
+     * @brief HealthPoint of the unit
+     * 
+     */
     int healthPoint;
+    /**
+     * @brief Attack damage of the unit
+     * 
+     */
     int damage;
+    /**
+     * @brief Attack cooldown of the unit
+     * 
+     */
     float cooldown;
 };
 
