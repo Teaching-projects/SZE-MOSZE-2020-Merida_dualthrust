@@ -68,58 +68,64 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="JSON_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef JSON_HEADER</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define JSON_HEADER</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;exception&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Monster_8h.html">Monster.h</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;any&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef JSON_HEADER</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define JSON_HEADER</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;exception&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Monster_8h.html">Monster.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;any&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classJSON.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classJSON.html">JSON</a> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classJSON.html#ab41366d3f2db613b5cd2be0edd84985b">JSON</a>(<span class="keyword">const</span> std::map&lt;std::string, std::string&gt;&amp;);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::map&lt;std::string, std::string&gt; content;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    T get(std::string key){</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">return</span> std::any_cast&lt;T&gt;(content[key]);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> count(std::string);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classJSON.html#acd65a0b1e2ceda335856f470a76adff0">isNumber</a>(<span class="keyword">const</span> std::string&amp;);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">static</span> std::vector&lt;std::string&gt; <a class="code" href="classJSON.html#a632fd6947dc1de83bd3088c0774d1295">split</a>(<span class="keyword">const</span> std::string&amp;, <span class="keywordtype">char</span>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">static</span> std::vector&lt;std::string&gt; splitRowsJSON(<span class="keyword">const</span> std::string&amp;);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">static</span> std::string removeJSONSpaces(std::string);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">static</span> <a class="code" href="classJSON.html">JSON</a> parseString(<span class="keyword">const</span> std::string&amp;);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">static</span> <a class="code" href="classJSON.html">JSON</a> parseStream(std::ifstream&amp;);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">static</span> <a class="code" href="classJSON.html">JSON</a> parseFromFile(<span class="keyword">const</span> std::string&amp;);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classJSON.html#a820f6bd7c781c3710592ddc7c66233a3">deleteCharacters</a>(<span class="keyword">const</span> std::vector&lt;Monster*&gt;&amp;);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    std::vector&lt;std::string&gt; getJsonData(<span class="keyword">const</span> std::string&amp;);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classJSON_1_1ParseException.html">   66</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classJSON_1_1ParseException.html">ParseException</a> : std::exception</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="classJSON_1_1ParseException.html">ParseException</a>(){}</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    };</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classJSON.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classJSON.html">JSON</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classJSON.html#ab41366d3f2db613b5cd2be0edd84985b">JSON</a>(<span class="keyword">const</span> std::map&lt;std::string, std::string&gt;&amp;);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::map&lt;std::string, std::string&gt; content;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    T get(std::string key){</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> std::any_cast&lt;T&gt;(content[key]);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">int</span> count(std::string);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classJSON.html#acd65a0b1e2ceda335856f470a76adff0">isNumber</a>(<span class="keyword">const</span> std::string&amp;);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">static</span> std::vector&lt;std::string&gt; <a class="code" href="classJSON.html#a632fd6947dc1de83bd3088c0774d1295">split</a>(<span class="keyword">const</span> std::string&amp;, <span class="keywordtype">char</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">static</span> std::vector&lt;std::string&gt; <a class="code" href="classJSON.html#a624b10e5bb22197f5e3818589afcb5a6">splitRowsJSON</a>(<span class="keyword">const</span> std::string&amp;);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="classJSON.html#af7161d083a7d4ea5ff0c76bb8a2fe7f4">removeJSONSpaces</a>(std::string);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">static</span> <a class="code" href="classJSON.html">JSON</a> <a class="code" href="classJSON.html#a95fcb53d04ca4e9fcd8117880437ca4d">parseString</a>(<span class="keyword">const</span> std::string&amp;);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">static</span> <a class="code" href="classJSON.html">JSON</a> <a class="code" href="classJSON.html#a928b250d7dcb828898e6814cb32c6182">parseStream</a>(std::ifstream&amp;);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">static</span> <a class="code" href="classJSON.html">JSON</a> <a class="code" href="classJSON.html#a1c04537d4deced04d31fd48ae7009c54">parseFromFile</a>(<span class="keyword">const</span> std::string&amp;);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classJSON.html#a820f6bd7c781c3710592ddc7c66233a3">deleteCharacters</a>(<span class="keyword">const</span> std::vector&lt;Monster*&gt;&amp;);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    std::vector&lt;std::string&gt; getJsonData(<span class="keyword">const</span> std::string&amp;);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classJSON_1_1ParseException.html">  101</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classJSON_1_1ParseException.html">ParseException</a> : std::exception</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="classJSON_1_1ParseException.html">ParseException</a>(){}</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    };</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;};</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassJSON_html_ab41366d3f2db613b5cd2be0edd84985b"><div class="ttname"><a href="classJSON.html#ab41366d3f2db613b5cd2be0edd84985b">JSON::JSON</a></div><div class="ttdeci">JSON(const std::map&lt; std::string, std::string &gt; &amp;)</div><div class="ttdoc">Constructor for JSON object.</div><div class="ttdef"><b>Definition:</b> JSON.cpp:11</div></div>
+<div class="ttc" id="aclassJSON_html_a624b10e5bb22197f5e3818589afcb5a6"><div class="ttname"><a href="classJSON.html#a624b10e5bb22197f5e3818589afcb5a6">JSON::splitRowsJSON</a></div><div class="ttdeci">static std::vector&lt; std::string &gt; splitRowsJSON(const std::string &amp;)</div><div class="ttdoc">Specific splitting method for JSON files, responsible for finding the JSON rows in a given JSON strin...</div><div class="ttdef"><b>Definition:</b> JSON.cpp:77</div></div>
 <div class="ttc" id="aclassJSON_html_a820f6bd7c781c3710592ddc7c66233a3"><div class="ttname"><a href="classJSON.html#a820f6bd7c781c3710592ddc7c66233a3">JSON::deleteCharacters</a></div><div class="ttdeci">void deleteCharacters(const std::vector&lt; Monster * &gt; &amp;)</div><div class="ttdoc">Delete every existing Character object given as input.</div><div class="ttdef"><b>Definition:</b> JSON.cpp:124</div></div>
-<div class="ttc" id="aclassJSON_html_a632fd6947dc1de83bd3088c0774d1295"><div class="ttname"><a href="classJSON.html#a632fd6947dc1de83bd3088c0774d1295">JSON::split</a></div><div class="ttdeci">static std::vector&lt; std::string &gt; split(const std::string &amp;, char)</div><div class="ttdoc">Method for splitting a string by specific characters.</div><div class="ttdef"><b>Definition:</b> JSON.cpp:49</div></div>
+<div class="ttc" id="aclassJSON_html_a928b250d7dcb828898e6814cb32c6182"><div class="ttname"><a href="classJSON.html#a928b250d7dcb828898e6814cb32c6182">JSON::parseStream</a></div><div class="ttdeci">static JSON parseStream(std::ifstream &amp;)</div><div class="ttdoc">JSON parser method, takes an ifstream as an input and returns an object of the JSON class.</div><div class="ttdef"><b>Definition:</b> JSON.cpp:178</div></div>
+<div class="ttc" id="aclassJSON_html_a95fcb53d04ca4e9fcd8117880437ca4d"><div class="ttname"><a href="classJSON.html#a95fcb53d04ca4e9fcd8117880437ca4d">JSON::parseString</a></div><div class="ttdeci">static JSON parseString(const std::string &amp;)</div><div class="ttdoc">JSON parser method. Takes a filepath as input and returns an object of the JSON class.</div><div class="ttdef"><b>Definition:</b> JSON.cpp:133</div></div>
+<div class="ttc" id="aclassJSON_html_af7161d083a7d4ea5ff0c76bb8a2fe7f4"><div class="ttname"><a href="classJSON.html#af7161d083a7d4ea5ff0c76bb8a2fe7f4">JSON::removeJSONSpaces</a></div><div class="ttdeci">static std::string removeJSONSpaces(std::string)</div><div class="ttdoc">Specific whitespace remover method for JSON files, responsible for removing whitespaces from a given ...</div><div class="ttdef"><b>Definition:</b> JSON.cpp:106</div></div>
+<div class="ttc" id="aclassJSON_html_a632fd6947dc1de83bd3088c0774d1295"><div class="ttname"><a href="classJSON.html#a632fd6947dc1de83bd3088c0774d1295">JSON::split</a></div><div class="ttdeci">static std::vector&lt; std::string &gt; split(const std::string &amp;, char)</div><div class="ttdoc">Utility method for handling strings, works similarly to other programming languages' split method.</div><div class="ttdef"><b>Definition:</b> JSON.cpp:49</div></div>
+<div class="ttc" id="aclassJSON_html_a1c04537d4deced04d31fd48ae7009c54"><div class="ttname"><a href="classJSON.html#a1c04537d4deced04d31fd48ae7009c54">JSON::parseFromFile</a></div><div class="ttdeci">static JSON parseFromFile(const std::string &amp;)</div><div class="ttdoc">JSON parser method, takes a string as an input and returns an object of the JSON class.</div><div class="ttdef"><b>Definition:</b> JSON.cpp:195</div></div>
 <div class="ttc" id="aclassJSON_html_acd65a0b1e2ceda335856f470a76adff0"><div class="ttname"><a href="classJSON.html#acd65a0b1e2ceda335856f470a76adff0">JSON::isNumber</a></div><div class="ttdeci">bool isNumber(const std::string &amp;)</div><div class="ttdoc">Method for checking if a given input is a number or not.</div></div>
-<div class="ttc" id="aclassJSON_html"><div class="ttname"><a href="classJSON.html">JSON</a></div><div class="ttdoc">JSON namespace.</div><div class="ttdef"><b>Definition:</b> JSON.h:23</div></div>
+<div class="ttc" id="aclassJSON_html"><div class="ttname"><a href="classJSON.html">JSON</a></div><div class="ttdoc">JSON namespace.</div><div class="ttdef"><b>Definition:</b> JSON.h:24</div></div>
 <div class="ttc" id="aMonster_8h_html"><div class="ttname"><a href="Monster_8h.html">Monster.h</a></div><div class="ttdoc">Monster class.</div></div>
-<div class="ttc" id="aclassJSON_1_1ParseException_html"><div class="ttname"><a href="classJSON_1_1ParseException.html">JSON::ParseException</a></div><div class="ttdef"><b>Definition:</b> JSON.h:66</div></div>
+<div class="ttc" id="aclassJSON_1_1ParseException_html"><div class="ttname"><a href="classJSON_1_1ParseException.html">JSON::ParseException</a></div><div class="ttdef"><b>Definition:</b> JSON.h:101</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

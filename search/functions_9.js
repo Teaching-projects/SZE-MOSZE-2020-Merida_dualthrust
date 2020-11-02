@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['split_54',['split',['../classJSON.html#a632fd6947dc1de83bd3088c0774d1295',1,'JSON']]],
-  ['sufferdamage_55',['sufferDamage',['../classMonster.html#a918bd9927844b54393378574ea221021',1,'Monster']]]
+  ['removejsonspaces_62',['removeJSONSpaces',['../classJSON.html#af7161d083a7d4ea5ff0c76bb8a2fe7f4',1,'JSON']]]
 ];
