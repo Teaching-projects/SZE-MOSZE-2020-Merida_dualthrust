@@ -72,9 +72,9 @@ Bevezető</h1>
 <p>A 'Modern szoftverfejlesztési eszközök' órára készült projekt. A kód c++ nyelven íródik, a projekt célja egy régi típusú parancssori RPG-re hasonlító játék megírása OOP alapelvek követésével és természetesen a modern szoftverfejlesztési eszközök használatával.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 A program működése</h1>
-<p>A projekt keretein belül készített program két játékos harcát játssza le. Futásához összesen hat darab bemeneti paramétert vár, a következő séma alapján:</p>
-<p><b>KarakterNev(string) KarakterHP(int) KarakterATK(int) EllensegNev(string) EllensegHP(int) EllensegATK(int)</b></p>
-<p>Helytelen input esetén a program a parancssorba printeli a helyes sémát, majd kilép. Helyes input esetén a létrehozott karakterek 'oda-vissza' módon támadják egymást, amíg egyikőjük életereje el nem fogy. Ez utóbbi esetben egy szkript leteszteli, hogy a kapott kimenet a valós értékeket közli-e. A program parancssorba printeli, hogy a kimenet helyes, vagy sem.</p>
+<p>A projekt keretein belül készített program egy hős és szörnyek harcát játsza le. Harc közben a felek a megszerzett tapasztalat alapján szintet is lépnek, amely során életerejük, támadásuk ereje és támadási idejük változik. Futásához bemeneti paramétereket vár, a következő séma alapján:</p>
+<p><b>KarakterNev(string) KarakterHP(int) KarakterATK(int) KarakterACD(double) KarakterXPperSzint(int) KarakterHPperSzint(int) KarakterDMGperSzint(int) KarakterACDperSzint(float) EllensegNev(string) EllensegHP(int) EllensegATK(int) EllensegACD EllensegSzint(1) EllensegMaxHP EllensegTapasztalat(0) EllensegXPperSzint EllensegHPperSzint EllensegDMGPerSzint EllensegACDperSzint</b></p>
+<p>Helytelen input esetén a program a parancssorba printeli a helyes sémát, majd kilép. Helyes input esetén a hős és a szörnyek 'oda-vissza' módon támadják egymást, amíg egyikőjük életereje el nem fogy. Ez utóbbi esetben egy szkript leteszteli, hogy a kapott kimenet a valós értékeket közli-e. A program parancssorba printeli, hogy a kimenet helyes, vagy sem.</p>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Csapattagok</h1>
 <p>Lapat Krisztián\ Lilik Ferenc\ Nemes Tamás</p>
