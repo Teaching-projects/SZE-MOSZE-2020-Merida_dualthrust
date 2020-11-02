@@ -36,13 +36,25 @@ class Hero : public Monster{
          * 
          */
         int experience;
-
+        /**
+         * @brief Experience needed to level up.
+         * 
+         */
         const int experiencePerLevel;
-
+        /**
+         * @brief Extra health points per level.
+         * 
+         */
         const int healthPointBonusPerLevel;
-
+        /**
+         * @brief Extra attack damage per level.
+         * 
+         */
         const int damageBonusPerLevel;
-
+        /**
+         * @brief Changing the attack speed cooldown time per level.
+         * 
+         */
         const float cooldownMultiplierPerLevel;
         /**
          * @brief When a units XP is above or equal to 100, it is called.
