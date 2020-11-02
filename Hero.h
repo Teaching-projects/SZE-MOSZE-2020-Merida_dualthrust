@@ -7,7 +7,8 @@
  * With each level-up, the maximum HP also increases, level-ups are calculated from the acquired XP.
  * 
  * @version 1.0
- * @date 2020-11-01 * 
+ * @date 2020-11-01
+ * 
  */
 
 #ifndef HERO_HEADER
@@ -19,13 +20,15 @@
 class Hero : public Monster{
     protected:
         /**
-         * @brief Tracking the units current level
+         * @brief Tracking the units current level.
+         * 
          */
         int level;
         /**
-         * @brief Tracking the units maximum Health Points
+         * @brief Tracking the units maximum HealthPoints.
          * 
          * lvlUp() uses this to raise a units HP after a level up, and uses it to set the current up to max.
+         * 
          */
         int maximumHealthPoint;
         /**
@@ -57,28 +60,29 @@ class Hero : public Monster{
          */
         const float cooldownMultiplierPerLevel;
         /**
-         * @brief When a units XP is above or equal to 100, it is called.
+         * @brief Handles the leveling of a unit.
          * 
-         * If a unit has N times 100 XP it is called N times.
-         * Sets a units maximumHP and ATK to 1.1 times the current value. Also it sets current HP to maximumHP.
-         * lvlUp() method is used by in the deliverHit() method.
+         When the unit's XP hits the needed amount described in the JSON file of the unit.
+         After leveling up, the unit's stats change based on the levelup rate also described in the JSON file
          * 
          */
         void levelUp();
           
     public:
         /**
-         * @brief Constructor for our Hero class, uses the same inputs as a Monster class.
+         * @brief Constructor for our Hero class.
          */
-        Hero(const std::string&, int, int, double, const int, const int, const int, const float);    ///<Constructor for our Hero class. Uses the same inputs as a Monster class.
+        Hero(const std::string&, int, int, double, const int, const int, const int, const float);
         /**
-         * @brief Getter for maximum health points of our Hero
-         * @return  double const&
+         * @brief Getter for maximum health points of our Hero.
+         * @return int const&
+         * 
          */
         int const & getMaxHealthPoints(/**There's no input parameter here.*/) const;
         /**
-         * @brief Getter for level of our Hero
-         * @return  double const&
+         * @brief Getter for level of our Hero.
+         * @return  int const&
+         * 
          */
         int const & getLevel(/**There's no input parameter here.*/) const;
         
@@ -88,6 +92,7 @@ class Hero : public Monster{
          * Same as the Monster class's, only difference is that it returns a Hero object instead of a Monster.
          * 
          * @return Hero 
+         * 
          */
         static Hero parse(const std::string&);
         /**
@@ -96,6 +101,7 @@ class Hero : public Monster{
          * Also calls the lvlUp() method when sufficient XP is gained for a levelup.
          * 
          * @param enemy 
+         * 
          */
         void deliverHit(Monster* enemy) override;
     };
