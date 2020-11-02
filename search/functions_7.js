@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parse_48',['parse',['../classHero.html#aac4d67bad651fbeb489905675545bb88',1,'Hero::parse()'],['../classMonster.html#a0b04445ff85b508acd45fa24732e4096',1,'Monster::parse()']]]
+  ['monster_48',['Monster',['../classMonster.html#ae1ec92052b580f3306d25bc4390c318e',1,'Monster']]]
 ];

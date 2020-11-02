@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['split_49',['split',['../classJSON.html#a632fd6947dc1de83bd3088c0774d1295',1,'JSON']]],
-  ['sufferdamage_50',['sufferDamage',['../classMonster.html#a918bd9927844b54393378574ea221021',1,'Monster']]]
+  ['parse_49',['parse',['../classHero.html#aac4d67bad651fbeb489905675545bb88',1,'Hero::parse()'],['../classMonster.html#a0b04445ff85b508acd45fa24732e4096',1,'Monster::parse()']]]
 ];
