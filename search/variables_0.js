@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['experience_52',['experience',['../classHero.html#ad8304002eae633bc0c32ee0980cf7d1b',1,'Hero']]]
+  ['cooldownmultiplierperlevel_56',['cooldownMultiplierPerLevel',['../classHero.html#a926246c88ed699f30992d5170eb63ff0',1,'Hero']]]
 ];

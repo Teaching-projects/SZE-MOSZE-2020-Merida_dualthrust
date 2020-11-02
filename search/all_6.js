@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['json_14',['JSON',['../classJSON.html',1,'JSON'],['../classJSON.html#ab41366d3f2db613b5cd2be0edd84985b',1,'JSON::JSON()']]],
-  ['json_2eh_15',['JSON.h',['../JSON_8h.html',1,'']]]
+  ['isalive_16',['isAlive',['../classMonster.html#a77ad18c44b3fb2df92b30ece4dc7847b',1,'Monster']]],
+  ['isnumber_17',['isNumber',['../classJSON.html#acd65a0b1e2ceda335856f470a76adff0',1,'JSON']]]
 ];

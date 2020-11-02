@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['parse_22',['parse',['../classHero.html#aac4d67bad651fbeb489905675545bb88',1,'Hero::parse()'],['../classMonster.html#a0b04445ff85b508acd45fa24732e4096',1,'Monster::parse()']]],
-  ['parseexception_23',['ParseException',['../classJSON_1_1ParseException.html',1,'JSON']]]
+  ['operator_3c_3c_25',['operator&lt;&lt;',['../classMonster.html#aa35c4001f5786899aea7eb8168aa6f58',1,'Monster']]]
 ];

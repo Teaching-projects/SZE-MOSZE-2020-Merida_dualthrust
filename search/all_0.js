@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['deletecharacters_0',['deleteCharacters',['../classJSON.html#a820f6bd7c781c3710592ddc7c66233a3',1,'JSON']]],
-  ['deliverhit_1',['deliverHit',['../classHero.html#a9c9c0c619c2121dc0083c8dc3a9fcf50',1,'Hero']]]
+  ['cooldownmultiplierperlevel_0',['cooldownMultiplierPerLevel',['../classHero.html#a926246c88ed699f30992d5170eb63ff0',1,'Hero']]]
 ];

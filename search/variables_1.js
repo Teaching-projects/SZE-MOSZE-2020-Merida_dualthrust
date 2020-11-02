@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['level_53',['level',['../classHero.html#a42f1236a8e4a3f8c7e47193e544ee01f',1,'Hero']]]
+  ['damagebonusperlevel_57',['damageBonusPerLevel',['../classHero.html#a6ff46be0ecde98f50f324058a1a289e4',1,'Hero']]]
 ];
