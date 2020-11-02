@@ -55,7 +55,9 @@ class Hero : public Monster{
          */
         const int damageBonusPerLevel;
         /**
-         * @brief Changing the attack speed cooldown time per level.
+         * @brief Member variable responsible for the rate of change in a given Hero's cooldown after leveling up. 
+         * 
+         * The data is initially stored in a JSON file.
          * 
          */
         const float cooldownMultiplierPerLevel;
