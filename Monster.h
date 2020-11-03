@@ -69,7 +69,7 @@ public:
     void sufferDamage(Monster*);
     /**
      * @brief The monster object whose sufferDamage method is called will lose healthpoints based on the attacker's damage points. The attacker object is the one whose reference is passed in the argument list.
-     * @param enemy Monster type object
+     * @param enemy Monster or Hero type object that represents the attacker
      * 
      */
     virtual void deliverHit(Monster* enemy);
