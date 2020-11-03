@@ -11,9 +11,9 @@ include_directories(${GTEST_INCLUDE_DIRS})
 # and the GTest and pthread library
 
 add_executable( runParserTests ParserTests.cpp )
-target_link_libraries(runTests gtest gtest_main pthread)
+target_link_libraries(runParserTests gtest gtest_main pthread)
 target_compile_features(runParserTests PRIVATE cxx_std_17)
 
 add_executable( runUnitTests UnitTests.cpp )
-target_link_libraries(runTests gtest gtest_main pthread)
+target_link_libraries(runUnitTests gtest gtest_main pthread)
 target_compile_features(runUnitTests PRIVATE cxx_std_17)
