@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
-        run: make Install_all_dependencies
+        run: make Install_googletest_and_cmake
       - name: cmake
         run: make Make_parsertests_with_cmake
       - name: Run Tests
