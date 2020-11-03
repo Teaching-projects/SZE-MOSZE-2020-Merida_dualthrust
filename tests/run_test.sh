@@ -2,7 +2,8 @@
 
 IFS=$'\n'
 
-../a.out scenario1.json >> results_scenario_1.txt
+cd..
+./a.out scenario1.json >> results_scenario_1.txt
 
 diff results_scenario_1.txt results_correct_scenario_1.txt
 
@@ -13,7 +14,8 @@ else
 echo "Test failed."
 fi
 
-../a.out scenario2.json >> results_scenario_2.txt
+cd ..
+./a.out scenario2.json >> results_scenario_2.txt
 
 diff results_scenario_2.txt results_correct_scenario_2.txt
 
