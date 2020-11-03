@@ -40,8 +40,8 @@ Valgrind:
 In-out_tests:
 	chmod +x run_test.sh && ./run_test.sh
 
-Generate_documentation: 
-	doxygen doxconf
+Generate_documentation:
+	doxygen doxyconf
 
 Make_parsertests_with_cmake:
 	cd tests && cmake . && make
