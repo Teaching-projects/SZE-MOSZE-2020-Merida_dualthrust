@@ -1,5 +1,6 @@
 #include "../JSON.cpp"
 #include "../Monster.cpp"
+#include "../Hero.cpp"
 #include <gtest/gtest.h>
 
 TEST(parserTests, parseFile) {
@@ -55,11 +56,13 @@ TEST(parserTests, Format_badDelimiter) {
 
 //Test for the Monster and Hero class
 
-TEST(unitTests, parseUnit){
-    ASSERT_NO_THROW(Monster("asd",10,10,0.5));
+TEST(unitTests, parseMonster){
+    ASSERT_NO_THROW(Monster::parse("../Zombie.json");
 }
 
-
+TEST(unitTests, parseHero){
+    ASSERT_NO_THROW(Hero::parse("../Dark_Wanderer.json");
+}   
 
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
