@@ -7,12 +7,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
-        run: sudo apt install libgtest-dev && sudo apt install cmake && cd /usr/src/gtest && sudo cmake . && sudo make && sudo cp *.a /usr/lib && sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
+        run: make Install_all_dependencies
       - name: cmake
-        run: cd tests && cmake . && make
+        run: make Make_parsertests_with_cmake
       - name: Run Tests
-        run: cd tests && ./runTests
-      - name: Run cmake
-        run: cd tests && cmake . && make
-      - name: Run parser tests
-        run: cd tests && ./runTests
+        run: make Run_parsertest
