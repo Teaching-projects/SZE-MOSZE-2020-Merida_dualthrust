@@ -10,7 +10,7 @@ jobs:
         run: make Install_googletest_and_cmake
       - name: cmake
         run: make Make_tests_with_cmake
-      - name: Run Parser tests
+      - name: Run parser tests
         run: make Run_parsertest
       - name: Run unit tests
         run: make Run_unittests
