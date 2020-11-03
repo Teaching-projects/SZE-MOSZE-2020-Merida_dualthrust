@@ -56,7 +56,7 @@ TEST(parserTests, Format_badDelimiter) {
 //Test for the Monster and Hero class
 
 TEST(unitTests, parseUnit){
-    ASSERT_NO_THROW(Monster::parse("../Zombie.json"));
+    ASSERT_NO_THROW(Monster("asd",10,10,0.5));
 }
 
 
