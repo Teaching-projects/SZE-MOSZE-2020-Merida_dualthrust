@@ -76,6 +76,17 @@ TEST(unitTests, sufferDamage){
     ASSERT_EQ(dead.isAlive(), false);
 }
 
+TEST(unitTests, levelUp){
+    Hero hero = Hero("Hero",100,100,100,100,100,100,2);
+    Monster enemy = Monster("Monster",100,1,1);
+    hero.fightTilDeath(enemy);
+
+    ASSERT_EQ(hero.getLevel(),2);
+    ASSERT_EQ(hero.getHealthPoints(),200);
+    ASSERT_EQ(hero.getAttackCoolDown(),200);
+    ASSERT_EQ(hero.getDamage(),200);
+}
+
 
 
 int main(int argc, char** argv) {
