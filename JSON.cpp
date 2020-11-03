@@ -102,6 +102,13 @@ JSON JSON::parseString(std::string const &json_string)
 
 	for (auto& row : rows) // access by reference to avoid copying
 	{
+		//Check if the file contains '{' and '}' delimiters
+		std::string spaceless = json_string;
+		spaceless.erase(remove_if(spaceless.begin(), spaceless.end(), isspace), spaceless.end());
+		if(spaceless[0] != '{' || spaceless[spaceless.length()-1]!='}'){
+			throw ParseException();
+		}
+
 		//Delete '{' and '}' from the raw string
 		row.erase(remove(row.begin(), row.end(), '{'), row.end());
 		row.erase(remove(row.begin(), row.end(), '}'), row.end());
@@ -118,7 +125,9 @@ JSON JSON::parseString(std::string const &json_string)
 			key = removeJSONSpaces(split(split(row, '"')[1], '"')[0]);
 			value = removeJSONSpaces(split(row, ':')[1]);
 		}
-		catch (const std::exception& ex) {}
+		catch (const std::exception& ex) {
+			throw ParseException();
+		}
 
 		////If the value is a string, we remove the " characters
 		if (value[0] == '"') 

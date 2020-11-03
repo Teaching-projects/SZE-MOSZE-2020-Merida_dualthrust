@@ -43,6 +43,16 @@ TEST(parserTests, Format_whitespaces) {
     ASSERT_EQ(normal.get<float>("float"),spaces.get<float>("float"));
 }
 
+TEST(parserTests, Format_badDelimiter) {
+    bool parseException=false;
+    try{
+    JSON bad_delimiter = JSON::parseFromFile("./Testfiles/missing_curly.json");
+    }catch(JSON::ParseException){
+        parseException=true;
+    }
+    ASSERT_EQ(parseException,true);
+}
+
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
