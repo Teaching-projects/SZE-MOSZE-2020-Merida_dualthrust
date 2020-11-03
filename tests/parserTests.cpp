@@ -18,7 +18,13 @@ TEST(parserTests, TypeCastCheck) {
     ASSERT_EQ(data.get<std::string>("string"), "Merida Dualthrust");
     ASSERT_EQ(data.get<int>("int"), 100);
     ASSERT_EQ(data.get<float>("float"), 0.1f);
+}
 
+TEST(parserTests, Format_oneLine) {
+    JSON data = JSON::parseFromFile("./Testfiles/oneline.json");
+    ASSERT_EQ(data.get<std::string>("string"), "Merida Dualthrust");
+    ASSERT_EQ(data.get<int>("int"), 100);
+    ASSERT_EQ(data.get<float>("float"), 0.1f);
 }
 
 int main(int argc, char** argv) {

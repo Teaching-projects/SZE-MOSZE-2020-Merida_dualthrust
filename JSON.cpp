@@ -153,10 +153,7 @@ JSON JSON::parseString(std::string const &json_string)
 			key = removeJSONSpaces(split(split(row, '"')[1], '"')[0]);
 			value = removeJSONSpaces(split(row, ':')[1]);
 		}
-		catch (const std::exception& ex) 
-		{
-
-		}
+		catch (const std::exception& ex) {}
 
 		////If the value is a string, we remove the " characters
 		if (value[0] == '"') 
