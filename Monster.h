@@ -69,7 +69,6 @@ public:
     void sufferDamage(Monster*);
     /**
      * @brief Method for delivering a hit during a fight. Takes a pointer to a monster object as input.
-     * 
      * @param enemy
      * 
      */
