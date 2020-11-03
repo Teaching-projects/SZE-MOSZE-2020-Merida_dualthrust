@@ -104,7 +104,6 @@ public:
      * 
      */
     void deleteCharacters(const std::vector<Monster*>&);
-    std::vector<std::string> getJsonData(const std::string&);
 
     class ParseException : std::exception
 	{
