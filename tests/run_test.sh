@@ -14,7 +14,6 @@ else
 echo "Test failed."
 fi
 
-cd ..
 ./a.out scenario2.json >> results_scenario_2.txt
 
 diff results_scenario_2.txt results_correct_scenario_2.txt
