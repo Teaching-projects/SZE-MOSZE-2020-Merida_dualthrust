@@ -69,6 +69,16 @@ TEST(unitTests, isAlive){
     ASSERT_EQ(dead.isAlive(), false);
 }
 
+TEST(unitTests, getHealth){
+    Monster healthy = Monster("Healthy",1000,1000,1000);
+    ASSERT_EQ(healthy.getHealthPoints(), 1000);
+}
+
+TEST(unitTests, getDamage){
+    Monster strong = Monster("strong",1000,1000,1000);
+    ASSERT_EQ(strong.getDamage(), 1000);
+}
+
 TEST(unitTests, sufferDamage){
     Monster attacker = Monster("Attacker",10,10,10);
     Monster dead = Monster("Dead",10,10,10);
@@ -86,6 +96,8 @@ TEST(unitTests, levelUp){
     ASSERT_EQ(hero.getAttackCoolDown(),200);
     ASSERT_EQ(hero.getDamage(),200);
 }
+
+
 
 
 
