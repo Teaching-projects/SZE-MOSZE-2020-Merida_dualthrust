@@ -43,8 +43,11 @@ In-out_tests:
 Generate_documentation:
 	doxygen doxyconf
 
-Make_parsertests_with_cmake:
+Make_tests_with_cmake:
 	cd tests && cmake . && make
 
 Run_parsertest:
-	cd tests && ./runTests
+	cd tests && ./runParserTests
+
+Run_unittests:
+	cd tests && ./runUnitTests

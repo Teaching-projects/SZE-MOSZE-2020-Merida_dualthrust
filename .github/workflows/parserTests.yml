@@ -1,5 +1,5 @@
   
-name: Parser Tests
+name: Unit tests
 on: push
 jobs:
   build_and_test:
@@ -9,6 +9,8 @@ jobs:
       - name: Install dependencies
         run: make Install_googletest_and_cmake
       - name: cmake
-        run: make Make_parsertests_with_cmake
-      - name: Run Tests
+        run: make Make_tests_with_cmake
+      - name: Run Parser tests
         run: make Run_parsertest
+      - name: Run unit tests
+        run: make Run_unittests
