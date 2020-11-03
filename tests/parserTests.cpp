@@ -38,9 +38,9 @@ TEST(parserTests, Format_mixed) {
 TEST(parserTests, Format_whitespaces) {
     JSON normal = JSON::parseFromFile("./Testfiles/normal.json");
     JSON spaces  = JSON::parseFromFile("./Testfiles/whitespaces.json");
-    ASSERT_EQ(normal_order.get<std::string>("string"), spaces.get<std::string>("string"));
-    ASSERT_EQ(normal_order.get<int>("int"), spaces.get<int>("int"));
-    ASSERT_EQ(normal_order.get<float>("float"),spaces.get<float>("float"));
+    ASSERT_EQ(normal.get<std::string>("string"), spaces.get<std::string>("string"));
+    ASSERT_EQ(normal.get<int>("int"), spaces.get<int>("int"));
+    ASSERT_EQ(normal.get<float>("float"),spaces.get<float>("float"));
 }
 
 int main(int argc, char** argv) {
