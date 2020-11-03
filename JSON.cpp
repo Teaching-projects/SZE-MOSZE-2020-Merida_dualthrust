@@ -8,7 +8,7 @@
 #include <type_traits>
 
 
-JSON::JSON(const std::map<std::string, std::string>& incoming_content):content(incoming_content)
+JSON::JSON(const std::map<std::string, std::any>& incoming_content):content(incoming_content)
 {
 
 }
@@ -132,7 +132,7 @@ void JSON::deleteCharacters(const std::vector<Monster*>& characters)
 
 JSON JSON::parseString(std::string const &json_string)
 {
-	std::map<std::string, std::string> parsedMap;
+	std::map<std::string, std::any> parsedMap;
 	std::vector<std::string> rows = splitRowsJSON(json_string);
 
 	for (auto& row : rows) // access by reference to avoid copying
@@ -187,7 +187,7 @@ JSON JSON::parseStream(std::ifstream &f) {
 	}
 	else
 	{
-		std::map<std::string, std::string> empty_content;
+		std::map<std::string, std::any> empty_content;
 		return JSON(empty_content);
 	}
 }
@@ -202,7 +202,7 @@ JSON JSON::parseFromFile(const std::string& path)
 	}
 	else
 	{
-		std::map<std::string, std::string> empty_content;
+		std::map<std::string, std::any> empty_content;
 		return JSON(empty_content);
 	}
 }

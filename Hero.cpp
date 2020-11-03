@@ -32,15 +32,15 @@
     
     Hero Hero::parse(const std::string& path)  //JSON parse method for creating a Monster object based on a given JSON input file
     {
-        std::map<std::string, std::string> parsedMap    =   JSON::parseFromFile(path).content;
-        std::string name                                =   parsedMap["name"];
-        int heatlhPoints                                =   std::stoi(parsedMap["base_health_points"]);
-        int damage                                      =   std::stoi(parsedMap["base_damage"]);
-        float cooldown                                  =   std::stof(parsedMap["base_attack_cooldown"]);
-        int experiencePerLevel                          =   std::stoi(parsedMap["experience_per_level"]);
-        int healthPointBonusPerLevel                    =   std::stoi(parsedMap["health_point_bonus_per_level"]);
-        int damageBonusPerLevel                         =   std::stoi(parsedMap["damage_bonus_per_level"]);
-        float cooldownMultiplierPerLevel                =   std::stof(parsedMap["cooldown_multiplier_per_level"]);
+        JSON data    =   JSON::parseFromFile(path);
+        std::string name                                =   data.get<std::string>("name");
+        int heatlhPoints                                =   data.get<int>("base_health_points");
+        int damage                                      =   data.get<int>("base_damage");
+        float cooldown                                  =   data.get<float>("base_attack_cooldown");
+        int experiencePerLevel                          =   data.get<int>("experience_per_level");
+        int healthPointBonusPerLevel                    =   data.get<int>("health_point_bonus_per_level");
+        int damageBonusPerLevel                         =   data.get<int>("damage_bonus_per_level");
+        float cooldownMultiplierPerLevel                =   data.get<float>("cooldown_multiplier_per_level");
 
         return Hero(name, heatlhPoints, damage, cooldown, experiencePerLevel, healthPointBonusPerLevel, damageBonusPerLevel, cooldownMultiplierPerLevel);
     }

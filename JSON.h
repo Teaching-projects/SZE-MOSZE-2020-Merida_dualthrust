@@ -19,7 +19,7 @@
 #include <any>
 #include <fstream>
 #include <sstream>
-
+#include <iostream>
 
 class JSON {
 public:
@@ -27,13 +27,21 @@ public:
      * @brief Constructor for JSON object.
      * 
      */
-    JSON(const std::map<std::string, std::string>&);
-    
-    std::map<std::string, std::string> content;
-    
+    JSON(const std::map<std::string, std::any>&);
+        
     template <typename T>
     T get(std::string key){
-        return std::any_cast<T>(content[key]);
+        std::string value =  std::any_cast<std::string>(content[key]);
+        std::any converted;
+        if (std::is_same<T, int>::value){
+            converted=(std::stoi(value));
+        }else if(std::is_same<T, float>::value){
+            converted=(std::stof(value));
+        }else if(std::is_same<T, std::string>::value){
+            converted=value;
+        }
+        
+        return std::any_cast<T>(converted);
     }
 
     int count(std::string);
@@ -103,6 +111,9 @@ public:
 		public:
 		ParseException(){}
 	};
+
+    protected:
+        std::map<std::string, std::any> content;
 };
 
 #endif
