@@ -35,7 +35,7 @@ Valgrind:
 	valgrind $(VALGRINDFLAGS) $(VALGRINDPARAMETER)
 
 In-out_tests:
-	chmod +x run_test.sh && ./run_test.sh
+	cd tests && chmod +x run_test.sh && ./run_test.sh
 
 Generate_documentation: 
 	doxygen doxconf
