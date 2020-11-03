@@ -57,11 +57,11 @@ TEST(parserTests, Format_badDelimiter) {
 //Test for the Monster and Hero class
 
 TEST(unitTests, parseMonster){
-    ASSERT_NO_THROW(Monster::parse("../Zombie.json");
+    ASSERT_NO_THROW(Monster::parse("../Zombie.json"));
 }
 
 TEST(unitTests, parseHero){
-    ASSERT_NO_THROW(Hero::parse("../Dark_Wanderer.json");
+    ASSERT_NO_THROW(Hero::parse("../Dark_Wanderer.json"));
 }   
 
 int main(int argc, char** argv) {
