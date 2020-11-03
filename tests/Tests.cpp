@@ -2,8 +2,6 @@
 #include "../Monster.h"
 #include <gtest/gtest.h>
 
-Monster unit = Monster("Monster",10,10,0.5);
-
 TEST(parserTests, parseFile) {
     ASSERT_NO_THROW(JSON::parseFromFile("../units/Tolvaj.json"));
 }
@@ -53,6 +51,12 @@ TEST(parserTests, Format_badDelimiter) {
         parseException=true;
     }
     ASSERT_EQ(parseException,true);
+}
+
+//Test for the Monster and Hero class
+
+TEST(unitTests, parseUnit){
+    ASSERT_NO_THROW(Monster::parse("../Zombie.json"));
 }
 
 
