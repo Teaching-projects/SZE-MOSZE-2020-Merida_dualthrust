@@ -107,7 +107,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a918bd9927844b54393378574ea221021"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for depleting HealthPoints during fight Basic subtraction operation. If the HealthPoint drops below 0 we set it to 0.  <a href="classMonster.html#a918bd9927844b54393378574ea221021">More...</a><br /></td></tr>
 <tr class="separator:a918bd9927844b54393378574ea221021"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaebd73a726b359c29c5e54777e235ba"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#aeaebd73a726b359c29c5e54777e235ba">deliverHit</a> (<a class="el" href="classMonster.html">Monster</a> *enemy)</td></tr>
-<tr class="memdesc:aeaebd73a726b359c29c5e54777e235ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method for delivering a hit during a fight. Takes a pointer to a monster object as input.  <a href="classMonster.html#aeaebd73a726b359c29c5e54777e235ba">More...</a><br /></td></tr>
+<tr class="memdesc:aeaebd73a726b359c29c5e54777e235ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">The monster object whose sufferDamage method is called will lose healthpoints based on the attacker's damage points. The attacker object is the one whose reference is passed in the argument list.  <a href="classMonster.html#aeaebd73a726b359c29c5e54777e235ba">More...</a><br /></td></tr>
 <tr class="separator:aeaebd73a726b359c29c5e54777e235ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77ad18c44b3fb2df92b30ece4dc7847b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a77ad18c44b3fb2df92b30ece4dc7847b">isAlive</a> () const</td></tr>
 <tr class="memdesc:a77ad18c44b3fb2df92b30ece4dc7847b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bool function to examine if the <a class="el" href="classMonster.html">Monster</a> is dead or alive.  <a href="classMonster.html#a77ad18c44b3fb2df92b30ece4dc7847b">More...</a><br /></td></tr>
@@ -238,10 +238,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Method for delivering a hit during a fight. Takes a pointer to a monster object as input. </p>
+<p>The monster object whose sufferDamage method is called will lose healthpoints based on the attacker's damage points. The attacker object is the one whose reference is passed in the argument list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">enemy</td><td></td></tr>
+    <tr><td class="paramname">enemy</td><td><a class="el" href="classMonster.html">Monster</a> type object </td></tr>
   </table>
   </dd>
 </dl>
