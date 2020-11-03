@@ -68,7 +68,7 @@ public:
      */
     void sufferDamage(Monster*);
     /**
-     * @brief Method for delivering a hit during a fight. Takes a pointer to a monster object as input.
+     * @brief The monster object whose sufferDamage method is called will lose healthpoints based on the attacker's damage points. The attacker object is the one whose reference is passed in the argument list.
      * @param enemy
      * 
      */
