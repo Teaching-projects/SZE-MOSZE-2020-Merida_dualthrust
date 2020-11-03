@@ -62,7 +62,21 @@ TEST(unitTests, parseMonster){
 
 TEST(unitTests, parseHero){
     ASSERT_NO_THROW(Hero::parse("../Dark_Wanderer.json"));
-}   
+}
+
+TEST(unitTests, isAlive){
+    Monster dead = Monster("Dead",0,0,0)
+    ASSERT_EQ(dead.isAlive(), false);
+}
+
+TEST(unitTests, sufferDamage){
+    Monster attacker = Monster("Attacker",10,10,10);
+    Monster dead = Monster("Dead",10,10,10);
+    dead.sufferDamage(attacker);
+    ASSERT_EQ(dead.isAlive(), false);
+}
+
+
 
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
