@@ -2,7 +2,6 @@
 
 IFS=$'\n'
 
-cd..
 ./a.out scenario1.json >> results_scenario_1.txt
 
 diff results_scenario_1.txt results_correct_scenario_1.txt
