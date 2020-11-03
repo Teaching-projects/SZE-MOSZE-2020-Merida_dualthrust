@@ -2,7 +2,7 @@
 #include "../Monster.h"
 #include <gtest/gtest.h>
 
-Monster unit;
+Monster unit = NULL;
 
 TEST(parserTests, parseFile) {
     ASSERT_NO_THROW(JSON::parseFromFile("../units/Tolvaj.json"));
@@ -58,7 +58,7 @@ TEST(parserTests, Format_badDelimiter) {
 
 
 int main(int argc, char** argv) {
-    unit = Monster::parse("../Zombie");
+    unit = Monster::parse("../Zombie.json");
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
