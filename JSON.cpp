@@ -86,11 +86,7 @@ std::vector<std::string> JSON::splitRowsJSON(const std::string& s)
 
 		if ((s[i] == ',' && remaining[0]=='"') || i == s.length() - 2)
 		{
-			if (i == s.length() - 1)
-			{
-				current_value += s[i];
-			}
-
+			current_value += s[i];
 			output.push_back(current_value);
 			current_value = "";
 		}
