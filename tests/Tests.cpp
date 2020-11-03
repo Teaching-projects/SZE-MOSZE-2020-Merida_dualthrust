@@ -65,7 +65,7 @@ TEST(unitTests, parseHero){
 }
 
 TEST(unitTests, isAlive){
-    Monster dead = Monster("Dead",0,0,0)
+    Monster dead = Monster("Dead",0,0,0);
     ASSERT_EQ(dead.isAlive(), false);
 }
 
