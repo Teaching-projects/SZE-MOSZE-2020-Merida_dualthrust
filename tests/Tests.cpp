@@ -1,6 +1,8 @@
 #include "../JSON.cpp"
-
+#include "../Monster.h"
 #include <gtest/gtest.h>
+
+Monster unit;
 
 TEST(parserTests, parseFile) {
     ASSERT_NO_THROW(JSON::parseFromFile("../units/Tolvaj.json"));
@@ -11,7 +13,7 @@ TEST(parserTests, ParseFromStream) {
     ASSERT_NO_THROW(JSON::parseStream(f));
 }
 
-//==========================================================================
+//TESTS FOR THE JSON CLASS
 
 TEST(parserTests, TypeCastCheck) {
     JSON data = JSON::parseFromFile("./Testfiles/normal.json");
@@ -53,7 +55,10 @@ TEST(parserTests, Format_badDelimiter) {
     ASSERT_EQ(parseException,true);
 }
 
+
+
 int main(int argc, char** argv) {
+    unit = Monster::parse("../Zombie");
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
