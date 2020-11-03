@@ -82,7 +82,7 @@ TEST(unitTests, levelUp){
     hero.fightTilDeath(enemy);
 
     ASSERT_EQ(hero.getLevel(),2);
-    ASSERT_EQ(hero.getHealthPoints(),200);
+    ASSERT_EQ(hero.getHealthPoints(),199);
     ASSERT_EQ(hero.getAttackCoolDown(),200);
     ASSERT_EQ(hero.getDamage(),200);
 }
