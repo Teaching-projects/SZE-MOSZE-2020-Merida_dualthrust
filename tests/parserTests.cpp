@@ -1,6 +1,7 @@
 #include "../JSON.cpp"
 
 #include <gtest/gtest.h>
+#include <iostream>
 
 TEST(parserTests, parseFile) {
     ASSERT_NO_THROW(JSON::parseFromFile("../units/Tolvaj.json"));
@@ -24,6 +25,7 @@ TEST(parserTests, Format_oneLine) {
     JSON data = JSON::parseFromFile("./Testfiles/oneline.json");
     ASSERT_EQ(data.get<std::string>("string"), "Merida Dualthrust");
     ASSERT_EQ(data.get<int>("int"), 100);
+    std::cout<<data.get<float>("float")<<std::endl;
     ASSERT_EQ(data.get<float>("float"), 0.1f);
 }
 
