@@ -17,7 +17,7 @@ TEST(parserTests, TypeCastCheck) {
     JSON data = JSON::parseFromFile("./Testfiles/normal.json");
     ASSERT_EQ(data.get<std::string>("string"), "Merida Dualthrust");
     ASSERT_EQ(data.get<int>("int"), 100);
-    ASSERT_EQ(data.get<int>("float"), 0.1f);
+    ASSERT_EQ(data.get<float>("float"), 0.1f);
 
 }
 
