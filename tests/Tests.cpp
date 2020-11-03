@@ -72,7 +72,7 @@ TEST(unitTests, isAlive){
 TEST(unitTests, sufferDamage){
     Monster attacker = Monster("Attacker",10,10,10);
     Monster dead = Monster("Dead",10,10,10);
-    dead.sufferDamage(attacker);
+    dead.sufferDamage(attacker&);
     ASSERT_EQ(dead.isAlive(), false);
 }
 
