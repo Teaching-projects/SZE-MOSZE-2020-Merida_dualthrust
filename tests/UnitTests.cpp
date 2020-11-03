@@ -1,3 +1,4 @@
+#include "../JSON.cpp"
 #include "../Monster.cpp"
 #include "../Hero.cpp"
 #include <gtest/gtest.h>
