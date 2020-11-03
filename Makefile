@@ -32,7 +32,7 @@ Static_code_analysis_cppcheck:
 	cppcheck $(CPPFILES) --output-file=cppcheck_results.txt && chmod +x warning_check.sh && ./warning_check.sh && chmod +x error_check.sh && ./error_check.sh
 
 Valgrind:
-	valgrind $(VALGRINDFLAGS) $(VLGRNDPARAM)
+	valgrind $(VALGRINDFLAGS) $(VALGRINDPARAMETER)
 
 In-out_tests:
 	chmod +x run_test.sh && ./run_test.sh
