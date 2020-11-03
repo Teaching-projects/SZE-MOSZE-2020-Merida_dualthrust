@@ -10,9 +10,7 @@ jobs:
         run: sudo apt install libgtest-dev && sudo apt install cmake && cd /usr/src/gtest && sudo cmake . && sudo make && sudo cp *.a /usr/lib && sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
       - name: cmake
         run: cd tests && cmake . && make
-      - name: Run Tests
-        run: cd tests && ./runTests
-      - name: Run cmake
-        run: cd tests && cmake . && make
-      - name: Run parser tests
-        run: cd tests && ./runTests
+      - name: Run Parser tests
+        run: cd tests && ./runParserTests
+      - name: Run unit tests
+        run: cd tests && ./runUnitTests
