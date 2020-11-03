@@ -1,5 +1,5 @@
 #include "../JSON.cpp"
-#include "../Monster.h"
+#include "../Monster.cpp"
 #include <gtest/gtest.h>
 
 TEST(parserTests, parseFile) {
