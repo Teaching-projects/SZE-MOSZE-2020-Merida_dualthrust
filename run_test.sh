@@ -2,14 +2,20 @@
 
 IFS=$'\n'
 
-./a.out units/Tolvaj.json units/Robin.json > results.txt
-./a.out units/Tolvaj.json units/Tomcat.json >> results.txt
-./a.out units/Robin.json units/Tolvaj.json >> results.txt
-./a.out units/Robin.json units/Tomcat.json >> results.txt
-./a.out units/Tomcat.json units/Tolvaj.json >> results.txt
-./a.out units/Tomcat.json units/Robin.json >> results.txt
+./a.out scenario1.json >> results_scenario_1.txt
 
-diff results.txt results_correct.txt
+diff results_scenario_1.txt results_correct_scenario_1.txt
+
+if [ $? -eq 0 ]
+then
+echo "Test successful."
+else
+echo "Test failed."
+fi
+
+./a.out scenario2.json >> results_scenario_2.txt
+
+diff results_scenario_2.txt results_correct_scenario_2.txt
 
 if [ $? -eq 0 ]
 then
