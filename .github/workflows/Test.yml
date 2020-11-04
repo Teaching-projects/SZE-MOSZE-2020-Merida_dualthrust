@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
-        run: make Install_all_dependencies
+        run: sudo apt install -y cppcheck && sudo apt install -y valgrind && sudo apt install -y gcc g++
       - name: Cppcheck code analysis
         run: make Static_code_analysis_cppcheck
       - name: Upload Cppcheck result 
