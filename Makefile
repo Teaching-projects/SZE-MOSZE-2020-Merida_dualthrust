@@ -34,7 +34,7 @@ Install_googletest_and_cmake:
 Static_code_analysis_cppcheck:
 	cppcheck $(CPPFILES) --output-file=cppcheck_results.txt && chmod +x warning_check.sh && ./warning_check.sh && chmod +x error_check.sh && ./error_check.sh
 
-Valgrind:
+Memcheck:
 	valgrind $(VALGRINDFLAGS) $(VALGRINDPARAMETER)
 
 In-out_tests:
