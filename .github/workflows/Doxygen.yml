@@ -11,9 +11,8 @@ jobs:
     steps:
     - uses: actions/checkout@master
         
-    - run: sudo apt-get install doxygen
-    - run: sudo apt-get install graphviz
-    - run: doxygen doxyconf
+    - run: sudo apt install doxygen && sudo apt install graphviz
+    - run: make Generate_documentation
 
     - name: Push git subdir as branch
       uses: s0/git-publish-subdir-action@v2.4.0
