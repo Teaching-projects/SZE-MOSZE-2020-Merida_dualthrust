@@ -1,16 +1,16 @@
-  
 name: Unit tests
 on: push
 jobs:
   build_and_test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
+    container: lkrisz1911/parsertest_image:latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install dependencies
-        run: sudo apt install libgtest-dev && sudo apt install cmake && cd /usr/src/gtest && sudo cmake . && sudo make && sudo cp *.a /usr/lib && sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
+      - name: Build
+        run: cd /usr/src/gtest && sudo cmake . && sudo make && sudo cp *.a /usr/lib && sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
       - name: cmake
-        run: cd tests && cmake . && make
-      - name: Run Parser tests
-        run: cd tests && ./runParserTests
+        run: make Make_tests_with_cmake
+      - name: Run parser tests
+        run: make Run_parsertest
       - name: Run unit tests
-        run: cd tests && ./runUnitTests
+        run: make Run_unittests
