@@ -6,10 +6,9 @@ on:
 jobs:
   build_and_test:
     runs-on: ubuntu-20.04
+    container: lkrisz1911/test_image:latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install dependencies
-        run: sudo apt install -y cppcheck && sudo apt install -y valgrind && sudo apt install -y gcc g++
       - name: Cppcheck code analysis
         run: make Static_code_analysis_cppcheck
       - name: Upload Cppcheck result 

@@ -3,15 +3,13 @@ name: Push DOCS
 on:
   push:
 
-
 jobs:
   deploy:
     name: Deploy to github pages
     runs-on: ubuntu-20.04
+    container: lkrisz1911/doxy_image:latest
     steps:
     - uses: actions/checkout@master
-        
-    - run: sudo apt install doxygen && sudo apt install graphviz
     - run: make Generate_documentation
 
     - name: Push git subdir as branch

@@ -19,3 +19,4 @@
 !/tests/
 !/results/
 !/results_correct/
+!/dockerfiles/
