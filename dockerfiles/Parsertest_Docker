@@ -2,16 +2,13 @@ FROM ubuntu:20.04
 
 ENV TZ=Europe/Budapest
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   make \
-    g++ \
-    g++-10 \
-    gcc \
-    valgrind \
-    cppcheck \
-    sudo \
-    libgtest-dev \
-    cmake \
-    build-essential \
-    && apt-get install -y git \
+  g++ \
+  gcc \
+  valgrind \
+  cppcheck \
+  libgtest-dev \
+  cmake \
+  build-essential \
 && rm -rf /var/lib/apt/lists/*
