@@ -6,8 +6,12 @@ RUN apt-get update && apt-get install -y \
   make \
     g++ \
     g++-10 \
-    cmake \
-   sudo \
+    gcc \
+    valgrind \
+    cppcheck \
+    sudo \
     libgtest-dev \
-   build-essential \
-&& rm -rf /var/lib/apt/lists/*
+    cmake \
+    build-essential \
+    clang \
+&& apt-get clean && rm -rf /var/lib/apt/lists/*
