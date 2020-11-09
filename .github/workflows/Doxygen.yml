@@ -10,7 +10,7 @@ jobs:
     container: lkrisz1911/doxy_image:latest
     steps:
     - uses: actions/checkout@master
-    - run: doxygen doxyconf
+    - run: make Generate_documentation
 
     - name: Push git subdir as branch
       uses: s0/git-publish-subdir-action@v2.4.0

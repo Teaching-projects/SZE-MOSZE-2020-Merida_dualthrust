@@ -10,15 +10,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Cppcheck code analysis
-        run: cppcheck *.cpp --enable=all --output-file=cppcheck_results.txt && chmod +x warning_check.sh && ./warning_check.sh && chmod +x error_check.sh && ./error_check.sh
+        run: make Static_code_analysis_cppcheck
       - name: Upload Cppcheck result 
         uses: actions/upload-artifact@v2  
         with:
           name: cppcheck_results
           path: cppcheck_results.txt
       - name: Build
-        run: g++ -Wall -Werror -Wextra -std=c++17 *.cpp -o a.out
-      - name: Valgrind check
-        run: valgrind --leak-check=full --error-exitcode=1 ./a.out scenario1.json
+        run: make build
+      - name: Memory leak check
+        run: make Memcheck
       - name: In-out tests
-        run: chmod +x run_test.sh && ./run_test.sh
+        run: make In-out_tests
