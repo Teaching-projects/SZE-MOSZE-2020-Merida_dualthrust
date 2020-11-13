@@ -20,6 +20,7 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <variant>
 
 class JSON {
 public:
@@ -28,7 +29,9 @@ public:
      * 
      */
     JSON(const std::map<std::string, std::any>&);
-        
+
+    typedef std::list<std::variant<std::string, int, double, float>> list; 
+
     template <typename T>
     T get(std::string key){
         std::string value =  std::any_cast<std::string>(content[key]);
