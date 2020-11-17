@@ -49,6 +49,12 @@ public:
      */
     int const & getDamage(/**There's no input parameter here.*/) const;
     /**
+     * @brief Getter for character defense
+     * @return int const& 
+     * 
+     */
+    int const & getDefense(/**There's no input parameter here.*/) const;
+    /**
      * @brief Getter for character healthpoint
      * @return int const& 
      * 
@@ -113,6 +119,11 @@ protected:
      * 
      */
     int damage;
+    /**
+     * @brief Defense of the unit
+     * 
+     */
+    int defense;
     /**
      * @brief Attack cooldown of the unit
      * 
