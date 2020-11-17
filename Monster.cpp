@@ -30,6 +30,11 @@
     {
         return damage;
     }
+    
+    int const & Monster::getDefense() const
+    {
+        return defense;
+    }
 
     float const & Monster::getAttackCoolDown() const
     {
@@ -44,9 +49,10 @@
         JSON data = JSON::parseFromFile(path);
         std::string name = data.get<std::string>("name");
         int healthPoints = data.get<int>("health_points");
-        int dmg = std::stoi(data.get<std::string>("damage"));
+        int dmg = std::stoi(data.get<std::string>("damage"));        
+        int def = std::stoi(data.get<std::string>("defense"));
         float cooldown = std::stof(data.get<std::string>("attack_cooldown"));
-        return Monster(name, healthPoints, dmg, cooldown);
+        return Monster(name, healthPoints, dmg, def, cooldown);
     }
 
     //Convenience method for simple checking
