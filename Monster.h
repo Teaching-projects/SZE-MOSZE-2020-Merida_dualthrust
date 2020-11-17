@@ -29,7 +29,7 @@ public:
      * In case of no inputs the Monster object gets default values
      * 
      */
-    Monster(const std::string&, int, int, const double);
+    Monster(const std::string&, int, int, int, const double);
     /**
      * @brief JSON parse method for creating a Monster object based on a given JSON input file
      * @return Monster type unit

@@ -5,7 +5,7 @@
 #include <string>
 
     //Constructor
-    Monster::Monster(const std::string& characterName, int characterHP, int characterATK, const double characterACD):name(characterName),healthPoint(characterHP),damage(characterATK),cooldown(characterACD)
+    Monster::Monster(const std::string& characterName, int characterHP, int characterATK, int characterDEF, const double characterACD):name(characterName),healthPoint(characterHP),damage(characterATK),defense(characterDEF),cooldown(characterACD)
     {
 
     }
