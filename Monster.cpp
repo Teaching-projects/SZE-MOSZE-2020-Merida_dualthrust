@@ -66,7 +66,7 @@
     void Monster::sufferDamage(Monster* enemy) 
     {
         //std::cout << enemy->getName() << " -> " << this->getName() << std::endl;
-        healthPoint = (getHealthPoints() - enemy->getDamage());
+        healthPoint = (getHealthPoints() - (enemy->getDamage()-defense));
         if (healthPoint < 0)
         {
             healthPoint = 0; 
