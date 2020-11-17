@@ -61,6 +61,10 @@
         else
         {
             experienceToGain   =   damage - enemyDefense;
+            if (experienceToGain    <   0)
+            {
+                experienceToGain    =   0;
+            }
         }              
 
         enemy       ->  sufferDamage(this);
