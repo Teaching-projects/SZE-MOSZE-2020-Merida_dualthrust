@@ -46,12 +46,13 @@
     //JSON parse method for creating a Monster object based on a given JSON input file
     Monster Monster::parse(const std::string& path)
     {
-        JSON data = JSON::parseFromFile(path);
-        std::string name = data.get<std::string>("name");
-        int healthPoints = data.get<int>("health_points");
-        int dmg = std::stoi(data.get<std::string>("damage"));        
-        int def = std::stoi(data.get<std::string>("defense"));
-        float cooldown = std::stof(data.get<std::string>("attack_cooldown"));
+        JSON data           =   JSON::parseFromFile(path);
+        std::string name    =   data.get<std::string>("name");
+        int healthPoints    =   data.get<int>("health_points");
+        int dmg             =   std::stoi(data.get<std::string>("damage"));        
+        int def             =   std::stoi(data.get<std::string>("defense"));
+        float cooldown      =   std::stof(data.get<std::string>("attack_cooldown"));
+
         return Monster(name, healthPoints, dmg, def, cooldown);
     }
 
@@ -66,7 +67,8 @@
     void Monster::sufferDamage(Monster* enemy) 
     {
         //std::cout << enemy->getName() << " -> " << this->getName() << std::endl;
-        healthPoint = (getHealthPoints() - (enemy->getDamage()-defense));
+        healthPoint = (getHealthPoints() - (enemy->getDamage() - defense));
+
         if (healthPoint < 0)
         {
             healthPoint = 0; 
@@ -85,30 +87,35 @@
         return os;
     }
 
-Monster* Monster::fightTilDeath(Monster& enemy) 
+    Monster* Monster::fightTilDeath(Monster& enemy) 
     {
         //We initialize the countdown variables - these keep track of the cooldown until a hit
         int attacker_hitCountdown=0;
         int enemy_hitCountdown=0;
-
-        //Attacker hits the enemy first, then the other way around
-        this->deliverHit(&enemy);
-        enemy.deliverHit(this); //the enemy hits us
-
+        
+        this->deliverHit(&enemy);   //Attacker hits the enemy first, then the other way around
+        enemy.deliverHit(this);     //the enemy hits us
         
         //The fight keeps on going until somebody is dead
         while (enemy.isAlive() && this->isAlive()) 
         {
-            if(attacker_hitCountdown >= getAttackCoolDown()){
+            if(attacker_hitCountdown >= getAttackCoolDown())
+            {
                 this->deliverHit(&enemy);
                 attacker_hitCountdown = 0;
-            }else{
+            }
+            else
+            {
                 attacker_hitCountdown++;
             }
-            if(enemy_hitCountdown >= enemy.getAttackCoolDown()){
+            
+            if(enemy_hitCountdown >= enemy.getAttackCoolDown())
+            {
                 enemy.deliverHit(this);
                 enemy_hitCountdown = 0;
-            }else{
+            }
+            else
+            {
                 enemy_hitCountdown++;
             }
         }
