@@ -51,15 +51,16 @@
     void Hero::deliverHit(Monster* enemy) 
     {
         int enemyHealthPoint    =   enemy   ->  getHealthPoints();
+        int enemyDefense        =   enemy   ->  getDefense();
         int experienceToGain    =   0;
 
-        if (enemyHealthPoint < damage)
+        if (enemyHealthPoint < damage - enemyDefense)
         {
             experienceToGain   =   enemyHealthPoint;
         }
         else
         {
-            experienceToGain   =   damage;
+            experienceToGain   =   damage - enemyDefense;
         }              
 
         enemy       ->  sufferDamage(this);
