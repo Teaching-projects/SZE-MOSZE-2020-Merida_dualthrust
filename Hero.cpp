@@ -33,17 +33,17 @@
     
     Hero Hero::parse(const std::string& path)  //JSON parse method for creating a Monster object based on a given JSON input file
     {
-        JSON data                                       =   JSON::parseFromFile(path);
-        std::string name                                =   data.get<std::string>("name");
-        int heatlhPoints                                =   data.get<int>("base_health_points");
-        int damage                                      =   data.get<int>("base_damage");
-        int defense                                     =   data.get<int>("base_defense");
-        float cooldown                                  =   data.get<float>("base_attack_cooldown");
-        int experiencePerLevel                          =   data.get<int>("experience_per_level");
-        int healthPointBonusPerLevel                    =   data.get<int>("health_point_bonus_per_level");
-        int damageBonusPerLevel                         =   data.get<int>("damage_bonus_per_level");
-        int defenseBonusPerLevel                        =   data.get<int>("defense_bonus_per_level");
-        float cooldownMultiplierPerLevel                =   data.get<float>("cooldown_multiplier_per_level");
+        JSON data                           =   JSON::parseFromFile(path);
+        std::string name                    =   data.get<std::string>("name");
+        int heatlhPoints                    =   data.get<int>("base_health_points");
+        int damage                          =   data.get<int>("base_damage");
+        int defense                         =   data.get<int>("base_defense");
+        float cooldown                      =   data.get<float>("base_attack_cooldown");
+        int experiencePerLevel              =   data.get<int>("experience_per_level");
+        int healthPointBonusPerLevel        =   data.get<int>("health_point_bonus_per_level");
+        int damageBonusPerLevel             =   data.get<int>("damage_bonus_per_level");
+        int defenseBonusPerLevel            =   data.get<int>("defense_bonus_per_level");
+        float cooldownMultiplierPerLevel    =   data.get<float>("cooldown_multiplier_per_level");
 
         return Hero(name, heatlhPoints, damage, defense, cooldown, experiencePerLevel, healthPointBonusPerLevel, damageBonusPerLevel, defenseBonusPerLevel, cooldownMultiplierPerLevel);
     }
