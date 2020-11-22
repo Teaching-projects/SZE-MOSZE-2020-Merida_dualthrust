@@ -18,7 +18,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
-#include <iostream>
+#include <exception>
 
 class Map
 {
@@ -61,7 +61,17 @@ class Map
          */
         Map::type get(int x, int y) const;
 
-        //TODO WrongIndexException 
+        //TODO WrongIndexException Visszaadja, hogy adott indexen mi van. A type egy enum, ami egyelore lehet Wall vagy Free. Ez dobjon Map::WrongIndexException-t ha rosz indexet kerunk.
+
+    class WrongIndexException : std::exception
+	{
+		public:
+            /**
+             * @brief Constructor for the exception
+             * @param key A hiba leirasa
+            */
+		    WrongIndexException(){}
+	};
 };
 
 #endif // MAP_HEADER
