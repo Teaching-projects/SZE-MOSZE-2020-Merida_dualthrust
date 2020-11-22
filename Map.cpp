@@ -8,12 +8,18 @@
 
 Map::type Map::get(int x, int y) const
 {
-    if(x >= map.size() || x < 0 ){
+    if(x >= map.size() || x < 0 )
+    {
         throw WrongIndexException();
-    }else{
-        if(y >= map[x].length() || y < 0){
+    }
+    else
+    {
+        if(y >= map[x].length() || y < 0)
+        {
             throw WrongIndexException();
-        }else{
+        }
+        else
+        {
             std::string types = " #";
             return type(types.find(map[x][y]));
         }
