@@ -74,20 +74,107 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a41697b848ea9a5aad1910714e0196b7b"><td class="memItemLeft" align="right" valign="top"><a id="a41697b848ea9a5aad1910714e0196b7b"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>type</b> { <b>Free</b>, 
+<tr class="memitem:a41697b848ea9a5aad1910714e0196b7b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a41697b848ea9a5aad1910714e0196b7b">type</a> { <b>Free</b>, 
 <b>Wall</b>
  }</td></tr>
+<tr class="memdesc:a41697b848ea9a5aad1910714e0196b7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Types that the map may contain.  <a href="classMap.html#a41697b848ea9a5aad1910714e0196b7b">More...</a><br /></td></tr>
 <tr class="separator:a41697b848ea9a5aad1910714e0196b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a74d5010209ad0da6b05595a33f36fc76"><td class="memItemLeft" align="right" valign="top"><a id="a74d5010209ad0da6b05595a33f36fc76"></a>
-Map::type&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> (int x, int y) const</td></tr>
-<tr class="separator:a74d5010209ad0da6b05595a33f36fc76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab124c12c6c9dec693aedb1a4b6384ecd"><td class="memItemLeft" align="right" valign="top"><a id="ab124c12c6c9dec693aedb1a4b6384ecd"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Map</b> (std::string filename)</td></tr>
+<tr class="memitem:ab124c12c6c9dec693aedb1a4b6384ecd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#ab124c12c6c9dec693aedb1a4b6384ecd">Map</a> (std::string filename)</td></tr>
+<tr class="memdesc:ab124c12c6c9dec693aedb1a4b6384ecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives back a map constructed from a txt file.  <a href="classMap.html#ab124c12c6c9dec693aedb1a4b6384ecd">More...</a><br /></td></tr>
 <tr class="separator:ab124c12c6c9dec693aedb1a4b6384ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74d5010209ad0da6b05595a33f36fc76"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMap.html#a41697b848ea9a5aad1910714e0196b7b">Map::type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a74d5010209ad0da6b05595a33f36fc76">get</a> (int x, int y) const</td></tr>
+<tr class="memdesc:a74d5010209ad0da6b05595a33f36fc76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives back the type of terrain based on coordinates.  <a href="classMap.html#a74d5010209ad0da6b05595a33f36fc76">More...</a><br /></td></tr>
+<tr class="separator:a74d5010209ad0da6b05595a33f36fc76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a41697b848ea9a5aad1910714e0196b7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41697b848ea9a5aad1910714e0196b7b">&#9670;&nbsp;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classMap.html#a41697b848ea9a5aad1910714e0196b7b">Map::type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Types that the map may contain. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ab124c12c6c9dec693aedb1a4b6384ecd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab124c12c6c9dec693aedb1a4b6384ecd">&#9670;&nbsp;</a></span>Map()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Map::Map </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gives back a map constructed from a txt file. </p>
+<p>When the given input is incorrect, it returns with an exception.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Name of the input file.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classMap.html">Map</a> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a74d5010209ad0da6b05595a33f36fc76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74d5010209ad0da6b05595a33f36fc76">&#9670;&nbsp;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMap.html#a41697b848ea9a5aad1910714e0196b7b">Map::type</a> Map::get </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gives back the type of terrain based on coordinates. </p>
+<p>Takes x and y coordinates.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Longitudinal coordinate. (Which "column") </td></tr>
+    <tr><td class="paramname">y</td><td>Latitudinal coordinate. (Which "row") </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>type </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="Map_8h_source.html">Map.h</a></li>
 <li>Map.cpp</li>

@@ -67,32 +67,38 @@ $(function() {
 <div class="title">Map.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MAP_HEADER</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define MAP_HEADER</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classMap.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMap.html">Map</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keyword">enum</span> type </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            Free,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            Wall</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        };</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        Map::type get(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classMap.html">Map</a>(std::string filename); <span class="comment">// Betolt fajlbol egy terkepet</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif // MAP_HEADER</span></div>
+<a href="Map_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#ifndef MAP_HEADER</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define MAP_HEADER</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classMap.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMap.html">Map</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        std::vector&lt;std::string&gt; map; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classMap.html#a41697b848ea9a5aad1910714e0196b7b">   36</a></span>&#160;        <span class="keyword">enum</span> <a class="code" href="classMap.html#a41697b848ea9a5aad1910714e0196b7b">type</a> </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            Free,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            Wall</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        };</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classMap.html#ab124c12c6c9dec693aedb1a4b6384ecd">Map</a>(std::string filename);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classMap.html#a41697b848ea9a5aad1910714e0196b7b">Map::type</a> <a class="code" href="classMap.html#a74d5010209ad0da6b05595a33f36fc76">get</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">//TODO WrongIndexException </span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif // MAP_HEADER</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassMap_html"><div class="ttname"><a href="classMap.html">Map</a></div><div class="ttdef"><b>Definition:</b> Map.h:6</div></div>
+<div class="ttc" id="aclassMap_html"><div class="ttname"><a href="classMap.html">Map</a></div><div class="ttdef"><b>Definition:</b> Map.h:23</div></div>
+<div class="ttc" id="aclassMap_html_a41697b848ea9a5aad1910714e0196b7b"><div class="ttname"><a href="classMap.html#a41697b848ea9a5aad1910714e0196b7b">Map::type</a></div><div class="ttdeci">type</div><div class="ttdoc">Types that the map may contain.</div><div class="ttdef"><b>Definition:</b> Map.h:36</div></div>
+<div class="ttc" id="aclassMap_html_a74d5010209ad0da6b05595a33f36fc76"><div class="ttname"><a href="classMap.html#a74d5010209ad0da6b05595a33f36fc76">Map::get</a></div><div class="ttdeci">Map::type get(int x, int y) const</div><div class="ttdoc">Gives back the type of terrain based on coordinates.</div><div class="ttdef"><b>Definition:</b> Map.cpp:4</div></div>
+<div class="ttc" id="aclassMap_html_ab124c12c6c9dec693aedb1a4b6384ecd"><div class="ttname"><a href="classMap.html#ab124c12c6c9dec693aedb1a4b6384ecd">Map::Map</a></div><div class="ttdeci">Map(std::string filename)</div><div class="ttdoc">Gives back a map constructed from a txt file.</div><div class="ttdef"><b>Definition:</b> Map.cpp:9</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
