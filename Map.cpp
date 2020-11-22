@@ -2,9 +2,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
-#include <sstream>
 #include <iostream>
-#include <fstream>
 
 Map::type Map::get(int x, int y) const
 {
