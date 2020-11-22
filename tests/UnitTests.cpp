@@ -30,7 +30,7 @@ TEST(unitTests, getDamage){
 
 TEST(unitTests, sufferDamage){
     Monster attacker = Monster("Attacker",10,10,10,10);
-    Monster dead = Monster("Dead",10,10,10,10);
+    Monster dead = Monster("Dead",1,1,1,1);
     dead.sufferDamage(&attacker);
     ASSERT_EQ(dead.isAlive(), false);
 }
@@ -41,7 +41,7 @@ TEST(unitTests, levelUp){
     hero.fightTilDeath(enemy);
 
     ASSERT_EQ(hero.getLevel(),2);
-    ASSERT_EQ(hero.getHealthPoints(),199);
+    ASSERT_EQ(hero.getHealthPoints(),200);
     ASSERT_EQ(hero.getAttackCoolDown(),200);
     ASSERT_EQ(hero.getDamage(),200);
 }
