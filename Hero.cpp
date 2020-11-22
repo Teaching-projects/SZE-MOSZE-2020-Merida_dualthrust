@@ -33,7 +33,7 @@
     
     Hero Hero::parse(const std::string& path)  //JSON parse method for creating a Monster object based on a given JSON input file
     {
-        JSON data    =   JSON::parseFromFile(path);
+        JSON data                                       =   JSON::parseFromFile(path);
         std::string name                                =   data.get<std::string>("name");
         int heatlhPoints                                =   data.get<int>("base_health_points");
         int damage                                      =   data.get<int>("base_damage");
