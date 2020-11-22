@@ -69,7 +69,7 @@
         //std::cout << enemy->getName() << " -> " << this->getName() << std::endl;
         if (    (enemy->getDamage() - defense)  >   0)
         {
-            healthPoint -= (enemy->getDamage() - defense);
+            healthPoint -= (enemy->getDamage() - defense));
         }
         
         if (healthPoint < 0)
