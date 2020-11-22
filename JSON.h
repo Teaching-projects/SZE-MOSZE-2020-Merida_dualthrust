@@ -21,7 +21,7 @@
 #include <sstream>
 #include <iostream>
 #include <variant>
-
+#include <list>
 class JSON {
 public:
     /**
@@ -31,6 +31,7 @@ public:
     JSON(const std::map<std::string, std::any>&);
 
     typedef std::list<std::variant<std::string, int, double, float>> list; 
+    
 
     template <typename T>
     T get(std::string key){
@@ -46,6 +47,22 @@ public:
         
         return std::any_cast<T>(converted);
     }
+
+    template <typename T>
+        inline typename std::enable_if<std::is_same<T, JSON::list>::value, JSON::list>::type
+        get(std::string key){
+            if(!content.count(key)){
+                throw ParseException("JSON is missing a key: " + key); 
+            }
+
+            JSON::list list;
+            std::string value = std::any_cast<std::string>(content[key]);
+
+            
+           
+
+            return list;
+        }
 
     int count(std::string);
     /**
