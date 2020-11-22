@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7emonster_43',['~Monster',['../classMonster.html#a21619ba1759b910cd2fd50d858aab338',1,'Monster']]]
+  ['type_43',['type',['../classMap.html#a41697b848ea9a5aad1910714e0196b7b',1,'Map']]]
 ];
