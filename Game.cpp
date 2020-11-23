@@ -9,32 +9,30 @@
 #include "Map.h"
 #include "Game.h"
 
-/* 
-Game::Game(); // Empty Game */
-Game::Game(std::string mapfilename){} // Game with the Map initialized
-void setMap(Map map)
+
+void Game::setMap(Map map)
 {
 
 }; // Set the map
 
-void putHero(Hero hero, int x, int y)
+void Game::putHero(Hero hero, int x, int y)
 {
     //map gettel lekérdezni hogy az adott helyen van-e valami, ha igen akkor exception. Ha van már hero a mapon, exception.
 }
 
-void putMonster(Monster monster, int x, int y)
+void Game::putMonster(Monster monster, int x, int y)
 {
     //map gettel lekérdezni hogy az adott helyen van-e valami, ha igen akkor exception. 
 }
 
-void run()
+void Game::run()
 {
 /* Legyen egy
 
 void Game::run();
 fuggveny, mely levezenyli a jatekot, de dob egy Game::NotInitializedException-t, ha meg nincs beallitva terkep, vagy nincs Hero a palyan.  */
 
-    while (/* Ha minden rendben van, elindit egy loop-ot egeszen addig, amig van meg Monster eletben. Ha mindegyik monster le lett gyakva, akkor egy "{hero.name} cleared the map. uzenetet kiir, es befejezi a futast. */)
+    while (true)
     {
         /* 
         A loop-ban north, south, east, west parancsokat var a stadard bemenetrol a program, amivel a Herot mozgatja, ha lehetseges (falra nem tud menni, palyarol nem lehet lemenni). 

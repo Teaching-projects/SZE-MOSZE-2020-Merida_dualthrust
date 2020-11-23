@@ -27,12 +27,12 @@ class Game
 {
  private:
  public:
-    Game::Game(); // Empty Game
-    Game::Game(std::string mapfilename); // Game with the Map initialized
-    void setMap(Map map); // Set the map
-    void putHero(Hero hero, int x, int y);
-    void putMonster(Monster monster, int x, int y);
-    void Game::run();
+    Game(); // Empty Game
+    Game(std::string); // Game with the Map initialized
+    void setMap(Map); // Set the map
+    void putHero(Hero, int, int);
+    void putMonster(Monster, int, int);
+    void run();
 
     class OccupiedException : std::exception
 	{
@@ -86,7 +86,7 @@ class Game
 		    GameAlreadyStartedException(){}
 	};
 
-
+};
 
     /* 
     
