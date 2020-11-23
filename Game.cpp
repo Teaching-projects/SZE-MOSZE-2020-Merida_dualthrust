@@ -9,10 +9,16 @@
 #include "Map.h"
 #include "Game.h"
 
+Game::Game(){}
 
-void Game::setMap(Map map)
+Game::Game(std::string map_file_path){
+    Map incoming_map(map_file_path);
+    map=incoming_map;
+}
+
+void Game::setMap(Map incoming_map)
 {
-
+    map = incoming_map;
 }; // Set the map
 
 void Game::putHero(Hero hero, int x, int y)

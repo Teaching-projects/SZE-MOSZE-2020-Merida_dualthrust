@@ -26,6 +26,7 @@
 class Game
 {
  private:
+    Map map;
  public:
     Game(); // Empty Game
     Game(std::string); // Game with the Map initialized

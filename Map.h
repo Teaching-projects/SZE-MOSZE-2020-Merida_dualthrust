@@ -42,7 +42,7 @@ class Map
             Monster,
             Monsters
         };
-
+        Map();
         /**
          * @brief Gives back a map constructed from a txt file.
          * 
