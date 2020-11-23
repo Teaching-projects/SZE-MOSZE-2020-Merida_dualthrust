@@ -61,6 +61,8 @@ class Map
          */
         Map::type get(int x, int y) const;
 
+        void drawMap() const;
+
     class WrongIndexException : std::exception
 	{
 		public:
