@@ -36,7 +36,10 @@ class Map
         enum type 
         {
             Free,
-            Wall
+            Wall,
+            Hero,
+            Monster,
+            Monsters
         };
         /**
          * @brief Gives back a map constructed from a txt file.

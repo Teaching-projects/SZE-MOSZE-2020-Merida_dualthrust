@@ -37,33 +37,54 @@ Map::Map(std::string path)
 void Map::drawMap() const
 {
 
-    for (int i = 0; i < map.size(); i++)
+    for (int row = 0; row < map.size(); row++)
     {   
-        for (int j = 0; j < map[i].length(); j++)
+        if (row==0 || row==map.size())
         {
-            if (i==0)
+            std::cout << "╔";
+            for (int number_of_chars = 0; number_of_chars < map[row].length(); number_of_chars++)
             {
-                std::cout << "╔";
-            }
-            else if (/* condition */)
-            {
-                std::cout <<"╗"<< std::endl;
-            }
-            
-
-
-            /* code */
+                std::cout <<"═"; 
+            }                           
+            std::cout <<"╗"<< std::endl;
         }
         
+        for (int column = 0; column < map[row].length(); column++)
+        {
+            if (column==0 || column==map[row].length())
+            {
+                std::cout <<"║";
+            }
+
+            if (Map::get(row,column)==Free)   
+            {
+                std::cout <<"░░";
+            }
+            else if (Map::get(row,column)==Wall)
+            {
+                std::cout <<"██";
+            }
+            else if (Map::get(row,column)==Hero)
+            {
+                std::cout <<"┣┫";
+            }
+            else if (Map::get(row,column)==Monster)
+            {
+                std::cout <<"M░";
+            }
+            else if (Map::get(row,column)==Monsters)
+            {
+                std::cout <<"MM";
+            }
+                        
+        }
     }
     
-    
-    /* ║ oldala, ═ alja és teteje*/
-    std::cout << "╚"<<"╝"<< std::endl;
+    std::cout << "╚";
+    for (int number_of_chars = 0; number_of_chars < map[map.size()].length(); number_of_chars++)
+    {
+        std::cout <<"═"; 
+    }
+    std::cout << "╝"<< std::endl;
     
 }
-/* 
-Miden loop elejen kiirodik a jatek olyan formaban, hogy a falak ██-vel, a szabad teruletek ░░-vel jelenjenek meg. 
-Ahol a Hero all, ott ┣┫ legyen, ahol Monsterek, ott pedig MM, M░ attol fuggoen, hogy egy vagy tobb van ott. 
-Az egesz palya korul U+255x karakterekkel (azok kozul a mindenhol duplavonalasakkal) legyen egy keret.
- */
