@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7emonster_75',['~Monster',['../classMonster.html#a21619ba1759b910cd2fd50d858aab338',1,'Monster']]]
+  ['wrongindexexception_81',['WrongIndexException',['../classMap_1_1WrongIndexException.html#aeebaf6a2269de443f9ed95dba18a0410',1,'Map::WrongIndexException']]]
 ];
