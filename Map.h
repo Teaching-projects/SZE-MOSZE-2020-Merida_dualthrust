@@ -27,7 +27,8 @@ class Map
          * @brief Data structure that contains the map.
          * 
          */
-        std::vector<std::string> map; 
+        std::vector<std::vector<int>> map; 
+        int longest_row_size;
     public:
         /**
          * @brief Types that the map may contain.
@@ -41,6 +42,7 @@ class Map
             Monster,
             Monsters
         };
+
         /**
          * @brief Gives back a map constructed from a txt file.
          * 

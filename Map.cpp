@@ -12,15 +12,13 @@ Map::type Map::get(int x, int y) const
     }
     else
     {
-        if(y >= map[x].length() || y < 0)
+        if(y >= map[x].size() || y < 0)
         {
             throw WrongIndexException();
         }
         else
         {
-            
-            std::string types = " #";
-            return type(types.find(map[x][y]));
+            return type(map[x][y]);
         }
     }
 }
@@ -29,9 +27,24 @@ Map::Map(std::string path)
 {
     std::string line;
     std::ifstream mapfile(path);
+    longest_row_size = 0;
+
     while (std::getline(mapfile, line))
     {
-        map.push_back(line);
+        std::vector<int> map_row;
+        for(int i=0;i<line.length();i++){
+            if(line[i]=='#'){
+                map_row.push_back(type(Wall));
+            }else if(line[i]=' '){
+                map_row.push_back(type(Free));
+            }
+        }
+        
+        if(line.length() > longest_row_size){
+            longest_row_size=line.length();
+        }
+
+        map.push_back(map_row);
     }
 }
 
@@ -39,22 +52,20 @@ void Map::drawMap() const
 {
 
     std::cout << "╔";
-    for (int number_of_chars = 0; number_of_chars < map[0].length(); number_of_chars++)
+    for (int number_of_chars = 0; number_of_chars < longest_row_size; number_of_chars++)
     {
-        std::cout <<"═"; 
+        std::cout <<"══"; 
     }                           
     std::cout <<"╗"<< std::endl;
 
 
     for (int row = 0; row < map.size(); row++)
     {   
-        
-        for (int column = 0; column < map[row].length(); column++)
+
+        int current_row_length = 0;
+        std::cout <<"║";        
+        for (int column = 0; column < map[row].size(); column++)
         {
-            if (column==0 || column==map[row].length())
-            {
-                std::cout <<"║";
-            }
 
             if (Map::get(row,column)==Free)   
             {
@@ -76,14 +87,21 @@ void Map::drawMap() const
             {
                 std::cout <<"MM";
             }
-                        
+            current_row_length=column;          
         }
+
+        for(int i=current_row_length;i<longest_row_size-1;i++)
+        {
+            std::cout <<"  ";
+        }
+        std::cout <<"║"<<std::endl;
+
     }
     
     std::cout << "╚";
-    for (int number_of_chars = 0; number_of_chars < map[map.size()].length(); number_of_chars++)
+    for (int number_of_chars = 0; number_of_chars <  longest_row_size; number_of_chars++)
     {
-        std::cout <<"═"; 
+        std::cout <<"══"; 
     }
     std::cout << "╝"<< std::endl;
     
