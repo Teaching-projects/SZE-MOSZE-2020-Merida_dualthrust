@@ -32,4 +32,4 @@ Map::Map(std::string path)
     {
         map.push_back(line);
     }
-} // Betolt fajlbol egy terkepet
+}
