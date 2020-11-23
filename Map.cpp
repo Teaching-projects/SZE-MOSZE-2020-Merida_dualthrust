@@ -18,6 +18,7 @@ Map::type Map::get(int x, int y) const
         }
         else
         {
+            
             std::string types = " #";
             return type(types.find(map[x][y]));
         }
@@ -37,17 +38,16 @@ Map::Map(std::string path)
 void Map::drawMap() const
 {
 
+    std::cout << "╔";
+    for (int number_of_chars = 0; number_of_chars < map[0].length(); number_of_chars++)
+    {
+        std::cout <<"═"; 
+    }                           
+    std::cout <<"╗"<< std::endl;
+
+
     for (int row = 0; row < map.size(); row++)
     {   
-        if (row==0 || row==map.size())
-        {
-            std::cout << "╔";
-            for (int number_of_chars = 0; number_of_chars < map[row].length(); number_of_chars++)
-            {
-                std::cout <<"═"; 
-            }                           
-            std::cout <<"╗"<< std::endl;
-        }
         
         for (int column = 0; column < map[row].length(); column++)
         {
