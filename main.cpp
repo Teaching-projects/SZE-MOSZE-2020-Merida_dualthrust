@@ -67,6 +67,8 @@ int main(int argc, char** argv){
                   << "  DMG: "<<hero.getDamage()<<std::endl
                   << "  ACD: "<<hero.getAttackCoolDown()<<std::endl
                   ;
-    } catch (const JSON::ParseException& e) {bad_exit(4);}
+    } 
+    catch (const JSON::ParseException& e) {bad_exit(4);
+    }
     return 0;
 }

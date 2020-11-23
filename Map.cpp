@@ -42,9 +42,14 @@ void Map::drawMap() const
         for (int j = 0; j < map[i].length(); j++)
         {
             if (i==0)
-                {
-                    std::cout << "╔"<<"╗"<< std::endl;
-                }
+            {
+                std::cout << "╔";
+            }
+            else if (/* condition */)
+            {
+                std::cout <<"╗"<< std::endl;
+            }
+            
 
 
             /* code */
