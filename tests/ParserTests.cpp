@@ -1,4 +1,5 @@
 #include "../JSON.cpp"
+#include "../Map.cpp"
 #include <gtest/gtest.h>
 
 TEST(parserTests, parseFile) {
@@ -50,6 +51,12 @@ TEST(parserTests, Format_badDelimiter) {
         parseException=true;
     }
     ASSERT_EQ(parseException,true);
+}
+
+// TESTS FOR THE MAP CLASS
+
+TEST(parserTests, parseFile) {
+    ASSERT_NO_THROW(Map:Map("../maps/map_1.txt"));
 }
 
 int main(int argc, char** argv) {
