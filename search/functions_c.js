@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7emonster_88',['~Monster',['../classMonster.html#a21619ba1759b910cd2fd50d858aab338',1,'Monster']]]
+  ['removejsonspaces_100',['removeJSONSpaces',['../classJSON.html#af7161d083a7d4ea5ff0c76bb8a2fe7f4',1,'JSON']]]
 ];

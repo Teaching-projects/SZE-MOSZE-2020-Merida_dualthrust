@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['map_77',['Map',['../classMap.html#ab124c12c6c9dec693aedb1a4b6384ecd',1,'Map']]],
-  ['monster_78',['Monster',['../classMonster.html#a89df1fa81c57037fce4f85058dee46c5',1,'Monster']]]
+  ['levelup_91',['levelUp',['../classHero.html#aef06e69ebb7d2d18c640af5e6746dff6',1,'Hero']]]
 ];

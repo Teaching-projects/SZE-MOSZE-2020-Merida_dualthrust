@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['deletecharacters_61',['deleteCharacters',['../classJSON.html#a820f6bd7c781c3710592ddc7c66233a3',1,'JSON']]],
-  ['deliverhit_62',['deliverHit',['../classHero.html#a9c9c0c619c2121dc0083c8dc3a9fcf50',1,'Hero::deliverHit()'],['../classMonster.html#aeaebd73a726b359c29c5e54777e235ba',1,'Monster::deliverHit()']]]
+  ['alreadyhasheroexception_73',['AlreadyHasHeroException',['../classGame_1_1AlreadyHasHeroException.html#a661fe174e6ed027c3ebe5a5c13bf5c55',1,'Game::AlreadyHasHeroException']]],
+  ['alreadyhasunitsexception_74',['AlreadyHasUnitsException',['../classGame_1_1AlreadyHasUnitsException.html#a538b74874c5db6e2f7d916275cfe3e98',1,'Game::AlreadyHasUnitsException']]]
 ];
