@@ -28,7 +28,7 @@ class Map
          * 
          */
         std::vector<std::vector<int>> map;
-        int longest_row_size;
+        unsigned int longest_row_size;
     public:
         /**
          * @brief Types that the map may contain.
@@ -70,7 +70,7 @@ class Map
          * @return type 
          * 
          */
-        Map::type get(int x, int y) const;
+        Map::type get(unsigned int x, unsigned int y) const;
 
         /**
          * @brief Draws our map to the standard output.

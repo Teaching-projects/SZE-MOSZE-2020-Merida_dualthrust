@@ -4,15 +4,15 @@
 #include <fstream>
 #include <iostream>
 
-Map::type Map::get(int x, int y) const
+Map::type Map::get(unsigned int x, unsigned int y) const
 {
-    if(x >= map.size() || x < 0 )
+    if(x >= map.size())
     {
         throw WrongIndexException();
     }
     else
     {
-        if(y >= map[x].size() || y < 0)
+        if(y >= map[x].size())
         {
             throw WrongIndexException();
         }
@@ -35,17 +35,22 @@ Map::Map(std::string path)
     {
         std::vector<int> map_row;
         
-        for(int i=0;i<line.length();i++){
-            if(line[i]=='#'){
+        for(unsigned int i=0;i<line.length();i++)
+        {
+            if(line[i]=='#')
+            {
                 map_row.push_back(type(Wall));
-            }else if(line[i]=' '){
+            }
+            else if(line[i]==' ')
+            {
                 map_row.push_back(type(Free));
             }
             //Nullpointereket tolunk bele, hogy fel legyen töltve hellyel
             
         }
         
-        if(line.length() > longest_row_size){
+        if(line.length() > longest_row_size)
+        {
             longest_row_size=line.length();
         }
 
@@ -57,19 +62,19 @@ void Map::drawMap() const
 {
 
     std::cout << "╔";
-    for (int number_of_chars = 0; number_of_chars < longest_row_size; number_of_chars++)
+    for (unsigned int number_of_chars = 0; number_of_chars < longest_row_size; number_of_chars++)
     {
         std::cout <<"══"; 
     }                           
     std::cout <<"╗"<< std::endl;
 
 
-    for (int row = 0; row < map.size(); row++)
+    for (unsigned int row = 0; row < map.size(); row++)
     {   
 
         int current_row_length = 0;
         std::cout <<"║";        
-        for (int column = 0; column < map[row].size(); column++)
+        for (unsigned int column = 0; column < map[row].size(); column++)
         {
 
             if (Map::get(row,column)==Free)   
@@ -95,7 +100,7 @@ void Map::drawMap() const
             current_row_length=column;          
         }
 
-        for(int i=current_row_length;i<longest_row_size-1;i++)
+        for(unsigned int i=current_row_length;i<longest_row_size-1;i++)
         {
             std::cout <<"  ";
         }
@@ -104,7 +109,7 @@ void Map::drawMap() const
     }
     
     std::cout << "╚";
-    for (int number_of_chars = 0; number_of_chars <  longest_row_size; number_of_chars++)
+    for (unsigned int number_of_chars = 0; number_of_chars <  longest_row_size; number_of_chars++)
     {
         std::cout <<"══"; 
     }
