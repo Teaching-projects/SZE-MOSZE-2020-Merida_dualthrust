@@ -92,7 +92,7 @@ void Game::run()
         while (hero->isAlive() && anyMonstersAlive())
         {
             map->drawMap();
-            std::cout<<"[north] \t[east] \t[south] \t[west]\n"<<std::endl;
+            std::cout<<"[north] [east] [south] [west]\n"<<std::endl;
             std::cout<<"[w] \t[a] \t[s] \t[d]\n"<<std::endl;
             std::cout<<"Choose a direction:"<<std::endl;
 
