@@ -27,14 +27,14 @@
 class Game
 {
  private:
-    Map map;
+    Map* map;
     Hero* hero;
     std::vector<Monster*> monsters_on_map;
  public:
     Game(); // Empty Game
     Game(std::string); // Game with the Map initialized
-    void setMap(Map); // Set the map
-    void putHero(Hero, int, int);
+    void setMap(Map*); // Set the map
+    void putHero(Hero*, int, int);
     void putMonster(Monster, int, int);
     void run();
 
