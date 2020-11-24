@@ -42,6 +42,12 @@ class Map
             Monster,
             Monsters
         };
+        /**
+         * @brief Constructor for an empty map.
+         * 
+         * @return Map 
+         * 
+         */
         Map();
         /**
          * @brief Gives back a map constructed from a txt file.

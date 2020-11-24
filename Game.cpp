@@ -9,9 +9,9 @@
 #include "Game.h"
 
 
-Game::Game(std::string map_file_path){
+Game::Game(std::string map_file_path)
+{
     map = new Map(map_file_path);
-    
 }
 
 void Game::setMap(Map* incoming_map)
@@ -21,24 +21,31 @@ void Game::setMap(Map* incoming_map)
 
 void Game::putHero(Hero *incoming_hero, int x, int y)
 {
-    if(hero != nullptr){
+    if(hero != nullptr)
+    {
         throw AlreadyHasHeroException();
     }
     
-    if(map->get(x,y)==Map::type::Free){
+    if(map->get(x,y) == Map::type::Free)
+    {
         hero = incoming_hero;
         map->setTile(x,y,2);
         hero->setPosition(x,y);
-    }else{
+    }
+    else
+    {
         throw OccupiedException();
     }
 }
 
-bool Game::anyMonstersAlive(){
+bool Game::anyMonstersAlive()
+{
     for( auto const& [key, val] : monster_map )
     {
-        for( auto const& [key_2, val_2] : val ){
-            if(val_2.size()>0){
+        for( auto const& [key_2, val_2] : val )
+        {
+            if(val_2.size()>0)
+            {
                 return true;
             }
         }
@@ -48,7 +55,8 @@ bool Game::anyMonstersAlive(){
 
 void Game::putMonster(Monster *monster, int x, int y)
 {
-    if(map->get(x,y)!=Map::type::Wall && map->get(x,y)!=Map::type::Hero){
+    if(map->get(x,y) != Map::type::Wall && map->get(x,y) != Map::type::Hero)
+    {
         monster->setPosition(x,y);
         //Elrakjuk az adott mezőre a szörny pointerét
         monster_map[x][y].push_back(*monster);
@@ -56,21 +64,29 @@ void Game::putMonster(Monster *monster, int x, int y)
         //ha több szörny van, akkor 4-es type-ra állítjuk a tile-t. Ha csak egy, akkor 3-as type
         int tile = (monster_map[x][y].size()>1) ? 4 : 3;
         map->setTile(x,y,tile);
-    }else{
+    }
+    else
+    {
         throw OccupiedException();
     }
 }
 
 void Game::run()
 {
-    std::map<std::string, std::pair<int,int>> steps{
-        {"north",std::make_pair(-1,0)},
-        {"east",std::make_pair(0,1)},
-        {"south",std::make_pair(1   ,0)},
-        {"west",std::make_pair(0,-1)}
+    std::map<std::string, std::pair<int,int>> steps
+    {
+        {"north",   std::make_pair(-1,0)},
+        {"east",    std::make_pair(0,1)},
+        {"south",   std::make_pair(1,0)},
+        {"west",    std::make_pair(0,-1)},
+        {"w",   std::make_pair(-1,0)},
+        {"d",    std::make_pair(0,1)},
+        {"s",   std::make_pair(1,0)},
+        {"a",    std::make_pair(0,-1)} // WASD controls are only here for local testing
     };
 
-    if(hero && map){
+    if(hero && map)
+    {
 
         while (hero->isAlive() && anyMonstersAlive())
         {
@@ -89,10 +105,13 @@ void Game::run()
             //A map típusa azon a mezőn
             Map::type tile = map->get(new_x,new_y);
 
-            if(tile!=Map::type::Wall){
+            if(tile!=Map::type::Wall)
+            {
 
-                if(tile==Map::type::Monster || tile==Map::type::Monsters){
-                    while (hero->isAlive() && !monster_map[new_x][new_y].empty()) {
+                if(tile==Map::type::Monster || tile==Map::type::Monsters)
+                {
+                    while (hero->isAlive() && !monster_map[new_x][new_y].empty())
+                    {
                         std::cout 
                             << hero->getName() << "(" << hero->getLevel()<<")"
                             << " vs "
@@ -113,7 +132,9 @@ void Game::run()
             }
         }
         std::cout << (hero->isAlive() ? "The hero won." : "The hero died.") << std::endl;
-    }else{
+    }
+    else
+    {
         throw NotInitializedException();
     }
 }

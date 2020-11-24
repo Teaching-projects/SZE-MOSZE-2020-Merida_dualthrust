@@ -18,8 +18,9 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
-#include <exception> // Might include useless stuff as i copied this from another header, will delete later
+#include <exception> 
 #include <list>
+// Might include useless stuff as i copied this from another header, will delete later
 
 #include "Hero.h"
 #include "Map.h"
@@ -31,14 +32,76 @@ class Game
     std::map<int,std::map<int, std::list<Monster>>> monster_map;
     Map* map=NULL;
     Hero* hero=NULL;
+    /**
+     * @brief Something here.
+     * 
+     * Something there
+     * 
+     * @return return 
+     * 
+     */
     void initMonsterMap();
+    /**
+     * @brief Something here.
+     * 
+     * Something there
+     * 
+     * @return return 
+     * 
+     */
     bool anyMonstersAlive();
  public:
-    Game(); // Empty Game
-    Game(std::string); // Game with the Map initialized
+    /**
+     * @brief Constructor for a game with no map.
+     * 
+     * @return Game 
+     * 
+     */
+    Game();
+    /**
+     * @brief Constructor for a game with a map initialized.
+     * 
+     * @param Name of the input file, from which the map is generated.
+     * 
+     * @return Game 
+     * 
+     */
+    Game(std::string);
+    /**
+     * @brief Sets a map in a game with no map.
+     * 
+     * @param Takes a pointer to a map.
+     * 
+     */
     void setMap(Map*); // Set the map
+    /**
+     * @brief Something here.
+     * 
+     * Something there
+     * 
+     * @param
+     * 
+     * @return return 
+     * 
+     */
     void putHero(Hero*, int, int);
+    /**
+     * @brief Something here.
+     * 
+     * Something there
+     * 
+     * @return return 
+     * 
+     */
     void putMonster(Monster*, int, int);
+    /**
+     * @brief Something here.
+     * 
+     * Something there
+     * 
+     * @return return 
+     * 
+     */
     void run();
 
     class OccupiedException : std::exception
