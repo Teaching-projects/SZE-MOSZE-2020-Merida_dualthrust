@@ -30,8 +30,8 @@ class Game
 {
  private:
     std::map<int,std::map<int, std::list<Monster>>> monster_map;
-    Map* map=NULL;
-    Hero* hero=NULL;
+    Map* map=NULL; //Sets initial value to NULL
+    Hero* hero=NULL; //Sets initial value to NULL
     /**
      * @brief Something here.
      * 
@@ -150,24 +150,4 @@ class Game
 	};
 
 };
-
-    /* 
-    
-Ha minden rendben van, elindit egy loop-ot egeszen addig, amig van meg Monster eletben. 
-Ha mindegyik monster le lett gyakva, akkor egy "{hero.name} cleared the map. uzenetet kiir, es befejezi a futast.
-
-Monstert viszont barmikor lehet feltenni, es egy lefutott run() utan akar ujra is lehet inditani.
-
-A loop-ban north, south, east, west parancsokat var a stadard bemenetrol a program, amivel a Herot mozgatja, ha lehetseges (falra nem tud menni, palyarol nem lehet lemenni). 
-Ha olyan mezore lep a hero, ahol monsterek vannak, akkor azokkal megcsatazik. (A monsterekkel abban a sorrendben, ahogy a jatekhoz hozza lettek adva.)
-
-
-Ha a hosunk meghal, akkor egy The hero died. kimenettel veget er a loop, es ebben az esetben Addig nem lehet ujra elinditani, amig egy masik Herot fel nem pakolunk ra.
-
-Exceptions to implement for set and put methods.
-
-Ha meg nincs terkep beallitva, akkor az elsot dobja a ket put. 
-
-};
-*/
 #endif // GAME_HEADER

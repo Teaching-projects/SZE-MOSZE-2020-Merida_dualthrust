@@ -72,8 +72,19 @@ class Map
          */
         Map::type get(int x, int y) const;
 
+        /**
+         * @brief Draws our map to the standard output.
+         * 
+         */
         void drawMap() const;
-
+        /**
+         * @brief Sets the type of a certain tile.
+         * 
+         * @param x Longitudinal coordinate. (Which "column")
+         * @param y Latitudinal coordinate. (Which "row")
+         * @param Type of the tile 
+         * 
+         */
         void setTile(int, int, int);
 
     class WrongIndexException : std::exception

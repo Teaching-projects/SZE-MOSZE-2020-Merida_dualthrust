@@ -62,6 +62,7 @@ void Game::putMonster(Monster *monster, int x, int y)
         monster_map[x][y].push_back(*monster);
 
         //ha több szörny van, akkor 4-es type-ra állítjuk a tile-t. Ha csak egy, akkor 3-as type
+        //If there are monsters on a certain tile we set its type to 4. If there were no monsters on the tile and now there will be one, we set it to 3.
         int tile = (monster_map[x][y].size()>1) ? 4 : 3;
         map->setTile(x,y,tile);
     }
@@ -90,19 +91,19 @@ void Game::run()
 
         while (hero->isAlive() && anyMonstersAlive())
         {
-            //map kirajzolása
             map->drawMap();
-            std::cout<<"[north] [east] [south] [west]\n"<<std::endl;
+            std::cout<<"[north] \t[east] \t[south] \t[west]\n"<<std::endl;
+            std::cout<<"[w] \t[a] \t[s] \t[d]\n"<<std::endl;
             std::cout<<"Choose a direction:"<<std::endl;
 
-            //Hero action bekérése
+            //Takes the hero action - movement at the moment.
             std::string hero_action;
             std::cin >> hero_action;
             
-            //Új pozíció a lépés alapján
+            //Sets the new position based on the hero's action.
             int new_x=hero->getPosition().first+steps[hero_action].first;
             int new_y=hero->getPosition().second+steps[hero_action].second;
-            //A map típusa azon a mezőn
+            //Gets the type of the tile to which we wish to move.
             Map::type tile = map->get(new_x,new_y);
 
             if(tile!=Map::type::Wall)
