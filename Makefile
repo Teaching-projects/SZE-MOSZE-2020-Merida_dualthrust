@@ -1,8 +1,8 @@
-OBJECTS := JSON.o Monster.o Hero.o main.o
+OBJECTS := JSON.o Monster.o Hero.o Map.o Game.o main.o
 COMPILERFLAGS := -std=c++17 -Wall -Werror -Wextra 
 COMPILER := g++
 
-CPPFILES := JSON.cpp Monster.cpp Hero.cpp main.cpp
+CPPFILES := JSON.cpp Monster.cpp Hero.cpp Map.cpp Game.cpp main.cpp
 
 VALGRINDFLAGS:= --leak-check=full --error-exitcode=1
 VALGRINDPARAMETER:=  ./a.out scenario1.json
@@ -18,6 +18,12 @@ Monster.o: Monster.cpp Monster.h JSON.h
 
 Hero.o: Hero.cpp Hero.h Monster.h JSON.h
 	$(COMPILER) $(COMPILERFLAGS) -c Hero.cpp
+	
+Map.o: Map.cpp Map.h
+	$(COMPILER) $(COMPILERFLAGS) -c Map.cpp
+	
+Game.o: Game.cpp Hero.h Monster.h Map.h
+	$(COMPILER) $(COMPILERFLAGS) -c Game.cpp
 
 main.o: main.cpp Monster.h Hero.h
 	$(COMPILER) $(COMPILERFLAGS) -c main.cpp
