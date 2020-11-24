@@ -53,5 +53,7 @@ fuggveny, mely levezenyli a jatekot, de dob egy Game::NotInitializedException-t,
             Ha a hosunk meghal, akkor egy The hero died. kimenettel veget er a loop, es ebben az esetben Addig nem lehet ujra elinditani, amig egy masik Herot fel nem pakolunk ra.
             */
         }
+    }else{
+        throw NotInitializedException();
     }
 }
