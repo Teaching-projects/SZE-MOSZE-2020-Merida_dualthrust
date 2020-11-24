@@ -3,12 +3,13 @@
 #include <fstream>
 #include <sstream>
 #include <exception> // Might include useless stuff as i copied this from another header, will delete later
+#include <iostream>
 
 #include "Game.h"
 
 Game::Game(std::string map_file_path){
-    Map incoming_map(map_file_path);
-    map=&incoming_map;
+    map = new Map(map_file_path);
+    
 }
 
 void Game::setMap(Map* incoming_map)
@@ -16,13 +17,13 @@ void Game::setMap(Map* incoming_map)
     map = incoming_map;
 }; // Set the map
 
-void Game::putHero(Hero* incoming_hero, int x, int y)
+void Game::putHero(Hero *incoming_hero, int x, int y)
 {
     //map gettel lekérdezni hogy az adott helyen van-e valami, ha igen akkor exception. Ha van már hero a mapon, exception.
-    if(hero){
+    if(hero != nullptr){
         throw AlreadyHasHeroException();
     }
-
+    
     if(map->get(x,y)==Map::type::Free){
         hero = incoming_hero;
         hero->setPosition(x,y);
@@ -31,7 +32,7 @@ void Game::putHero(Hero* incoming_hero, int x, int y)
     }
 }
 
-void Game::putMonster(Monster* monster, int x, int y)
+void Game::putMonster(Monster *monster, int x, int y)
 {
     //map gettel lekérdezni hogy az adott helyen van-e valami, ha igen akkor exception.
     if(map->get(x,y)==Map::type::Free){

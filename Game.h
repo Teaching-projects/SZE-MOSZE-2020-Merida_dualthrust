@@ -27,8 +27,8 @@
 class Game
 {
  private:
-    Map* map;
-    Hero* hero;
+    Map* map=NULL;
+    Hero* hero=NULL;
     std::vector<Monster*> monsters_on_map;
  public:
     Game(); // Empty Game
