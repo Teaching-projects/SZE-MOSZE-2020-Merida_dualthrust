@@ -68,6 +68,8 @@ class Map
 
         void drawMap() const;
 
+        void setTile(int, int, int);
+
     class WrongIndexException : std::exception
 	{
 		public:

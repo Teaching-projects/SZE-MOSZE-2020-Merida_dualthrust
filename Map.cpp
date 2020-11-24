@@ -108,3 +108,7 @@ void Map::drawMap() const
     std::cout << "╝"<< std::endl;
     
 }
+
+void Map::setTile(int x, int y, int type_int){
+    map[x][y] = type_int;
+}
