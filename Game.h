@@ -22,6 +22,7 @@
 
 #include "Hero.h"
 #include "Map.h"
+#include "Monster.h"
 
 class Game
 {

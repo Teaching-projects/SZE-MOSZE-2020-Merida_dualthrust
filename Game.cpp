@@ -4,12 +4,7 @@
 #include <sstream>
 #include <exception> // Might include useless stuff as i copied this from another header, will delete later
 
-#include "Hero.h"
-#include "Monster.h"
-#include "Map.h"
 #include "Game.h"
-
-Game::Game(){}
 
 Game::Game(std::string map_file_path){
     Map incoming_map(map_file_path);

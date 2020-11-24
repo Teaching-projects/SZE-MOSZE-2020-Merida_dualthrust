@@ -23,6 +23,8 @@ Map::type Map::get(int x, int y) const
     }
 }
 
+Map::Map(){}
+
 Map::Map(std::string path)
 {
     std::string line;
