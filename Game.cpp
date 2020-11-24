@@ -2,7 +2,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
-#include <exception> // Might include useless stuff as i copied this from another header, will delete later
+#include <exception>
 #include <iostream>
 #include <map>
 
@@ -17,11 +17,10 @@ Game::Game(std::string map_file_path){
 void Game::setMap(Map* incoming_map)
 {
     map = incoming_map;
-}; // Set the map
+};
 
 void Game::putHero(Hero *incoming_hero, int x, int y)
 {
-    //map gettel lekérdezni hogy az adott helyen van-e valami, ha igen akkor exception. Ha van már hero a mapon, exception.
     if(hero != nullptr){
         throw AlreadyHasHeroException();
     }
@@ -49,7 +48,6 @@ bool Game::anyMonstersAlive(){
 
 void Game::putMonster(Monster *monster, int x, int y)
 {
-    //map gettel lekérdezni hogy az adott helyen van-e valami, ha igen akkor exception.
     if(map->get(x,y)!=Map::type::Wall && map->get(x,y)!=Map::type::Hero){
         monster->setPosition(x,y);
         //Elrakjuk az adott mezőre a szörny pointerét
@@ -58,8 +56,6 @@ void Game::putMonster(Monster *monster, int x, int y)
         //ha több szörny van, akkor 4-es type-ra állítjuk a tile-t. Ha csak egy, akkor 3-as type
         int tile = (monster_map[x][y].size()>1) ? 4 : 3;
         map->setTile(x,y,tile);
-
-
     }else{
         throw OccupiedException();
     }
@@ -67,10 +63,6 @@ void Game::putMonster(Monster *monster, int x, int y)
 
 void Game::run()
 {
-/* Legyen egy
-
-void Game::run();
-fuggveny, mely levezenyli a jatekot, de dob egy Game::NotInitializedException-t, ha meg nincs beallitva terkep, vagy nincs Hero a palyan.  */
     std::map<std::string, std::pair<int,int>> steps{
         {"north",std::make_pair(-1,0)},
         {"east",std::make_pair(0,1)},
@@ -122,13 +114,6 @@ fuggveny, mely levezenyli a jatekot, de dob egy Game::NotInitializedException-t,
                 hero->setPosition(new_x, new_y);
                 map->setTile(new_x,new_y,2);
             }
-
-            /* 
-            A loop-ban north, south, east, west parancsokat var a stadard bemenetrol a program, amivel a Herot mozgatja, ha lehetseges (falra nem tud menni, palyarol nem lehet lemenni). 
-            Ha olyan mezore lep a hero, ahol monsterek vannak, akkor azokkal megcsatazik. (A monsterekkel abban a sorrendben, ahogy a jatekhoz hozza lettek adva.)
-
-            Ha a hosunk meghal, akkor egy The hero died. kimenettel veget er a loop, es ebben az esetben Addig nem lehet ujra elinditani, amig egy masik Herot fel nem pakolunk ra.
-            */
         }
         std::cout << (hero->isAlive() ? "The hero won." : "The hero died.") << std::endl;
     }else{
