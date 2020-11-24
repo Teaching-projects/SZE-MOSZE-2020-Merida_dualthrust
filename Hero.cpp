@@ -5,7 +5,7 @@
 #include <string>
 #include <cmath>
 
-    Hero::Hero(const std::string& characterName, int characterHP, int characterATK, double characterACD, int XPperlevel, int HPperlevel, int DMGperlevel, float ACDperlevel) : Monster(characterName, characterHP, characterATK, characterACD), level(1), maximumHealthPoint(characterHP), experience(0), experiencePerLevel(XPperlevel), healthPointBonusPerLevel(HPperlevel), damageBonusPerLevel(DMGperlevel), cooldownMultiplierPerLevel(ACDperlevel)
+    Hero::Hero(const std::string& characterName, int characterHP, int characterATK, int characterDEF, double characterACD, int XPperlevel, int HPperlevel, int DMGperlevel, int DEFperlevel, float ACDperlevel) : Monster(characterName, characterHP, characterATK, characterDEF, characterACD), level(1), maximumHealthPoint(characterHP), experience(0), experiencePerLevel(XPperlevel), healthPointBonusPerLevel(HPperlevel), damageBonusPerLevel(DMGperlevel), defenseBonusPerLevel(DEFperlevel), cooldownMultiplierPerLevel(ACDperlevel)
     {
 
     }
@@ -25,6 +25,7 @@
         maximumHealthPoint  +=  healthPointBonusPerLevel;
         maximumHealthPoint  =   round(maximumHealthPoint);
         damage              +=  damageBonusPerLevel;
+        defense             +=  defenseBonusPerLevel;   
         cooldown            *=  cooldownMultiplierPerLevel;
         this->healthPoint   =   maximumHealthPoint;        
         level               +=  1;
@@ -32,31 +33,38 @@
     
     Hero Hero::parse(const std::string& path)  //JSON parse method for creating a Monster object based on a given JSON input file
     {
-        JSON data    =   JSON::parseFromFile(path);
-        std::string name                                =   data.get<std::string>("name");
-        int heatlhPoints                                =   data.get<int>("base_health_points");
-        int damage                                      =   data.get<int>("base_damage");
-        float cooldown                                  =   data.get<float>("base_attack_cooldown");
-        int experiencePerLevel                          =   data.get<int>("experience_per_level");
-        int healthPointBonusPerLevel                    =   data.get<int>("health_point_bonus_per_level");
-        int damageBonusPerLevel                         =   data.get<int>("damage_bonus_per_level");
-        float cooldownMultiplierPerLevel                =   data.get<float>("cooldown_multiplier_per_level");
+        JSON data                           =   JSON::parseFromFile(path);
+        std::string name                    =   data.get<std::string>("name");
+        int heatlhPoints                    =   data.get<int>("base_health_points");
+        int damage                          =   data.get<int>("base_damage");
+        int defense                         =   data.get<int>("base_defense");
+        float cooldown                      =   data.get<float>("base_attack_cooldown");
+        int experiencePerLevel              =   data.get<int>("experience_per_level");
+        int healthPointBonusPerLevel        =   data.get<int>("health_point_bonus_per_level");
+        int damageBonusPerLevel             =   data.get<int>("damage_bonus_per_level");
+        int defenseBonusPerLevel            =   data.get<int>("defense_bonus_per_level");
+        float cooldownMultiplierPerLevel    =   data.get<float>("cooldown_multiplier_per_level");
 
-        return Hero(name, heatlhPoints, damage, cooldown, experiencePerLevel, healthPointBonusPerLevel, damageBonusPerLevel, cooldownMultiplierPerLevel);
+        return Hero(name, heatlhPoints, damage, defense, cooldown, experiencePerLevel, healthPointBonusPerLevel, damageBonusPerLevel, defenseBonusPerLevel, cooldownMultiplierPerLevel);
     }
 
     void Hero::deliverHit(Monster* enemy) 
     {
         int enemyHealthPoint    =   enemy   ->  getHealthPoints();
+        int enemyDefense        =   enemy   ->  getDefense();
         int experienceToGain    =   0;
 
-        if (enemyHealthPoint < damage)
+        if (enemyHealthPoint < damage - enemyDefense)
         {
             experienceToGain   =   enemyHealthPoint;
         }
         else
         {
-            experienceToGain   =   damage;
+            experienceToGain   =   damage - enemyDefense;
+            if (experienceToGain    <   0)
+            {
+                experienceToGain    =   0;
+            }
         }              
 
         enemy       ->  sufferDamage(this);

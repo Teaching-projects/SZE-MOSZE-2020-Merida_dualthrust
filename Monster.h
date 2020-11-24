@@ -29,7 +29,7 @@ public:
      * In case of no inputs the Monster object gets default values
      * 
      */
-    Monster(const std::string&, int, int, const double);
+    Monster(const std::string&, int, int, int, const double);
     /**
      * @brief JSON parse method for creating a Monster object based on a given JSON input file
      * @return Monster type unit
@@ -48,6 +48,12 @@ public:
      * 
      */
     int const & getDamage(/**There's no input parameter here.*/) const;
+    /**
+     * @brief Getter for character defense
+     * @return int const& 
+     * 
+     */
+    int const & getDefense(/**There's no input parameter here.*/) const;
     /**
      * @brief Getter for character healthpoint
      * @return int const& 
@@ -113,6 +119,11 @@ protected:
      * 
      */
     int damage;
+    /**
+     * @brief Defense of the unit
+     * 
+     */
+    int defense;
     /**
      * @brief Attack cooldown of the unit
      * 

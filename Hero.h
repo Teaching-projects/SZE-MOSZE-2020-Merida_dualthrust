@@ -55,6 +55,11 @@ class Hero : public Monster{
          */
         const int damageBonusPerLevel;
         /**
+         * @brief Extra defense per level.
+         * 
+         */
+        const int defenseBonusPerLevel;
+        /**
          * @brief Member variable responsible for the rate of change in a given Hero's cooldown after leveling up. 
          * 
          * The data is initially stored in a JSON file.
@@ -74,7 +79,7 @@ class Hero : public Monster{
         /**
          * @brief Constructor for our Hero class.
          */
-        Hero(const std::string&, int, int, double, const int, const int, const int, const float);
+        Hero(const std::string&, int, int, int, double, const int, const int, const int, const int, const float);
         /**
          * @brief Getter for maximum health points of our Hero.
          * @return int const&
@@ -86,8 +91,7 @@ class Hero : public Monster{
          * @return  int const&
          * 
          */
-        int const & getLevel(/**There's no input parameter here.*/) const;
-        
+        int const & getLevel(/**There's no input parameter here.*/) const;       
         /**
          * @brief Provides data for our constructor.
          * 
