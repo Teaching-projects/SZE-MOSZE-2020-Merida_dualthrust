@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['experience_10',['experience',['../classHero.html#ad8304002eae633bc0c32ee0980cf7d1b',1,'Hero']]],
-  ['experienceperlevel_11',['experiencePerLevel',['../classHero.html#aa62f35226da9a03419e1b6e176c7970c',1,'Hero']]]
+  ['fighttildeath_8',['fightTilDeath',['../classMonster.html#ad2cbb636ed46fd4cc0a4869c9970f1a0',1,'Monster']]]
 ];
