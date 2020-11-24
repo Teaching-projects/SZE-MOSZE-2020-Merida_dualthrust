@@ -28,6 +28,8 @@ class Game
 {
  private:
     Map map;
+    Hero* hero;
+    std::vector<Monster*> monsters_on_map;
  public:
     Game(); // Empty Game
     Game(std::string); // Game with the Map initialized

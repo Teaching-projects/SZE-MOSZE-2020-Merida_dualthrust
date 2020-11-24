@@ -32,7 +32,7 @@ void Game::run()
 
 void Game::run();
 fuggveny, mely levezenyli a jatekot, de dob egy Game::NotInitializedException-t, ha meg nincs beallitva terkep, vagy nincs Hero a palyan.  */
-
+    
     while (true)
     {
         /* 
