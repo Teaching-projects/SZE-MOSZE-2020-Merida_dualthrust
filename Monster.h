@@ -30,6 +30,19 @@ public:
      * 
      */
     Monster(const std::string&, int, int, int, const double);
+    
+    /**
+     * @brief Setter for the unit's position for the map. Evaluation logic of the move's validity happens inside the Game class.
+     * 
+     */
+    void setPosition(int x, int y);
+
+    /**
+     * @brief Getter for the unit's current position on the map.
+     * 
+     */
+    std::pair<int,int> getPosition();
+    
     /**
      * @brief JSON parse method for creating a Monster object based on a given JSON input file
      * @return Monster type unit
@@ -129,6 +142,11 @@ protected:
      * 
      */
     float cooldown;
+    /**
+     * @brief Represents the unit's current coordinates on the game map
+     * 
+     */
+    std::pair<int,int> position;
 };
 
 #endif // MONSTER_HEADER
