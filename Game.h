@@ -35,7 +35,7 @@ class Game
     Game(std::string); // Game with the Map initialized
     void setMap(Map*); // Set the map
     void putHero(Hero*, int, int);
-    void putMonster(Monster, int, int);
+    void putMonster(Monster*, int, int);
     void run();
 
     class OccupiedException : std::exception

@@ -25,14 +25,21 @@ void Game::putHero(Hero* incoming_hero, int x, int y)
 
     if(map->get(x,y)==Map::type::Free){
         hero = incoming_hero;
+        hero->setPosition(x,y);
     }else{
         throw OccupiedException();
     }
 }
 
-void Game::putMonster(Monster monster, int x, int y)
+void Game::putMonster(Monster* monster, int x, int y)
 {
-    //map gettel lekérdezni hogy az adott helyen van-e valami, ha igen akkor exception. 
+    //map gettel lekérdezni hogy az adott helyen van-e valami, ha igen akkor exception.
+    if(map->get(x,y)==Map::type::Free){
+        monsters_on_map.push_back(monster);
+        monster->setPosition(x,y);
+    }else{
+        throw OccupiedException();
+    }
 }
 
 void Game::run()
