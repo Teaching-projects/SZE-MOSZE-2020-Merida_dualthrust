@@ -78,13 +78,11 @@ fuggveny, mely levezenyli a jatekot, de dob egy Game::NotInitializedException-t,
         {"west",std::make_pair(0,-1)}
     };
 
-    anyMonstersAlive();
-
     if(hero && map){
 
-        while (hero->isAlive() || anyMonstersAlive())
+        while (hero->isAlive() && anyMonstersAlive())
         {
-            //Map kirajzolása
+            //map kirajzolása
             map->drawMap();
             std::cout<<"[north] [east] [south] [west]\n"<<std::endl;
             std::cout<<"Choose a direction:"<<std::endl;
