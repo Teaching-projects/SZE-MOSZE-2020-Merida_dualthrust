@@ -102,9 +102,6 @@ void Game::run()
                         if (!monster_map[new_x][new_y].front().isAlive()) monster_map[new_x][new_y].pop_front();
                     }
 
-                    if(!hero->isAlive()){
-                        break;
-                    }
                 }
 
                 //Ahonnan elépett a hero, az üres kell legyen -> ha szörny volt legyőzte, ha nem volt, üres volt
