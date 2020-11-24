@@ -30,16 +30,19 @@ Map::Map(std::string path)
     std::string line;
     std::ifstream mapfile(path);
     longest_row_size = 0;
-
+    
     while (std::getline(mapfile, line))
     {
         std::vector<int> map_row;
+        
         for(int i=0;i<line.length();i++){
             if(line[i]=='#'){
                 map_row.push_back(type(Wall));
             }else if(line[i]=' '){
                 map_row.push_back(type(Free));
             }
+            //Nullpointereket tolunk bele, hogy fel legyen töltve hellyel
+            
         }
         
         if(line.length() > longest_row_size){

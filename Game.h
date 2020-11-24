@@ -19,6 +19,7 @@
 #include <fstream>
 #include <sstream>
 #include <exception> // Might include useless stuff as i copied this from another header, will delete later
+#include <list>
 
 #include "Hero.h"
 #include "Map.h"
@@ -27,9 +28,11 @@
 class Game
 {
  private:
+    std::map<int,std::map<int, std::list<Monster>>> monster_map;
     Map* map=NULL;
     Hero* hero=NULL;
-    std::vector<Monster*> monsters_on_map;
+    void initMonsterMap();
+    bool anyMonstersAlive();
  public:
     Game(); // Empty Game
     Game(std::string); // Game with the Map initialized

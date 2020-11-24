@@ -8,6 +8,7 @@
 
 #include "Game.h"
 
+
 Game::Game(std::string map_file_path){
     map = new Map(map_file_path);
     
@@ -34,16 +35,31 @@ void Game::putHero(Hero *incoming_hero, int x, int y)
     }
 }
 
+bool Game::anyMonstersAlive(){
+    for( auto const& [key, val] : monster_map )
+    {
+        for( auto const& [key_2, val_2] : val ){
+            if(val_2.size()>0){
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 void Game::putMonster(Monster *monster, int x, int y)
 {
     //map gettel lekérdezni hogy az adott helyen van-e valami, ha igen akkor exception.
-    if(map->get(x,y)==Map::type::Free){
-        monsters_on_map.push_back(monster);
-        
-        //TODO: ha több szörny van, akkor 4-es type-ra állítani -> több szörnyre írni egy checket
-        map->setTile(x,y,3);
-
+    if(map->get(x,y)!=Map::type::Wall && map->get(x,y)!=Map::type::Hero){
         monster->setPosition(x,y);
+        //Elrakjuk az adott mezőre a szörny pointerét
+        monster_map[x][y].push_back(*monster);
+
+        //TODO: ha több szörny van, akkor 4-es type-ra állítjuk a tile-t. Ha csak egy, akkor 3-as type
+        int tile = (monster_map[x][y].size()>1) ? 4 : 3;
+        map->setTile(x,y,tile);
+
+
     }else{
         throw OccupiedException();
     }
@@ -58,14 +74,15 @@ fuggveny, mely levezenyli a jatekot, de dob egy Game::NotInitializedException-t,
     std::map<std::string, std::pair<int,int>> steps{
         {"north",std::make_pair(-1,0)},
         {"east",std::make_pair(0,1)},
-        {"south",std::make_pair(1,0)},
+        {"south",std::make_pair(1   ,0)},
         {"west",std::make_pair(0,-1)}
     };
 
+    anyMonstersAlive();
 
     if(hero && map){
 
-        while (monsters_on_map.size() > 0 && hero->isAlive())
+        while (hero->isAlive() || anyMonstersAlive())
         {
             //Map kirajzolása
             map->drawMap();
@@ -82,7 +99,24 @@ fuggveny, mely levezenyli a jatekot, de dob egy Game::NotInitializedException-t,
             //A map típusa azon a mezőn
             Map::type tile = map->get(new_x,new_y);
 
-            if(tile==Map::type::Free || tile==Map::type::Monster || tile==Map::type::Monsters){
+            if(tile!=Map::type::Wall){
+
+                if(tile==Map::type::Monster || tile==Map::type::Monsters){
+                    while (hero->isAlive() && !monster_map[new_x][new_y].empty()) {
+                        std::cout 
+                            << hero->getName() << "(" << hero->getLevel()<<")"
+                            << " vs "
+                            << monster_map[new_x][new_y].front().getName()
+                            <<std::endl;
+                        hero->fightTilDeath(monster_map[new_x][new_y].front());
+                        if (!monster_map[new_x][new_y].front().isAlive()) monster_map[new_x][new_y].pop_front();
+                    }
+
+                    if(!hero->isAlive()){
+                        break;
+                    }
+                }
+
                 //Ahonnan elépett a hero, az üres kell legyen -> ha szörny volt legyőzte, ha nem volt, üres volt
                 //Visszaállítjuk a map adott mezőjét tehát üresre
                 map->setTile(hero->getPosition().first,hero->getPosition().second,0);
@@ -98,6 +132,7 @@ fuggveny, mely levezenyli a jatekot, de dob egy Game::NotInitializedException-t,
             Ha a hosunk meghal, akkor egy The hero died. kimenettel veget er a loop, es ebben az esetben Addig nem lehet ujra elinditani, amig egy masik Herot fel nem pakolunk ra.
             */
         }
+        std::cout << (hero->isAlive() ? "The hero won." : "The hero died.") << std::endl;
     }else{
         throw NotInitializedException();
     }

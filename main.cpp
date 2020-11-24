@@ -10,7 +10,7 @@
 #include "JSON.h"
 #include "Hero.h"
 #include "Monster.h"
-
+#include "Game.h"
 
 
 
@@ -48,10 +48,22 @@ int main(int argc, char** argv){
 
     try { 
         Hero hero{Hero::parse(hero_file)};
+
+        Game game("./maps/map_1.txt");
+        game.putHero(&hero,1,1);        
+        
         std::list<Monster> monsters;
         for (const auto& monster_file : monster_files)
             monsters.push_back(Monster::parse(monster_file));        
 
+        for (Monster monster : monsters)
+        {
+            game.putMonster(&monster,1,2);
+        }
+
+        game.run();
+
+        /* RÉGI KÓD - HASZNÁLVA LESZ KÉSŐBB
         while (hero.isAlive() && !monsters.empty()) {
             std::cout 
                 << hero.getName() << "(" << hero.getLevel()<<")"
@@ -67,6 +79,7 @@ int main(int argc, char** argv){
                   << "  DMG: "<<hero.getDamage()<<std::endl
                   << "  ACD: "<<hero.getAttackCoolDown()<<std::endl
                   ;
+        */
     } 
     catch (const JSON::ParseException& e) {bad_exit(4);
     }
