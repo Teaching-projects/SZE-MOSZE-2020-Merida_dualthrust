@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['alreadyhasheroexception_0',['AlreadyHasHeroException',['../classGame_1_1AlreadyHasHeroException.html',1,'Game::AlreadyHasHeroException'],['../classGame_1_1AlreadyHasHeroException.html#a661fe174e6ed027c3ebe5a5c13bf5c55',1,'Game::AlreadyHasHeroException::AlreadyHasHeroException()']]],
-  ['alreadyhasunitsexception_1',['AlreadyHasUnitsException',['../classGame_1_1AlreadyHasUnitsException.html',1,'Game::AlreadyHasUnitsException'],['../classGame_1_1AlreadyHasUnitsException.html#a538b74874c5db6e2f7d916275cfe3e98',1,'Game::AlreadyHasUnitsException::AlreadyHasUnitsException()']]]
+  ['cooldown_0',['cooldown',['../classMonster.html#a3299915749c117d00b28414f669197b3',1,'Monster']]],
+  ['cooldownmultiplierperlevel_1',['cooldownMultiplierPerLevel',['../classHero.html#a926246c88ed699f30992d5170eb63ff0',1,'Hero']]]
 ];

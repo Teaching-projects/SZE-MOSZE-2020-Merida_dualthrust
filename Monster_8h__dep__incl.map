@@ -1,6 +1,5 @@
 <map id="Monster.h" name="Monster.h">
-<area shape="rect" id="node1" title="Monster class." alt="" coords="65,5,152,32"/>
+<area shape="rect" id="node1" title="Monster class." alt="" coords="40,5,127,32"/>
 <area shape="rect" id="node2" href="$Hero_8h.html" title="Hero class." alt="" coords="5,80,71,107"/>
-<area shape="rect" id="node3" href="$Game_8h.html" title="Game class." alt="" coords="36,155,109,181"/>
-<area shape="rect" id="node4" href="$JSON_8h.html" title=" " alt="" coords="146,80,213,107"/>
+<area shape="rect" id="node3" href="$JSON_8h.html" title=" " alt="" coords="95,80,162,107"/>
 </map>
