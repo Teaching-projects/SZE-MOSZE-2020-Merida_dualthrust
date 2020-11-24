@@ -55,7 +55,7 @@ void Game::putMonster(Monster *monster, int x, int y)
         //Elrakjuk az adott mezőre a szörny pointerét
         monster_map[x][y].push_back(*monster);
 
-        //TODO: ha több szörny van, akkor 4-es type-ra állítjuk a tile-t. Ha csak egy, akkor 3-as type
+        //ha több szörny van, akkor 4-es type-ra állítjuk a tile-t. Ha csak egy, akkor 3-as type
         int tile = (monster_map[x][y].size()>1) ? 4 : 3;
         map->setTile(x,y,tile);
 
