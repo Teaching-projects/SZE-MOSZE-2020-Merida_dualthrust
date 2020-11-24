@@ -75,32 +75,25 @@ class Game
      */
     void setMap(Map*); // Set the map
     /**
-     * @brief Something here.
+     * @brief Puts a hero to a given - and valid - coordinate on a map - on a map with no heroes, in case there is already a hero there is an exception.
      * 
-     * Something there
      * 
-     * @param
-     * 
-     * @return return 
+     * @param Pointer to a hero that has to be put somewhere.
+     * @param X coordinate on the map.
+     * @param Y coordinate on the map.
      * 
      */
     void putHero(Hero*, int, int);
     /**
-     * @brief Something here.
+     * @brief Puts a monster to a given - and valid - coordinate on a map. 
      * 
-     * Something there
-     * 
-     * @return return 
+     * If a monster is already on a certain coordinate, the function will add the monster to the vector of monster(s) on the coordinate.
      * 
      */
     void putMonster(Monster*, int, int);
     /**
-     * @brief Something here.
-     * 
-     * Something there
-     * 
-     * @return return 
-     * 
+     * @brief Runs the game. Handles movement on the map, draws the map.
+     *
      */
     void run();
 
