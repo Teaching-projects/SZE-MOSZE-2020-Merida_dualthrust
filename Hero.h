@@ -16,6 +16,7 @@
 
 #include <string>
 #include "Monster.h"
+#include "Damage.h"
 
 class Hero : public Monster{
     protected:
@@ -53,7 +54,9 @@ class Hero : public Monster{
          * @brief Extra attack damage per level.
          * 
          */
-        const int damageBonusPerLevel;
+        int damageBonusPerLevel;
+        int magicaldamageBonusPerLevel;
+        Damage damage;
         /**
          * @brief Extra defense per level.
          * 
@@ -79,7 +82,18 @@ class Hero : public Monster{
         /**
          * @brief Constructor for our Hero class.
          */
-        Hero(const std::string&, int, int, int, double, const int, const int, const int, const int, const float);
+        Hero(
+            const std::string&, 
+            int, 
+            Damage, 
+            int, 
+            double, 
+            const int, 
+            const int, 
+            const int, 
+            const int, 
+            const int, 
+            const float);
         /**
          * @brief Getter for maximum health points of our Hero.
          * @return int const&
@@ -110,6 +124,8 @@ class Hero : public Monster{
          * 
          */
         void deliverHit(Monster* enemy) override;
+
+        Damage getDamage() const {return damage;}
     };
 
 #endif // HERO_HEADER
