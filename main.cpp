@@ -10,6 +10,7 @@
 #include "JSON.h"
 #include "Hero.h"
 #include "Monster.h"
+#include "Damage.h"
 
 
 
@@ -64,7 +65,8 @@ int main(int argc, char** argv){
         std::cout << (hero.isAlive() ? "The hero won." : "The hero died.") << std::endl;
         std::cout << hero.getName() << ": LVL" << hero.getLevel() << std::endl
                   << "   HP: "<<hero.getHealthPoints()<<"/"<<hero.getMaxHealthPoints()<<std::endl
-                  << "  DMG: "<<hero.getDamage()<<std::endl
+                  << "  DMG: "<<hero.getPhysicalDamage()<<std::endl
+                  << " MDMG: "<<hero.getMagicalDamage()<<std::endl
                   << "  ACD: "<<hero.getAttackCoolDown()<<std::endl
                   ;
     } catch (const JSON::ParseException& e) {bad_exit(4);}
