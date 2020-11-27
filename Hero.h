@@ -82,18 +82,7 @@ class Hero : public Monster{
         /**
          * @brief Constructor for our Hero class.
          */
-        Hero(
-            const std::string&, 
-            int, 
-            Damage, 
-            int, 
-            double, 
-            const int, 
-            const int, 
-            const int, 
-            const int, 
-            const int, 
-            const float);
+        Hero(const std::string&, int, Damage, int, double, const int, const int, const int, const int, const int, const float);
         /**
          * @brief Getter for maximum health points of our Hero.
          * @return int const&
