@@ -5,7 +5,7 @@
 #include <string>
 
     //Constructor
-    Monster::Monster(const std::string& characterName, int characterHP, int characterATK, int characterDEF, const double characterACD):name(characterName), healthPoint(characterHP), damage(characterATK), defense(characterDEF), cooldown(characterACD)
+    Monster::Monster(const std::string& characterName, int characterHP, Damage dmg, int characterDEF, const double characterACD):name(characterName), healthPoint(characterHP), damage(dmg), defense(characterDEF), cooldown(characterACD)
     {
 
     }
@@ -26,9 +26,14 @@
         return healthPoint;
     }
 
-    int const & Monster::getDamage() const
+    int const & Monster::getPhysicalDamage() const
     {
-        return damage;
+        return damage.physical;
+    }
+
+    int const & Monster::getMagicalDamage() const
+    {
+        return damage.magical;
     }
     
     int const & Monster::getDefense() const
@@ -47,13 +52,15 @@
     Monster Monster::parse(const std::string& path)
     {
         JSON data           =   JSON::parseFromFile(path);
+        Damage damage;
         std::string name    =   data.get<std::string>("name");
         int healthPoints    =   data.get<int>("health_points");
-        int dmg             =   std::stoi(data.get<std::string>("damage"));        
+        damage.magical      =   std::stoi(data.get<std::string>("damage"));
+        damage.magical      =   std::stoi(data.get<std::string>("magical-damage"));
         int def             =   std::stoi(data.get<std::string>("defense"));
         float cooldown      =   std::stof(data.get<std::string>("attack_cooldown"));
 
-        return Monster(name, healthPoints, dmg, def, cooldown);
+        return Monster(name, healthPoints, damage, def, cooldown);
     }
 
     //Convenience method for simple checking
@@ -67,10 +74,11 @@
     void Monster::sufferDamage(Monster* enemy) 
     {
         //std::cout << enemy->getName() << " -> " << this->getName() << std::endl;
-        if (    (enemy->getDamage() - defense)  >   0)
+        if (    (enemy->getPhysicalDamage() - defense)  >   0)
         {
-            healthPoint -= (enemy->getDamage() - defense);
+            healthPoint -= (enemy->getPhysicalDamage() - defense);
         }
+        healthPoint -= enemy->getMagicalDamage();
         
         if (healthPoint < 0)
         {
@@ -86,7 +94,7 @@
     //Printing a characters status
     std::ostream& operator<<(std::ostream& os, const Monster& character)
     {
-        os << character.getName() << ": [healthPoint: "  << character.getHealthPoints() << "] [DMG:" << character.getDamage() << "]";
+        os << character.getName() << ": [healthPoint: "  << character.getHealthPoints() << "] [DMG: " << character.getPhysicalDamage() << "] [MagicalDMG: " << character.getMagicalDamage() << "]";
         return os;
     }
 
