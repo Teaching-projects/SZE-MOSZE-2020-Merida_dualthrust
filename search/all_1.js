@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['damage_2',['Damage',['../structDamage.html',1,'Damage'],['../classMonster.html#a3819d1bf6ee6bf2a9be94f8ddd2d4cb5',1,'Monster::damage()']]],
+  ['damage_2',['Damage',['../structDamage.html',1,'Damage'],['../classMonster.html#a6614cc11c092b94f39869576fb049b67',1,'Monster::damage()']]],
   ['damagebonusperlevel_3',['damageBonusPerLevel',['../classHero.html#ace09f226b09843be731f7856af366b38',1,'Hero']]],
   ['defense_4',['defense',['../classMonster.html#ad867513550d7fde7e4b79806fe90ae2f',1,'Monster']]],
   ['defensebonusperlevel_5',['defenseBonusPerLevel',['../classHero.html#a30e1bc3ac558cd7c23f62162092637bf',1,'Hero']]],
