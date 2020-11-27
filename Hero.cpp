@@ -18,18 +18,7 @@
     int const & Hero::getLevel() const
     {
         return level;
-    }
-
-    int const & Hero::getPhysicalDamage() const
-    {
-        return damage.physical;
-    }
-
-    int const & Hero::getMagicalDamage() const
-    {
-        return damage.magical;
-    }
-    
+    }    
 
     void Hero::levelUp()
     {
