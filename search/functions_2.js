@@ -7,5 +7,5 @@ var searchData=
   ['getlevel_67',['getLevel',['../classHero.html#a0dfc4ecbb966adfe1e787c0a3313a68e',1,'Hero']]],
   ['getmaxhealthpoints_68',['getMaxHealthPoints',['../classHero.html#a42177c32f27cf0c4a0ab9f0def809340',1,'Hero']]],
   ['getname_69',['getName',['../classMonster.html#a3d2f854307d2415c379d2e60ed482968',1,'Monster']]],
-  ['getphysicaldamage_70',['getPhysicalDamage',['../classMonster.html#ae7657f64fbc98a72282b6ff2f79ea448',1,'Monster']]]
+  ['getphysicaldamage_70',['getPhysicalDamage',['../classMonster.html#a3acb73103bef01fe85b904d78f44dc3c',1,'Monster']]]
 ];
