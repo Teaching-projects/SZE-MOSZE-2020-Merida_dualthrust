@@ -2,9 +2,10 @@
 
 IFS=$'\n'
 
-./a.out scenario1.json >> results_scenario_1.txt
+./a.out scenario1.json
+echo "east"
 
-diff results_scenario_1.txt results_correct_scenario_1.txt
+diff output.txt results_correct_scenario_1.txt
 
 if [ $? -eq 0 ]
 then
@@ -13,9 +14,11 @@ else
 echo "Test failed."
 fi
 
-./a.out scenario2.json >> results_scenario_2.txt
+./a.out scenario2.json
+echo "east"
+echo "\n"
 
-diff results_scenario_2.txt results_correct_scenario_2.txt
+diff output.txt results_correct_scenario_2.txt
 
 if [ $? -eq 0 ]
 then
