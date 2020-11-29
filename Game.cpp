@@ -92,13 +92,13 @@ void Game::run()
         while (hero->isAlive() && anyMonstersAlive())
         {
             map->drawMap();
-            std::cout<<"[north] \t[east] \t[south] \t[west]\n"<<std::endl;
-            std::cout<<"[w] \t[a] \t[s] \t[d]\n"<<std::endl;
+            std::cout<<"[north] [east] [south] [west]\n"<<std::endl;
+            std::cout<<"[w] [a] [s] [d]\n"<<std::endl;
             std::cout<<"Choose a direction:"<<std::endl;
 
             //Takes the hero action - movement at the moment.
             std::string hero_action;
-            std::cin >> hero_action;
+            std::getline(std::cin,hero_action);
             
             //Sets the new position based on the hero's action.
             int new_x=hero->getPosition().first+steps[hero_action].first;
@@ -120,6 +120,7 @@ void Game::run()
                             <<std::endl;
                         hero->fightTilDeath(monster_map[new_x][new_y].front());
                         if (!monster_map[new_x][new_y].front().isAlive()) monster_map[new_x][new_y].pop_front();
+
                     }
 
                 }
@@ -133,6 +134,21 @@ void Game::run()
             }
         }
         std::cout << (hero->isAlive() ? "The hero won." : "The hero died.") << std::endl;
+
+        if(!hero->isAlive()){
+            int tile = (monster_map[hero->getPosition().first][hero->getPosition().second].size()>1) ? 4 : 3;
+            map->setTile(hero->getPosition().first,hero->getPosition().second,3);
+            hero = nullptr;
+
+            std::string new_hero_path;
+            std::cout<<"Please enter a path to a new Hero.json if you'd like to continue playing:\n[Or just press Enter to end the game]\n";
+            std::getline(std::cin,new_hero_path);
+            if(new_hero_path!=""){
+                Hero new_hero{Hero::parse(new_hero_path)};
+                putHero(&new_hero,1,1);
+                Game::run(); 
+            }
+        }
     }
     else
     {
