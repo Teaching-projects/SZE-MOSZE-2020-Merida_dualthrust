@@ -36,6 +36,7 @@ Static_code_analysis_cppcheck:
 
 Memcheck:
 	valgrind $(VALGRINDFLAGS) $(VALGRINDPARAMETER)
+	echo "east"
 
 In-out_tests:
 	chmod +x run_test.sh && ./run_test.sh
