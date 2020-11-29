@@ -104,7 +104,7 @@ std::list<std::variant<std::string, int, double, float>> JSON::listFromValues(st
 	std::list<std::variant<std::string, int, double, float>> output;
 	std::vector<std::string> s = split(rawList,',');
 
-	for(int i=0;i<s.size();i++){
+	for(unsigned int i=0;i<s.size();i++){
 		std::string processed_string = removeJSONSpaces(s[i]);
 		processed_string.erase(remove(processed_string.begin(), processed_string.end(), '['), processed_string.end());
 		processed_string.erase(remove(processed_string.begin(), processed_string.end(), ']'), processed_string.end());
