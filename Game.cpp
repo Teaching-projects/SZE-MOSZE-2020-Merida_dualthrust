@@ -5,7 +5,7 @@
 #include <exception>
 #include <iostream>
 #include <map>
-
+#include <algorithm>
 #include "Game.h"
 
 
@@ -72,8 +72,18 @@ void Game::putMonster(Monster *monster, int x, int y)
     }
 }
 
-void Game::run()
+void Game::run(bool is_test)
 {
+    std::vector<std::string> test_input;
+    if(is_test){
+        std::ifstream f("test_input.txt");
+        std::stringstream s;
+		s << f.rdbuf();
+		std::string fileContents = s.str();
+		f.close();
+        test_input=JSON::split(fileContents,'\n');
+    }
+
     std::map<std::string, std::pair<int,int>> steps
     {
         {"north",   std::make_pair(-1,0)},
@@ -98,8 +108,14 @@ void Game::run()
 
             //Takes the hero action - movement at the moment.
             std::string hero_action;
-            std::getline(std::cin,hero_action);
-            
+            if(is_test){
+                hero_action=test_input.front();
+		        hero_action.erase(std::remove(hero_action.begin(), hero_action.end(), '\n'), hero_action.end());
+                hero_action.erase(std::remove(hero_action.begin(), hero_action.end(), '\r'), hero_action.end());
+                test_input.erase(test_input.begin());
+            }else{
+                std::getline(std::cin,hero_action);
+            }
             //Sets the new position based on the hero's action.
             int new_x=hero->getPosition().first+steps[hero_action].first;
             int new_y=hero->getPosition().second+steps[hero_action].second;
@@ -146,7 +162,7 @@ void Game::run()
             if(new_hero_path!=""){
                 Hero new_hero{Hero::parse(new_hero_path)};
                 putHero(&new_hero,1,1);
-                Game::run(); 
+                Game::run(is_test); 
             }
         }
     }

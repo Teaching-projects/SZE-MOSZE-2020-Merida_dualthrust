@@ -30,7 +30,7 @@ void bad_exit(int exitcode){
 }
 
 int main(int argc, char** argv){
-    if (argc != 2) bad_exit(1);
+    if (argc < 2) bad_exit(1);
     if (!std::filesystem::exists(argv[1])) bad_exit(2);
 
     std::string hero_file;
@@ -62,12 +62,9 @@ int main(int argc, char** argv){
             game.putMonster(&monster,1,2);
         }
 
-        game.run();
-
-        std::ofstream outputFile;
-        outputFile.open("output.txt");
-        outputFile << hero.isAlive();
-        outputFile.close();
+        
+        bool is_test = (argc == 3);
+        game.run(is_test);
 
     } 
     catch (const JSON::ParseException& e) {bad_exit(4);

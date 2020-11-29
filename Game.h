@@ -25,6 +25,7 @@
 #include "Hero.h"
 #include "Map.h"
 #include "Monster.h"
+#include "Json.h"
 
 class Game
 {
@@ -95,7 +96,7 @@ class Game
      * @brief Runs the game. Handles movement on the map, draws the map.
      *
      */
-    void run();
+    void run(bool);
 
     class OccupiedException : std::exception
 	{
