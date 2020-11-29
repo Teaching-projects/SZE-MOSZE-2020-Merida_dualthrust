@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <map>
 #include <string>
 #include <filesystem>
@@ -62,6 +63,11 @@ int main(int argc, char** argv){
         }
 
         game.run();
+
+        std::ofstream outputFile;
+        outputFile.open("output.txt");
+        outputFile << hero.isAlive();
+        outputFile.close();
 
     } 
     catch (const JSON::ParseException& e) {bad_exit(4);
