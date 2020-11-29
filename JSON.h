@@ -20,7 +20,8 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
-
+#include <variant>
+#include <list>
 class JSON {
 public:
     /**
@@ -28,7 +29,16 @@ public:
      * 
      */
     JSON(const std::map<std::string, std::any>&);
-        
+
+    typedef std::list<std::variant<std::string, int, double, float>> list; 
+    
+/*else if(std::is_same<T, JSON::list>::value){
+            JSON::list myList;
+            myList.push_back("asd");
+            converted = myList;
+        }
+*/
+
     template <typename T>
     T get(std::string key){
         std::string value =  std::any_cast<std::string>(content[key]);
@@ -39,10 +49,13 @@ public:
             converted=(std::stof(value));
         }else if(std::is_same<T, std::string>::value){
             converted=value;
+        }if (std::is_same<T, JSON::list>::value){
+            converted = listFromValues(value);
         }
-        
         return std::any_cast<T>(converted);
     }
+
+    
 
     int count(std::string);
     /**
@@ -112,6 +125,7 @@ public:
 	};
 
     protected:
+        static std::list<std::variant<std::string, int, double, float>> listFromValues(std::string);
         std::map<std::string, std::any> content;
 };
 

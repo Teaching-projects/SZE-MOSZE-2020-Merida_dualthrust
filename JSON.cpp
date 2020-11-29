@@ -48,12 +48,17 @@ std::vector<std::string> JSON::splitRowsJSON(const std::string& s)
 	std::vector<std::string> output;
 	std::string current_value;
 
+	bool list_open=false;
+
 	for (unsigned int i = 0; i < s.length()-1; i++)
 	{
 		std::string remaining = s.substr(i+1, s.length());
 		remaining.erase(remove_if(remaining.begin(), remaining.end(), isspace), remaining.end());
 
-		if ((s[i] == ',' && remaining[0]=='"') || i == s.length() - 2)
+		if (s[i]=='['){ list_open=true;}
+		if (s[i]==']'){ list_open=false;}
+
+		if ((s[i] == ',' && remaining[0]=='"' && !list_open) || (i == s.length() - 2 && !list_open))
 		{
 			current_value += s[i];
 			output.push_back(current_value);
@@ -95,23 +100,44 @@ void JSON::deleteCharacters(const std::vector<Monster*>& characters)
 	}
 }
 
+std::list<std::variant<std::string, int, double, float>> JSON::listFromValues(std::string rawList){
+	std::list<std::variant<std::string, int, double, float>> output;
+	std::vector<std::string> s = split(rawList,',');
+
+	for(unsigned int i=0;i<s.size();i++){
+		std::string processed_string = removeJSONSpaces(s[i]);
+		processed_string.erase(remove(processed_string.begin(), processed_string.end(), '['), processed_string.end());
+		processed_string.erase(remove(processed_string.begin(), processed_string.end(), ']'), processed_string.end());
+		processed_string.erase(remove(processed_string.begin(), processed_string.end(), ','), processed_string.end());
+		processed_string.erase(remove(processed_string.begin(), processed_string.end(), '"'), processed_string.end());
+
+		if(processed_string!=""){
+			output.push_back(processed_string);
+		}
+	}
+	return output;
+}
+
 JSON JSON::parseString(std::string const &json_string)
 {
 	std::map<std::string, std::any> parsedMap;
 	std::vector<std::string> rows = splitRowsJSON(json_string);
 
+	//Check if the file contains '{' and '}' delimiters
+	std::string spaceless = json_string;
+	spaceless.erase(remove_if(spaceless.begin(), spaceless.end(), isspace), spaceless.end());
+	if(spaceless[0] != '{' || spaceless[spaceless.length()-1]!='}'){
+		throw ParseException();
+	}
+
 	for (auto& row : rows) // access by reference to avoid copying
 	{
-		//Check if the file contains '{' and '}' delimiters
-		std::string spaceless = json_string;
-		spaceless.erase(remove_if(spaceless.begin(), spaceless.end(), isspace), spaceless.end());
-		if(spaceless[0] != '{' || spaceless[spaceless.length()-1]!='}'){
-			throw ParseException();
-		}
-
 		//Delete '{' and '}' from the raw string
 		row.erase(remove(row.begin(), row.end(), '{'), row.end());
 		row.erase(remove(row.begin(), row.end(), '}'), row.end());
+
+		spaceless = row;
+		spaceless.erase(remove_if(spaceless.begin(), spaceless.end(), isspace), spaceless.end());
 
 		//Delete linebreaks
 		row.erase(std::remove(row.begin(), row.end(), '\n'), row.end());
