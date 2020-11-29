@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['notinitializedexception_106',['NotInitializedException',['../classGame_1_1NotInitializedException.html#a940350c425f5d08a07fdeabc3814e552',1,'Game::NotInitializedException']]]
+  ['removejsonspaces_81',['removeJSONSpaces',['../classJSON.html#af7161d083a7d4ea5ff0c76bb8a2fe7f4',1,'JSON']]]
 ];
