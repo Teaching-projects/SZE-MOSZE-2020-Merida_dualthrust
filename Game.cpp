@@ -137,7 +137,7 @@ void Game::run()
 
         if(!hero->isAlive()){
             int tile = (monster_map[hero->getPosition().first][hero->getPosition().second].size()>1) ? 4 : 3;
-            map->setTile(hero->getPosition().first,hero->getPosition().second,3);
+            map->setTile(hero->getPosition().first,hero->getPosition().second,tile);
             hero = nullptr;
 
             std::string new_hero_path;
