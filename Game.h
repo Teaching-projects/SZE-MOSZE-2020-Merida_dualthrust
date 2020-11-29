@@ -59,6 +59,7 @@ class Game
      * 
      */
     Game();
+    ~Game();
     /**
      * @brief Constructor for a game with a map initialized.
      * 

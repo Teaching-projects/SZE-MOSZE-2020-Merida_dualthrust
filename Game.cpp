@@ -13,6 +13,10 @@ Game::Game(std::string map_file_path)
 {
     map = new Map(map_file_path);
 }
+Game::~Game()
+{
+    delete map;
+}
 
 void Game::setMap(Map* incoming_map)
 {
