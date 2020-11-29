@@ -5,7 +5,7 @@ COMPILER := g++
 CPPFILES := JSON.cpp Monster.cpp Hero.cpp Map.cpp Game.cpp main.cpp
 
 VALGRINDFLAGS:= --leak-check=full --error-exitcode=1
-VALGRINDPARAMETER:=  ./a.out scenario1.json
+VALGRINDPARAMETER:=  ./a.out scenario1.json -test
 
 build: $(OBJECTS)
 	$(COMPILER) $(COMPILERFLAGS) -o a.out $(OBJECTS)
@@ -36,7 +36,6 @@ Static_code_analysis_cppcheck:
 
 Memcheck:
 	valgrind $(VALGRINDFLAGS) $(VALGRINDPARAMETER)
-	echo "east"
 
 In-out_tests:
 	chmod +x run_test.sh && ./run_test.sh
