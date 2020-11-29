@@ -32,6 +32,12 @@ public:
 
     typedef std::list<std::variant<std::string, int, double, float>> list; 
     
+/*else if(std::is_same<T, JSON::list>::value){
+            JSON::list myList;
+            myList.push_back("asd");
+            converted = myList;
+        }
+*/
 
     template <typename T>
     T get(std::string key){
@@ -43,26 +49,13 @@ public:
             converted=(std::stof(value));
         }else if(std::is_same<T, std::string>::value){
             converted=value;
+        }if (std::is_same<T, JSON::list>::value){
+            converted = listFromValues(value);
         }
-        
         return std::any_cast<T>(converted);
     }
 
-    template <typename T>
-        inline typename std::enable_if<std::is_same<T, JSON::list>::value, JSON::list>::type
-        get(std::string key){
-            if(!content.count(key)){
-                throw ParseException("JSON is missing a key: " + key); 
-            }
-
-            JSON::list list;
-            std::string value = std::any_cast<std::string>(content[key]);
-
-            
-           
-
-            return list;
-        }
+    
 
     int count(std::string);
     /**
@@ -132,6 +125,7 @@ public:
 	};
 
     protected:
+        static std::list<std::variant<std::string, int, double, float>> listFromValues(std::string);
         std::map<std::string, std::any> content;
 };
 
