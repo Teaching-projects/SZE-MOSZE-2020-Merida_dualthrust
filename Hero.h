@@ -32,6 +32,11 @@ class Hero : public Monster{
          */
         int maximumHealthPoint;
         /**
+         * @brief Shows how far our hero can see the map.
+         * 
+         */
+        int lightradius;
+        /**
          * @brief Tracking the units current Experience Points.
          * 
          * When using the deliverHit() method XP is given to a unit based on its damage inflicted to the enemy.
@@ -79,7 +84,7 @@ class Hero : public Monster{
         /**
          * @brief Constructor for our Hero class.
          */
-        Hero(const std::string&, int, int, int, double, const int, const int, const int, const int, const float);
+        Hero(const std::string&, int, int, int, int, double, const int, const int, const int, const int, const float);
         /**
          * @brief Getter for maximum health points of our Hero.
          * @return int const&
