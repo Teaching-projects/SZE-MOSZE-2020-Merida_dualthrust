@@ -21,6 +21,11 @@
         return level;
     }
 
+    int const & Hero::getLightRadius() const
+    {
+        return lightradius;
+    }
+
     void Hero::levelUp()
     {
         maximumHealthPoint  +=  healthPointBonusPerLevel;

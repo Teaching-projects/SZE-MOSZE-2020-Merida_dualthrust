@@ -103,7 +103,13 @@ class Hero : public Monster{
          * @return  int const&
          * 
          */
-        int const & getLevel(/**There's no input parameter here.*/) const;       
+        int const & getLevel(/**There's no input parameter here.*/) const;    
+        /**
+         * @brief Getter for the lightrange - viewrange - of our Hero.
+         * @return  int const&
+         * 
+         */
+        int const & getLightRadius(/**There's no input parameter here.*/) const;       
         /**
          * @brief Provides data for our constructor.
          * 
