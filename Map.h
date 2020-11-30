@@ -36,11 +36,11 @@ class Map
          */
         enum type 
         {
-            Free,
-            Wall,
-            Hero,
-            Monster,
-            Monsters
+            Free,       /* 0 */
+            Wall,       /* 1 */
+            Hero,       /* 2 */
+            Monster,    /* 3 */
+            Monsters    /* 4 */
         };
         /**
          * @brief Constructor for an empty map.
@@ -48,7 +48,7 @@ class Map
          * @return Map 
          * 
          */
-        Map();
+        Map(/**There's no input parameter here.*/);
         /**
          * @brief Gives back a map constructed from a txt file.
          * 
@@ -71,7 +71,6 @@ class Map
          * 
          */
         Map::type get(unsigned int x, unsigned int y) const;
-
         /**
          * @brief Draws our map to the standard output.
          * 
@@ -91,8 +90,8 @@ class Map
 	{
 		public:
             /**
-             * @brief Constructor for the exception
-             * @param key A hiba leirasa
+             * @brief Prevents out of bound indexing 
+             * 
             */
 		    WrongIndexException(){}
 	};

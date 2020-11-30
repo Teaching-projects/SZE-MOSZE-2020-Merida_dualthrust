@@ -41,7 +41,7 @@ public:
      * @brief Getter for the unit's current position on the map.
      * 
      */
-    std::pair<int,int> getPosition();
+    std::pair<int,int> getPosition(/**There's no input parameter here.*/);
     
     /**
      * @brief JSON parse method for creating a Monster object based on a given JSON input file

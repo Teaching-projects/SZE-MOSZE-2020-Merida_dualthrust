@@ -30,27 +30,19 @@
 class Game
 {
  private:
+
     std::map<int,std::map<int, std::list<Monster>>> monster_map;
+
     Map* map=NULL; //Sets initial value to NULL
+
     Hero* hero=NULL; //Sets initial value to NULL
     /**
-     * @brief Something here.
+     * @brief Checks if there are any monsters alive on the map
      * 
-     * Something there
-     * 
-     * @return return 
+     * @return bool 
      * 
      */
-    void initMonsterMap();
-    /**
-     * @brief Something here.
-     * 
-     * Something there
-     * 
-     * @return return 
-     * 
-     */
-    bool anyMonstersAlive();
+    bool anyMonstersAlive(/**There's no input parameter here.*/);
  public:
     /**
      * @brief Constructor for a game with no map.
@@ -58,7 +50,11 @@ class Game
      * @return Game 
      * 
      */
-    Game();
+    Game(/**There's no input parameter here.*/);
+    /**
+     * @brief Destructor for a game object. Deletes the map, preventing a memory leak. 
+     * 
+     */
     ~Game();
     /**
      * @brief Constructor for a game with a map initialized.
@@ -103,52 +99,49 @@ class Game
 	{
 		public:
             /**
-             * @brief Falra nem kerulhet se Monster se Hero. Ugyanarra a szabad mezore azonban kerulhetnek egyszerre, akar tobb Monster is. 
-             * @param key A hiba leirasa
+             * @brief We may not place a unit - monster(s) or hero - on an invalid tile. 
+             * 
             */
-		    OccupiedException(){}
+		    OccupiedException(/**There's no input parameter here.*/){}
 	};
     class AlreadyHasHeroException : std::exception
 	{
 		public:
             /**
-             * @brief 
-             * @param key A hiba leirasa A harmadikat akkor dobja, ha mar van beallitva hos, es egy masodikat tennenk fel. 
+             * @brief If there is already a hero on the map, we may not place a second one on it.
+             * 
             */
-		    AlreadyHasHeroException(){}
+		    AlreadyHasHeroException(/**There's no input parameter here.*/){}
 	};
     class AlreadyHasUnitsException : std::exception
 	{
 		public:
             /**
-             * @brief 
-             * @param key A hiba leirasa Az utolsot pedig akkor, ha terkepet allitanank at, de mar vannak a palyan egysegek. (Elotte akarhanyszor lecserelhetjuk.)
+             * @brief If there are still units on the map, we may not set a new map.
+             * 
 
             */
-		    AlreadyHasUnitsException(){}
+		    AlreadyHasUnitsException(/**There's no input parameter here.*/){}
 	};
     
     class NotInitializedException : std::exception
 	{
 		public:
             /**
-             * @brief 
-             * @param key A hiba leirasa 
-             * Legyen egy void Game::run(); fuggveny, mely levezenyli a jatekot, de dob egy Game::NotInitializedException-t, ha meg nincs beallitva terkep, vagy nincs Hero a palyan. 
-
-            */
-		    NotInitializedException(){}
+             * @brief If we have no map, or no hero on the map, we may not run the game.
+             * 
+             */
+		    NotInitializedException(/**There's no input parameter here.*/){}
 	};
     
     class GameAlreadyStartedException : std::exception
 	{
 		public:
             /**
-             * @brief 
-             * @param key A hiba leirasa 
-             * A loop sikeres elinditasa utan Hero, Map allitas mar nem tortenhet, azok Game::GameAlreadyStartedException-t dobnak. 
+             * @brief If the game is already running with a set map and hero, we may not set a new map or hero.
+             * 
             */
-		    GameAlreadyStartedException(){}
+		    GameAlreadyStartedException(/**There's no input parameter here.*/){}
 	};
 
 };
