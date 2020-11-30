@@ -1,7 +1,7 @@
 #ifndef DAMAGE_HEADER
 #define DAMAGE_HEADER
- #include <ostream>
- struct Damage {
+#include <ostream>
+struct Damage {
 
     int physical;
     int magical;
@@ -26,7 +26,7 @@
     
     }
     friend std::ostream& operator<<(std::ostream& out, const Damage& dmg){
-    out<<"Physical: "<<dmg.physical<<", Magical: "<<dmg.magical;
+    out<<"DMG: "<<dmg.physical<<", MagicalDMG: "<<dmg.magical;
     return out;
     }
 };
