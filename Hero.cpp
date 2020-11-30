@@ -31,7 +31,8 @@
         maximumHealthPoint  +=  healthPointBonusPerLevel;
         maximumHealthPoint  =   round(maximumHealthPoint);
         damage              +=  damageBonusPerLevel;
-        defense             +=  defenseBonusPerLevel;   
+        defense             +=  defenseBonusPerLevel;
+        lightradius         +=  lightradiusBonusPerLevel;
         cooldown            *=  cooldownMultiplierPerLevel;
         this->healthPoint   =   maximumHealthPoint;        
         level               +=  1;
