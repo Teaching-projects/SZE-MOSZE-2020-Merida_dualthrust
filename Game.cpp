@@ -114,7 +114,6 @@ void Game::run(bool is_test)
         {
             map->drawMap();
             std::cout<<"[north] [east] [south] [west]\n"<<std::endl;
-            std::cout<<"[w] [a] [s] [d]\n"<<std::endl;
             std::cout<<"Choose a direction:"<<std::endl;
 
             //Takes the hero action - movement at the moment.

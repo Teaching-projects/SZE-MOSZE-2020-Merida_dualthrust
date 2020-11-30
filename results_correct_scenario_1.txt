@@ -9,8 +9,6 @@
 ╚════════════════════════════╝
 [north] [east] [south] [west]
 
-[w] [a] [s] [d]
-
 Choose a direction:
 ╔════════════════════════════╗
 ║████████████████████████████║
@@ -23,8 +21,6 @@ Choose a direction:
 ╚════════════════════════════╝
 [north] [east] [south] [west]
 
-[w] [a] [s] [d]
-
 Choose a direction:
 ╔════════════════════════════╗
 ║████████████████████████████║
@@ -36,8 +32,6 @@ Choose a direction:
 ║██████████████████          ║
 ╚════════════════════════════╝
 [north] [east] [south] [west]
-
-[w] [a] [s] [d]
 
 Choose a direction:
 ╔════════════════════════════╗
@@ -51,8 +45,6 @@ Choose a direction:
 ╚════════════════════════════╝
 [north] [east] [south] [west]
 
-[w] [a] [s] [d]
-
 Choose a direction:
 ╔════════════════════════════╗
 ║████████████████████████████║
@@ -64,8 +56,6 @@ Choose a direction:
 ║██████████████████          ║
 ╚════════════════════════════╝
 [north] [east] [south] [west]
-
-[w] [a] [s] [d]
 
 Choose a direction:
 ╔════════════════════════════╗
@@ -79,8 +69,6 @@ Choose a direction:
 ╚════════════════════════════╝
 [north] [east] [south] [west]
 
-[w] [a] [s] [d]
-
 Choose a direction:
 ╔════════════════════════════╗
 ║████████████████████████████║
@@ -92,8 +80,6 @@ Choose a direction:
 ║██████████████████          ║
 ╚════════════════════════════╝
 [north] [east] [south] [west]
-
-[w] [a] [s] [d]
 
 Choose a direction:
 Prince Aidan of Khanduras(1) vs Fallen
