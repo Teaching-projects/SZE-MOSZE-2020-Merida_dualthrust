@@ -58,9 +58,9 @@ Map::Map(std::string path)
     }
 }
 
-void Map::drawMap() const
+void Map::drawMap(unsigned const int viewrange, unsigned int hero_x, unsigned int hero_y) const
 {
-
+    
     std::cout << "╔";
     for (unsigned int number_of_chars = 0; number_of_chars < longest_row_size; number_of_chars++)
     {

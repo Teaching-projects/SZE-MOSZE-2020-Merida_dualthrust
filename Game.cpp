@@ -113,7 +113,7 @@ void Game::run(bool is_test)
 
         while (hero->isAlive() && anyMonstersAlive())
         {
-            map->drawMap();
+            map->drawMap(hero->getLightRadius(), hero->getPosition().first, hero->getPosition().second);
             std::cout<<"[north] [east] [south] [west]\n"<<std::endl;
             std::cout<<"Choose a direction:"<<std::endl;
 

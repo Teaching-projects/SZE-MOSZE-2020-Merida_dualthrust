@@ -74,8 +74,13 @@ class Map
         /**
          * @brief Draws our map to the standard output.
          * 
+         * Draws the map around the hero, based on its viewrange - lightradius - and its x and y coordinates.
+         * 
+         * @param viewrange, lightradius of hero object. 
+         * @param x Longitudinal coordinate. (Which "column")
+         * @param y Latitudinal coordinate. (Which "row")
          */
-        void drawMap() const;
+        void drawMap(unsigned const int viewrange, unsigned int hero_x, unsigned int hero_y) const;
         /**
          * @brief Sets the type of a certain tile.
          * 
