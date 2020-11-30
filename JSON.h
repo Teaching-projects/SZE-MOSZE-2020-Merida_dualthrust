@@ -66,7 +66,6 @@ public:
      * 
      */
     bool isNumber(const std::string&);
-
     /**
      * @brief Utility method for handling strings, works similarly to other programming languages' split method.
      * 
@@ -88,7 +87,6 @@ public:
      * 
      */
     static std::string removeJSONSpaces(std::string);
-
     /**
      * @brief JSON parser method. Takes a filepath as input and returns an object of the JSON class.
      * 
@@ -110,7 +108,6 @@ public:
      * 
      */
     static JSON parseFromFile(const std::string&);
-
     /**
      * @brief Delete every existing Character object given as input.
      * @param[in] Character vector

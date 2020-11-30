@@ -22,3 +22,8 @@ jobs:
         run: make Memcheck
       - name: In-out tests
         run: make In-out_tests
+      - name: Upload scenario1 result 
+        uses: actions/upload-artifact@v2  
+        with:
+          name: results_scenario_1
+          path: results_scenario_1.txt

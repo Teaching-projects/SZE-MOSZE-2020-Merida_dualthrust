@@ -27,7 +27,8 @@ class Map
          * @brief Data structure that contains the map.
          * 
          */
-        std::vector<std::string> map; 
+        std::vector<std::vector<int>> map;
+        unsigned int longest_row_size;
     public:
         /**
          * @brief Types that the map may contain.
@@ -35,9 +36,19 @@ class Map
          */
         enum type 
         {
-            Free,
-            Wall
+            Free,       /* 0 */
+            Wall,       /* 1 */
+            Hero,       /* 2 */
+            Monster,    /* 3 */
+            Monsters    /* 4 */
         };
+        /**
+         * @brief Constructor for an empty map.
+         * 
+         * @return Map 
+         * 
+         */
+        Map(/**There's no input parameter here.*/);
         /**
          * @brief Gives back a map constructed from a txt file.
          * 
@@ -59,14 +70,28 @@ class Map
          * @return type 
          * 
          */
-        Map::type get(int x, int y) const;
+        Map::type get(unsigned int x, unsigned int y) const;
+        /**
+         * @brief Draws our map to the standard output.
+         * 
+         */
+        void drawMap() const;
+        /**
+         * @brief Sets the type of a certain tile.
+         * 
+         * @param x Longitudinal coordinate. (Which "column")
+         * @param y Latitudinal coordinate. (Which "row")
+         * @param Type of the tile 
+         * 
+         */
+        void setTile(int, int, int);
 
     class WrongIndexException : std::exception
 	{
 		public:
             /**
-             * @brief Constructor for the exception
-             * @param key A hiba leirasa
+             * @brief Prevents out of bound indexing 
+             * 
             */
 		    WrongIndexException(){}
 	};
