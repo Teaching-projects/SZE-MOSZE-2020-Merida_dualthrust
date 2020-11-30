@@ -58,9 +58,9 @@
         int enemyDefense        =   enemy   ->  getDefense();
         int experienceToGain    =   0;
         
-        if (enemyHealthPoint < damage.physical - enemyDefense)
+        if (enemyHealthPoint < damage.physical - enemyDefense + damage.magical)
         {
-            experienceToGain   =   damage.magical;
+            experienceToGain   =   enemyHealthPoint;
         }
         else
         {
