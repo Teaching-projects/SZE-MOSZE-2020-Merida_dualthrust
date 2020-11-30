@@ -5,7 +5,7 @@
 #include <string>
 #include <cmath>
 
-    Hero::Hero(const std::string& characterName, int characterHP, int characterATK, int characterDEF, int characterLIGHT, double characterACD, int XPperlevel, int HPperlevel, int DMGperlevel, int DEFperlevel, int LIGHTperlevel=1, float ACDperlevel) 
+    Hero::Hero(const std::string& characterName, int characterHP, int characterATK, int characterDEF, int characterLIGHT, double characterACD, int XPperlevel, int HPperlevel, int DMGperlevel, int DEFperlevel, int LIGHTperlevel, float ACDperlevel) 
     : Monster(characterName, characterHP, characterATK, characterDEF, characterACD), level(1), maximumHealthPoint(characterHP), lightradius(characterLIGHT), experience(0), experiencePerLevel(XPperlevel), healthPointBonusPerLevel(HPperlevel), damageBonusPerLevel(DMGperlevel), defenseBonusPerLevel(DEFperlevel), lightradiusBonusPerLevel(LIGHTperlevel), cooldownMultiplierPerLevel(ACDperlevel)
     {
 
@@ -45,14 +45,11 @@
         int healthPointBonusPerLevel        =   data.get<int>("health_point_bonus_per_level");
         int damageBonusPerLevel             =   data.get<int>("damage_bonus_per_level");
         int defenseBonusPerLevel            =   data.get<int>("defense_bonus_per_level");
+        int lightradiusBonusPerLevel=1;
         if (data.count("light_radius_bonus_per_level"))
         {
-            int lightradiusBonusPerLevel    =   data.get<int>("light_radius_bonus_per_level");
+            lightradiusBonusPerLevel    =   data.get<int>("light_radius_bonus_per_level");
         }
-        else
-        {
-            int lightradiusBonusPerLevel    =   1;
-        }        
         float cooldownMultiplierPerLevel    =   data.get<float>("cooldown_multiplier_per_level");
 
         return Hero(name, heatlhPoints, damage, defense, lightradius, cooldown, experiencePerLevel, healthPointBonusPerLevel, damageBonusPerLevel, defenseBonusPerLevel, lightradiusBonusPerLevel, cooldownMultiplierPerLevel);
