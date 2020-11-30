@@ -84,9 +84,8 @@
         //std::cout << enemy->getName() << " -> " << this->getName() << std::endl;
         if (    (enemy->getPhysicalDamage() - defense)  >   0)
         {
-            healthPoint -= (enemy->getPhysicalDamage() - defense);
+            healthPoint -= (enemy->getPhysicalDamage() - defense) + enemy->getMagicalDamage();
         }
-        healthPoint -= enemy->getMagicalDamage();
         
         if (healthPoint < 0)
         {
