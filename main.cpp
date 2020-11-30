@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <map>
 #include <string>
 #include <filesystem>
@@ -10,8 +11,7 @@
 #include "JSON.h"
 #include "Hero.h"
 #include "Monster.h"
-#include "Damage.h"
-
+#include "Game.h"
 
 
 
@@ -30,7 +30,7 @@ void bad_exit(int exitcode){
 }
 
 int main(int argc, char** argv){
-    if (argc != 2) bad_exit(1);
+    if (argc < 2) bad_exit(1);
     if (!std::filesystem::exists(argv[1])) bad_exit(2);
 
     std::string hero_file;
@@ -40,35 +40,33 @@ int main(int argc, char** argv){
         if (!(scenario.count("hero")&&scenario.count("monsters"))) bad_exit(3);
         else {
             hero_file=scenario.get<std::string>("hero");
-            std::istringstream monsters(scenario.get<std::string>("monsters"));
-            std::copy(std::istream_iterator<std::string>(monsters),
-                std::istream_iterator<std::string>(),
-                std::back_inserter(monster_files));
+            JSON::list monster_file_list=scenario.get<JSON::list>("monsters");
+            for(auto monster_file : monster_file_list)
+                monster_files.push_back(std::get<std::string>(monster_file));
         }
     } catch (const JSON::ParseException& e) {bad_exit(4);}
-
+    
     try { 
         Hero hero{Hero::parse(hero_file)};
+
+        Game game("./maps/map_1.txt");
+        game.putHero(&hero,1,1);        
+        
         std::list<Monster> monsters;
         for (const auto& monster_file : monster_files)
             monsters.push_back(Monster::parse(monster_file));        
 
-        while (hero.isAlive() && !monsters.empty()) {
-            std::cout 
-                << hero.getName() << "(" << hero.getLevel()<<")"
-                << " vs "
-                << monsters.front().getName()
-                <<std::endl;
-            hero.fightTilDeath(monsters.front());
-            if (!monsters.front().isAlive()) monsters.pop_front();
+        for (Monster monster : monsters)
+        {
+            game.putMonster(&monster,1,2);
         }
-        std::cout << (hero.isAlive() ? "The hero won." : "The hero died.") << std::endl;
-        std::cout << hero.getName() << ": LVL" << hero.getLevel() << std::endl
-                  << "   HP: "<<hero.getHealthPoints()<<"/"<<hero.getMaxHealthPoints()<<std::endl
-                  << "  DMG: "<<hero.getPhysicalDamage()<<std::endl
-                  << " MDMG: "<<hero.getMagicalDamage()<<std::endl
-                  << "  ACD: "<<hero.getAttackCoolDown()<<std::endl
-                  ;
-    } catch (const JSON::ParseException& e) {bad_exit(4);}
+
+        
+        bool is_test = (argc == 3);
+        game.run(is_test);
+
+    } 
+    catch (const JSON::ParseException& e) {bad_exit(4);
+    }
     return 0;
 }

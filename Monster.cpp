@@ -46,6 +46,14 @@
         return cooldown;
     }
 
+    //Setter for the unit's position on the map
+    void Monster::setPosition(int x, int y){
+        position=std::make_pair(x,y);
+    }
+
+    std::pair<int,int> Monster::getPosition(){
+        return position;
+    }
 
 
     //JSON parse method for creating a Monster object based on a given JSON input file
