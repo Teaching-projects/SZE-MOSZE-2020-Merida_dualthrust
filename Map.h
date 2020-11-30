@@ -22,6 +22,7 @@
 
 class Map
 {
+    /* INDEXING OF THE MAP STARTS FROM THE UPPER LEFT CORNET, FIRST INDEX IS ROW, SECOND IS COLUMN */
     private:
         /**
          * @brief Data structure that contains the map.
@@ -63,29 +64,29 @@ class Map
         /**
          * @brief Gives back the type of terrain based on coordinates.
          * 
-         * Takes x and y coordinates.
+         * Takes y and x coordinates.
          * 
-         * @param x Longitudinal coordinate. (Which "column")
-         * @param y Latitudinal coordinate. (Which "row")
+         * @param Which row
+         * @param Which column
          * @return type 
          * 
          */
-        Map::type get(unsigned int x, unsigned int y) const;
+        Map::type get(unsigned int row, unsigned int column) const;
         /**
          * @brief Draws our map to the standard output.
          * 
          * Draws the map around the hero, based on its viewrange - lightradius - and its x and y coordinates.
          * 
          * @param viewrange, lightradius of hero object. 
-         * @param x Longitudinal coordinate. (Which "column")
-         * @param y Latitudinal coordinate. (Which "row")
+         * @param Hero row
+         * @param Hero column
          */
-        void drawMap(unsigned const int viewrange, unsigned int hero_x, unsigned int hero_y) const;
+        void drawMap(unsigned const int viewrange, unsigned int hero_row, unsigned int hero_column) const;
         /**
          * @brief Sets the type of a certain tile.
          * 
-         * @param x Longitudinal coordinate. (Which "column")
-         * @param y Latitudinal coordinate. (Which "row")
+         * @param Which row
+         * @param Which column
          * @param Type of the tile 
          * 
          */

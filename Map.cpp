@@ -4,21 +4,21 @@
 #include <fstream>
 #include <iostream>
 
-Map::type Map::get(unsigned int x, unsigned int y) const
+Map::type Map::get(unsigned int row, unsigned int column) const
 {
-    if(x >= map.size())
+    if(row >= map.size())
     {
         throw WrongIndexException();
     }
     else
     {
-        if(y >= map[x].size())
+        if(column >= map[row].size())
         {
             throw WrongIndexException();
         }
         else
         {
-            return type(map[x][y]);
+            return type(map[row][column]);
         }
     }
 }
@@ -58,9 +58,23 @@ Map::Map(std::string path)
     }
 }
 
-void Map::drawMap(unsigned const int viewrange, unsigned int hero_x, unsigned int hero_y) const
-{
-    
+void Map::drawMap(unsigned const int viewrange, unsigned int hero_row, unsigned int hero_column) const
+{/* 
+    unsigned int view_maximum_width     = 0;
+    unsigned int view_maximum_height    = 0;
+ */
+    std::cout << "viewrange: "<< viewrange <<", hero_row: "<< hero_row <<", hero_column: "<< hero_column <<std::endl;
+/* 
+    for (int sorok = 0; sorok < view_maximum_height; sorok++)
+    {
+        for (int oszlopok = 0; sorok < view_maximum_width; oszlopok++)
+        {
+        }
+    }
+     */
+
+
+
     std::cout << "╔";
     for (unsigned int number_of_chars = 0; number_of_chars < longest_row_size; number_of_chars++)
     {
@@ -117,6 +131,6 @@ void Map::drawMap(unsigned const int viewrange, unsigned int hero_x, unsigned in
     
 }
 
-void Map::setTile(int x, int y, int type_int){
-    map[x][y] = type_int;
+void Map::setTile(int row, int column, int type_int){
+    map[row][column] = type_int;
 }
