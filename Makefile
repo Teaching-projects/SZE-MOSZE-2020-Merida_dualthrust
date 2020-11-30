@@ -1,5 +1,5 @@
 OBJECTS := JSON.o Monster.o Hero.o Map.o Game.o main.o
-COMPILERFLAGS := -std=c++17 -Wall -Werror -Wextra 
+COMPILERFLAGS := -std=c++17 -g -Wall -Werror -Wextra 
 COMPILER := g++
 
 CPPFILES := JSON.cpp Monster.cpp Hero.cpp Map.cpp Game.cpp main.cpp

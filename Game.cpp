@@ -20,7 +20,14 @@ Game::~Game()
 
 void Game::setMap(Map* incoming_map)
 {
-    map = incoming_map;
+    if (Game::anyMonstersAlive())
+    {
+        throw AlreadyHasUnitsException();
+    }
+    else
+    {
+        map = incoming_map;
+    }
 };
 
 void Game::putHero(Hero *incoming_hero, int x, int y)
@@ -153,7 +160,7 @@ void Game::run(bool is_test)
                 map->setTile(new_x,new_y,2);
             }
         }
-        std::cout << (hero->isAlive() ? "The hero won." : "The hero died.") << std::endl;
+        std::cout << (hero->isAlive() ? hero->getName() + "  cleared the map." : "The hero died.") << std::endl;
 
         if(!hero->isAlive()){
             int tile = (monster_map[hero->getPosition().first][hero->getPosition().second].size()>1) ? 4 : 3;
