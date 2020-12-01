@@ -30,6 +30,7 @@ Map::Map(std::string path)
     std::string line;
     std::ifstream mapfile(path);
     longest_row_size = 0;
+    longest_column_size = 0;
     
     while (std::getline(mapfile, line))
     {
@@ -54,29 +55,43 @@ Map::Map(std::string path)
             longest_row_size=line.length();
         }
 
-        map.push_back(map_row);
+        map.push_back(map_row);            
+        longest_column_size=map_row.size();
     }
 }
 
-void Map::drawMap(unsigned const int viewrange, unsigned int hero_row, unsigned int hero_column) const
-{/* 
-    unsigned int view_maximum_width     = 0;
-    unsigned int view_maximum_height    = 0;
+void Map::drawMap(const int viewrange, int hero_row, int hero_column) const
+{
+/*     std::cout << "viewrange: "<< viewrange <<", hero_row: "<< hero_row <<", hero_column: "<< hero_column <<std::endl;
  */
-    std::cout << "viewrange: "<< viewrange <<", hero_row: "<< hero_row <<", hero_column: "<< hero_column <<std::endl;
-/* 
-    for (int sorok = 0; sorok < view_maximum_height; sorok++)
+    for (int i = hero_row-viewrange; i < hero_row+viewrange; i++)
     {
-        for (int oszlopok = 0; sorok < view_maximum_width; oszlopok++)
+        if (i<0||i>longest_row_size)
         {
+            continue;
         }
+        
+        for (int j = hero_column-viewrange; j < hero_column+viewrange; j++)
+        {
+            if (i<0||i>longest_column_size)
+            {
+                continue;
+            }
+            else
+            {
+                /* kirajzolja az adott koordinátát. */
+            }
+            
+        }
+        
     }
-     */
+    
+   
 
 
 
     std::cout << "╔";
-    for (unsigned int number_of_chars = 0; number_of_chars < longest_row_size; number_of_chars++)
+    for (int number_of_chars = 0; number_of_chars < longest_row_size; number_of_chars++)
     {
         std::cout <<"══"; 
     }                           
@@ -114,7 +129,7 @@ void Map::drawMap(unsigned const int viewrange, unsigned int hero_row, unsigned 
             current_row_length=column;          
         }
 
-        for(unsigned int i=current_row_length;i<longest_row_size-1;i++)
+        for(int i=current_row_length;i<longest_row_size-1;i++)
         {
             std::cout <<"  ";
         }
@@ -123,7 +138,7 @@ void Map::drawMap(unsigned const int viewrange, unsigned int hero_row, unsigned 
     }
     
     std::cout << "╚";
-    for (unsigned int number_of_chars = 0; number_of_chars <  longest_row_size; number_of_chars++)
+    for (int number_of_chars = 0; number_of_chars <  longest_row_size; number_of_chars++)
     {
         std::cout <<"══"; 
     }

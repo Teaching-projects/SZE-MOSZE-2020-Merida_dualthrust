@@ -29,7 +29,8 @@ class Map
          * 
          */
         std::vector<std::vector<int>> map;
-        unsigned int longest_row_size;
+        int longest_row_size;
+        int longest_column_size;
     public:
         /**
          * @brief Types that the map may contain.
@@ -81,7 +82,7 @@ class Map
          * @param Hero row
          * @param Hero column
          */
-        void drawMap(unsigned const int viewrange, unsigned int hero_row, unsigned int hero_column) const;
+        void drawMap(const int viewrange, int hero_row, int hero_column) const;
         /**
          * @brief Sets the type of a certain tile.
          * 
