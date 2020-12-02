@@ -108,18 +108,17 @@ void Map::drawMap(const int viewrange, int hero_row, int hero_column) const
                 {
                     std::cout <<"MM";
                 }
-                current_row_length=j;
-                
-                for(int i=current_row_length;i<longest_row_size-1;i++)
-                {
-                    std::cout <<"  ";
-                }
-                std::cout <<"║"<<std::endl;
             }
-            
+            current_row_length=j; 
+
         }
-        
+        for(int i=current_row_length;i<longest_row_size-1;i++)
+        {
+            std::cout <<"  ";
+        }
+        std::cout <<"║"<<std::endl;      
     }
+    
     std::cout << "╚";
     for (int width = 0; width < ((2*viewrange)+1); width++)
     {
