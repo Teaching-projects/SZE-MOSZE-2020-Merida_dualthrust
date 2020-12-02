@@ -64,8 +64,17 @@ void Map::drawMap(const int viewrange, int hero_row, int hero_column) const
 {
 /*     std::cout << "viewrange: "<< viewrange <<", hero_row: "<< hero_row <<", hero_column: "<< hero_column <<std::endl;
  */
+    std::cout << "╔";
+    for (int width = 0; width < ((2*viewrange)+1); width++)
+    {
+        std::cout <<"══"; 
+    }                           
+    std::cout <<"╗"<< std::endl;
+
     for (int i = hero_row-viewrange; i < hero_row+viewrange; i++)
     {
+        int current_row_length = 0;
+        std::cout <<"║";     
         if (i<0||i>longest_row_size)
         {
             continue;
@@ -79,70 +88,44 @@ void Map::drawMap(const int viewrange, int hero_row, int hero_column) const
             }
             else
             {
-                /* kirajzolja az adott koordinátát. */
+                if (Map::get(i,j)==Free)   
+                {
+                    std::cout <<"░░";
+                }
+                else if (Map::get(i,j)==Wall)
+                {
+                    std::cout <<"██";
+                }
+                else if (Map::get(i,j)==Hero)
+                {
+                    std::cout <<"┣┫";
+                }
+                else if (Map::get(i,j)==Monster)
+                {
+                    std::cout <<"M░";
+                }
+                else if (Map::get(i,j)==Monsters)
+                {
+                    std::cout <<"MM";
+                }
+                current_row_length=j;
+                
+                for(int i=current_row_length;i<longest_row_size-1;i++)
+                {
+                    std::cout <<"  ";
+                }
+                std::cout <<"║"<<std::endl;
             }
             
         }
         
     }
-    
-   
-
-
-
-    std::cout << "╔";
-    for (int number_of_chars = 0; number_of_chars < longest_row_size; number_of_chars++)
+    std::cout << "╚";
+    for (int width = 0; width < ((2*viewrange)+1); width++)
     {
         std::cout <<"══"; 
     }                           
-    std::cout <<"╗"<< std::endl;
-
-
-    for (unsigned int row = 0; row < map.size(); row++)
-    {   
-
-        int current_row_length = 0;
-        std::cout <<"║";        
-        for (unsigned int column = 0; column < map[row].size(); column++)
-        {
-
-            if (Map::get(row,column)==Free)   
-            {
-                std::cout <<"░░";
-            }
-            else if (Map::get(row,column)==Wall)
-            {
-                std::cout <<"██";
-            }
-            else if (Map::get(row,column)==Hero)
-            {
-                std::cout <<"┣┫";
-            }
-            else if (Map::get(row,column)==Monster)
-            {
-                std::cout <<"M░";
-            }
-            else if (Map::get(row,column)==Monsters)
-            {
-                std::cout <<"MM";
-            }
-            current_row_length=column;          
-        }
-
-        for(int i=current_row_length;i<longest_row_size-1;i++)
-        {
-            std::cout <<"  ";
-        }
-        std::cout <<"║"<<std::endl;
-
-    }
-    
-    std::cout << "╚";
-    for (int number_of_chars = 0; number_of_chars <  longest_row_size; number_of_chars++)
-    {
-        std::cout <<"══"; 
-    }
-    std::cout << "╝"<< std::endl;
+    std::cout <<"╝"<< std::endl;
     
 }
 
