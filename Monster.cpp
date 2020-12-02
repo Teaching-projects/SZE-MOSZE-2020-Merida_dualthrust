@@ -63,7 +63,7 @@
         Damage damage;
         std::string name    =   data.get<std::string>("name");
         int healthPoints    =   data.get<int>("health_points");
-        damage.magical      =   std::stoi(data.get<std::string>("damage"));
+        damage.physical      =   std::stoi(data.get<std::string>("damage"));
         damage.magical      =   std::stoi(data.get<std::string>("magical-damage"));
         int def             =   std::stoi(data.get<std::string>("defense"));
         float cooldown      =   std::stof(data.get<std::string>("attack_cooldown"));
