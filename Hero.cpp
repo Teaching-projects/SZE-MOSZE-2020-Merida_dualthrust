@@ -45,7 +45,7 @@
         int experiencePerLevel              =   data.get<int>("experience_per_level");
         int healthPointBonusPerLevel        =   data.get<int>("health_point_bonus_per_level");
         int damageBonusPerLevel             =   data.get<int>("damage_bonus_per_level");
-        int magicaldamageBonusPerLevel      =   data.get<int>("magical_damage_bonus_per_level");
+        int magicaldamageBonusPerLevel      =   data.get<int>("magicaldamage_bonus_per_level");
         int defenseBonusPerLevel            =   data.get<int>("defense_bonus_per_level");
         float cooldownMultiplierPerLevel    =   data.get<float>("cooldown_multiplier_per_level");
 
