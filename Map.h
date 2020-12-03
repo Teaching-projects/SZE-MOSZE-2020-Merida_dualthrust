@@ -44,6 +44,15 @@ class Map
             Monster,    /* 3 */
             Monsters    /* 4 */
         };
+
+        std::string tileString [5]={
+            "░░",
+            "██",
+            "┣┫",
+            "M░",
+            "MM",
+        };
+
         /**
          * @brief Constructor for an empty map.
          * 

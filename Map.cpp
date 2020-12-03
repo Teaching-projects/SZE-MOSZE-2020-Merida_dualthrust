@@ -55,75 +55,94 @@ Map::Map(std::string path)
             longest_row_size=line.length();
         }
 
-        map.push_back(map_row);            
-        longest_column_size=map_row.size();
+        map.push_back(map_row);
     }
+
 }
 
 void Map::drawMap(const int viewrange, int hero_row, int hero_column) const
 {
 /*     std::cout << "viewrange: "<< viewrange <<", hero_row: "<< hero_row <<", hero_column: "<< hero_column <<std::endl;
  */
-    std::cout << "╔";
-    for (int width = 0; width < ((2*viewrange)+1); width++)
-    {
-        std::cout <<"══"; 
-    }                           
-    std::cout <<"╗"<< std::endl;
 
-    for (int i = hero_row-viewrange; i < hero_row+viewrange; i++)
+    //Draw the upper border of the map
+    std::cout << "╔";
+
+
+    for (int j = hero_column-viewrange; j < hero_column+viewrange+1; j++)
     {
-        int current_row_length = 0;
-        std::cout <<"║";     
-        if (i<0||i>longest_row_size)
-        {
-            continue;
-        }
-        
-        for (int j = hero_column-viewrange; j < hero_column+viewrange; j++)
-        {
-            if (j<0||j>longest_column_size)
+         if (j<0)
             {
                 continue;
             }
             else
             {
-                if (Map::get(i,j)==Free)   
-                {
-                    std::cout <<"░░";
-                }
-                else if (Map::get(i,j)==Wall)
-                {
-                    std::cout <<"██";
-                }
-                else if (Map::get(i,j)==Hero)
-                {
-                    std::cout <<"┣┫";
-                }
-                else if (Map::get(i,j)==Monster)
-                {
-                    std::cout <<"M░";
-                }
-                else if (Map::get(i,j)==Monsters)
-                {
-                    std::cout <<"MM";
+                if(j<longest_row_size-1){
+                    std::cout <<"══"; 
                 }
             }
-            current_row_length=j; 
+    }
+
+
+    std::cout <<"╗"<< std::endl;
+
+    for (int i = hero_row-viewrange; i < hero_row+viewrange+1; i++)
+    {
+        int current_row_length = 0;
+ 
+        if (i<0)
+        {
+            continue;
+        }
+
+        if(i>=map.size()){
+            break;
+        }else{
+            std::cout <<"║";    
+        }
+        
+        
+        for (int j = hero_column-viewrange; j < hero_column+viewrange+1; j++)
+        {
+            if (j<0||j>longest_row_size)
+            {
+                continue;
+            }
+            else
+            {
+                //Ha van ilyen mező a mapon, lekérjük a stringet amit kiírunk
+                if(i < map.size()){
+                    if(j < map[i].size()){
+                        std::cout <<tileString[get(i,j)];
+                        current_row_length=j;
+                    }else if(j < longest_row_size-1){
+                        std::cout <<"  ";
+                    }
+                }
+            }
+ 
 
         }
-        for(int i=current_row_length;i<longest_row_size-1;i++)
-        {
-            std::cout <<"  ";
-        }
+        
         std::cout <<"║"<<std::endl;      
     }
     
     std::cout << "╚";
-    for (int width = 0; width < ((2*viewrange)+1); width++)
+
+    for (int j = hero_column-viewrange; j < hero_column+viewrange+1; j++)
     {
-        std::cout <<"══"; 
-    }                           
+         if (j<0)
+            {
+                continue;
+            }
+            else
+            {
+                if(j<longest_row_size-1){
+                    std::cout <<"══"; 
+                }
+            }
+    }
+
     std::cout <<"╝"<< std::endl;
     
 }
