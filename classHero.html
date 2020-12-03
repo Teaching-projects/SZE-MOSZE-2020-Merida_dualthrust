@@ -87,36 +87,37 @@ Collaboration diagram for Hero:</div>
 <div class="dyncontent">
 <div class="center"><img src="classHero__coll__graph.png" border="0" usemap="#Hero_coll__map" alt="Collaboration graph"/></div>
 <map name="Hero_coll__map" id="Hero_coll__map">
-<area shape="rect" title=" " alt="" coords="16,80,69,107"/>
-<area shape="rect" href="classMonster.html" title=" " alt="" coords="5,5,80,32"/>
+<area shape="rect" title=" " alt="" coords="33,171,87,197"/>
+<area shape="rect" href="classMonster.html" title=" " alt="" coords="104,95,179,121"/>
+<area shape="rect" href="structDamage.html" title=" " alt="" coords="5,5,83,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a47295b6d66d8326a718a705f429dd403"><td class="memItemLeft" align="right" valign="top"><a id="a47295b6d66d8326a718a705f429dd403"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#a47295b6d66d8326a718a705f429dd403">Hero</a> (const std::string &amp;, int, int, int, int, double, const int, const int, const int, const int, const int, const float)</td></tr>
-<tr class="memdesc:a47295b6d66d8326a718a705f429dd403"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for our <a class="el" href="classHero.html">Hero</a> class. <br /></td></tr>
-<tr class="separator:a47295b6d66d8326a718a705f429dd403"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58aa3b859224c7e2567b6cbfaff23746"><td class="memItemLeft" align="right" valign="top"><a id="a58aa3b859224c7e2567b6cbfaff23746"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#a58aa3b859224c7e2567b6cbfaff23746">Hero</a> (const std::string &amp;, int, <a class="el" href="structDamage.html">Damage</a>, int, double, const int, const int, const int, const int, const int, const float)</td></tr>
+<tr class="memdesc:a58aa3b859224c7e2567b6cbfaff23746"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for our <a class="el" href="classHero.html">Hero</a> class. <br /></td></tr>
+<tr class="separator:a58aa3b859224c7e2567b6cbfaff23746"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42177c32f27cf0c4a0ab9f0def809340"><td class="memItemLeft" align="right" valign="top">const int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#a42177c32f27cf0c4a0ab9f0def809340">getMaxHealthPoints</a> () const</td></tr>
 <tr class="memdesc:a42177c32f27cf0c4a0ab9f0def809340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for maximum health points of our <a class="el" href="classHero.html">Hero</a>.  <a href="classHero.html#a42177c32f27cf0c4a0ab9f0def809340">More...</a><br /></td></tr>
 <tr class="separator:a42177c32f27cf0c4a0ab9f0def809340"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dfc4ecbb966adfe1e787c0a3313a68e"><td class="memItemLeft" align="right" valign="top">const int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#a0dfc4ecbb966adfe1e787c0a3313a68e">getLevel</a> () const</td></tr>
 <tr class="memdesc:a0dfc4ecbb966adfe1e787c0a3313a68e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for level of our <a class="el" href="classHero.html">Hero</a>.  <a href="classHero.html#a0dfc4ecbb966adfe1e787c0a3313a68e">More...</a><br /></td></tr>
 <tr class="separator:a0dfc4ecbb966adfe1e787c0a3313a68e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5c257d2f06368b791615b1edce0fd3b"><td class="memItemLeft" align="right" valign="top">const int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#af5c257d2f06368b791615b1edce0fd3b">getLightRadius</a> () const</td></tr>
-<tr class="memdesc:af5c257d2f06368b791615b1edce0fd3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the lightrange - viewrange - of our <a class="el" href="classHero.html">Hero</a>.  <a href="classHero.html#af5c257d2f06368b791615b1edce0fd3b">More...</a><br /></td></tr>
-<tr class="separator:af5c257d2f06368b791615b1edce0fd3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c9c0c619c2121dc0083c8dc3a9fcf50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#a9c9c0c619c2121dc0083c8dc3a9fcf50">deliverHit</a> (<a class="el" href="classMonster.html">Monster</a> *enemy) override</td></tr>
 <tr class="memdesc:a9c9c0c619c2121dc0083c8dc3a9fcf50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the enemy units <a class="el" href="classMonster.html#a918bd9927844b54393378574ea221021" title="Function for depleting HealthPoints during fight Basic subtraction operation. If the HealthPoint drop...">sufferDamage()</a> method, and handles the <a class="el" href="classHero.html">Hero</a> units XP gain.  <a href="classHero.html#a9c9c0c619c2121dc0083c8dc3a9fcf50">More...</a><br /></td></tr>
 <tr class="separator:a9c9c0c619c2121dc0083c8dc3a9fcf50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16e35435f28a8ca4175245b98d2f643a"><td class="memItemLeft" align="right" valign="top"><a id="a16e35435f28a8ca4175245b98d2f643a"></a>
+<a class="el" href="structDamage.html">Damage</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getDamage</b> () const</td></tr>
+<tr class="separator:a16e35435f28a8ca4175245b98d2f643a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classMonster"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classMonster')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classMonster.html">Monster</a></td></tr>
 <tr class="memitem:a21619ba1759b910cd2fd50d858aab338 inherit pub_methods_classMonster"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a21619ba1759b910cd2fd50d858aab338">~Monster</a> ()</td></tr>
 <tr class="memdesc:a21619ba1759b910cd2fd50d858aab338 inherit pub_methods_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for <a class="el" href="classMonster.html">Monster</a> class.  <a href="classMonster.html#a21619ba1759b910cd2fd50d858aab338">More...</a><br /></td></tr>
 <tr class="separator:a21619ba1759b910cd2fd50d858aab338 inherit pub_methods_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89df1fa81c57037fce4f85058dee46c5 inherit pub_methods_classMonster"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a89df1fa81c57037fce4f85058dee46c5">Monster</a> (const std::string &amp;, int, int, int, const double)</td></tr>
-<tr class="memdesc:a89df1fa81c57037fce4f85058dee46c5 inherit pub_methods_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classMonster.html">Monster</a> object In case of no inputs the <a class="el" href="classMonster.html">Monster</a> object gets default values.  <a href="classMonster.html#a89df1fa81c57037fce4f85058dee46c5">More...</a><br /></td></tr>
-<tr class="separator:a89df1fa81c57037fce4f85058dee46c5 inherit pub_methods_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85a7d40e871acae0dac42c640347c5bd inherit pub_methods_classMonster"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a85a7d40e871acae0dac42c640347c5bd">Monster</a> (const std::string &amp;, int, <a class="el" href="structDamage.html">Damage</a>, int, const double)</td></tr>
+<tr class="memdesc:a85a7d40e871acae0dac42c640347c5bd inherit pub_methods_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classMonster.html">Monster</a> object In case of no inputs the <a class="el" href="classMonster.html">Monster</a> object gets default values.  <a href="classMonster.html#a85a7d40e871acae0dac42c640347c5bd">More...</a><br /></td></tr>
+<tr class="separator:a85a7d40e871acae0dac42c640347c5bd inherit pub_methods_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35ef56f049bf8109cb5102250c1fce83 inherit pub_methods_classMonster"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a35ef56f049bf8109cb5102250c1fce83">setPosition</a> (int x, int y)</td></tr>
 <tr class="memdesc:a35ef56f049bf8109cb5102250c1fce83 inherit pub_methods_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the unit's position for the map. Evaluation logic of the move's validity happens inside the <a class="el" href="classGame.html">Game</a> class.  <a href="classMonster.html#a35ef56f049bf8109cb5102250c1fce83">More...</a><br /></td></tr>
 <tr class="separator:a35ef56f049bf8109cb5102250c1fce83 inherit pub_methods_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,9 +127,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3d2f854307d2415c379d2e60ed482968 inherit pub_methods_classMonster"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a3d2f854307d2415c379d2e60ed482968">getName</a> () const</td></tr>
 <tr class="memdesc:a3d2f854307d2415c379d2e60ed482968 inherit pub_methods_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the name of the character.  <a href="classMonster.html#a3d2f854307d2415c379d2e60ed482968">More...</a><br /></td></tr>
 <tr class="separator:a3d2f854307d2415c379d2e60ed482968 inherit pub_methods_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0dccdb75ff257af41dbea403bd620e1 inherit pub_methods_classMonster"><td class="memItemLeft" align="right" valign="top">const int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#ab0dccdb75ff257af41dbea403bd620e1">getDamage</a> () const</td></tr>
-<tr class="memdesc:ab0dccdb75ff257af41dbea403bd620e1 inherit pub_methods_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for character attack damage.  <a href="classMonster.html#ab0dccdb75ff257af41dbea403bd620e1">More...</a><br /></td></tr>
-<tr class="separator:ab0dccdb75ff257af41dbea403bd620e1 inherit pub_methods_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3acb73103bef01fe85b904d78f44dc3c inherit pub_methods_classMonster"><td class="memItemLeft" align="right" valign="top">const int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a3acb73103bef01fe85b904d78f44dc3c">getPhysicalDamage</a> () const</td></tr>
+<tr class="memdesc:a3acb73103bef01fe85b904d78f44dc3c inherit pub_methods_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for character attack damage.  <a href="classMonster.html#a3acb73103bef01fe85b904d78f44dc3c">More...</a><br /></td></tr>
+<tr class="separator:a3acb73103bef01fe85b904d78f44dc3c inherit pub_methods_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cc9ec90bcde5889cc4648b614f9f765 inherit pub_methods_classMonster"><td class="memItemLeft" align="right" valign="top"><a id="a3cc9ec90bcde5889cc4648b614f9f765"></a>
+const int &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getMagicalDamage</b> () const</td></tr>
+<tr class="separator:a3cc9ec90bcde5889cc4648b614f9f765 inherit pub_methods_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2becf12ef63277908b5c3269fe1429fd inherit pub_methods_classMonster"><td class="memItemLeft" align="right" valign="top">const int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a2becf12ef63277908b5c3269fe1429fd">getDefense</a> () const</td></tr>
 <tr class="memdesc:a2becf12ef63277908b5c3269fe1429fd inherit pub_methods_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for character defense.  <a href="classMonster.html#a2becf12ef63277908b5c3269fe1429fd">More...</a><br /></td></tr>
 <tr class="separator:a2becf12ef63277908b5c3269fe1429fd inherit pub_methods_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,9 +176,6 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a0332b15316cbf518ebac8eba594d1caa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#a0332b15316cbf518ebac8eba594d1caa">maximumHealthPoint</a></td></tr>
 <tr class="memdesc:a0332b15316cbf518ebac8eba594d1caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tracking the units maximum HealthPoints.  <a href="classHero.html#a0332b15316cbf518ebac8eba594d1caa">More...</a><br /></td></tr>
 <tr class="separator:a0332b15316cbf518ebac8eba594d1caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6650f060d04d9a09cda5a5924c5d086"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#aa6650f060d04d9a09cda5a5924c5d086">lightradius</a></td></tr>
-<tr class="memdesc:aa6650f060d04d9a09cda5a5924c5d086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows how far our hero can see the map.  <a href="classHero.html#aa6650f060d04d9a09cda5a5924c5d086">More...</a><br /></td></tr>
-<tr class="separator:aa6650f060d04d9a09cda5a5924c5d086"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8304002eae633bc0c32ee0980cf7d1b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#ad8304002eae633bc0c32ee0980cf7d1b">experience</a></td></tr>
 <tr class="memdesc:ad8304002eae633bc0c32ee0980cf7d1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tracking the units current Experience Points.  <a href="classHero.html#ad8304002eae633bc0c32ee0980cf7d1b">More...</a><br /></td></tr>
 <tr class="separator:ad8304002eae633bc0c32ee0980cf7d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,15 +185,18 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:aa2577e6d1ae307fa72589b535307167d"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#aa2577e6d1ae307fa72589b535307167d">healthPointBonusPerLevel</a></td></tr>
 <tr class="memdesc:aa2577e6d1ae307fa72589b535307167d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extra health points per level.  <a href="classHero.html#aa2577e6d1ae307fa72589b535307167d">More...</a><br /></td></tr>
 <tr class="separator:aa2577e6d1ae307fa72589b535307167d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ff46be0ecde98f50f324058a1a289e4"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#a6ff46be0ecde98f50f324058a1a289e4">damageBonusPerLevel</a></td></tr>
-<tr class="memdesc:a6ff46be0ecde98f50f324058a1a289e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extra attack damage per level.  <a href="classHero.html#a6ff46be0ecde98f50f324058a1a289e4">More...</a><br /></td></tr>
-<tr class="separator:a6ff46be0ecde98f50f324058a1a289e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace09f226b09843be731f7856af366b38"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#ace09f226b09843be731f7856af366b38">damageBonusPerLevel</a></td></tr>
+<tr class="memdesc:ace09f226b09843be731f7856af366b38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extra attack damage per level.  <a href="classHero.html#ace09f226b09843be731f7856af366b38">More...</a><br /></td></tr>
+<tr class="separator:ace09f226b09843be731f7856af366b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15166b1643afda5d03e929c1377b76fd"><td class="memItemLeft" align="right" valign="top"><a id="a15166b1643afda5d03e929c1377b76fd"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>magicaldamageBonusPerLevel</b></td></tr>
+<tr class="separator:a15166b1643afda5d03e929c1377b76fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97228e227a61a12300749e2a443609e1"><td class="memItemLeft" align="right" valign="top"><a id="a97228e227a61a12300749e2a443609e1"></a>
+<a class="el" href="structDamage.html">Damage</a>&#160;</td><td class="memItemRight" valign="bottom"><b>damage</b></td></tr>
+<tr class="separator:a97228e227a61a12300749e2a443609e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30e1bc3ac558cd7c23f62162092637bf"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#a30e1bc3ac558cd7c23f62162092637bf">defenseBonusPerLevel</a></td></tr>
 <tr class="memdesc:a30e1bc3ac558cd7c23f62162092637bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extra defense per level.  <a href="classHero.html#a30e1bc3ac558cd7c23f62162092637bf">More...</a><br /></td></tr>
 <tr class="separator:a30e1bc3ac558cd7c23f62162092637bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5bc52068157fd4e56da6579d08b575c"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#ae5bc52068157fd4e56da6579d08b575c">lightradiusBonusPerLevel</a></td></tr>
-<tr class="memdesc:ae5bc52068157fd4e56da6579d08b575c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extra lightradius - viewrange - per level.  <a href="classHero.html#ae5bc52068157fd4e56da6579d08b575c">More...</a><br /></td></tr>
-<tr class="separator:ae5bc52068157fd4e56da6579d08b575c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a926246c88ed699f30992d5170eb63ff0"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHero.html#a926246c88ed699f30992d5170eb63ff0">cooldownMultiplierPerLevel</a></td></tr>
 <tr class="memdesc:a926246c88ed699f30992d5170eb63ff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Member variable responsible for the rate of change in a given <a class="el" href="classHero.html">Hero</a>'s cooldown after leveling up.  <a href="classHero.html#a926246c88ed699f30992d5170eb63ff0">More...</a><br /></td></tr>
 <tr class="separator:a926246c88ed699f30992d5170eb63ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -203,9 +207,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:acbe6a513d7be856fc515e64823a32978 inherit pro_attribs_classMonster"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#acbe6a513d7be856fc515e64823a32978">healthPoint</a></td></tr>
 <tr class="memdesc:acbe6a513d7be856fc515e64823a32978 inherit pro_attribs_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">HealthPoint of the unit.  <a href="classMonster.html#acbe6a513d7be856fc515e64823a32978">More...</a><br /></td></tr>
 <tr class="separator:acbe6a513d7be856fc515e64823a32978 inherit pro_attribs_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3819d1bf6ee6bf2a9be94f8ddd2d4cb5 inherit pro_attribs_classMonster"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a3819d1bf6ee6bf2a9be94f8ddd2d4cb5">damage</a></td></tr>
-<tr class="memdesc:a3819d1bf6ee6bf2a9be94f8ddd2d4cb5 inherit pro_attribs_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attack damage of the unit.  <a href="classMonster.html#a3819d1bf6ee6bf2a9be94f8ddd2d4cb5">More...</a><br /></td></tr>
-<tr class="separator:a3819d1bf6ee6bf2a9be94f8ddd2d4cb5 inherit pro_attribs_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6614cc11c092b94f39869576fb049b67 inherit pro_attribs_classMonster"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structDamage.html">Damage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a6614cc11c092b94f39869576fb049b67">damage</a></td></tr>
+<tr class="memdesc:a6614cc11c092b94f39869576fb049b67 inherit pro_attribs_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attack damage of the unit.  <a href="classMonster.html#a6614cc11c092b94f39869576fb049b67">More...</a><br /></td></tr>
+<tr class="separator:a6614cc11c092b94f39869576fb049b67 inherit pro_attribs_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad867513550d7fde7e4b79806fe90ae2f inherit pro_attribs_classMonster"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#ad867513550d7fde7e4b79806fe90ae2f">defense</a></td></tr>
 <tr class="memdesc:ad867513550d7fde7e4b79806fe90ae2f inherit pro_attribs_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defense of the unit.  <a href="classMonster.html#ad867513550d7fde7e4b79806fe90ae2f">More...</a><br /></td></tr>
 <tr class="separator:ad867513550d7fde7e4b79806fe90ae2f inherit pro_attribs_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -270,26 +274,6 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Getter for level of our <a class="el" href="classHero.html">Hero</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>int const&amp; </dd></dl>
-
-</div>
-</div>
-<a id="af5c257d2f06368b791615b1edce0fd3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5c257d2f06368b791615b1edce0fd3b">&#9670;&nbsp;</a></span>getLightRadius()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int &amp; Hero::getLightRadius </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Getter for the lightrange - viewrange - of our <a class="el" href="classHero.html">Hero</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>int const&amp; </dd></dl>
 
 </div>
@@ -398,8 +382,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a6ff46be0ecde98f50f324058a1a289e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ff46be0ecde98f50f324058a1a289e4">&#9670;&nbsp;</a></span>damageBonusPerLevel</h2>
+<a id="ace09f226b09843be731f7856af366b38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace09f226b09843be731f7856af366b38">&#9670;&nbsp;</a></span>damageBonusPerLevel</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -408,7 +392,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const int Hero::damageBonusPerLevel</td>
+          <td class="memname">int Hero::damageBonusPerLevel</td>
         </tr>
       </table>
   </td>
@@ -540,55 +524,6 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Tracking the units current level. </p>
-
-</div>
-</div>
-<a id="aa6650f060d04d9a09cda5a5924c5d086"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6650f060d04d9a09cda5a5924c5d086">&#9670;&nbsp;</a></span>lightradius</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Hero::lightradius</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Shows how far our hero can see the map. </p>
-
-</div>
-</div>
-<a id="ae5bc52068157fd4e56da6579d08b575c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5bc52068157fd4e56da6579d08b575c">&#9670;&nbsp;</a></span>lightradiusBonusPerLevel</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const float Hero::lightradiusBonusPerLevel</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Extra lightradius - viewrange - per level. </p>
-<p>The data is initially stored in a <a class="el" href="classJSON.html" title="JSON namespace.">JSON</a> file. </p>
 
 </div>
 </div>
