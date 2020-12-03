@@ -1,4 +1,4 @@
-OBJECTS := JSON.o Monster.o Hero.o Map.o Game.o main.o
+OBJECTS := JSON.o Monster.o Hero.o Map.o Game.o Damage.o main.o
 COMPILERFLAGS := -std=c++17 -g -Wall -Werror -Wextra 
 COMPILER := g++
 
