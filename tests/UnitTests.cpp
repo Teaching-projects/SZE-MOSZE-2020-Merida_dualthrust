@@ -45,8 +45,9 @@ TEST(unitTests, sufferDamage){
 }
 
 TEST(unitTests, levelUp){
-    Hero hero = Hero("Hero",100,100,100,100,100,100,100,100,100,2);
-    Monster enemy = Monster("Monster",100,1,1,1,1);
+    Damage tmp (10, 10);
+    Hero hero = Hero("Hero",100,tmp,100,100,100,100,100,100,100,2);
+    Monster enemy = Monster("Monster",1,tmp,1,1,1);
     hero.fightTilDeath(enemy);
 
     ASSERT_EQ(hero.getLevel(),2);
