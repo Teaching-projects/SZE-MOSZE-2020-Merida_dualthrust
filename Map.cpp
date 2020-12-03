@@ -82,7 +82,7 @@ void Map::drawMap(const int viewrange, int hero_row, int hero_column) const
         
         for (int j = hero_column-viewrange; j < hero_column+viewrange; j++)
         {
-            if (i<0||i>longest_column_size)
+            if (j<0||j>longest_column_size)
             {
                 continue;
             }
