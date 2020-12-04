@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['name_41',['name',['../classMonster.html#a4ce38cc9d6af5a37f54f90d2d7ab8ee0',1,'Monster']]],
-  ['notinitializedexception_42',['NotInitializedException',['../classGame_1_1NotInitializedException.html',1,'Game::NotInitializedException'],['../classGame_1_1NotInitializedException.html#a940350c425f5d08a07fdeabc3814e552',1,'Game::NotInitializedException::NotInitializedException()']]]
+  ['name_42',['name',['../classMonster.html#a4ce38cc9d6af5a37f54f90d2d7ab8ee0',1,'Monster']]],
+  ['notinitializedexception_43',['NotInitializedException',['../classGame_1_1NotInitializedException.html',1,'Game::NotInitializedException'],['../classGame_1_1NotInitializedException.html#a940350c425f5d08a07fdeabc3814e552',1,'Game::NotInitializedException::NotInitializedException()']]]
 ];
