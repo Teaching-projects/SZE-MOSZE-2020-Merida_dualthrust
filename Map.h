@@ -22,7 +22,7 @@
 
 class Map
 {
-    private:
+    protected:
         /**
          * @brief Data structure that contains the map.
          * 

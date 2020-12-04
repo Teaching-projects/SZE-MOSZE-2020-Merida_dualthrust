@@ -23,7 +23,7 @@
 // Might include useless stuff as i copied this from another header, will delete later
 
 #include "Hero.h"
-#include "Map.h"
+#include "MarkedMap.h"
 #include "Monster.h"
 #include "JSON.h"
 
