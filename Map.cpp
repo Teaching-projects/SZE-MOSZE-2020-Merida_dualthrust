@@ -88,8 +88,6 @@ void Map::drawMap(const int viewrange, int hero_row, int hero_column) const
 
     for (int i = hero_row-viewrange; i < hero_row+viewrange+1; i++)
     {
-        int current_row_length = 0;
- 
         if (i<0)
         {
             continue;
@@ -114,7 +112,6 @@ void Map::drawMap(const int viewrange, int hero_row, int hero_column) const
                 if(i < map.size()){
                     if(j < map[i].size()){
                         std::cout <<tileString[get(i,j)];
-                        current_row_length=j;
                     }else if(j < longest_row_size-1){
                         std::cout <<"  ";
                     }
