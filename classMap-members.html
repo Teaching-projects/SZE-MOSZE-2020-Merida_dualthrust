@@ -70,17 +70,23 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="classMap.html">Map</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classMap.html#a918faafccfe28937dbfb842f58b385ca">drawMap</a>(const int viewrange, int hero_row, int hero_column) const</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classMap.html#acb89ca324e81cf18799ffcbf96b7f679">drawMap</a>() const</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>Free</b> enum value (defined in <a class="el" href="classMap.html">Map</a>)</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classMap.html#ac2058ec27a28ff2c4d737d48d570a165">get</a>(unsigned int row, unsigned int column) const</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classMap.html#af3d2f71301bb5bdafcef6099a65ae7e0">get</a>(unsigned int x, unsigned int y) const</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>getHeroPosition</b>() (defined in <a class="el" href="classMap.html">Map</a>)</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>getMonsterPositions</b>(char) (defined in <a class="el" href="classMap.html">Map</a>)</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>Hero</b> enum value (defined in <a class="el" href="classMap.html">Map</a>)</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classMap.html#a0f5ad0fd4563497b4214038cbca8b582">Map</a>()</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classMap.html#ab124c12c6c9dec693aedb1a4b6384ecd">Map</a>(std::string filename)</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Monster</b> enum value (defined in <a class="el" href="classMap.html">Map</a>)</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>heroPosition</b> (defined in <a class="el" href="classMap.html">Map</a>)</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>longest_row_size</b> (defined in <a class="el" href="classMap.html">Map</a>)</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classMap.html#a7fbb34f989fcf03bb5717073f882080a">map</a></td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classMap.html#a0f5ad0fd4563497b4214038cbca8b582">Map</a>()</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classMap.html#ab124c12c6c9dec693aedb1a4b6384ecd">Map</a>(std::string filename)</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>Monster</b> enum value (defined in <a class="el" href="classMap.html">Map</a>)</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classMap.html#a9f827218d2ff7742f7cd39d43653fcf0">monsterPositions</a></td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>Monsters</b> enum value (defined in <a class="el" href="classMap.html">Map</a>)</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classMap.html#a4c6f5a0f5146390c90960892f6c3e56c">setTile</a>(int, int, int)</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>tileString</b> (defined in <a class="el" href="classMap.html">Map</a>)</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classMap.html#a41697b848ea9a5aad1910714e0196b7b">type</a> enum name</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>setHeroPosition</b>(std::pair&lt; int, int &gt; pos) (defined in <a class="el" href="classMap.html">Map</a>)</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classMap.html#a4c6f5a0f5146390c90960892f6c3e56c">setTile</a>(int, int, int)</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>type</b> enum name (defined in <a class="el" href="classMap.html">Map</a>)</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>Wall</b> enum value (defined in <a class="el" href="classMap.html">Map</a>)</td><td class="entry"><a class="el" href="classMap.html">Map</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
