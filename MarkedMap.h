@@ -19,12 +19,10 @@ class MarkedMap : public Map
 {
 private:
     /* data */
-    
 public:
     MarkedMap(std::string);
     ~MarkedMap();
     const std::pair<int,int> getHeroPosition();
     const std::vector<std::pair<int,int>> getMonsterPositions(char);
-    int longest_row_size;
 };
 #endif

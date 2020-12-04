@@ -8,7 +8,7 @@ MarkedMap::MarkedMap(std::string path)
 {
     std::string line;
     std::ifstream mapfile(path);
-    longest_row_size = 0;
+    longest_row_size=0;
     
     while (std::getline(mapfile, line))
     {
@@ -23,7 +23,8 @@ MarkedMap::MarkedMap(std::string path)
             else if(line[i]==' ')
             {
                 map_row.push_back(type(Free));
-            }else if(line[i]=='1' || line[i]=='2' || line[i] == '3'){
+            }
+            else if(line[i]=='1' || line[i]=='2' || line[i] == '3'){
                 map_row.push_back(type(Monster));
             }
 
@@ -35,7 +36,6 @@ MarkedMap::MarkedMap(std::string path)
         {
             longest_row_size=line.length();
         }
-
         map.push_back(map_row);
     }
 }
