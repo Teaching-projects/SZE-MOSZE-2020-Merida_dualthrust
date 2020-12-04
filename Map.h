@@ -34,6 +34,14 @@ class Map
          * @brief Types that the map may contain.
          * 
          */
+
+        std::vector<std::pair<int,int>> monsterPositions;
+        std::pair<int,int> heroPosition;
+
+        const std::pair<int,int> getHeroPosition(){return heroPosition;};
+        const std::vector<std::pair<int,int>> getMonsterPositions(char){return monsterPositions;};
+        const void setHeroPosition(std::pair<int,int> pos){heroPosition=pos;};
+
         enum type 
         {
             Free,       /* 0 */

@@ -26,10 +26,9 @@ MarkedMap::MarkedMap(std::string path)
             }
             else if(line[i]=='1' || line[i]=='2' || line[i] == '3'){
                 map_row.push_back(type(Monster));
+                monsterPositions.push_back(std::pair<int,int>(map.size()-1,i));
             }
 
-            //Nullpointereket tolunk bele, hogy fel legyen töltve hellyel
-            
         }
         
         if(line.length() > longest_row_size)
@@ -38,19 +37,4 @@ MarkedMap::MarkedMap(std::string path)
         }
         map.push_back(map_row);
     }
-}
-
-MarkedMap::~MarkedMap()
-{
-}
-
-const std::pair<int,int> MarkedMap::getHeroPosition()
-{
-    return std::pair<int,int>(1,1);
-}
-
-const std::vector<std::pair<int,int>> MarkedMap::getMonsterPositions(char)
-{
-    std::vector<std::pair<int,int>> positions = {};
-    return positions;
 }

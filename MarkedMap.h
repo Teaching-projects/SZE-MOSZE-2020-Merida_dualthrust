@@ -19,10 +19,12 @@ class MarkedMap : public Map
 {
 private:
     /* data */
+    std::vector<std::pair<int,int>> monsterPositions;
+    std::pair<int,int> heroPosition;
 public:
+    //Constructors, destructor
     MarkedMap(std::string);
     ~MarkedMap();
-    const std::pair<int,int> getHeroPosition();
-    const std::vector<std::pair<int,int>> getMonsterPositions(char);
+
 };
 #endif

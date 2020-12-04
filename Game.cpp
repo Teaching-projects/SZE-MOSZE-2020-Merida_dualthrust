@@ -43,6 +43,7 @@ void Game::putHero(Hero *incoming_hero, int x, int y)
         hero = incoming_hero;
         map->setTile(x,y,2);
         hero->setPosition(x,y);
+        map->setHeroPosition(hero->getPosition());
     }
     else
     {
