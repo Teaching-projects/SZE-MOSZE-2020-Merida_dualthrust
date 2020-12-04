@@ -49,8 +49,11 @@ Map::Map(std::string path)
             //Nullpointereket tolunk bele, hogy fel legyen töltve hellyel
             
         }
-        
-        if(line.length() > longest_row_size)
+
+        int64_t signed_longest_row_size = longest_row_size; //Fixes signed-unsigned errors
+        uint64_t unsigned_longest_row_size = static_cast<uint64_t>(signed_longest_row_size);
+
+        if(line.length() > unsigned_longest_row_size) 
         {
             longest_row_size=line.length();
         }
@@ -93,7 +96,11 @@ void Map::drawMap(const int viewrange, int hero_row, int hero_column) const
             continue;
         }
 
-        if(i>=map.size()){
+        int64_t signed_i = i; //Fixes signed-unsigned errors
+        uint64_t unsigned_i = static_cast<uint64_t>(signed_i);
+
+        if(unsigned_i>=map.size()) 
+        {
             break;
         }else{
             std::cout <<"║";    
@@ -109,8 +116,12 @@ void Map::drawMap(const int viewrange, int hero_row, int hero_column) const
             else
             {
                 //Ha van ilyen mező a mapon, lekérjük a stringet amit kiírunk
-                if(i < map.size()){
-                    if(j < map[i].size()){
+                if(unsigned_i < map.size()){ 
+
+                    int64_t signed_j = j; //Fixes signed-unsigned errors
+                    uint64_t unsigned_j = static_cast<uint64_t>(signed_j);
+
+                    if(unsigned_j < map[i].size()){ 
                         std::cout <<tileString[get(i,j)];
                     }else if(j < longest_row_size-1){
                         std::cout <<"  ";
