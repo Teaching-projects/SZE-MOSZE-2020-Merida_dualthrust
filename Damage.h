@@ -1,3 +1,5 @@
+#ifndef DAMAGE_H
+#define DAMAGE_H
 #include <ostream>
 struct Damage {
 
@@ -28,3 +30,4 @@ struct Damage {
     return out;
     }
 };
+#endif

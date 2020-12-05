@@ -16,7 +16,7 @@
 
 #include <string>
 #include "Monster.h"
-#include "Damage.cpp"
+#include "Damage.h"
 
 class Hero : public Monster{
     protected:
