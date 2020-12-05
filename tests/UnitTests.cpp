@@ -73,7 +73,7 @@ TEST(unitTests, levelUp){
     Monster enemy = Monster("Monster",200,dmg_2,1,1);
     hero.fightTilDeath(enemy);
 
-    ASSERT_EQ(hero.getLevel(),2);
+    ASSERT_EQ(hero.getLevel(),3);
     ASSERT_EQ(hero.getHealthPoints(),200);
     ASSERT_EQ(hero.getAttackCoolDown(),200);
     ASSERT_EQ(hero.getPhysicalDamage(),200);
