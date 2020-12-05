@@ -72,19 +72,29 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define PREPAREDGAME_HEADER</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Game_8h.html">Game.h</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classPreparedGame.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPreparedGame.html">PreparedGame</a> : <span class="keyword">public</span> <a class="code" href="classGame.html">Game</a></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">//Constructors, destructor</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classPreparedGame.html">PreparedGame</a>(std::string);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    ~<a class="code" href="classPreparedGame.html">PreparedGame</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="JSON_8h.html">JSON.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;MarkedMap.h&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classPreparedGame.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPreparedGame.html">PreparedGame</a> : <span class="keyword">public</span> <a class="code" href="classGame.html">Game</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classPreparedGame.html">PreparedGame</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classPreparedGame.html">PreparedGame</a>(std::string);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classPreparedGame_1_1InsufficientGamedataInput.html">   26</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classPreparedGame_1_1InsufficientGamedataInput.html">InsufficientGamedataInput</a> : std::exception</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classPreparedGame_1_1InsufficientGamedataInput.html#a2ff3e3a6792acb89773e978a6b6fb167">   33</a></span>&#160;            <a class="code" href="classPreparedGame_1_1InsufficientGamedataInput.html#a2ff3e3a6792acb89773e978a6b6fb167">InsufficientGamedataInput</a>(){}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    };</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassPreparedGame_html"><div class="ttname"><a href="classPreparedGame.html">PreparedGame</a></div><div class="ttdef"><b>Definition:</b> PreparedGame.h:18</div></div>
+<div class="ttc" id="aJSON_8h_html"><div class="ttname"><a href="JSON_8h.html">JSON.h</a></div></div>
+<div class="ttc" id="aclassPreparedGame_1_1InsufficientGamedataInput_html_a2ff3e3a6792acb89773e978a6b6fb167"><div class="ttname"><a href="classPreparedGame_1_1InsufficientGamedataInput.html#a2ff3e3a6792acb89773e978a6b6fb167">PreparedGame::InsufficientGamedataInput::InsufficientGamedataInput</a></div><div class="ttdeci">InsufficientGamedataInput()</div><div class="ttdoc">The game cannot be initialized if the input json doesn't contain a map, a hero and at least one monst...</div><div class="ttdef"><b>Definition:</b> PreparedGame.h:33</div></div>
+<div class="ttc" id="aclassPreparedGame_html"><div class="ttname"><a href="classPreparedGame.html">PreparedGame</a></div><div class="ttdef"><b>Definition:</b> PreparedGame.h:20</div></div>
+<div class="ttc" id="aclassPreparedGame_1_1InsufficientGamedataInput_html"><div class="ttname"><a href="classPreparedGame_1_1InsufficientGamedataInput.html">PreparedGame::InsufficientGamedataInput</a></div><div class="ttdef"><b>Definition:</b> PreparedGame.h:26</div></div>
 <div class="ttc" id="aclassGame_html"><div class="ttname"><a href="classGame.html">Game</a></div><div class="ttdef"><b>Definition:</b> Game.h:30</div></div>
 <div class="ttc" id="aGame_8h_html"><div class="ttname"><a href="Game_8h.html">Game.h</a></div><div class="ttdoc">Game class.</div></div>
 <!-- start footer part -->
