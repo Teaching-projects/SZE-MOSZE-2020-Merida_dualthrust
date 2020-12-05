@@ -1,6 +1,6 @@
 /**
  * @file JSON.h
- * @author lapatkrisz
+ * @author LilikF
  * @class JSON
  * 
  * @brief JSON namespace

@@ -1,6 +1,6 @@
 /**
  * @file Hero.h
- * @author NemesTom
+ * @author LilikF
  * @brief MarkedMap class
  * 
  * This class contains basic methods for handling our marked maps.

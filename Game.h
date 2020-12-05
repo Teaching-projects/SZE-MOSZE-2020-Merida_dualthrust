@@ -1,6 +1,6 @@
 /**
  * @file Game.h
- * @author NemesTom
+ * @author LilikF
  * @brief Game class
  * 
  * This class contains methods used for controlling our game.
