@@ -15,7 +15,7 @@
 #define MONSTER_HEADER
 
 #include <string>
-#include "Damage.h"
+#include "Damage.cpp"
 
 class Monster {
 

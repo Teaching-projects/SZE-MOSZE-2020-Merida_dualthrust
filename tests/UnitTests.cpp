@@ -1,7 +1,7 @@
 #include "../JSON.cpp"
 #include "../Monster.cpp"
 #include "../Hero.cpp"
-#include "../Damage.h"
+#include "../Damage.cpp"
 #include <gtest/gtest.h>
 
 //Test for the Monster and Hero class

@@ -1,5 +1,3 @@
-#ifndef DAMAGE_HEADER
-#define DAMAGE_HEADER
 #include <ostream>
 struct Damage {
 
@@ -30,4 +28,3 @@ struct Damage {
     return out;
     }
 };
-#endif
