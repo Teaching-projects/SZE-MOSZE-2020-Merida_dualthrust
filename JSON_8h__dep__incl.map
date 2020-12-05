@@ -1,4 +1,5 @@
 <map id="JSON.h" name="JSON.h">
-<area shape="rect" id="node1" title=" " alt="" coords="9,5,75,32"/>
-<area shape="rect" id="node2" href="$Game_8h.html" title="Game class." alt="" coords="5,80,79,107"/>
+<area shape="rect" id="node1" title=" " alt="" coords="37,5,104,32"/>
+<area shape="rect" id="node2" href="$Game_8h.html" title="Game class." alt="" coords="34,80,107,107"/>
+<area shape="rect" id="node3" href="$PreparedGame_8h.html" title="PreparedGame class." alt="" coords="5,155,136,181"/>
 </map>
