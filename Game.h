@@ -29,7 +29,7 @@
 
 class Game
 {
- private:
+ protected:
 
     std::map<int,std::map<int, std::list<Monster>>> monster_map;
 

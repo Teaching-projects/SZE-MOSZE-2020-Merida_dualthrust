@@ -3,7 +3,7 @@
  * @author LilikF
  * @brief PreparedGame class
  * 
- * This class contains basic methods for handling our marked maps.
+ * This class contains methods for initializing a game from a file.
  * 
  * @version 1.0
  * @date 2020-12-05
@@ -13,14 +13,25 @@
 #define PREPAREDGAME_HEADER
 
 #include "Game.h"
+#include "JSON.h"
+#include "MarkedMap.h"
 #include <string>
 
 class PreparedGame : public Game
 {
 public:
-    //Constructors, destructor
+    PreparedGame();
     PreparedGame(std::string);
-    ~PreparedGame();
+
+    class InsufficientGamedataInput : std::exception
+	{
+		public:
+            /**
+             * @brief The game cannot be initialized if the input json doesn't contain a map, a hero and at least one monster.
+             * 
+             */
+		    InsufficientGamedataInput(/**There's no input parameter here.*/){}
+	};
 
 };
 #endif
