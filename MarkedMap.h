@@ -11,9 +11,9 @@
  */
 #ifndef MARKEDMAP_HEADER
 #define MARKEDMAP_HEADER
+#include <string>
 
 #include "Map.h"
-#include <string>
 
 class MarkedMap : public Map
 {
@@ -22,9 +22,7 @@ private:
     std::vector<std::pair<int,int>> monsterPositions;
     std::pair<int,int> heroPosition;
 public:
-    //Constructors, destructor
-    MarkedMap(std::string);
+    MarkedMap(std::string, Hero*, Monster*, Monster*, Monster*);
     ~MarkedMap();
-
 };
 #endif

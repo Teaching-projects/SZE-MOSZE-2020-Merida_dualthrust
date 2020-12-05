@@ -4,7 +4,7 @@
 #include <fstream>
 #include <iostream>
 
-MarkedMap::MarkedMap(std::string path)
+MarkedMap::MarkedMap(std::string path, Hero *hero, Monster *monster_1, Monster *monster_2, Monster *monster_3)
 {
     std::string line;
     std::ifstream mapfile(path);
