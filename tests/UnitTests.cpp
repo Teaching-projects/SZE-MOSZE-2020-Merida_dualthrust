@@ -70,7 +70,7 @@ TEST(unitTests, levelUp){
     Damage dmg_2;
     dmg_2.physical=1;
     dmg_2.magical=1;
-    Monster enemy = Monster("Monster",100,dmg_2,1,1);
+    Monster enemy = Monster("Monster",200,dmg_2,1,1);
     hero.fightTilDeath(enemy);
 
     ASSERT_EQ(hero.getLevel(),2);
