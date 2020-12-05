@@ -62,7 +62,7 @@ TEST(unitTests, sufferDamage){
 TEST(unitTests, levelUp){
     Damage dmg_1;
     dmg_1.physical=100;
-    Hero hero = Hero("Hero",100,dmg_1,100,100,100,100,100,100,2);
+    Hero hero = Hero("Hero",100,dmg_1,100,100,100,100,100,100,100,2);
     Damage dmg_2;
     dmg_2.physical=1;
     Monster enemy = Monster("Monster",100,dmg_2,1,1);
