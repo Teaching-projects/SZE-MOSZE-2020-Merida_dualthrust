@@ -77,8 +77,8 @@ class Game
      * 
      * 
      * @param Pointer to a hero that has to be put somewhere.
-     * @param X coordinate on the map.
-     * @param Y coordinate on the map.
+     * @param ROW coordinate on the map.
+     * @param COLUMN coordinate on the map.
      * 
      */
     void putHero(Hero*, int, int);

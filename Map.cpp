@@ -4,21 +4,21 @@
 #include <fstream>
 #include <iostream>
 
-Map::type Map::get(unsigned int x, unsigned int y) const
+Map::type Map::get(unsigned int row, unsigned int column) const
 {
-    if(x >= map.size())
+    if(row >= map.size())
     {
         throw WrongIndexException();
     }
     else
     {
-        if(y >= map[x].size())
+        if(column >= map[row].size())
         {
             throw WrongIndexException();
         }
         else
         {
-            return type(map[x][y]);
+            return type(map[row][column]);
         }
     }
 }
@@ -30,6 +30,7 @@ Map::Map(std::string path)
     std::string line;
     std::ifstream mapfile(path);
     longest_row_size = 0;
+    longest_column_size = 0;
     
     while (std::getline(mapfile, line))
     {
@@ -48,75 +49,112 @@ Map::Map(std::string path)
             //Nullpointereket tolunk bele, hogy fel legyen töltve hellyel
             
         }
-        
-        if(line.length() > longest_row_size)
+
+        int64_t signed_longest_row_size = longest_row_size; //Fixes signed-unsigned errors
+        uint64_t unsigned_longest_row_size = static_cast<uint64_t>(signed_longest_row_size);
+
+        if(line.length() > unsigned_longest_row_size) 
         {
             longest_row_size=line.length();
         }
 
         map.push_back(map_row);
     }
+
 }
 
-void Map::drawMap() const
+void Map::drawMap(const int viewrange, int hero_row, int hero_column) const
 {
+/*     std::cout << "viewrange: "<< viewrange <<", hero_row: "<< hero_row <<", hero_column: "<< hero_column <<std::endl;
+ */
 
+    //Draw the upper border of the map
     std::cout << "╔";
-    for (unsigned int number_of_chars = 0; number_of_chars < longest_row_size; number_of_chars++)
+
+
+    for (int j = hero_column-viewrange; j < hero_column+viewrange+1; j++)
     {
-        std::cout <<"══"; 
-    }                           
+         if (j<0)
+            {
+                continue;
+            }
+            else
+            {
+                if(j<longest_row_size-1){
+                    std::cout <<"══"; 
+                }
+            }
+    }
+
+
     std::cout <<"╗"<< std::endl;
 
-
-    for (unsigned int row = 0; row < map.size(); row++)
-    {   
-
-        int current_row_length = 0;
-        std::cout <<"║";        
-        for (unsigned int column = 0; column < map[row].size(); column++)
+    for (int i = hero_row-viewrange; i < hero_row+viewrange+1; i++)
+    {
+        if (i<0)
         {
-
-            if (Map::get(row,column)==Free)   
-            {
-                std::cout <<"░░";
-            }
-            else if (Map::get(row,column)==Wall)
-            {
-                std::cout <<"██";
-            }
-            else if (Map::get(row,column)==Hero)
-            {
-                std::cout <<"┣┫";
-            }
-            else if (Map::get(row,column)==Monster)
-            {
-                std::cout <<"M░";
-            }
-            else if (Map::get(row,column)==Monsters)
-            {
-                std::cout <<"MM";
-            }
-            current_row_length=column;          
+            continue;
         }
 
-        for(unsigned int i=current_row_length;i<longest_row_size-1;i++)
-        {
-            std::cout <<"  ";
-        }
-        std::cout <<"║"<<std::endl;
+        int64_t signed_i = i; //Fixes signed-unsigned errors
+        uint64_t unsigned_i = static_cast<uint64_t>(signed_i);
 
+        if(unsigned_i>=map.size()) 
+        {
+            break;
+        }else{
+            std::cout <<"║";    
+        }
+        
+        
+        for (int j = hero_column-viewrange; j < hero_column+viewrange+1; j++)
+        {
+            if (j<0||j>longest_row_size)
+            {
+                continue;
+            }
+            else
+            {
+                //Ha van ilyen mező a mapon, lekérjük a stringet amit kiírunk
+                if(unsigned_i < map.size()){ 
+
+                    int64_t signed_j = j; //Fixes signed-unsigned errors
+                    uint64_t unsigned_j = static_cast<uint64_t>(signed_j);
+
+                    if(unsigned_j < map[i].size()){ 
+                        std::cout <<tileString[get(i,j)];
+                    }else if(j < longest_row_size-1){
+                        std::cout <<"  ";
+                    }
+                }
+            }
+ 
+
+        }
+        
+        std::cout <<"║"<<std::endl;      
     }
     
     std::cout << "╚";
-    for (unsigned int number_of_chars = 0; number_of_chars <  longest_row_size; number_of_chars++)
+
+    for (int j = hero_column-viewrange; j < hero_column+viewrange+1; j++)
     {
-        std::cout <<"══"; 
+         if (j<0)
+            {
+                continue;
+            }
+            else
+            {
+                if(j<longest_row_size-1){
+                    std::cout <<"══"; 
+                }
+            }
     }
-    std::cout << "╝"<< std::endl;
+
+    std::cout <<"╝"<< std::endl;
     
 }
 
-void Map::setTile(int x, int y, int type_int){
-    map[x][y] = type_int;
+void Map::setTile(int row, int column, int type_int){
+    map[row][column] = type_int;
 }
