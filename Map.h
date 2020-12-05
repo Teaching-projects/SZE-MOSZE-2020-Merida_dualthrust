@@ -22,13 +22,15 @@
 
 class Map
 {
+    /* INDEXING OF THE MAP STARTS FROM THE UPPER LEFT CORNET, FIRST INDEX IS ROW, SECOND IS COLUMN */
     private:
         /**
          * @brief Data structure that contains the map.
          * 
          */
         std::vector<std::vector<int>> map;
-        unsigned int longest_row_size;
+        int longest_row_size;
+        int longest_column_size;
     public:
         /**
          * @brief Types that the map may contain.
@@ -42,6 +44,15 @@ class Map
             Monster,    /* 3 */
             Monsters    /* 4 */
         };
+
+        std::string tileString [5]={
+            "░░",
+            "██",
+            "┣┫",
+            "M░",
+            "MM",
+        };
+
         /**
          * @brief Constructor for an empty map.
          * 
@@ -63,24 +74,29 @@ class Map
         /**
          * @brief Gives back the type of terrain based on coordinates.
          * 
-         * Takes x and y coordinates.
+         * Takes y and x coordinates.
          * 
-         * @param x Longitudinal coordinate. (Which "column")
-         * @param y Latitudinal coordinate. (Which "row")
+         * @param Which row
+         * @param Which column
          * @return type 
          * 
          */
-        Map::type get(unsigned int x, unsigned int y) const;
+        Map::type get(unsigned int row, unsigned int column) const;
         /**
          * @brief Draws our map to the standard output.
          * 
+         * Draws the map around the hero, based on its viewrange - lightradius - and its x and y coordinates.
+         * 
+         * @param viewrange, lightradius of hero object. 
+         * @param Hero row
+         * @param Hero column
          */
-        void drawMap() const;
+        void drawMap(const int viewrange, int hero_row, int hero_column) const;
         /**
          * @brief Sets the type of a certain tile.
          * 
-         * @param x Longitudinal coordinate. (Which "column")
-         * @param y Latitudinal coordinate. (Which "row")
+         * @param Which row
+         * @param Which column
          * @param Type of the tile 
          * 
          */
