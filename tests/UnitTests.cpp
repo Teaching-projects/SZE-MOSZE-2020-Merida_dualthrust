@@ -1,8 +1,9 @@
-#include "../JSON.cpp"
-#include "../Monster.cpp"
-#include "../Hero.cpp"
 #include "../Damage.h"
 #include "../Game.cpp"
+#include "../Hero.cpp"
+#include "../JSON.cpp"
+#include "../Map.cpp"
+#include "../Monster.cpp"
 #include <gtest/gtest.h>
 
 //Test for the Monster and Hero class
