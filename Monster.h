@@ -31,6 +31,8 @@ public:
      */
     Monster(const std::string&, int, int, int, const double);
     
+    //Copy constructor
+    Monster(const Monster &m2): name(m2.name),healthPoint(m2.healthPoint),damage(m2.damage),defense(m2.defense),cooldown(m2.cooldown){}
     /**
      * @brief Setter for the unit's position for the map. Evaluation logic of the move's validity happens inside the Game class.
      * 

@@ -88,7 +88,7 @@ class Game
      * If a monster is already on a certain coordinate, the function will add the monster to the vector of monster(s) on the coordinate.
      * 
      */
-    void putMonster(Monster*, int, int);
+    virtual void putMonster(Monster*, int, int);
     /**
      * @brief Runs the game. Handles movement on the map, draws the map.
      *

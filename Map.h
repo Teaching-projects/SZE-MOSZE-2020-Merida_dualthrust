@@ -19,8 +19,7 @@
 #include <fstream>
 #include <sstream>
 #include <exception>
-//Include loopok elkerülése miatt - ha kitörlöd rossz lesz a linker és a markedmapben hibákat észlel
-#include "MarkedMap.h"
+
 
 class Map
 {
