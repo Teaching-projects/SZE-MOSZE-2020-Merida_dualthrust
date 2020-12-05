@@ -51,12 +51,12 @@ TEST(unitTests, getDefense){
 
 TEST(unitTests, sufferDamage){
     Damage dmg;
-    dmg.physical=10;
-    dmg.magical=10;
+    Hero dmg.physical=10;
+    Hero dmg.magical=10;
     Monster attacker = Monster("Attacker",10,dmg,10,10);
     Damage dmg_2;
-    dmg_2.physical=1;
-    dmg_2.magical=1;
+    Monster dmg_2.physical=1;
+    Monster dmg_2.magical=1;
     Monster dead = Monster("Dead",1,dmg_2,1,1);
     dead.sufferDamage(&attacker);
     ASSERT_EQ(dead.isAlive(), false);
@@ -64,12 +64,12 @@ TEST(unitTests, sufferDamage){
 
 TEST(unitTests, levelUp){
     Damage dmg;
-    dmg.physical=100;
-    dmg.magical=100;
+    Hero dmg.physical=100;
+    Hero dmg.magical=100;
     Hero hero = Hero("Hero",100,dmg,100,100,100,100,100,100,100,2);
     Damage dmg_2;
-    dmg_2.physical=1;
-    dmg_2.magical=1;
+    Monster dmg_2.physical=1;
+    Monster dmg_2.magical=1;
     Monster enemy = Monster("Monster",100,dmg_2,1,1);
     hero.fightTilDeath(enemy);
 
