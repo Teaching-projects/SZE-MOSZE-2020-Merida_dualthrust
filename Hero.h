@@ -114,7 +114,8 @@ class Hero : public Monster{
          */
         void deliverHit(Monster* enemy) override;
 
-        Damage getDamage() const {return damage;}
+        Damage getPhysicalDamage() const {return damage;}
+        Damage getMagicalDamage() const {return damage;}
     };
 
 #endif // HERO_HEADER
