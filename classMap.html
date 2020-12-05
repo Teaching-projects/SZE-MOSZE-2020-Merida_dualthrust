@@ -68,21 +68,11 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classMap-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Map Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for Map:</div>
-<div class="dyncontent">
-<div class="center"><img src="classMap__inherit__graph.png" border="0" usemap="#Map_inherit__map" alt="Inheritance graph"/></div>
-<map name="Map_inherit__map" id="Map_inherit__map">
-<area shape="rect" title=" " alt="" coords="29,5,80,32"/>
-<area shape="rect" href="classMarkedMap.html" title=" " alt="" coords="5,80,104,107"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -91,7 +81,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a41697b848ea9a5aad1910714e0196b7b"><td class="memItemLeft" align="right" valign="top"><a id="a41697b848ea9a5aad1910714e0196b7b"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>type</b> { <br />
+<tr class="memitem:a41697b848ea9a5aad1910714e0196b7b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a41697b848ea9a5aad1910714e0196b7b">type</a> { <br />
 &#160;&#160;<b>Free</b>, 
 <b>Wall</b>, 
 <b>Hero</b>, 
@@ -100,53 +90,49 @@ Public Types</h2></td></tr>
 &#160;&#160;<b>Monsters</b>
 <br />
  }</td></tr>
+<tr class="memdesc:a41697b848ea9a5aad1910714e0196b7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Types that the map may contain.  <a href="classMap.html#a41697b848ea9a5aad1910714e0196b7b">More...</a><br /></td></tr>
 <tr class="separator:a41697b848ea9a5aad1910714e0196b7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a958f2a0ea97f37cd48132a3bece47151"><td class="memItemLeft" align="right" valign="top"><a id="a958f2a0ea97f37cd48132a3bece47151"></a>
-const std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getHeroPosition</b> ()</td></tr>
-<tr class="separator:a958f2a0ea97f37cd48132a3bece47151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32250b7859fccb3a43b7cf1f3b9fbc76"><td class="memItemLeft" align="right" valign="top"><a id="a32250b7859fccb3a43b7cf1f3b9fbc76"></a>
-const std::vector&lt; std::pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getMonsterPositions</b> (char)</td></tr>
-<tr class="separator:a32250b7859fccb3a43b7cf1f3b9fbc76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8df91b5495fc1eac0e4f18558a50cda1"><td class="memItemLeft" align="right" valign="top"><a id="a8df91b5495fc1eac0e4f18558a50cda1"></a>
-const void&#160;</td><td class="memItemRight" valign="bottom"><b>setHeroPosition</b> (std::pair&lt; int, int &gt; pos)</td></tr>
-<tr class="separator:a8df91b5495fc1eac0e4f18558a50cda1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f5ad0fd4563497b4214038cbca8b582"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a0f5ad0fd4563497b4214038cbca8b582">Map</a> ()</td></tr>
 <tr class="memdesc:a0f5ad0fd4563497b4214038cbca8b582"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for an empty map.  <a href="classMap.html#a0f5ad0fd4563497b4214038cbca8b582">More...</a><br /></td></tr>
 <tr class="separator:a0f5ad0fd4563497b4214038cbca8b582"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab124c12c6c9dec693aedb1a4b6384ecd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#ab124c12c6c9dec693aedb1a4b6384ecd">Map</a> (std::string filename)</td></tr>
 <tr class="memdesc:ab124c12c6c9dec693aedb1a4b6384ecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives back a map constructed from a txt file.  <a href="classMap.html#ab124c12c6c9dec693aedb1a4b6384ecd">More...</a><br /></td></tr>
 <tr class="separator:ab124c12c6c9dec693aedb1a4b6384ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3d2f71301bb5bdafcef6099a65ae7e0"><td class="memItemLeft" align="right" valign="top">Map::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#af3d2f71301bb5bdafcef6099a65ae7e0">get</a> (unsigned int x, unsigned int y) const</td></tr>
-<tr class="memdesc:af3d2f71301bb5bdafcef6099a65ae7e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives back the type of terrain based on coordinates.  <a href="classMap.html#af3d2f71301bb5bdafcef6099a65ae7e0">More...</a><br /></td></tr>
-<tr class="separator:af3d2f71301bb5bdafcef6099a65ae7e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb89ca324e81cf18799ffcbf96b7f679"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#acb89ca324e81cf18799ffcbf96b7f679">drawMap</a> () const</td></tr>
-<tr class="memdesc:acb89ca324e81cf18799ffcbf96b7f679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws our map to the standard output.  <a href="classMap.html#acb89ca324e81cf18799ffcbf96b7f679">More...</a><br /></td></tr>
-<tr class="separator:acb89ca324e81cf18799ffcbf96b7f679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2058ec27a28ff2c4d737d48d570a165"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMap.html#a41697b848ea9a5aad1910714e0196b7b">Map::type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#ac2058ec27a28ff2c4d737d48d570a165">get</a> (unsigned int row, unsigned int column) const</td></tr>
+<tr class="memdesc:ac2058ec27a28ff2c4d737d48d570a165"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives back the type of terrain based on coordinates.  <a href="classMap.html#ac2058ec27a28ff2c4d737d48d570a165">More...</a><br /></td></tr>
+<tr class="separator:ac2058ec27a28ff2c4d737d48d570a165"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a918faafccfe28937dbfb842f58b385ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a918faafccfe28937dbfb842f58b385ca">drawMap</a> (const int viewrange, int hero_row, int hero_column) const</td></tr>
+<tr class="memdesc:a918faafccfe28937dbfb842f58b385ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws our map to the standard output.  <a href="classMap.html#a918faafccfe28937dbfb842f58b385ca">More...</a><br /></td></tr>
+<tr class="separator:a918faafccfe28937dbfb842f58b385ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c6f5a0f5146390c90960892f6c3e56c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a4c6f5a0f5146390c90960892f6c3e56c">setTile</a> (int, int, int)</td></tr>
 <tr class="memdesc:a4c6f5a0f5146390c90960892f6c3e56c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the type of a certain tile.  <a href="classMap.html#a4c6f5a0f5146390c90960892f6c3e56c">More...</a><br /></td></tr>
 <tr class="separator:a4c6f5a0f5146390c90960892f6c3e56c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a9f827218d2ff7742f7cd39d43653fcf0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a9f827218d2ff7742f7cd39d43653fcf0">monsterPositions</a></td></tr>
-<tr class="memdesc:a9f827218d2ff7742f7cd39d43653fcf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Types that the map may contain.  <a href="classMap.html#a9f827218d2ff7742f7cd39d43653fcf0">More...</a><br /></td></tr>
-<tr class="separator:a9f827218d2ff7742f7cd39d43653fcf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ef7d24330e97918b6fc01db61de2a8d"><td class="memItemLeft" align="right" valign="top"><a id="a9ef7d24330e97918b6fc01db61de2a8d"></a>
-std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>heroPosition</b></td></tr>
-<tr class="separator:a9ef7d24330e97918b6fc01db61de2a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a7fbb34f989fcf03bb5717073f882080a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a7fbb34f989fcf03bb5717073f882080a">map</a></td></tr>
-<tr class="memdesc:a7fbb34f989fcf03bb5717073f882080a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data structure that contains the map.  <a href="classMap.html#a7fbb34f989fcf03bb5717073f882080a">More...</a><br /></td></tr>
-<tr class="separator:a7fbb34f989fcf03bb5717073f882080a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ccc7ce0ac9b6d653ad31dbc91451232"><td class="memItemLeft" align="right" valign="top"><a id="a1ccc7ce0ac9b6d653ad31dbc91451232"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>longest_row_size</b></td></tr>
-<tr class="separator:a1ccc7ce0ac9b6d653ad31dbc91451232"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecf8e06065d974b902bef55b2c3b8bc0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><b>tileString</b> [5]</td></tr>
+<tr class="separator:aecf8e06065d974b902bef55b2c3b8bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a41697b848ea9a5aad1910714e0196b7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41697b848ea9a5aad1910714e0196b7b">&#9670;&nbsp;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classMap.html#a41697b848ea9a5aad1910714e0196b7b">Map::type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Types that the map may contain. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0f5ad0fd4563497b4214038cbca8b582"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0f5ad0fd4563497b4214038cbca8b582">&#9670;&nbsp;</a></span>Map() <span class="overload">[1/2]</span></h2>
@@ -197,8 +183,8 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>longest_row_s
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="acb89ca324e81cf18799ffcbf96b7f679"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb89ca324e81cf18799ffcbf96b7f679">&#9670;&nbsp;</a></span>drawMap()</h2>
+<a id="a918faafccfe28937dbfb842f58b385ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a918faafccfe28937dbfb842f58b385ca">&#9670;&nbsp;</a></span>drawMap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,33 +192,59 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>longest_row_s
         <tr>
           <td class="memname">void Map::drawMap </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>viewrange</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>hero_row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>hero_column</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Draws our map to the standard output. </p>
+<p>Draws the map around the hero, based on its viewrange - lightradius - and its x and y coordinates.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">viewrange,lightradius</td><td>of hero object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classHero.html">Hero</a></td><td>row </td></tr>
+    <tr><td class="paramname"><a class="el" href="classHero.html">Hero</a></td><td>column </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="af3d2f71301bb5bdafcef6099a65ae7e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3d2f71301bb5bdafcef6099a65ae7e0">&#9670;&nbsp;</a></span>get()</h2>
+<a id="ac2058ec27a28ff2c4d737d48d570a165"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2058ec27a28ff2c4d737d48d570a165">&#9670;&nbsp;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Map::type Map::get </td>
+          <td class="memname"><a class="el" href="classMap.html#a41697b848ea9a5aad1910714e0196b7b">Map::type</a> Map::get </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
+          <td class="paramname"><em>row</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
+          <td class="paramname"><em>column</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -243,11 +255,11 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>longest_row_s
 </div><div class="memdoc">
 
 <p>Gives back the type of terrain based on coordinates. </p>
-<p>Takes x and y coordinates.</p>
+<p>Takes y and x coordinates.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>Longitudinal coordinate. (Which "column") </td></tr>
-    <tr><td class="paramname">y</td><td>Latitudinal coordinate. (Which "row") </td></tr>
+    <tr><td class="paramname">Which</td><td>row </td></tr>
+    <tr><td class="paramname">Which</td><td>column </td></tr>
   </table>
   </dd>
 </dl>
@@ -265,13 +277,13 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>longest_row_s
           <td class="memname">void Map::setTile </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
+          <td class="paramname"><em>row</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
+          <td class="paramname"><em>column</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -290,8 +302,8 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>longest_row_s
 <p>Sets the type of a certain tile. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>Longitudinal coordinate. (Which "column") </td></tr>
-    <tr><td class="paramname">y</td><td>Latitudinal coordinate. (Which "row") </td></tr>
+    <tr><td class="paramname">Which</td><td>row </td></tr>
+    <tr><td class="paramname">Which</td><td>column </td></tr>
     <tr><td class="paramname">Type</td><td>of the tile </td></tr>
   </table>
   </dd>
@@ -300,44 +312,25 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>longest_row_s
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a7fbb34f989fcf03bb5717073f882080a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fbb34f989fcf03bb5717073f882080a">&#9670;&nbsp;</a></span>map</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;int&gt; &gt; Map::map</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Data structure that contains the map. </p>
-
-</div>
-</div>
-<a id="a9f827218d2ff7742f7cd39d43653fcf0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f827218d2ff7742f7cd39d43653fcf0">&#9670;&nbsp;</a></span>monsterPositions</h2>
+<a id="aecf8e06065d974b902bef55b2c3b8bc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecf8e06065d974b902bef55b2c3b8bc0">&#9670;&nbsp;</a></span>tileString</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::pair&lt;int,int&gt; &gt; Map::monsterPositions</td>
+          <td class="memname">std::string Map::tileString[5]</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Types that the map may contain. </p>
-
+<b>Initial value:</b><div class="fragment"><div class="line">={</div>
+<div class="line">            <span class="stringliteral">&quot;░░&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;██&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;┣┫&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;M░&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;MM&quot;</span>,</div>
+<div class="line">        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
