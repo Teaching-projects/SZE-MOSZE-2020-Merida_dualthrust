@@ -53,7 +53,7 @@ TEST(unitTests, sufferDamage){
     Damage dmg;
     dmg.physical=10;
     dmg.magical=10;
-    Monster attacker = Monster("Attacker",10,dmg_1,10,10);
+    Monster attacker = Monster("Attacker",10,dmg,10,10);
     Damage dmg_2;
     dmg_2.physical=1;
     dmg_2.magical=1;
