@@ -9,51 +9,18 @@
     : Monster(characterName, characterHP, characterATK, characterDEF, characterACD), level(1), maximumHealthPoint(characterHP), lightradius(characterLIGHT), experience(0), experiencePerLevel(XPperlevel), healthPointBonusPerLevel(HPperlevel), damageBonusPerLevel(DMGperlevel), defenseBonusPerLevel(DEFperlevel), lightradiusBonusPerLevel(LIGHTperlevel), cooldownMultiplierPerLevel(ACDperlevel)
     {
 
-int const & Hero::getMaxHealthPoints() const
-{
-    return maximumHealthPoint;
-}
+    }
 
-int const & Hero::getLevel() const
-{
-    return level;
-}
-
-void Hero::levelUp()
-{
-    maximumHealthPoint  +=  healthPointBonusPerLevel;
-    maximumHealthPoint  =   round(maximumHealthPoint);
-    damage              +=  damageBonusPerLevel;
-    defense             +=  defenseBonusPerLevel;   
-    cooldown            *=  cooldownMultiplierPerLevel;
-    this->healthPoint   =   maximumHealthPoint;        
-    level               +=  1;
-}
-
-Hero Hero::parse(const std::string& path)  //JSON parse method for creating a Monster object based on a given JSON input file
-{
-    JSON data                           =   JSON::parseFromFile(path);
-    std::string name                    =   data.get<std::string>("name");
-    int heatlhPoints                    =   data.get<int>("base_health_points");
-    int damage                          =   data.get<int>("base_damage");
-    int defense                         =   data.get<int>("base_defense");
-    float cooldown                      =   data.get<float>("base_attack_cooldown");
-    int experiencePerLevel              =   data.get<int>("experience_per_level");
-    int healthPointBonusPerLevel        =   data.get<int>("health_point_bonus_per_level");
-    int damageBonusPerLevel             =   data.get<int>("damage_bonus_per_level");
-    int defenseBonusPerLevel            =   data.get<int>("defense_bonus_per_level");
-    float cooldownMultiplierPerLevel    =   data.get<float>("cooldown_multiplier_per_level");
-    return Hero(name, heatlhPoints, damage, defense, cooldown, experiencePerLevel, healthPointBonusPerLevel, damageBonusPerLevel, defenseBonusPerLevel, cooldownMultiplierPerLevel);
-}
-
-void Hero::deliverHit(Monster* enemy) 
-{
-    int enemyHealthPoint    =   enemy   ->  getHealthPoints();
-    int enemyDefense        =   enemy   ->  getDefense();
-    int experienceToGain    =   0;
-    if (enemyHealthPoint < damage - enemyDefense)
+    int const & Hero::getMaxHealthPoints() const
     {
-        experienceToGain   =   enemyHealthPoint;
+        return maximumHealthPoint;
+    }
+
+    int const & Hero::getLevel() const
+    {
+        return level;
+    }
+
     int const & Hero::getLightRadius() const
     {
         return lightradius;
@@ -70,10 +37,9 @@ void Hero::deliverHit(Monster* enemy)
         this->healthPoint   =   maximumHealthPoint;        
         level               +=  1;
     }
-    else
+    
+    Hero Hero::parse(const std::string& path)  //JSON parse method for creating a Monster object based on a given JSON input file
     {
-        experienceToGain   =   damage - enemyDefense;
-        if (experienceToGain    <   0)
         JSON data                           =   JSON::parseFromFile(path);
         std::string name                    =   data.get<std::string>("name");
         int heatlhPoints                    =   data.get<int>("base_health_points");
@@ -103,19 +69,30 @@ void Hero::deliverHit(Monster* enemy)
 
         if (enemyHealthPoint < damage - enemyDefense)
         {
-            experienceToGain    =   0;
+            experienceToGain   =   enemyHealthPoint;
         }
-    }              
-    enemy       ->  sufferDamage(this);
-    experience  +=  experienceToGain;
-    
-    if (experience  >=  experiencePerLevel)
-    {
-        int LVL_ToGain  =   (experience / experiencePerLevel);
-        for (int i = 0; i < LVL_ToGain; i++)
+        else
         {
-            this    ->  levelUp();
+            experienceToGain   =   damage - enemyDefense;
+            if (experienceToGain    <   0)
+            {
+                experienceToGain    =   0;
+            }
+        }              
+
+        enemy       ->  sufferDamage(this);
+
+        experience  +=  experienceToGain;
+        
+        if (experience  >=  experiencePerLevel)
+        {
+            int LVL_ToGain  =   (experience / experiencePerLevel);
+
+            for (int i = 0; i < LVL_ToGain; i++)
+            {
+                this    ->  levelUp();
+            }
+
+            experience  -=  (LVL_ToGain * experiencePerLevel);            
         }
-        experience  -=  (LVL_ToGain * experiencePerLevel);            
     }
-}
