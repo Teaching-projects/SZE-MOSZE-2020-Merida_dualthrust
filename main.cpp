@@ -35,7 +35,6 @@ int main(int argc, char** argv){
         //If there are two arguments, we passed '-test' to the program
         //In that case, the 'is test' flag is true, we pass it to the run method
         game.run(argc == 3);
-
     } 
     catch (const JSON::ParseException& e) {bad_exit(4);
     }
