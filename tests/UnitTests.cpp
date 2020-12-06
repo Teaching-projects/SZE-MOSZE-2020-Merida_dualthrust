@@ -67,7 +67,7 @@ TEST(unitTests, levelUp){
     dmg.physical=1;
     dmg.magical=1;
     Hero hero = Hero("Hero",1,dmg,1,1,1,1,1,1,1,2);
-    hero.levelUp()
+    hero.levelUp();
 
     ASSERT_EQ(hero.getLevel(),2);
     ASSERT_EQ(hero.getHealthPoints(),2);
