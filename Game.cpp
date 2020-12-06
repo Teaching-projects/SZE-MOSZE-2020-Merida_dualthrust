@@ -106,7 +106,7 @@ void Game::run(bool is_test)
         {"w",       std::make_pair(-1,0)},
         {"d",       std::make_pair(0,1)},
         {"s",       std::make_pair(1,0)},
-        {"a",       std::make_pair(0,-1)} // WASD controls are only here for local testing
+        {"a",       std::make_pair(0,-1)} // WASD controls are only here for testing
     };
 
     if(hero && map)
