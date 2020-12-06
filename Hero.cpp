@@ -1,4 +1,3 @@
-#include "Monster.h"
 #include "Hero.h"
 #include "JSON.h"
 #include <iostream>
