@@ -64,17 +64,21 @@ TEST(unitTests, sufferDamage){
 
 TEST(unitTests, levelUp){
     Damage dmg;
-    dmg.physical=1;
-    dmg.magical=1;
-    Hero hero = Hero("Hero",1,dmg,1,1,1,1,1,1,1,2);
-    Hero::hero.levelUp();
+    dmg.physical=100;
+    dmg.magical=100;
+    Hero hero = Hero("Hero",100,dmg,100,100,100,100,100,100,100,2);
+    Damage dmg_2;
+    dmg_2.physical=1;
+    dmg_2.magical=1;
+    Monster enemy = Monster("Monster",100,dmg_2,1,1);
+    hero.fightTilDeath(enemy);
 
     ASSERT_EQ(hero.getLevel(),2);
-    ASSERT_EQ(hero.getHealthPoints(),2);
-    ASSERT_EQ(hero.getAttackCoolDown(),2);
-    ASSERT_EQ(hero.getPhysicalDamage(),2);
-    ASSERT_EQ(hero.getMagicalDamage(),2);
-    ASSERT_EQ(hero.getDefense(),2);
+    ASSERT_EQ(hero.getHealthPoints(),200);
+    ASSERT_EQ(hero.getAttackCoolDown(),200);
+    ASSERT_EQ(hero.getPhysicalDamage(),200);
+    ASSERT_EQ(hero.getMagicalDamage(),200);
+    ASSERT_EQ(hero.getDefense(),200);
 }
 
 
