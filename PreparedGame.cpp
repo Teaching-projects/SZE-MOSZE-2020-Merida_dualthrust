@@ -26,7 +26,7 @@ PreparedGame::PreparedGame(std::string path){
           for(unsigned int i=0;i<line.length();i++)
           {
               if(line[i] == 'H'){
-                putHero(&h, row, i);
+                putHero(new Hero(h), row, i);
               }else if(line[i]=='1'){
                 putMonster(new Monster(monster_1), row, i);
               }else if(line[i]=='2'){
