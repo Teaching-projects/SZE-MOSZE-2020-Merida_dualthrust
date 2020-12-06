@@ -106,7 +106,7 @@
     //Printing a characters status
     std::ostream& operator<<(std::ostream& os, const Monster& character)
     {
-        os << character.getName() << ": [healthPoint: "  << character.getHealthPoints() << "] [DMG: " << character.getPhysicalDamage() << "] [MagicalDMG: " << character.getMagicalDamage() << "]";
+        os << character.getName() << ": [healthPoint: "  << character.getHealthPoints() << "] [DMG: " << character.getDamage().physical << "] [MagicalDMG: " << character.getDamage().magical << "]";
         return os;
     }
 
