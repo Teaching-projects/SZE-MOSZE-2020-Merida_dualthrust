@@ -1,7 +1,6 @@
 #ifndef DAMAGE_H
 #define DAMAGE_H
-#include <iostream>
-#include <string>
+#include <ostream>
 struct Damage {
 
     int physical;
