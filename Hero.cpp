@@ -62,20 +62,19 @@
 
     void Hero::deliverHit(Monster* enemy) 
     {
-        Damage damage;
         int enemyHealthPoint    =   enemy   ->  getHealthPoints();
-        damage.physical         =   this    -> getPhysicalDamage();
-        damage.magical          =   this    -> getMagicalDamage();
+        damage.physical         =   this    ->  getPhysicalDamage();
+        damage.magical          =   this    ->  getMagicalDamage();
         int enemyDefense        =   enemy   ->  getDefense();
         int experienceToGain    =   0;
         
-        if (enemyHealthPoint < (getPhysicalDamage() - enemyDefense) + getMagicalDamage())
+        if (enemyHealthPoint < (damage.physical - enemyDefense) + damage.magical)
         {
             experienceToGain   =   enemyHealthPoint;
         }
         else
         {
-            experienceToGain   =   (getPhysicalDamage() - enemyDefense) + getMagicalDamage();
+            experienceToGain   =   (damage.physical - enemyDefense) + damage.magical;
             if (experienceToGain    <   0)
             {
                 experienceToGain    =   0;
