@@ -5,7 +5,7 @@
 #include <string>
 
     //Constructor
-    Monster::Monster(const std::string& characterName, int characterHP, Damage dmg, int characterDEF, const double characterACD):name(characterName), healthPoint(characterHP), damage(dmg), defense(characterDEF), cooldown(characterACD)
+    Monster::Monster(const std::string& characterName, int characterHP, int physicaldmg, int magicaldmg, int characterDEF, const double characterACD):name(characterName), healthPoint(characterHP), damage{physicaldmg, magicaldmg}, defense(characterDEF), cooldown(characterACD)
     {
 
     }
@@ -26,7 +26,12 @@
         return healthPoint;
     }
 
-    int const & Monster::getPhysicalDamage() const
+
+    Damage Monster::getDamage() const 
+    {
+        return damage;
+    }
+    /*int const & Monster::getPhysicalDamage() const
     {
         return damage.physical;
     }
@@ -34,7 +39,7 @@
     int const & Monster::getMagicalDamage() const
     {
         return damage.magical;
-    }
+    }*/
     
     int const & Monster::getDefense() const
     {
@@ -63,12 +68,12 @@
         Damage damage;
         std::string name    =   data.get<std::string>("name");
         int healthPoints    =   data.get<int>("health_points");
-        damage.physical      =   std::stoi(data.get<std::string>("damage"));
+        damage.physical     =   std::stoi(data.get<std::string>("damage"));
         damage.magical      =   std::stoi(data.get<std::string>("magical-damage"));
         int def             =   std::stoi(data.get<std::string>("defense"));
         float cooldown      =   std::stof(data.get<std::string>("attack_cooldown"));
 
-        return Monster(name, healthPoints, damage, def, cooldown);
+        return Monster(name, healthPoints, damage.physical, damage.magical, def, cooldown);
     }
 
     //Convenience method for simple checking

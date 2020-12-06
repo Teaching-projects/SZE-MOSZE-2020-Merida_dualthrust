@@ -54,8 +54,8 @@ class Hero : public Monster{
          * @brief Extra attack damage per level.
          * 
          */
-        int damageBonusPerLevel;
-        int magicaldamageBonusPerLevel;
+        const int damageBonusPerLevel;
+        const int magicaldamageBonusPerLevel;
         Damage damage;
         /**
          * @brief Extra defense per level.
@@ -82,7 +82,7 @@ class Hero : public Monster{
         /**
          * @brief Constructor for our Hero class.
          */
-        Hero(const std::string&, int, Damage, int, double, const int, const int, const int, const int, const int, const float);
+        Hero(const std::string&, int, int, int, int, double, const int, const int, const int, const int, const int, const float);
         /**
          * @brief Getter for maximum health points of our Hero.
          * @return int const&
