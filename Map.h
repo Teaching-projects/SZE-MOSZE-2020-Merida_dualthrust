@@ -28,7 +28,7 @@ class Map
          * @brief Data structure that contains the map.
          * 
          */
-        std::vector<std::vector<int>> map;
+        std::vector<std::vector<int>> map = std::vector<std::vector<int>>();
         int longest_row_size;
         int longest_column_size;
     public:
