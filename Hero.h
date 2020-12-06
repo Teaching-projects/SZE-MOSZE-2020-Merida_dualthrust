@@ -96,8 +96,8 @@ class Hero : public Monster{
          */
         int const & getLevel(/**There's no input parameter here.*/) const;   
 
-        int const & getPhysicalDamage(/**There's no input parameter here.*/) const;
-        int const & getMagicalDamage(/**There's no input parameter here.*/) const;  
+        //int const & getPhysicalDamage(/**There's no input parameter here.*/) const;
+        //int const & getMagicalDamage(/**There's no input parameter here.*/) const;  
            
         /**
          * @brief Provides data for our constructor.
