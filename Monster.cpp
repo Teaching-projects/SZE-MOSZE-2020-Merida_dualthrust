@@ -5,7 +5,7 @@
 #include <string>
 
     //Constructor
-    Monster::Monster(const std::string& characterName, int characterHP, Damage damage, int characterDEF, const double characterACD):name(characterName), healthPoint(characterHP), damage(damage), defense(characterDEF), cooldown(characterACD)
+    Monster::Monster(const std::string& characterName, int characterHP, Damage dmg, int characterDEF, const double characterACD):name(characterName), healthPoint(characterHP), damage(dmg), defense(characterDEF), cooldown(characterACD)
     {
 
     }
@@ -82,9 +82,9 @@
     void Monster::sufferDamage(Monster* enemy) 
     {
         //std::cout << enemy->getName() << " -> " << this->getName() << std::endl;
-        if (    (enemy-> damage.physical - defense)  >   0)
+        if (    (enemy->getPhysicalDamage() - defense)  >   0)
         {
-            healthPoint -= (enemy-> damage.physical - defense) + damage.magical;
+            healthPoint -= (enemy->getPhysicalDamage() - defense) + enemy->getMagicalDamage();
         }
         
         if (healthPoint < 0)

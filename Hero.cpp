@@ -4,7 +4,7 @@
 #include <string>
 #include <cmath>
 
-    Hero::Hero(const std::string& characterName, int characterHP, Damage damage, int characterDEF, double characterACD, int XPperlevel, int HPperlevel, int DMGperlevel, int MDMGperlevel, int DEFperlevel, float ACDperlevel) : Monster(characterName, characterHP, damage, characterDEF, characterACD), level(1), maximumHealthPoint(characterHP), experience(0), experiencePerLevel(XPperlevel), healthPointBonusPerLevel(HPperlevel), damageBonusPerLevel(DMGperlevel), magicaldamageBonusPerLevel(MDMGperlevel), defenseBonusPerLevel(DEFperlevel), cooldownMultiplierPerLevel(ACDperlevel)
+    Hero::Hero(const std::string& characterName, int characterHP, Damage dmg, int characterDEF, double characterACD, int XPperlevel, int HPperlevel, int DMGperlevel, int MDMGperlevel, int DEFperlevel, float ACDperlevel) : Monster(characterName, characterHP, dmg, characterDEF, characterACD), level(1), maximumHealthPoint(characterHP), experience(0), experiencePerLevel(XPperlevel), healthPointBonusPerLevel(HPperlevel), damageBonusPerLevel(DMGperlevel), magicaldamageBonusPerLevel(MDMGperlevel), defenseBonusPerLevel(DEFperlevel), cooldownMultiplierPerLevel(ACDperlevel)
     {
 
     }
@@ -63,18 +63,18 @@
     void Hero::deliverHit(Monster* enemy) 
     {
         int enemyHealthPoint    =   enemy   ->  getHealthPoints();
-        damage.physical         =   this    ->  getPhysicalDamage();
-        damage.magical          =   this    ->  getMagicalDamage();
+        int physicalDamage      =   this    ->  getPhysicalDamage();
+        int magicalDamage       =   this    ->  getMagicalDamage();
         int enemyDefense        =   enemy   ->  getDefense();
         int experienceToGain    =   0;
         
-        if (enemyHealthPoint < (damage.physical - enemyDefense) + damage.magical)
+        if (enemyHealthPoint < (physicalDamage - enemyDefense) + magicalDamage)
         {
             experienceToGain   =   enemyHealthPoint;
         }
         else
         {
-            experienceToGain   =   (damage.physical - enemyDefense) + damage.magical;
+            experienceToGain   =   (physicalDamage - enemyDefense) + magicalDamage;
             if (experienceToGain    <   0)
             {
                 experienceToGain    =   0;
