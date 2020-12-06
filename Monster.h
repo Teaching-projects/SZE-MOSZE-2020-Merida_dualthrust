@@ -30,7 +30,7 @@ public:
      * In case of no inputs the Monster object gets default values
      * 
      */
-    Monster(const std::string&, int, damage, int, int, const double);
+    Monster(const std::string&, int, damage, int, const double);
     
     /**
      * @brief Setter for the unit's position for the map. Evaluation logic of the move's validity happens inside the Game class.
