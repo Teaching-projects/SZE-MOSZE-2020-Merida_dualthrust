@@ -4,7 +4,7 @@
 #include <string>
 #include <cmath>
 
-    Hero::Hero(const std::string& characterName, int characterHP, int physicaldmg, int magicaldmg, int characterDEF, double characterACD, int XPperlevel, int HPperlevel, int DMGperlevel, int MDMGperlevel, int DEFperlevel, float ACDperlevel) : Monster(characterName, characterHP, damage{physicaldmg, magicaldmg}, characterDEF, characterACD), level(1), maximumHealthPoint(characterHP), experience(0), experiencePerLevel(XPperlevel), healthPointBonusPerLevel(HPperlevel), damageBonusPerLevel(DMGperlevel), magicaldamageBonusPerLevel(MDMGperlevel), defenseBonusPerLevel(DEFperlevel), cooldownMultiplierPerLevel(ACDperlevel)
+    Hero::Hero(const std::string& characterName, int characterHP, Damage dmg, int characterDEF, double characterACD, int XPperlevel, int HPperlevel, int DMGperlevel, int MDMGperlevel, int DEFperlevel, float ACDperlevel) : Monster(characterName, characterHP, damage(dmg), characterDEF, characterACD), level(1), maximumHealthPoint(characterHP), experience(0), experiencePerLevel(XPperlevel), healthPointBonusPerLevel(HPperlevel), damageBonusPerLevel(DMGperlevel), magicaldamageBonusPerLevel(MDMGperlevel), defenseBonusPerLevel(DEFperlevel), cooldownMultiplierPerLevel(ACDperlevel)
     {
 
     }
@@ -18,18 +18,15 @@
     {
         return level;
     }
-    Damage Hero::getDamage() const
-    {
-        return damage;
-    }
-    /*int const & Hero::getPhysicalDamage() const
+
+    int const & Hero::getPhysicalDamage() const
     {
         return damage.physical;
     }
     int const & Hero::getMagicalDamage() const
     {
         return damage.magical;
-    }*/
+    }
 
     void Hero::levelUp()
     {
@@ -60,7 +57,7 @@
         int defenseBonusPerLevel            =   data.get<int>("defense_bonus_per_level");
         float cooldownMultiplierPerLevel    =   data.get<float>("cooldown_multiplier_per_level");
 
-        return Hero(name, heatlhPoints, damage.physical, damage.magical, defense, cooldown, experiencePerLevel, healthPointBonusPerLevel, damageBonusPerLevel, magicaldamageBonusPerLevel, defenseBonusPerLevel, cooldownMultiplierPerLevel);
+        return Hero(name, heatlhPoints, damage, defense, cooldown, experiencePerLevel, healthPointBonusPerLevel, damageBonusPerLevel, magicaldamageBonusPerLevel, defenseBonusPerLevel, cooldownMultiplierPerLevel);
     }
 
     void Hero::deliverHit(Monster* enemy) 
@@ -68,16 +65,16 @@
         int enemyHealthPoint    =   enemy   ->  getHealthPoints();
         int enemyDefense        =   enemy   ->  getDefense();
         int experienceToGain    =   0;
-        int damage              =   this    -> getDamage();
-        //int magicalDamage       =   this    -> getMagicalDamage();
+        int damage              =   this    -> getPhysicalDamage();
+        int magicalDamage       =   this    -> getMagicalDamage();
         
-        if (enemyHealthPoint < (getDamage().physical - enemyDefense) + getDamage().magical)
+        if (enemyHealthPoint < (getPhysicalDamage() - enemyDefense) + getMagicalDamage())
         {
             experienceToGain   =   enemyHealthPoint;
         }
         else
         {
-            experienceToGain   =   (getDamage().physical - enemyDefense) + getDamage().magical;
+            experienceToGain   =   (getPhysicalDamage() - enemyDefense) + getMagicalDamage();
             if (experienceToGain    <   0)
             {
                 experienceToGain    =   0;

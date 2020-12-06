@@ -82,7 +82,7 @@ class Hero : public Monster{
         /**
          * @brief Constructor for our Hero class.
          */
-        Hero(const std::string&, int, int, int, int, double, const int, const int, const int, const int, const int, const float);
+        Hero(const std::string&, int, damage, int, double, const int, const int, const int, const int, const int, const float);
         /**
          * @brief Getter for maximum health points of our Hero.
          * @return int const&
@@ -96,8 +96,8 @@ class Hero : public Monster{
          */
         int const & getLevel(/**There's no input parameter here.*/) const;   
 
-        //int const & getPhysicalDamage(/**There's no input parameter here.*/) const;
-        //int const & getMagicalDamage(/**There's no input parameter here.*/) const;  
+        int const & getPhysicalDamage(/**There's no input parameter here.*/) const;
+        int const & getMagicalDamage(/**There's no input parameter here.*/) const;  
            
         /**
          * @brief Provides data for our constructor.
@@ -117,7 +117,7 @@ class Hero : public Monster{
          * 
          */
         void deliverHit(Monster* enemy) override;
-
+        //Damage dmg;
 
         //Damage getDamage() const {return damage;}
     };

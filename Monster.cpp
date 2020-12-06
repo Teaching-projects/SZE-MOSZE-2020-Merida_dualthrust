@@ -5,7 +5,7 @@
 #include <string>
 
     //Constructor
-    Monster::Monster(const std::string& characterName, int characterHP, int physicaldmg, int magicaldmg, int characterDEF, const double characterACD):name(characterName), healthPoint(characterHP), damage{physicaldmg, magicaldmg}, defense(characterDEF), cooldown(characterACD)
+    Monster::Monster(const std::string& characterName, Damage damage, int magicaldmg, int characterDEF, const double characterACD):name(characterName), healthPoint(characterHP), damage(dmg), defense(characterDEF), cooldown(characterACD)
     {
 
     }
@@ -26,12 +26,7 @@
         return healthPoint;
     }
 
-
-    Damage Monster::getDamage() const 
-    {
-        return damage;
-    }
-    /*int const & Monster::getPhysicalDamage() const
+    int const & Monster::getPhysicalDamage() const
     {
         return damage.physical;
     }
@@ -39,7 +34,7 @@
     int const & Monster::getMagicalDamage() const
     {
         return damage.magical;
-    }*/
+    }
     
     int const & Monster::getDefense() const
     {
@@ -73,7 +68,7 @@
         int def             =   std::stoi(data.get<std::string>("defense"));
         float cooldown      =   std::stof(data.get<std::string>("attack_cooldown"));
 
-        return Monster(name, healthPoints, damage.physical, damage.magical, def, cooldown);
+        return Monster(name, healthPoints, damage, def, cooldown);
     }
 
     //Convenience method for simple checking
@@ -87,9 +82,9 @@
     void Monster::sufferDamage(Monster* enemy) 
     {
         //std::cout << enemy->getName() << " -> " << this->getName() << std::endl;
-        if (    (enemy->getDamage().physical - defense)  >   0)
+        if (    (enemy-> getPhysicalDamage() - defense)  >   0)
         {
-            healthPoint -= (enemy->getDamage().physical - defense) + enemy->getDamage().magical;
+            healthPoint -= (enemy-> getPhysicalDamage() - defense) + getMagicalDamage();
         }
         
         if (healthPoint < 0)
@@ -106,7 +101,7 @@
     //Printing a characters status
     std::ostream& operator<<(std::ostream& os, const Monster& character)
     {
-        os << character.getName() << ": [healthPoint: "  << character.getHealthPoints() << "] [DMG: " << character.getDamage().physical << "] [MagicalDMG: " << character.getDamage().magical << "]";
+        os << character.getName() << ": [healthPoint: "  << character.getHealthPoints() << "] [DMG: " << character.getPhysicalDamage() << "] [MagicalDMG: " << character.getMagicalDamage() << "]";
         return os;
     }
 
