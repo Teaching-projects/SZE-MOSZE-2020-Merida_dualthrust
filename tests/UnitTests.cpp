@@ -77,7 +77,7 @@ TEST(unitTests, levelUp){
     ASSERT_EQ(hero.getHealthPoints(),200);
     ASSERT_EQ(hero.getAttackCoolDown(),200);
     ASSERT_EQ(hero.getPhysicalDamage(),100);
-    ASSERT_EQ(hero.getMagicalDamage(),200);
+    ASSERT_EQ(hero.getMagicalDamage(),100);
     ASSERT_EQ(hero.getDefense(),200);
 }
 
