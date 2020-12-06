@@ -42,7 +42,7 @@ class Map
 
         const std::pair<int,int> getHeroPosition(){return heroPosition;};
         const std::vector<std::pair<int,int>> getMonsterPositions(char){return monsterPositions;};
-        const void setHeroPosition(std::pair<int,int> pos){heroPosition=pos;};
+        void setHeroPosition(std::pair<int,int> pos){heroPosition=pos;};
 
         enum type 
         {
@@ -68,6 +68,11 @@ class Map
          * 
          */
         Map(/**There's no input parameter here.*/);
+        /**
+         * @brief Virtual destructor for Map - MarkedMap inherits this class.
+         * 
+         */
+        virtual ~Map(/**There's no input parameter here.*/){};
         /**
          * @brief Gives back a map constructed from a txt file.
          * 

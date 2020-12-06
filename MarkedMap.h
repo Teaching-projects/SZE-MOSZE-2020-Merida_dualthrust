@@ -23,6 +23,6 @@ private:
     std::pair<int,int> heroPosition;
 public:
     MarkedMap(std::string);
-    ~MarkedMap();
+    ~MarkedMap(){};
 };
 #endif
