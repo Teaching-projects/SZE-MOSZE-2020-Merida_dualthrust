@@ -87,9 +87,9 @@
     void Monster::sufferDamage(Monster* enemy) 
     {
         //std::cout << enemy->getName() << " -> " << this->getName() << std::endl;
-        if (    (enemy->getPhysicalDamage() - defense)  >   0)
+        if (    (enemy->getDamage().physical - defense)  >   0)
         {
-            healthPoint -= (enemy->getPhysicalDamage() - defense) + enemy->getMagicalDamage();
+            healthPoint -= (enemy->getDamage().physical - defense) + enemy->getDamage().magical;
         }
         
         if (healthPoint < 0)
