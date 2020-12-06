@@ -65,8 +65,8 @@
         int enemyHealthPoint    =   enemy   ->  getHealthPoints();
         int enemyDefense        =   enemy   ->  getDefense();
         int experienceToGain    =   0;
-        int damage              =   this    -> getPhysicalDamage();
-        int magicalDamage       =   this    -> getMagicalDamage();
+        damage.physical         =   this    -> getPhysicalDamage();
+        damage.magical          =   this    -> getMagicalDamage();
         
         if (enemyHealthPoint < (getPhysicalDamage() - enemyDefense) + getMagicalDamage())
         {
