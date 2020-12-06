@@ -75,14 +75,14 @@ TEST(unitTests, levelUp){
     Damage dmg_2;
     dmg_2.physical=100;
     dmg_2.magical=100;
-    Monster enemy = Monster("Monster",100,1,dmg_2,1);
+    Monster enemy = Monster("Monster",100,,dmg_2,1,1);
     hero.fightTilDeath(enemy);
 
     ASSERT_EQ(hero.getLevel(),2);
     ASSERT_EQ(hero.getHealthPoints(),200);
     ASSERT_EQ(hero.getAttackCoolDown(),200);
     ASSERT_EQ(hero.getPhysicalDamage(),200);
-    ASSERT_EQ(hero.getMagicalDamage,200);
+    ASSERT_EQ(hero.getMagicalDamage(),200);
     ASSERT_EQ(hero.getDefense(),200);
 }
 
