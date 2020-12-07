@@ -4,7 +4,7 @@ COMPILER := g++
 
 CPPFILES := JSON.cpp Monster.cpp Hero.cpp Map.cpp Game.cpp main.cpp
 
-VALGRINDFLAGS:= --leak-check=full --error-exitcode=1
+VALGRINDFLAGS:= -s --leak-check=full --error-exitcode=1 --track-origins=yes
 VALGRINDPARAMETER:=  ./a.out scenario1.json -test
 
 build: $(OBJECTS)
@@ -13,10 +13,10 @@ build: $(OBJECTS)
 JSON.o: JSON.cpp JSON.h
 	$(COMPILER) $(COMPILERFLAGS) -c JSON.cpp
 
-Monster.o: Monster.cpp Monster.h JSON.h
+Monster.o: Monster.cpp Monster.h JSON.h Damage.h
 	$(COMPILER) $(COMPILERFLAGS) -c Monster.cpp
 
-Hero.o: Hero.cpp Hero.h Monster.h JSON.h
+Hero.o: Hero.cpp Hero.h Monster.h JSON.h Damage.h
 	$(COMPILER) $(COMPILERFLAGS) -c Hero.cpp
 	
 Map.o: Map.cpp Map.h
