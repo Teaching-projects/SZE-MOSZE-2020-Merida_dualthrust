@@ -33,6 +33,11 @@ class Hero : public Monster{
          */
         int maximumHealthPoint;
         /**
+         * @brief Shows how far our hero can see the map.
+         * 
+         */
+        int lightradius;
+        /**
          * @brief Tracking the units current Experience Points.
          * 
          * When using the deliverHit() method XP is given to a unit based on its damage inflicted to the enemy.
@@ -63,6 +68,13 @@ class Hero : public Monster{
          */
         const int defenseBonusPerLevel;
         /**
+         * @brief Extra lightradius - viewrange - per level. 
+         * 
+         * The data is initially stored in a JSON file.
+         * 
+         */
+        const float lightradiusBonusPerLevel;
+        /**
          * @brief Member variable responsible for the rate of change in a given Hero's cooldown after leveling up. 
          * 
          * The data is initially stored in a JSON file.
@@ -79,11 +91,11 @@ class Hero : public Monster{
         void levelUp();
           
     public:
+    
         /**
          * @brief Constructor for our Hero class.
          */
-        Hero(const std::string&, int, Damage, int, double, const int, const int, const int, const int, const int, const float);
-        /**
+        Hero(const std::string&, int, Damage, int, int, double, const int, const int, const int, const int, const int, const int, const float)        /**
          * @brief Getter for maximum health points of our Hero.
          * @return int const&
          * 
@@ -95,10 +107,12 @@ class Hero : public Monster{
          * 
          */
         int const & getLevel(/**There's no input parameter here.*/) const;   
-
-        //int const & getPhysicalDamage(/**There's no input parameter here.*/) const;
-        //int const & getMagicalDamage(/**There's no input parameter here.*/) const;  
-           
+        /**
+         * @brief Getter for the lightrange - viewrange - of our Hero.
+         * @return  int const&
+         * 
+         */
+        int const & getLightRadius(/**There's no input parameter here.*/) const;       
         /**
          * @brief Provides data for our constructor.
          * 

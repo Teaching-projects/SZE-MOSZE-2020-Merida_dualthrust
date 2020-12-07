@@ -3,8 +3,10 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-
-    Hero::Hero(const std::string& characterName, int characterHP, Damage dmg_struct, int characterDEF, double characterACD, int XPperlevel, int HPperlevel, int DMGperlevel, int MDMGperlevel, int DEFperlevel, float ACDperlevel) : Monster(characterName, characterHP, dmg_struct, characterDEF, characterACD), level(1), maximumHealthPoint(characterHP), experience(0), experiencePerLevel(XPperlevel), healthPointBonusPerLevel(HPperlevel), damageBonusPerLevel(DMGperlevel), magicaldamageBonusPerLevel(MDMGperlevel), defenseBonusPerLevel(DEFperlevel), cooldownMultiplierPerLevel(ACDperlevel)
+/* 
+        return Hero(name, heatlhPoints, damage, defense, lightradius, cooldown, experiencePerLevel, healthPointBonusPerLevel, damageBonusPerLevel, magicaldamageBonusPerLevel, defenseBonusPerLevel, lightradiusBonusPerLevel, cooldownMultiplierPerLevel);
+ */
+    Hero::Hero(const std::string& characterName, int characterHP, Damage dmg_struct, int characterDEF, int characterLIGHT, double characterACD, int XPperlevel, int HPperlevel, int DMGperlevel, int MDMGperlevel, int DEFperlevel, int LIGHTperlevel, float ACDperlevel) : Monster(characterName, characterHP, dmg_struct, characterDEF, characterACD), level(1), maximumHealthPoint(characterHP), lightradius(characterLIGHT), experience(0), experiencePerLevel(XPperlevel), healthPointBonusPerLevel(HPperlevel), damageBonusPerLevel(DMGperlevel), magicaldamageBonusPerLevel(MDMGperlevel), defenseBonusPerLevel(DEFperlevel), lightradiusBonusPerLevel(LIGHTperlevel), cooldownMultiplierPerLevel(ACDperlevel)
     {
     }
 
@@ -17,15 +19,10 @@
     {
         return level;
     }
-
-    /*int const & Hero::getPhysicalDamage() const
+    int const & Hero::getLightRadius() const
     {
-        return damage.physical;
+        return lightradius;
     }
-    int const & Hero::getMagicalDamage() const
-    {
-        return damage.magical;
-    }*/
 
     void Hero::levelUp()
     {
@@ -34,6 +31,8 @@
         damage.physical     +=  damageBonusPerLevel;
         damage.magical      +=  magicaldamageBonusPerLevel;
         defense             +=  defenseBonusPerLevel;   
+        defense             +=  defenseBonusPerLevel;
+        lightradius         +=  lightradiusBonusPerLevel;
         cooldown            *=  cooldownMultiplierPerLevel;
         this->healthPoint   =   maximumHealthPoint;        
         level               +=  1;
@@ -46,15 +45,21 @@
         int heatlhPoints                    =   data.get<int>("base_health_points");
         Damage damage = Damage(data.get<int>("base_damage"), data.get<int>("base_magical-damage"));
         int defense                         =   data.get<int>("base_defense");
+        int lightradius                     =   data.get<int>("light_radius");
         float cooldown                      =   data.get<float>("base_attack_cooldown");
         int experiencePerLevel              =   data.get<int>("experience_per_level");
         int healthPointBonusPerLevel        =   data.get<int>("health_point_bonus_per_level");
         int damageBonusPerLevel             =   data.get<int>("damage_bonus_per_level");
         int magicaldamageBonusPerLevel      =   data.get<int>("magicaldamage_bonus_per_level");
         int defenseBonusPerLevel            =   data.get<int>("defense_bonus_per_level");
+        int lightradiusBonusPerLevel=1;
+        if (data.count("light_radius_bonus_per_level"))
+        {
+            lightradiusBonusPerLevel    =   data.get<int>("light_radius_bonus_per_level");
+        }
         float cooldownMultiplierPerLevel    =   data.get<float>("cooldown_multiplier_per_level");
 
-        return Hero(name, heatlhPoints, damage, defense, cooldown, experiencePerLevel, healthPointBonusPerLevel, damageBonusPerLevel, magicaldamageBonusPerLevel, defenseBonusPerLevel, cooldownMultiplierPerLevel);
+        return Hero(name, heatlhPoints, damage, defense, lightradius, cooldown, experiencePerLevel, healthPointBonusPerLevel, damageBonusPerLevel, magicaldamageBonusPerLevel, defenseBonusPerLevel, lightradiusBonusPerLevel, cooldownMultiplierPerLevel);
     }
 
     void Hero::deliverHit(Monster* enemy) 

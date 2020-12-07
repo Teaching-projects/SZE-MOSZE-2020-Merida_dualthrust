@@ -44,7 +44,11 @@ int main(int argc, char** argv){
             for(auto monster_file : monster_file_list)
                 monster_files.push_back(std::get<std::string>(monster_file));
         }
-    } catch (const JSON::ParseException& e) {bad_exit(4);}
+    } 
+    catch (const JSON::ParseException& e) 
+    {
+        bad_exit(4);
+    }
     
     try { 
         Hero hero{Hero::parse(hero_file)};
@@ -66,7 +70,9 @@ int main(int argc, char** argv){
         game.run(is_test);
 
     } 
-    catch (const JSON::ParseException& e) {bad_exit(4);
+    catch (const JSON::ParseException& e) 
+    {
+        bad_exit(4);
     }
     return 0;
 }

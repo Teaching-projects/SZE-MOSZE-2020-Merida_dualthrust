@@ -47,7 +47,7 @@ TEST(unitTests, sufferDamage){
 }
 
 TEST(unitTests, levelUp){
-    Hero hero = Hero("Hero",100,Damage(100,100),100,100,100,100,100,100,100,2);
+    Hero hero = Hero("Hero",100,Damage(100,100),100,100,100,100,100,100,100,100,100,2);
     Monster enemy = Monster("Monster",100,Damage(100,100),1,1);
     hero.fightTilDeath(enemy);
 
@@ -57,6 +57,7 @@ TEST(unitTests, levelUp){
     ASSERT_EQ(hero.getPhysicalDamage(),200);
     ASSERT_EQ(hero.getMagicalDamage(),200);
     ASSERT_EQ(hero.getDefense(),200);
+    ASSERT_EQ(hero.getLightRadius(),200);
 }
 
 
