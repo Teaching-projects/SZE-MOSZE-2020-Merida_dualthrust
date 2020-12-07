@@ -79,7 +79,6 @@
     //The Monster object's healthPoint gets lowered based on the output 
     void Monster::sufferDamage(Monster* enemy) 
     {
-        //std::cout << enemy->getName() << " -> " << this->getName() << std::endl;
         if (    (enemy->getPhysicalDamage() - defense)  >   0)
         {
             healthPoint -= (enemy->getPhysicalDamage() - defense) + enemy->getMagicalDamage();

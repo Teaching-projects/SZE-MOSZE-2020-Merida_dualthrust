@@ -6,7 +6,6 @@
 
     Hero::Hero(const std::string& characterName, int characterHP, Damage dmg_struct, int characterDEF, double characterACD, int XPperlevel, int HPperlevel, int DMGperlevel, int MDMGperlevel, int DEFperlevel, float ACDperlevel) : Monster(characterName, characterHP, dmg_struct, characterDEF, characterACD), level(1), maximumHealthPoint(characterHP), experience(0), experiencePerLevel(XPperlevel), healthPointBonusPerLevel(HPperlevel), damageBonusPerLevel(DMGperlevel), magicaldamageBonusPerLevel(MDMGperlevel), defenseBonusPerLevel(DEFperlevel), cooldownMultiplierPerLevel(ACDperlevel)
     {
-        std::cout<<"Dmg struct: "<<dmg_struct.physical<<std::endl;
     }
 
     int const & Hero::getMaxHealthPoints() const
@@ -45,7 +44,7 @@
         JSON data                           =   JSON::parseFromFile(path);
         std::string name                    =   data.get<std::string>("name");
         int heatlhPoints                    =   data.get<int>("base_health_points");
-        Damage damage = Damage(data.get<int>("damage"), data.get<int>("magical-damage"));
+        Damage damage = Damage(data.get<int>("base_damage"), data.get<int>("base_magical-damage"));
         int defense                         =   data.get<int>("base_defense");
         float cooldown                      =   data.get<float>("base_attack_cooldown");
         int experiencePerLevel              =   data.get<int>("experience_per_level");
