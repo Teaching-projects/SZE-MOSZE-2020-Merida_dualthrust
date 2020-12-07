@@ -31,7 +31,6 @@
         damage.physical     +=  damageBonusPerLevel;
         damage.magical      +=  magicaldamageBonusPerLevel;
         defense             +=  defenseBonusPerLevel;   
-        defense             +=  defenseBonusPerLevel;
         lightradius         +=  lightradiusBonusPerLevel;
         cooldown            *=  cooldownMultiplierPerLevel;
         this->healthPoint   =   maximumHealthPoint;        
