@@ -43,6 +43,7 @@ class Game
      * 
      */
     bool anyMonstersAlive(/**There's no input parameter here.*/);
+
  public:
     /**
      * @brief Constructor for a game with no map.

@@ -9,6 +9,21 @@ Game::Game(){};
 
 PreparedGame::~PreparedGame(){
     delete hero;
+    
+    for(auto &outer_map : monster_map) 
+    {
+        auto &inner_map = outer_map.second;
+
+        for(auto &inner_map_contents : inner_map) 
+        {
+            auto &monster_list = inner_map_contents.second;
+
+            if (monster_list.size()>0)
+            {
+              delete &monster_list.front();
+            }            
+        }
+    }
 }
 
 PreparedGame::PreparedGame(std::string path){ 
