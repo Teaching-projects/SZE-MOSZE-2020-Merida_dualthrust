@@ -7,6 +7,10 @@
 //WTF
 Game::Game(){};
 
+PreparedGame::~PreparedGame(){
+    delete hero;
+}
+
 PreparedGame::PreparedGame(std::string path){ 
     JSON game_data = JSON::parseFromFile(path);
 

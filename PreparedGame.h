@@ -21,6 +21,7 @@ class PreparedGame : public Game
 {
 public:
     PreparedGame();
+    ~PreparedGame();
     PreparedGame(std::string);
 
     class InsufficientGamedataInput : std::exception
