@@ -6,11 +6,16 @@ struct Damage {
     int physical;
     int magical;
 
+    Damage(const int phis, const int magi){
+        physical=phis;
+        magical = magi;
+    }
+
     Damage operator+(const Damage& other){
-        Damage dmgToReturn;
-        dmgToReturn.physical = this->physical + other.physical;
-        dmgToReturn.magical = this->magical + other.magical;
-        return dmgToReturn;
+
+        this->physical += other.physical;
+        this->magical += other.magical;
+        return *this;
     }
 
     Damage& operator+=(const Damage& other){

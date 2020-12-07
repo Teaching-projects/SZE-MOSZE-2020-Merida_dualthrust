@@ -56,7 +56,7 @@ class Hero : public Monster{
          */
         const int damageBonusPerLevel;
         const int magicaldamageBonusPerLevel;
-        Damage damage;
+
         /**
          * @brief Extra defense per level.
          * 

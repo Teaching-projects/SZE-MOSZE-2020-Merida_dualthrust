@@ -60,11 +60,9 @@
     Monster Monster::parse(const std::string& path)
     {
         JSON data           =   JSON::parseFromFile(path);
-        Damage damage;
         std::string name    =   data.get<std::string>("name");
         int healthPoints    =   data.get<int>("health_points");
-        damage.physical     =   std::stoi(data.get<std::string>("damage"));
-        damage.magical      =   std::stoi(data.get<std::string>("magical-damage"));
+        Damage damage = Damage(data.get<int>("damage"), data.get<int>("magical-damage"));
         int def             =   std::stoi(data.get<std::string>("defense"));
         float cooldown      =   std::stof(data.get<std::string>("attack_cooldown"));
 
