@@ -208,7 +208,7 @@ std::map&lt; int, std::map&lt; int, std::list&lt; <a class="el" href="classMonst
 <p>Constructor for a game with a map initialized. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Name</td><td>of the input file, from which the map is generated.</td></tr>
+    <tr><td class="paramname">MAPFILEPATH</td><td>Name of the input file, from which the map is generated.</td></tr>
   </table>
   </dd>
 </dl>
@@ -330,7 +330,15 @@ std::map&lt; int, std::map&lt; int, std::list&lt; <a class="el" href="classMonst
 </div><div class="memdoc">
 
 <p>Puts a monster to a given - and valid - coordinate on a map. </p>
-<p>If a monster is already on a certain coordinate, the function will add the monster to the vector of monster(s) on the coordinate. </p>
+<p>If a monster is already on a certain coordinate, the function will add the monster to the vector of monster(s) on the coordinate.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Pointer</td><td>to a monster that has to be put somewhere. </td></tr>
+    <tr><td class="paramname">ROW</td><td>coordinate on the map. </td></tr>
+    <tr><td class="paramname">COLUMN</td><td>coordinate on the map. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -351,6 +359,12 @@ std::map&lt; int, std::map&lt; int, std::list&lt; <a class="el" href="classMonst
 </div><div class="memdoc">
 
 <p>Runs the game. Handles movement on the map, draws the map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">IS_TEST.</td><td>If the -test argument is used, we will take inputs from a file. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -373,7 +387,7 @@ std::map&lt; int, std::map&lt; int, std::list&lt; <a class="el" href="classMonst
 <p>Sets a map in a game with no map. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Takes</td><td>a pointer to a map. </td></tr>
+    <tr><td class="paramname">INCOMINGMAP</td><td>Takes a pointer to a map. </td></tr>
   </table>
   </dd>
 </dl>

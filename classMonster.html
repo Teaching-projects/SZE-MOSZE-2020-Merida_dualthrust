@@ -91,8 +91,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a89df1fa81c57037fce4f85058dee46c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a89df1fa81c57037fce4f85058dee46c5">Monster</a> (const std::string &amp;, int, int, int, const double)</td></tr>
 <tr class="memdesc:a89df1fa81c57037fce4f85058dee46c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classMonster.html">Monster</a> object In case of no inputs the <a class="el" href="classMonster.html">Monster</a> object gets default values.  <a href="classMonster.html#a89df1fa81c57037fce4f85058dee46c5">More...</a><br /></td></tr>
 <tr class="separator:a89df1fa81c57037fce4f85058dee46c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a597155ec73d8d3b70f5d11ed7bbb8fd4"><td class="memItemLeft" align="right" valign="top"><a id="a597155ec73d8d3b70f5d11ed7bbb8fd4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Monster</b> (const <a class="el" href="classMonster.html">Monster</a> &amp;m2)</td></tr>
+<tr class="memitem:a597155ec73d8d3b70f5d11ed7bbb8fd4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a597155ec73d8d3b70f5d11ed7bbb8fd4">Monster</a> (const <a class="el" href="classMonster.html">Monster</a> &amp;m2)</td></tr>
+<tr class="memdesc:a597155ec73d8d3b70f5d11ed7bbb8fd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy construct for <a class="el" href="classMonster.html">Monster</a> class.  <a href="classMonster.html#a597155ec73d8d3b70f5d11ed7bbb8fd4">More...</a><br /></td></tr>
 <tr class="separator:a597155ec73d8d3b70f5d11ed7bbb8fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35ef56f049bf8109cb5102250c1fce83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a35ef56f049bf8109cb5102250c1fce83">setPosition</a> (int x, int y)</td></tr>
 <tr class="memdesc:a35ef56f049bf8109cb5102250c1fce83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the unit's position for the map. Evaluation logic of the move's validity happens inside the <a class="el" href="classGame.html">Game</a> class.  <a href="classMonster.html#a35ef56f049bf8109cb5102250c1fce83">More...</a><br /></td></tr>
@@ -116,7 +116,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:afce25c5be4b64a0b721a1a9976ea53ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for attack speed cooldown of character.  <a href="classMonster.html#afce25c5be4b64a0b721a1a9976ea53ac">More...</a><br /></td></tr>
 <tr class="separator:afce25c5be4b64a0b721a1a9976ea53ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a918bd9927844b54393378574ea221021"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a918bd9927844b54393378574ea221021">sufferDamage</a> (<a class="el" href="classMonster.html">Monster</a> *)</td></tr>
-<tr class="memdesc:a918bd9927844b54393378574ea221021"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for depleting HealthPoints during fight Basic subtraction operation. If the HealthPoint drops below 0 we set it to 0.  <a href="classMonster.html#a918bd9927844b54393378574ea221021">More...</a><br /></td></tr>
+<tr class="memdesc:a918bd9927844b54393378574ea221021"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for depleting HealthPoints during fight.  <a href="classMonster.html#a918bd9927844b54393378574ea221021">More...</a><br /></td></tr>
 <tr class="separator:a918bd9927844b54393378574ea221021"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaebd73a726b359c29c5e54777e235ba"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#aeaebd73a726b359c29c5e54777e235ba">deliverHit</a> (<a class="el" href="classMonster.html">Monster</a> *enemy)</td></tr>
 <tr class="memdesc:aeaebd73a726b359c29c5e54777e235ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">The monster object whose sufferDamage method is called will lose healthpoints based on the attacker's damage points. The attacker object is the one whose reference is passed in the argument list.  <a href="classMonster.html#aeaebd73a726b359c29c5e54777e235ba">More...</a><br /></td></tr>
@@ -125,7 +125,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a77ad18c44b3fb2df92b30ece4dc7847b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bool function to examine if the <a class="el" href="classMonster.html">Monster</a> is dead or alive.  <a href="classMonster.html#a77ad18c44b3fb2df92b30ece4dc7847b">More...</a><br /></td></tr>
 <tr class="separator:a77ad18c44b3fb2df92b30ece4dc7847b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2cbb636ed46fd4cc0a4869c9970f1a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMonster.html">Monster</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#ad2cbb636ed46fd4cc0a4869c9970f1a0">fightTilDeath</a> (<a class="el" href="classMonster.html">Monster</a> &amp;)</td></tr>
-<tr class="memdesc:ad2cbb636ed46fd4cc0a4869c9970f1a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fight function, performs the whole fight Winner gets announced. Puts out the results to both file and command line.  <a href="classMonster.html#ad2cbb636ed46fd4cc0a4869c9970f1a0">More...</a><br /></td></tr>
+<tr class="memdesc:ad2cbb636ed46fd4cc0a4869c9970f1a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fight function, performs the whole fight.  <a href="classMonster.html#ad2cbb636ed46fd4cc0a4869c9970f1a0">More...</a><br /></td></tr>
 <tr class="separator:ad2cbb636ed46fd4cc0a4869c9970f1a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
@@ -158,7 +158,7 @@ Protected Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:aa35c4001f5786899aea7eb8168aa6f58"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#aa35c4001f5786899aea7eb8168aa6f58">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classMonster.html">Monster</a> &amp;character)</td></tr>
-<tr class="memdesc:aa35c4001f5786899aea7eb8168aa6f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator overload Printing a characters' status.  <a href="classMonster.html#aa35c4001f5786899aea7eb8168aa6f58">More...</a><br /></td></tr>
+<tr class="memdesc:aa35c4001f5786899aea7eb8168aa6f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operator overload.  <a href="classMonster.html#aa35c4001f5786899aea7eb8168aa6f58">More...</a><br /></td></tr>
 <tr class="separator:aa35c4001f5786899aea7eb8168aa6f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -190,7 +190,7 @@ Friends</h2></td></tr>
 </div>
 </div>
 <a id="a89df1fa81c57037fce4f85058dee46c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89df1fa81c57037fce4f85058dee46c5">&#9670;&nbsp;</a></span>Monster()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a89df1fa81c57037fce4f85058dee46c5">&#9670;&nbsp;</a></span>Monster() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -234,6 +234,52 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Construct a new <a class="el" href="classMonster.html">Monster</a> object In case of no inputs the <a class="el" href="classMonster.html">Monster</a> object gets default values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">characterName</td><td></td></tr>
+    <tr><td class="paramname">characterHP</td><td></td></tr>
+    <tr><td class="paramname">characterATK</td><td></td></tr>
+    <tr><td class="paramname">characterDEF</td><td></td></tr>
+    <tr><td class="paramname">characterACD</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classMonster.html">Monster</a> </dd></dl>
+
+</div>
+</div>
+<a id="a597155ec73d8d3b70f5d11ed7bbb8fd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a597155ec73d8d3b70f5d11ed7bbb8fd4">&#9670;&nbsp;</a></span>Monster() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Monster::Monster </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMonster.html">Monster</a> &amp;&#160;</td>
+          <td class="paramname"><em>m2</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy construct for <a class="el" href="classMonster.html">Monster</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m2</td><td>Reference to a <a class="el" href="classMonster.html">Monster</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classMonster.html">Monster</a> </dd></dl>
 
 </div>
 </div>
@@ -290,7 +336,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fight function, performs the whole fight Winner gets announced. Puts out the results to both file and command line. </p>
+<p>Fight function, performs the whole fight. </p>
+<p>Winner gets announced. Puts out the results to both file and command line</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="classMonster.html">Monster</a></td><td>type object </td></tr>
@@ -435,7 +482,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Bool function to examine if the <a class="el" href="classMonster.html">Monster</a> is dead or alive. </p>
-<dl class="section return"><dt>Returns</dt><dd>false, if the Characters' HealthPoint 0 or below 0 </dd>
+<dl class="section return"><dt>Returns</dt><dd>false, if the Characters' HealthPoint 0 or below 0 * </dd>
 <dd>
 true, if the Characters' HealthPoint is more than 0 </dd></dl>
 
@@ -466,6 +513,12 @@ true, if the Characters' HealthPoint is more than 0 </dd></dl>
 </div><div class="memdoc">
 
 <p><a class="el" href="classJSON.html" title="JSON namespace.">JSON</a> parse method for creating a <a class="el" href="classMonster.html">Monster</a> object based on a given <a class="el" href="classJSON.html" title="JSON namespace.">JSON</a> input file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Path</td><td>to our <a class="el" href="classJSON.html" title="JSON namespace.">JSON</a> file.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classMonster.html">Monster</a> type unit </dd></dl>
 
 </div>
@@ -516,7 +569,8 @@ true, if the Characters' HealthPoint is more than 0 </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Function for depleting HealthPoints during fight Basic subtraction operation. If the HealthPoint drops below 0 we set it to 0. </p>
+<p>Function for depleting HealthPoints during fight. </p>
+<p>Basic subtraction operation. If the HealthPoint drops below 0 we set it to 0</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="classMonster.html">Monster</a></td><td>type object </td></tr>
@@ -561,11 +615,12 @@ true, if the Characters' HealthPoint is more than 0 </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Operator overload Printing a characters' status. </p>
+<p>Operator overload. </p>
+<p>Printing a characters' status</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">output</td><td>stream </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">character</td><td>(name, HealthPoint, damage) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">character</td><td>(name, HealthPoint, damage)</td></tr>
   </table>
   </dd>
 </dl>
