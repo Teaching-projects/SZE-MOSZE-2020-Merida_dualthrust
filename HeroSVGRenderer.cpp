@@ -25,8 +25,12 @@ void HeroSVGRenderer::render(const Game &game) const
             }
             else
             {
+                
+                int64_t signed_i = i; //Fixes signed-unsigned errors
+                uint64_t unsigned_i = static_cast<uint64_t>(signed_i);
+
                 //Ha van ilyen mező a mapon, lekérjük a stringet amit kiírunk
-                if(i < map.getMap().size()){ 
+                if(unsigned_i < map.getMap().size()){ 
 
                     int64_t signed_j = j; //Fixes signed-unsigned errors
                     uint64_t unsigned_j = static_cast<uint64_t>(signed_j);

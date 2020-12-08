@@ -35,8 +35,12 @@ void ObserverTextRenderer::render(const Game &game) const
         
         for (int j = 0; j < map.longest_row_size; j++)
         {
+                
+                int64_t signed_map_longest_column_size = map.longest_column_size; //Fixes signed-unsigned errors
+                uint64_t unsigned_signed_map_longest_column_size = static_cast<uint64_t>(signed_map_longest_column_size);
+
                 //Ha van ilyen mező a mapon, lekérjük a stringet amit kiírunk
-                if(unsigned_i < map.longest_column_size){ 
+                if(unsigned_i < unsigned_signed_map_longest_column_size){ 
 
                     int64_t signed_j = j; //Fixes signed-unsigned errors
                     uint64_t unsigned_j = static_cast<uint64_t>(signed_j);
