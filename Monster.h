@@ -15,6 +15,7 @@
 #define MONSTER_HEADER
 
 #include <string>
+#include "Damage.h"
 
 class Monster {
 
@@ -37,7 +38,7 @@ public:
      * 
      * @return Monster
      */
-    Monster(const std::string&, int, int, int, const double);
+    Monster(const std::string&, int, Damage, int, const double);
     
     /**
      * @brief Copy construct for Monster class
@@ -87,8 +88,8 @@ public:
      * @return int const& 
      * 
      */
-    int const & getDamage(/**There's no input parameter here.*/) const;
-
+    int const & getPhysicalDamage(/**There's no input parameter here.*/) const;
+    int const & getMagicalDamage(/**There's no input parameter here.*/) const;
     /**
      * @brief Getter for character defense
      * 
@@ -180,8 +181,7 @@ protected:
      * @brief Attack damage of the unit
      * 
      */
-    int damage;
-
+    Damage damage;
     /**
      * @brief Defense of the unit
      * 
