@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['removejsonspaces_67',['removeJSONSpaces',['../classJSON.html#af7161d083a7d4ea5ff0c76bb8a2fe7f4',1,'JSON']]],
-  ['renderer_68',['Renderer',['../classRenderer.html',1,'']]],
+  ['removejsonspaces_68',['removeJSONSpaces',['../classJSON.html#af7161d083a7d4ea5ff0c76bb8a2fe7f4',1,'JSON']]],
   ['run_69',['run',['../classGame.html#ae3421b6527a55fc0aaa514c2d53a6832',1,'Game']]]
 ];
