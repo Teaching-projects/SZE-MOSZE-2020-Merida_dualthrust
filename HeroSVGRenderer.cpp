@@ -1,4 +1,4 @@
-#include "HeroSvgRenderer.h"
+#include "HeroSVGRenderer.h"
 
 void HeroSVGRenderer::render(const Game &game) const
 {
