@@ -8,15 +8,33 @@
 #include "../Monster.cpp"
 #include <gtest/gtest.h>
 
-//Test for the Monster class
+//Test for the Monster class 
+// It has 16 public functions, 
+//parse(path), Monster(name, hp, damage, defense, acd), ~Monster(),
+//Monster(monster)(copy constructor), getName(), getPhysicalDamage(),
+//getMagicalDamage(), getDefense(), getHealthPoints(), getACD(), sufferDamage(monsterpointer)
+//
+//THESE NEED TO BE DONE
+//setPosition(row, cloumn), getPosition(), deliverHit, fightTilDeath
 
 TEST(unitTests, parseMonster){
     ASSERT_NO_THROW(Monster::parse("../Zombie.json"));
 }
 
+TEST(unitTests, MonsterCopyConstructor){
+    Monster healthy = Monster("Healthy",1000,Damage(1000,1000),1000,1000);
+    Monster healthytoo = Monster(healthy);
+    ASSERT_EQ(healthytoo.getDefense(), 1000);
+}
+
 TEST(unitTests, isAlive){
     Monster dead = Monster("Dead",0,Damage(100,100),0,0);
     ASSERT_EQ(dead.isAlive(), false);
+}
+
+TEST(unitTests, getName){
+    Monster dead = Monster("Dead",0,Damage(100,100),0,0);
+    ASSERT_EQ(dead.getName(), "Dead");
 }
 
 TEST(unitTests, getHealth){
@@ -28,10 +46,12 @@ TEST(unitTests, getPhysicalDamage){
     Monster strong = Monster("strong",1000,Damage(1000,1000),1000,1000);
     ASSERT_EQ(strong.getPhysicalDamage(), 1000);
 }
+
 TEST(unitTests, getMagicalDamage){
     Monster stronger = Monster("stronger",1000,Damage(1000,1000),1000,1000);
     ASSERT_EQ(stronger.getMagicalDamage(), 1000);
 }
+
 TEST(unitTests, getDefense){
     Monster defender = Monster("defender",1000,Damage(1000,1000),1000,1000);
     ASSERT_EQ(defender.getDefense(), 1000);
@@ -68,8 +88,9 @@ TEST(unitTests, levelUp){
     ASSERT_EQ(hero.getDefense(),200);
     ASSERT_EQ(hero.getLightRadius(),200);
 }
+
 //Test for the Damage class 
-// It ahs 3 public functions, +, +=, *=
+// It has 3 public functions, +, +=, *=
 TEST(unitTests, DamageAddition)
 {
     Damage damage1 = Damage(100,100);
@@ -94,6 +115,17 @@ TEST(unitTests, DamageMultiplicationEq)
     ASSERT_EQ(damage1.physical,10000);
     ASSERT_EQ(damage1.magical,10000);
 }
+
+//Test for the Game class 
+// It has 7 public functions, 
+//Game(), ~Game(), Game(filepath), setMap(mappointer), 
+//putHero(heropointer, row, column), putMonster(monster, row, column), run(istest)
+
+//Test for the Map class 
+// It has 9 public functions, 
+//Map(), ~Map(), Map(filepath), getHeroPosition(),
+//getMonsterPositions(char), setHeroPosition(pair(first is row, second is column)), 
+//drawMap(viewrange, hero row, hero column), setTile(row, column, type)
 
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
