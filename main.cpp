@@ -9,6 +9,8 @@
 #include <list>
 
 #include "PreparedGame.h"
+#include "Renderer.h"
+#include "ObserverTextRenderer.h"
 
 
 const std::map<int,std::string> error_messages = {
@@ -31,7 +33,9 @@ int main(int argc, char** argv){
 
     try { 
         PreparedGame game(argv[1]);
-        
+        std::ofstream stream = std::ofstream("log.txt");
+        game.registerRenderer(new ObserverTextRenderer(stream));
+
         //If there are two arguments, we passed '-test' to the program
         //In that case, the 'is test' flag is true, we pass it to the run method
        game.run(argc == 3);

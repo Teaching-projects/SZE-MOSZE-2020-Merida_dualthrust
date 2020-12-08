@@ -26,6 +26,7 @@
 #include "MarkedMap.h"
 #include "Monster.h"
 #include "JSON.h"
+#include "Renderer.h"
 
 class Game
 {
@@ -45,6 +46,9 @@ class Game
      */
     bool anyMonstersAlive(/**There's no input parameter here.*/);
 
+    std::vector<Renderer *> renderers = std::vector<Renderer *>();
+    void render();
+
  public:
     /**
      * @brief Constructor for a game with no map.
@@ -59,6 +63,9 @@ class Game
      * 
      */
     ~Game();
+
+    void registerRenderer(Renderer *renderer);
+    Map* getMap() const{return this->map;};
 
     /**
      * @brief Constructor for a game with a map initialized.

@@ -30,10 +30,14 @@ class Map
          * 
          */
         std::vector<std::vector<int>> map = std::vector<std::vector<int>>();
-
+    public:
         int longest_row_size;
         int longest_column_size;
-    public:
+        
+        std::vector<std::vector<int>> getMap(){
+            return map;
+        }
+
         /**
          * @brief Vector holding the positions of all monsters.
          * 
