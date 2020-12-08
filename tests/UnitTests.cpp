@@ -35,11 +35,6 @@ TEST(unitTests, getDefense){
     ASSERT_EQ(defender.getDefense(), 1000);
 }
 
-TEST(unitTests, getDefense){
-    Monster healthy = Monster("Healthy",1000,Damage(1000,1000),1000,1000);
-    ASSERT_EQ(healthy.getDefense(), 1000);
-}
-
 TEST(unitTests, getACD){
     Monster strong = Monster("strong",1000,Damage(1000,1000),1000,1000);
     ASSERT_EQ(strong.getAttackCoolDown(), 1000);
