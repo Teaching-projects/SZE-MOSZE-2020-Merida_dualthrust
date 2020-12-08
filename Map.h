@@ -20,20 +20,62 @@
 #include <sstream>
 #include <exception>
 
+
 class Map
 {
-    /* INDEXING OF THE MAP STARTS FROM THE UPPER LEFT CORNET, FIRST INDEX IS ROW, SECOND IS COLUMN */
-    private:
+    protected:
+
         /**
          * @brief Data structure that contains the map.
          * 
          */
-        std::vector<std::vector<int>> map;
+        std::vector<std::vector<int>> map = std::vector<std::vector<int>>();
+
         int longest_row_size;
         int longest_column_size;
     public:
         /**
-         * @brief Types that the map may contain.
+         * @brief Vector holding the positions of all monsters.
+         * 
+         * The vector itself holds pair type values, the first of the pair representing the row in which the monster is, the second of the pair representing the column.
+         * 
+         */
+        std::vector<std::pair<int,int>> monsterPositions;
+
+        /**
+         * @brief Pair type holding the hero's position.
+         * 
+         * The first of the pair represents the row in which the hero is, the second of the pair represents the column.
+         * 
+         */
+        std::pair<int,int> heroPosition;
+
+        /**
+         * @brief Getter for the hero's position.
+         * 
+         * @return const pair Returns a pair type. First of the pair is the row, the second is the column.
+         * 
+         */
+        const std::pair<int,int> getHeroPosition(){return heroPosition;};
+
+        /**
+         * @brief Getter for the position of monsters' positions.
+         * 
+         * @return Returns a vector which holds the monsters' positions.
+         * 
+         */
+        const std::vector<std::pair<int,int>> getMonsterPositions(char){return monsterPositions;};
+
+        /**
+         * @brief Setter for the hero's position.
+         * 
+         * @param pos Takes a pair type. First of the pair is the row, the second is the column.
+         * 
+         */
+        void setHeroPosition(std::pair<int,int> pos){heroPosition=pos;};
+
+        /**
+         * @brief Holds tile types.
          * 
          */
         enum type 
@@ -45,6 +87,10 @@ class Map
             Monsters    /* 4 */
         };
 
+        /**
+         * @brief Holds the string representations of tile types.
+         * 
+         */
         std::string tileString [5]={
             "░░",
             "██",
@@ -60,6 +106,13 @@ class Map
          * 
          */
         Map(/**There's no input parameter here.*/);
+
+        /**
+         * @brief Virtual destructor for Map - MarkedMap inherits this class.
+         * 
+         */
+        virtual ~Map(/**There's no input parameter here.*/){};
+
         /**
          * @brief Gives back a map constructed from a txt file.
          * 
@@ -71,17 +124,20 @@ class Map
          * 
          */
         Map(std::string filename);
+
         /**
-         * @brief Gives back the type of terrain based on coordinates.
+         * @brief Gives back the type of tile based on coordinates.
          * 
          * Takes y and x coordinates.
          * 
          * @param Which row
          * @param Which column
-         * @return type 
+         * 
+         * @return Type of the tile 
          * 
          */
         Map::type get(unsigned int row, unsigned int column) const;
+
         /**
          * @brief Draws our map to the standard output.
          * 
@@ -90,8 +146,10 @@ class Map
          * @param viewrange, lightradius of hero object. 
          * @param Hero row
          * @param Hero column
+         * 
          */
         void drawMap(const int viewrange, int hero_row, int hero_column) const;
+
         /**
          * @brief Sets the type of a certain tile.
          * 

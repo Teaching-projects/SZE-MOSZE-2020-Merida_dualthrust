@@ -8,11 +8,7 @@
 #include <iterator>
 #include <list>
 
-#include "JSON.h"
-#include "Hero.h"
-#include "Monster.h"
-#include "Game.h"
-
+#include "PreparedGame.h"
 
 
 const std::map<int,std::string> error_messages = {
@@ -33,42 +29,12 @@ int main(int argc, char** argv){
     if (argc < 2) bad_exit(1);
     if (!std::filesystem::exists(argv[1])) bad_exit(2);
 
-    std::string hero_file;
-    std::list<std::string> monster_files;
-    try {
-        JSON scenario = JSON::parseFromFile(argv[1]); 
-        if (!(scenario.count("hero")&&scenario.count("monsters"))) bad_exit(3);
-        else {
-            hero_file=scenario.get<std::string>("hero");
-            JSON::list monster_file_list=scenario.get<JSON::list>("monsters");
-            for(auto monster_file : monster_file_list)
-                monster_files.push_back(std::get<std::string>(monster_file));
-        }
-    } 
-    catch (const JSON::ParseException& e) 
-    {
-        bad_exit(4);
-    }
-    
     try { 
-        Hero hero{Hero::parse(hero_file)};
-
-        Game game("./maps/map_1.txt");
-        game.putHero(&hero,1,1);        
+        PreparedGame game(argv[1]);
         
-        std::list<Monster> monsters;
-        for (const auto& monster_file : monster_files)
-            monsters.push_back(Monster::parse(monster_file));        
-
-        for (Monster monster : monsters)
-        {
-            game.putMonster(&monster,1,2);
-        }
-
-        
-        bool is_test = (argc == 3);
-        game.run(is_test);
-
+        //If there are two arguments, we passed '-test' to the program
+        //In that case, the 'is test' flag is true, we pass it to the run method
+       game.run(argc == 3);
     } 
     catch (const JSON::ParseException& e) 
     {

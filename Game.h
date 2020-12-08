@@ -1,6 +1,6 @@
 /**
  * @file Game.h
- * @author NemesTom
+ * @author LilikF
  * @brief Game class
  * 
  * This class contains methods used for controlling our game.
@@ -23,19 +23,20 @@
 // Might include useless stuff as i copied this from another header, will delete later
 
 #include "Hero.h"
-#include "Map.h"
+#include "MarkedMap.h"
 #include "Monster.h"
 #include "JSON.h"
 
 class Game
 {
- private:
+ protected:
 
-    std::map<int,std::map<int, std::list<Monster>>> monster_map;
+    std::map<int,std::map<int, std::list<Monster>>> monster_map; //"Map" that stores our monsters by location. Each "tile" is represented by a list which holds the monsters on said tile. 
 
-    Map* map=NULL; //Sets initial value to NULL
+    Map* map=NULL; //Pointer to our map. Sets initial value to NULL.
 
-    Hero* hero=NULL; //Sets initial value to NULL
+    Hero* hero=NULL; //Pointer to our hero. Sets initial value to NULL.
+
     /**
      * @brief Checks if there are any monsters alive on the map
      * 
@@ -43,6 +44,7 @@ class Game
      * 
      */
     bool anyMonstersAlive(/**There's no input parameter here.*/);
+
  public:
     /**
      * @brief Constructor for a game with no map.
@@ -51,30 +53,33 @@ class Game
      * 
      */
     Game(/**There's no input parameter here.*/);
+
     /**
      * @brief Destructor for a game object. Deletes the map, preventing a memory leak. 
      * 
      */
     ~Game();
+
     /**
      * @brief Constructor for a game with a map initialized.
      * 
-     * @param Name of the input file, from which the map is generated.
+     * @param MAPFILEPATH Name of the input file, from which the map is generated.
      * 
      * @return Game 
      * 
      */
     Game(std::string);
+
     /**
      * @brief Sets a map in a game with no map.
      * 
-     * @param Takes a pointer to a map.
+     * @param INCOMINGMAP Takes a pointer to a map.
      * 
      */
-    void setMap(Map*); // Set the map
+    void setMap(Map*);
+    
     /**
      * @brief Puts a hero to a given - and valid - coordinate on a map - on a map with no heroes, in case there is already a hero there is an exception.
-     * 
      * 
      * @param Pointer to a hero that has to be put somewhere.
      * @param ROW coordinate on the map.
@@ -82,15 +87,20 @@ class Game
      * 
      */
     void putHero(Hero*, int, int);
+
     /**
      * @brief Puts a monster to a given - and valid - coordinate on a map. 
      * 
      * If a monster is already on a certain coordinate, the function will add the monster to the vector of monster(s) on the coordinate.
      * 
+     * @param Pointer to a monster that has to be put somewhere.
+     * @param ROW coordinate on the map.
+     * @param COLUMN coordinate on the map.
      */
-    void putMonster(Monster*, int, int);
+    virtual void putMonster(Monster, int, int);
     /**
      * @brief Runs the game. Handles movement on the map, draws the map.
+     * @param IS_TEST. If the -test argument is used, we will take inputs from a file.
      *
      */
     void run(bool);

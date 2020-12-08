@@ -25,6 +25,7 @@ class Hero : public Monster{
          * 
          */
         int level;
+
         /**
          * @brief Tracking the units maximum HealthPoints.
          * 
@@ -32,11 +33,13 @@ class Hero : public Monster{
          * 
          */
         int maximumHealthPoint;
+
         /**
          * @brief Shows how far our hero can see the map.
          * 
          */
         int lightradius;
+
         /**
          * @brief Tracking the units current Experience Points.
          * 
@@ -45,16 +48,19 @@ class Hero : public Monster{
          * 
          */
         int experience;
+
         /**
          * @brief Experience needed to level up.
          * 
          */
         const int experiencePerLevel;
+
         /**
          * @brief Extra health points per level.
          * 
          */
         const int healthPointBonusPerLevel;
+
         /**
          * @brief Extra attack damage per level.
          * 
@@ -67,20 +73,19 @@ class Hero : public Monster{
          * 
          */
         const int defenseBonusPerLevel;
+
         /**
          * @brief Extra lightradius - viewrange - per level. 
          * 
-         * The data is initially stored in a JSON file.
-         * 
          */
         const float lightradiusBonusPerLevel;
+
         /**
          * @brief Member variable responsible for the rate of change in a given Hero's cooldown after leveling up. 
          * 
-         * The data is initially stored in a JSON file.
-         * 
          */
         const float cooldownMultiplierPerLevel;
+
         /**
          * @brief Handles the leveling of a unit.
          * 
@@ -94,47 +99,67 @@ class Hero : public Monster{
     
         /**
          * @brief Constructor for our Hero class.
+         * 
+         * @param name
+         * @param heatlhPoints
+         * @param damage
+         * @param defense
+         * @param lightradius
+         * @param cooldown
+         * @param experiencePerLevel
+         * @param healthPointBonusPerLevel
+         * @param damageBonusPerLevel
+         * @param defenseBonusPerLevel
+         * @param lightradiusBonusPerLevel
+         * @param cooldownMultiplierPerLevel
+         * 
+         * @return Hero
          */
         Hero(const std::string&, int, Damage, int, int, double, const int, const int, const int, const int, const int, const int, const float);
         /**
          * @brief Getter for maximum health points of our Hero.
+         * 
          * @return int const&
          * 
          */
         int const & getMaxHealthPoints(/**There's no input parameter here.*/) const;
+
         /**
          * @brief Getter for level of our Hero.
+         * 
          * @return  int const&
          * 
          */
         int const & getLevel(/**There's no input parameter here.*/) const;   
         /**
          * @brief Getter for the lightrange - viewrange - of our Hero.
+         * 
          * @return  int const&
          * 
          */
-        int const & getLightRadius(/**There's no input parameter here.*/) const;       
+        int const & getLightRadius(/**There's no input parameter here.*/) const;    
+
         /**
          * @brief Provides data for our constructor.
          * 
          * Same as the Monster class's, only difference is that it returns a Hero object instead of a Monster.
          * 
+         * @param Path to our JSON file.
+         * 
          * @return Hero 
          * 
          */
         static Hero parse(const std::string&);
+
         /**
          * @brief Calls the enemy units sufferDamage() method, and handles the Hero units XP gain.
          * 
          * Also calls the lvlUp() method when sufficient XP is gained for a levelup.
          * 
-         * @param enemy 
+         * @param enemy Pointer to a Monster object.
          * 
          */
         void deliverHit(Monster* enemy) override;
-        //Damage dmg;
-
-        //Damage getDamage() const {return damage;}
     };
 
 #endif // HERO_HEADER

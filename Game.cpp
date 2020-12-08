@@ -11,7 +11,7 @@
 
 Game::Game(std::string map_file_path)
 {
-    map = new Map(map_file_path);
+    map = new MarkedMap(map_file_path);
 }
 
 Game::~Game()
@@ -43,6 +43,7 @@ void Game::putHero(Hero *incoming_hero, int row, int column)
         hero = incoming_hero;
         map->setTile(row, column, 2);
         hero->setPosition(row, column);
+        map->setHeroPosition(hero->getPosition());
     }
     else
     {
@@ -65,13 +66,13 @@ bool Game::anyMonstersAlive()
     return false;
 }
 
-void Game::putMonster(Monster *monster, int row, int column)
+void Game::putMonster(Monster monster, int row, int column)
 {
     if(map->get(row, column) != Map::type::Wall && map->get(row, column) != Map::type::Hero)
     {
-        monster->setPosition(row, column);
+        monster.setPosition(row, column);
         //We set the monsters pointer to a certain tile
-        monster_map[row][column].push_back(*monster);
+        monster_map[row][column].push_back(monster);
 
         //If there are MONSTERS on a certain tile we set its type to 4. If there were no monsters on the tile and now there will be ONE, we set it to 3.
         int tile = (monster_map[row][column].size()>1) ? 4 : 3;
@@ -105,12 +106,11 @@ void Game::run(bool is_test)
         {"w",       std::make_pair(-1,0)},
         {"d",       std::make_pair(0,1)},
         {"s",       std::make_pair(1,0)},
-        {"a",       std::make_pair(0,-1)} // WASD controls are only here for local testing
+        {"a",       std::make_pair(0,-1)} // WASD controls are only here for testing
     };
 
     if(hero && map)
     {
-
         while (hero->isAlive() && anyMonstersAlive())
         {
             map->drawMap(hero->getLightRadius(), hero->getPosition().first, hero->getPosition().second);

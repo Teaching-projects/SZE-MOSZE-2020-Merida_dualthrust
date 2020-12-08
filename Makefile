@@ -1,11 +1,11 @@
-OBJECTS := JSON.o Monster.o Hero.o Map.o Game.o main.o
+OBJECTS := JSON.o Monster.o Hero.o Map.o Game.o main.o MarkedMap.o PreparedGame.o
 COMPILERFLAGS := -std=c++17 -g -Wall -Werror -Wextra 
 COMPILER := g++
 
-CPPFILES := JSON.cpp Monster.cpp Hero.cpp Map.cpp Game.cpp main.cpp
+CPPFILES := JSON.cpp Monster.cpp Hero.cpp Map.cpp Game.cpp main.cpp MarkedMap.cpp PreparedGame.cpp
 
-VALGRINDFLAGS:= -s --leak-check=full --error-exitcode=1 --track-origins=yes
-VALGRINDPARAMETER:=  ./a.out scenario1.json -test
+VALGRINDFLAGS:= --leak-check=full --error-exitcode=1 --track-origins=yes --log-file="Valgrind_log"
+VALGRINDPARAMETER:=  ./a.out preparedgame.json -test
 
 build: $(OBJECTS)
 	$(COMPILER) $(COMPILERFLAGS) -o a.out $(OBJECTS)
@@ -27,6 +27,12 @@ Game.o: Game.cpp Hero.h Monster.h Map.h
 
 main.o: main.cpp Monster.h Hero.h
 	$(COMPILER) $(COMPILERFLAGS) -c main.cpp
+
+MarkedMap.o: MarkedMap.cpp MarkedMap.h Map.h
+	$(COMPILER) $(COMPILERFLAGS) -c MarkedMap.cpp
+
+PreparedGame.o: PreparedGame.cpp PreparedGame.h Map.h Game.h JSON.h
+	$(COMPILER) $(COMPILERFLAGS) -c PreparedGame.cpp
 
 Clean:
 	rm -rf $(OBJECTS) a.out cppcheck_results.txt results_scenario_1.txt results_scenario_2.txt
