@@ -65,7 +65,14 @@ class Game
     ~Game();
 
     void registerRenderer(Renderer *renderer);
+
+    Monster getMonsterByPosition(int col, int row) const{
+        //.front()-ot használok, mert csak 1 szörny lehet 1 mezőn - LF
+        return monster_map.at(col).at(row).front();
+    }
+
     Map* getMap() const{return this->map;};
+    Hero* getHero() const{return this->hero;};
 
     /**
      * @brief Constructor for a game with a map initialized.

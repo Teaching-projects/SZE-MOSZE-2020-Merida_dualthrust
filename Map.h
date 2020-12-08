@@ -103,6 +103,14 @@ class Map
             "MM",
         };
 
+        std::string svg [5]={
+            "./SVGs/free.svg",
+            "./SVGs/wall.svg",
+            "./SVGs/hero.svg",
+            "./SVGs/monster.svg",
+            "./SVGs/monsters.svg",
+        };
+
         /**
          * @brief Constructor for an empty map.
          * 
