@@ -10,7 +10,7 @@
 #ifndef OBSERVERSVGRENDERER_HEADER
 #define OBSERVERSVGRENDERER_HEADER
 
-#include "SvgRenderer.h"
+#include "SVGRenderer.h"
 
 class ObserverSVGRenderer : public SvgRenderer
 {

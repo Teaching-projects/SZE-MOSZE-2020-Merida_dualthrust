@@ -10,7 +10,7 @@
 #ifndef HEROSVGRENDERER_HEADER
 #define HEROSVGRENDERER_HEADER
 
-#include "SvgRenderer.h"
+#include "SVGRenderer.h"
 
 class HeroSVGRenderer : public SvgRenderer
 {
