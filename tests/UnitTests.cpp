@@ -68,7 +68,32 @@ TEST(unitTests, levelUp){
     ASSERT_EQ(hero.getDefense(),200);
     ASSERT_EQ(hero.getLightRadius(),200);
 }
-
+//Test for the Damage class 
+// It ahs 3 public functions, +, +=, *=
+TEST(unitTests, DamageAddition)
+{
+    Damage damage1 = Damage(100,100);
+    Damage damage2 = Damage(100,100);
+    damage1 +   damage2;
+    ASSERT_EQ(damage1.physical,200);
+    ASSERT_EQ(damage1.magical,200);
+}
+TEST(unitTests, DamageAddEq)
+{
+    Damage damage1 = Damage(100,100);
+    Damage damage2 = Damage(100,100);
+    damage1 +=  damage2;
+    ASSERT_EQ(damage1.physical,200);
+    ASSERT_EQ(damage1.magical,200);
+}
+TEST(unitTests, DamageMultiplicationEq)
+{
+    Damage damage1 = Damage(100,100);
+    Damage damage2 = Damage(100,100);
+    damage1 *=  damage2;
+    ASSERT_EQ(damage1.physical,10000);
+    ASSERT_EQ(damage1.magical,10000);
+}
 
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
