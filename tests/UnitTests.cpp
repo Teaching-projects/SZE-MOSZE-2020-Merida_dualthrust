@@ -98,6 +98,7 @@ TEST(unitTests, levelUp){
     //This levelup test also test the constructor, the fighttildeath method etc
     ASSERT_EQ(hero.getLevel(),2);
     ASSERT_EQ(hero.getHealthPoints(),200);
+    ASSERT_EQ(hero.getMaxHealthPoints(),200);
     ASSERT_EQ(hero.getAttackCoolDown(),200);
     ASSERT_EQ(hero.getPhysicalDamage(),200);
     ASSERT_EQ(hero.getMagicalDamage(),200);
@@ -116,6 +117,7 @@ TEST(unitTests, DamageAddition)
     ASSERT_EQ(damage1.physical,200);
     ASSERT_EQ(damage1.magical,200);
 }
+
 TEST(unitTests, DamageAddEq)
 {
     Damage damage1 = Damage(100,100);
@@ -124,6 +126,7 @@ TEST(unitTests, DamageAddEq)
     ASSERT_EQ(damage1.physical,200);
     ASSERT_EQ(damage1.magical,200);
 }
+
 TEST(unitTests, DamageMultiplicationEq)
 {
     Damage damage1 = Damage(100,100);
@@ -138,6 +141,33 @@ TEST(unitTests, DamageMultiplicationEq)
 // It has 7 public functions, 
 //Game(), ~Game(), Game(filepath), setMap(mappointer), 
 //putHero(heropointer, row, column), putMonster(monster, row, column), run(istest)
+/* TEST(unitTests, PutHeroFree)
+{
+    Game game("../maps/map_for_gametest.txt");
+    Hero hero = Hero::parse("../Dark_Wanderer.json");
+    ASSERT_NO_THROW(game.putHero(&hero, 1, 1));
+}
+
+TEST(unitTests, PutHeroWall)
+{
+    Game game("../maps/map_for_gametest.txt");
+    Hero hero = Hero::parse("../Dark_Wanderer.json");
+    ASSERT_THROW(game.putHero(&hero, 0, 0), Game::OccupiedException);
+}
+ 
+TEST(unitTests, PutMonsterFree)
+{
+    Game game("../maps/map_for_gametest.txt");
+    Monster monster = Monster::parse("../Fallen.json");
+    ASSERT_NO_THROW(game.putMonster(monster, 1, 1));
+}
+
+TEST(unitTests, PutMonsterWall)
+{
+    Game game("../maps/map_for_gametest.txt");
+    Monster monster = Monster::parse("../Fallen.json");
+    ASSERT_THROW(game.putMonster(monster, 0, 0), Game::OccupiedException);
+} */
 
 //Test for the Map class 
 // It has 9 public functions,
