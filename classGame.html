@@ -140,14 +140,14 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a99bd7164f5c6de98bfcd2d1d66e48053"><td class="memItemLeft" align="right" valign="top"><a id="a99bd7164f5c6de98bfcd2d1d66e48053"></a>
-std::map&lt; int, std::map&lt; int, std::list&lt; <a class="el" href="classMonster.html">Monster</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>monster_map</b></td></tr>
+<tr class="memitem:a99bd7164f5c6de98bfcd2d1d66e48053"><td class="memItemLeft" align="right" valign="top">std::map&lt; int, std::map&lt; int, std::list&lt; <a class="el" href="classMonster.html">Monster</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a99bd7164f5c6de98bfcd2d1d66e48053">monster_map</a></td></tr>
+<tr class="memdesc:a99bd7164f5c6de98bfcd2d1d66e48053"><td class="mdescLeft">&#160;</td><td class="mdescRight">"Map" that stores our monsters by location. Each "tile" is represented by a list which holds the monsters on said tile.  <a href="classGame.html#a99bd7164f5c6de98bfcd2d1d66e48053">More...</a><br /></td></tr>
 <tr class="separator:a99bd7164f5c6de98bfcd2d1d66e48053"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acef3a39fdf14be2c980b0dc11e7be402"><td class="memItemLeft" align="right" valign="top"><a id="acef3a39fdf14be2c980b0dc11e7be402"></a>
-<a class="el" href="classMap.html">Map</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>map</b> =NULL</td></tr>
+<tr class="memitem:acef3a39fdf14be2c980b0dc11e7be402"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMap.html">Map</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#acef3a39fdf14be2c980b0dc11e7be402">map</a> =NULL</td></tr>
+<tr class="memdesc:acef3a39fdf14be2c980b0dc11e7be402"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to our map. Sets initial value to NULL.  <a href="classGame.html#acef3a39fdf14be2c980b0dc11e7be402">More...</a><br /></td></tr>
 <tr class="separator:acef3a39fdf14be2c980b0dc11e7be402"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a349ad267515138c672f12fa0e6961790"><td class="memItemLeft" align="right" valign="top"><a id="a349ad267515138c672f12fa0e6961790"></a>
-<a class="el" href="classHero.html">Hero</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>hero</b> =NULL</td></tr>
+<tr class="memitem:a349ad267515138c672f12fa0e6961790"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classHero.html">Hero</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html#a349ad267515138c672f12fa0e6961790">hero</a> =NULL</td></tr>
+<tr class="memdesc:a349ad267515138c672f12fa0e6961790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to our hero. Sets initial value to NULL.  <a href="classGame.html#a349ad267515138c672f12fa0e6961790">More...</a><br /></td></tr>
 <tr class="separator:a349ad267515138c672f12fa0e6961790"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -392,6 +392,79 @@ std::map&lt; int, std::map&lt; int, std::list&lt; <a class="el" href="classMonst
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a349ad267515138c672f12fa0e6961790"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a349ad267515138c672f12fa0e6961790">&#9670;&nbsp;</a></span>hero</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classHero.html">Hero</a>* Game::hero =NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pointer to our hero. Sets initial value to NULL. </p>
+
+</div>
+</div>
+<a id="acef3a39fdf14be2c980b0dc11e7be402"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acef3a39fdf14be2c980b0dc11e7be402">&#9670;&nbsp;</a></span>map</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMap.html">Map</a>* Game::map =NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pointer to our map. Sets initial value to NULL. </p>
+
+</div>
+</div>
+<a id="a99bd7164f5c6de98bfcd2d1d66e48053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99bd7164f5c6de98bfcd2d1d66e48053">&#9670;&nbsp;</a></span>monster_map</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;int,std::map&lt;int, std::list&lt;<a class="el" href="classMonster.html">Monster</a>&gt; &gt; &gt; Game::monster_map</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>"Map" that stores our monsters by location. Each "tile" is represented by a list which holds the monsters on said tile. </p>
 
 </div>
 </div>
