@@ -18,11 +18,38 @@
 class MarkedMap : public Map
 {
 private:
-    /* data */
+    /**
+     * @brief Vector holding the positions of all monsters.
+     * 
+     * The vector itself holds pair type values, the first of the pair representing the row in which the monster is, the second of the pair representing the column.
+     * 
+     */
     std::vector<std::pair<int,int>> monsterPositions;
+
+    /**
+     * @brief Pair type holding the hero's position.
+     * 
+     * The first of the pair represents the row in which the hero is, the second of the pair represents the column.
+     * 
+     */
     std::pair<int,int> heroPosition;
+
 public:
+
+    /**
+     * @brief Gives back a MarkedMap constructed from a txt file.
+     * 
+     * @param path Path of the input file from which the MarkedMap is parsed.
+     * 
+     * @return MarkedMap 
+     * 
+     */
     MarkedMap(std::string);
+
+    /**
+     * @brief Destructor for MarkedMap class.
+     * 
+     */
     ~MarkedMap(){};
 };
 #endif

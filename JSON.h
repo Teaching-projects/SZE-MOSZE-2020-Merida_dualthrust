@@ -32,13 +32,6 @@ public:
 
     typedef std::list<std::variant<std::string, int, double, float>> list; 
     
-/*else if(std::is_same<T, JSON::list>::value){
-            JSON::list myList;
-            myList.push_back("asd");
-            converted = myList;
-        }
-*/
-
     template <typename T>
     T get(std::string key){
         std::string value =  std::any_cast<std::string>(content[key]);
@@ -58,14 +51,18 @@ public:
     
 
     int count(std::string);
+
     /**
      * @brief Method for checking if a given input is a number or not.
+     * 
      * @param[in] string
+     * 
      * @return true, if we get numbers correctly
      * @return false, if the input's size is 0 or it isn't number
      * 
      */
     bool isNumber(const std::string&);
+
     /**
      * @brief Utility method for handling strings, works similarly to other programming languages' split method.
      * 
@@ -73,6 +70,7 @@ public:
      * 
      */
     static std::vector<std::string> split(const std::string&, char);
+
     /**
      * @brief Specific splitting method for JSON files, responsible for finding the JSON rows in a given JSON string.
      * 
@@ -80,6 +78,7 @@ public:
      * 
      */
     static std::vector<std::string> splitRowsJSON(const std::string&);
+
     /**
      * @brief Specific whitespace remover method for JSON files, responsible for removing whitespaces from a given JSON string.
      * 
@@ -87,6 +86,7 @@ public:
      * 
      */
     static std::string removeJSONSpaces(std::string);
+
     /**
      * @brief JSON parser method. Takes a filepath as input and returns an object of the JSON class.
      * 
@@ -94,6 +94,7 @@ public:
      * 
      */
     static JSON parseString(const std::string&);
+
     /**
      * @brief JSON parser method, takes an ifstream as an input and returns an object of the JSON class.
      * 
@@ -101,6 +102,7 @@ public:
      * 
      */
     static JSON parseStream(std::ifstream&);
+
     /**
      * @brief JSON parser method, takes a string as an input and returns an object of the JSON class.
      * 
@@ -108,8 +110,10 @@ public:
      * 
      */
     static JSON parseFromFile(const std::string&);
+
     /**
      * @brief Delete every existing Character object given as input.
+     * 
      * @param[in] Character vector
      * 
      */
@@ -122,7 +126,9 @@ public:
 	};
 
     protected:
+    
         static std::list<std::variant<std::string, int, double, float>> listFromValues(std::string);
+
         std::map<std::string, std::any> content;
 };
 

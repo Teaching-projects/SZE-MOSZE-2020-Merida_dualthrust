@@ -3,14 +3,10 @@
 #include "../Hero.cpp"
 #include <gtest/gtest.h>
 
-//Test for the Monster and Hero class
+//Test for the Monster class
 
 TEST(unitTests, parseMonster){
     ASSERT_NO_THROW(Monster::parse("../Zombie.json"));
-}
-
-TEST(unitTests, parseHero){
-    ASSERT_NO_THROW(Hero::parse("../Dark_Wanderer.json"));
 }
 
 TEST(unitTests, isAlive){
@@ -18,14 +14,24 @@ TEST(unitTests, isAlive){
     ASSERT_EQ(dead.isAlive(), false);
 }
 
-TEST(unitTests, getHealth){
+TEST(unitTests, getName){
     Monster healthy = Monster("Healthy",1000,1000,1000,1000);
-    ASSERT_EQ(healthy.getHealthPoints(), 1000);
+    ASSERT_EQ(healthy.getName(), "Healthy");
 }
 
 TEST(unitTests, getDamage){
     Monster strong = Monster("strong",1000,1000,1000,1000);
     ASSERT_EQ(strong.getDamage(), 1000);
+}
+
+TEST(unitTests, getDefense){
+    Monster healthy = Monster("Healthy",1000,1000,1000,1000);
+    ASSERT_EQ(healthy.getDefense(), 1000);
+}
+
+TEST(unitTests, getACD){
+    Monster strong = Monster("strong",1000,1000,1000,1000);
+    ASSERT_EQ(strong.getAttackCoolDown(), 1000);
 }
 
 TEST(unitTests, sufferDamage){
@@ -35,11 +41,17 @@ TEST(unitTests, sufferDamage){
     ASSERT_EQ(dead.isAlive(), false);
 }
 
+//Test for the Hero class
+
+TEST(unitTests, parseHero){
+    ASSERT_NO_THROW(Hero::parse("../Dark_Wanderer.json"));
+}
+
 TEST(unitTests, levelUp){
     Hero hero = Hero("Hero",100,100,100,100,100,100,100,100,100,100,2);
     Monster enemy = Monster("Monster",100,1,1,1);
     hero.fightTilDeath(enemy);
-
+    //This levelup test also test the constructor, the fighttildeath method, as well as most of the getters.
     ASSERT_EQ(hero.getLevel(),2);
     ASSERT_EQ(hero.getHealthPoints(),200);
     ASSERT_EQ(hero.getAttackCoolDown(),200);

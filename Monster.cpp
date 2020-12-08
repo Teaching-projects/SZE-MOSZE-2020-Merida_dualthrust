@@ -12,7 +12,7 @@
 
     Monster::~Monster()
     {
-
+        
     }
 
     //Getters
