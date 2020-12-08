@@ -17,8 +17,6 @@ void HeroSVGRenderer::render(const Game &game) const
     {
         for (int j = hero_column-viewrange; j < hero_column+viewrange+1; j++)
         {
-            std::string svg = "";
-
             if (j<0||j>map.longest_row_size)
             {
                 continue;
@@ -36,12 +34,12 @@ void HeroSVGRenderer::render(const Game &game) const
                     uint64_t unsigned_j = static_cast<uint64_t>(signed_j);
 
                     if(unsigned_j < map.getMap()[i].size()){
-                        svg = readSVG(map.svg[map.get(i,j)]);
+                        svgFile << this->setCoords(readSVG(map.svg[map.get(i,j)]), j * 10, i * 10);
                     }else if(j < map.longest_row_size-1){
-                        svg = readSVG(map.svg[1]);
+                        svgFile << this->setCoords(readSVG(map.svg[1]), j * 10, i * 10);
                     }
 
-                    svgFile << this->setCoords(svg, j * 10, i * 10);
+                    
                 }
             }
  
