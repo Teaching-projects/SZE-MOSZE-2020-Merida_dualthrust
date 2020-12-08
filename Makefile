@@ -22,8 +22,8 @@ Hero.o: Hero.cpp Hero.h Monster.h JSON.h Damage.h
 Map.o: Map.cpp Map.h
 	$(COMPILER) $(COMPILERFLAGS) -c Map.cpp
 	
-Renderer.o: Renderer.cpp Renderer.h
-	$(COMPILER) $(COMPILERFLAGS) -c Renderer.cpp
+Renderer.o: Renderer.h
+	$(COMPILER) $(COMPILERFLAGS) -c Renderer.h
 
 TextRenderer.o: TextRenderer.h Renderer.h
 	$(COMPILER) $(COMPILERFLAGS) -c TextRenderer.h
