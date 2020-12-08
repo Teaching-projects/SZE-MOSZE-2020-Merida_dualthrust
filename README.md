@@ -7,15 +7,19 @@ RPG-re hasonlító játék megírása OOP alapelvek követésével és természe
 a modern szoftverfejlesztési eszközök használatával.
 
 ## A program működése
-A projekt keretein belül készített program egy hős és szörnyek harcát játsza le. Harc közben a felek a megszerzett tapasztalat alapján szintet is lépnek, amely során életerejük, támadásuk ereje és támadási idejük változik.
-Futásához bemeneti paramétereket vár, a következő séma alapján:
+A projekt keretein belül készített program egy hős és szörnyek harcát játsza le. Harc közben hősünk felfedez egy dungeon-t ahol szörnyekkel harcol. A harc közben megszerzett tapasztalat alapján szintet is lép, amely során életereje, támadási, védekezési ereje, támadási ideje és látótávolsága változik. A játék addig tart, ameddig van szörny a pályán, vagy a hős meg nem hal. A MarkedMap osztály segítségével be tudunk olvasni egy előre elkészített pályát txt-ből, ahol adott a hős és a szörnyek elhelyezkedése.
 
-**KarakterNev(string) KarakterHP(int) KarakterATK(int) KarakterACD(double) KarakterXPperSzint(int) KarakterHPperSzint(int) KarakterDMGperSzint(int) KarakterACDperSzint(float) EllensegNev(string) EllensegHP(int) EllensegATK(int) EllensegACD EllensegSzint(1) EllensegMaxHP EllensegTapasztalat(0) EllensegXPperSzint EllensegHPperSzint EllensegDMGPerSzint EllensegACDperSzint**
+### Helytelen input: 
+A program a parancssorba printeli a helyes sémát, majd kilép.
+### Helyes input: 
+A hős elindul a pályán, és megpróbálja megölni az összes szörnyet. A pályának a hős csak egy adott részét látja, amire kiterjed a látótávolsága.
+#### A hős mozgása az alábbi parancsokkal irányítható a játék során:
+**north**; **south**; **west**; **east**
 
-Helytelen input esetén a program a parancssorba printeli a helyes sémát, majd kilép.
-Helyes input esetén a hős és a szörnyek 'oda-vissza' módon támadják egymást, amíg egyikőjük életereje el nem fogy.
-Ez utóbbi esetben egy szkript leteszteli, hogy a kapott kimenet a valós értékeket közli-e.
+## Tesztek
+Helyes unput esetben egy szkript leteszteli, hogy a kapott kimenet a valós értékeket közli-e.
 A program parancssorba printeli, hogy a kimenet helyes, vagy sem.
+További tesztek is léteznek a programhoz: memóriaszemetelés ellenőrzése; kódteszt googletest segítségével.
 
 ## Csapattagok
 Lapat Krisztián\
