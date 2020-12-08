@@ -188,6 +188,14 @@ TEST(unitTests, PutMonsterWall)
 // It has 3 public functions, 
 //THESE NEED TO BE DONE
 //PreparedGame(), ~PreparedGame(), PreparedGame(filepath)
+TEST(unitTests, PreparedGameEmptyConstructor)
+{    
+    ASSERT_NO_THROW(PreparedGame preparedgame());
+}
+TEST(unitTests, PreparedGameConstructor)
+{    
+    ASSERT_NO_THROW(PreparedGame preparedgame("preparedgame.json"));
+}
 
 //Test for the MarkedMap class 
 // It has 2 public functions, 
