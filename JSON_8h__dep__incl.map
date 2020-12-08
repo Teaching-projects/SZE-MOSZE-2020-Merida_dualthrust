@@ -1,8 +1,10 @@
 <map id="JSON.h" name="JSON.h">
-<area shape="rect" id="node1" title=" " alt="" coords="120,5,187,32"/>
-<area shape="rect" id="node2" href="$Game_8h.html" title="Game class." alt="" coords="199,80,273,107"/>
-<area shape="rect" id="node4" href="$PreparedGame_8h.html" title="PreparedGame class." alt="" coords="5,155,136,181"/>
-<area shape="rect" id="node3" href="$HeroTextRenderer_8h_source.html" title=" " alt="" coords="161,155,311,181"/>
-<area shape="rect" id="node5" href="$ObserverTextRenderer_8h_source.html" title=" " alt="" coords="336,155,515,181"/>
-<area shape="rect" id="node6" href="$SvgRenderer_8h_source.html" title=" " alt="" coords="539,155,655,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="527,5,594,32"/>
+<area shape="rect" id="node2" href="$Game_8h.html" title="Game class." alt="" coords="487,80,560,107"/>
+<area shape="rect" id="node7" href="$PreparedGame_8h.html" title="PreparedGame class." alt="" coords="637,155,767,181"/>
+<area shape="rect" id="node3" href="$SVGRenderer_8h_source.html" title=" " alt="" coords="116,155,235,181"/>
+<area shape="rect" id="node6" href="$HeroTextRenderer_8h_source.html" title=" " alt="" coords="259,155,409,181"/>
+<area shape="rect" id="node8" href="$ObserverTextRenderer_8h_source.html" title=" " alt="" coords="434,155,613,181"/>
+<area shape="rect" id="node4" href="$HeroSVGRenderer_8h_source.html" title=" " alt="" coords="5,229,156,256"/>
+<area shape="rect" id="node5" href="$ObserverSVGRenderer_8h_source.html" title=" " alt="" coords="181,229,359,256"/>
 </map>
