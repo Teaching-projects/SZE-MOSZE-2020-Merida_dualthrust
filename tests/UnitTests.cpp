@@ -9,12 +9,11 @@
 #include <gtest/gtest.h>
 
 //Test for the Monster class 
+//ALL DONE
 // It has 16 public functions, 
 //parse(path), Monster(name, hp, damage, defense, acd), ~Monster(),
 //Monster(monster)(copy constructor), getName(), getPhysicalDamage(),
 //getMagicalDamage(), getDefense(), getHealthPoints(), getACD(), sufferDamage(monsterpointer)
-//
-//THESE NEED TO BE DONE
 //setPosition(row, cloumn), getPosition(), deliverHit, fightTilDeath
 
 TEST(unitTests, parseMonster){
@@ -30,6 +29,13 @@ TEST(unitTests, MonsterCopyConstructor){
 TEST(unitTests, isAlive){
     Monster dead = Monster("Dead",0,Damage(100,100),0,0);
     ASSERT_EQ(dead.isAlive(), false);
+}
+
+TEST(unitTests, setPosition_getPosition){
+    Monster lost = Monster("Lost",1000,Damage(1000,1000),1000,1000);
+    lost.setPosition(5,5);
+    ASSERT_EQ(lost.getPosition().first, 5);
+    ASSERT_EQ(lost.getPosition().second, 5);
 }
 
 TEST(unitTests, getName){
@@ -66,6 +72,13 @@ TEST(unitTests, sufferDamage){
     Monster attacker = Monster("Attacker",10,Damage(10,10),10,10);
     Monster dead = Monster("Dead",1,Damage(100,100),1,1);
     dead.sufferDamage(&attacker);
+    ASSERT_EQ(dead.isAlive(), false);
+}
+
+TEST(unitTests, fightTilDeath){
+    Monster attacker = Monster("Attacker",10,Damage(10,10),10,10);
+    Monster dead = Monster("Dead",1,Damage(100,100),1,1);
+    attacker.fightTilDeath(dead);
     ASSERT_EQ(dead.isAlive(), false);
 }
 
