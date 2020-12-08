@@ -21,7 +21,7 @@ TEST(unitTests, parseMonster){
 }
 
 TEST(unitTests, MonsterCopyConstructor){
-    Monster healthy = Monster("Healthy",1000,Damage(1000,1000),1000,1000);
+    Monster healthy = Monster("Healthy",1000,Damage(1000,1000),1000,1000,"./SVGs/monster.svg");
     Monster healthytoo = Monster(healthy);
     ASSERT_EQ(healthytoo.getDefense(), 1000);
 }
@@ -32,14 +32,14 @@ TEST(unitTests, isAlive){
 }
 
 TEST(unitTests, setPosition_getPosition){
-    Monster lost = Monster("Lost",1000,Damage(1000,1000),1000,1000);
+    Monster lost = Monster("Lost",1000,Damage(1000,1000),1000,1000,"./SVGs/monster.svg");
     lost.setPosition(5,5);
     ASSERT_EQ(lost.getPosition().first, 5);
     ASSERT_EQ(lost.getPosition().second, 5);
 }
 
 TEST(unitTests, getName){
-    Monster dead = Monster("Dead",0,Damage(100,100),0,0);
+    Monster dead = Monster("Dead",0,Damage(100,100),0,0,"./SVGs/monster.svg");
     ASSERT_EQ(dead.getName(), "Dead");
 }
 
@@ -76,8 +76,8 @@ TEST(unitTests, sufferDamage){
 }
 
 TEST(unitTests, fightTilDeath){
-    Monster attacker = Monster("Attacker",10,Damage(10,10),10,10);
-    Monster dead = Monster("Dead",1,Damage(100,100),1,1);
+    Monster attacker = Monster("Attacker",10,Damage(10,10),10,10,"./SVGs/monster.svg");
+    Monster dead = Monster("Dead",1,Damage(100,100),1,1,"./SVGs/monster.svg");
     attacker.fightTilDeath(dead);
     ASSERT_EQ(dead.isAlive(), false);
 }
