@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['json_88',['JSON',['../classJSON.html',1,'']]]
+  ['insufficientgamedatainput_88',['InsufficientGamedataInput',['../classPreparedGame_1_1InsufficientGamedataInput.html',1,'PreparedGame']]]
 ];
