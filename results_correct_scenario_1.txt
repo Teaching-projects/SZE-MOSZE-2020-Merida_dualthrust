@@ -1,77 +1,170 @@
-╔════════╗
-║████████║
-║██┣┫MM░░║
-║██░░████║
-║██░░░░░░║
-╚════════╝
-[north] [east] [south] [west]
-
-Choose a direction:
-╔════════╗
-║████████║
-║██░░MM░░║
-║██┣┫████║
-║██░░░░░░║
-║██████░░║
-╚════════╝
-[north] [east] [south] [west]
-
-Choose a direction:
-╔════════╗
-║██░░MM░░║
-║██░░████║
-║██┣┫░░░░║
-║██████░░║
-║██░░░░░░║
-╚════════╝
-[north] [east] [south] [west]
-
-Choose a direction:
 ╔══════════╗
-║██░░MM░░██║
+║██████████║
+║██░░┣┫██░░║
 ║██░░██████║
-║██░░┣┫░░██║
-║██████░░██║
-║██░░░░░░░░║
+║██░░M░M░██║
 ╚══════════╝
 [north] [east] [south] [west]
 
 Choose a direction:
 ╔════════╗
-║██░░MM░░║
+║████████║
+║██┣┫░░██║
 ║██░░████║
-║██┣┫░░░░║
-║██████░░║
-║██░░░░░░║
+║██░░M░M░║
 ╚════════╝
 [north] [east] [south] [west]
 
 Choose a direction:
 ╔════════╗
 ║████████║
-║██░░MM░░║
+║██░░░░██║
 ║██┣┫████║
-║██░░░░░░║
-║██████░░║
+║██░░M░M░║
+║██████M░║
 ╚════════╝
 [north] [east] [south] [west]
 
 Choose a direction:
 ╔════════╗
-║████████║
-║██┣┫MM░░║
+║██░░░░██║
 ║██░░████║
+║██┣┫M░M░║
+║██████M░║
 ║██░░░░░░║
 ╚════════╝
 [north] [east] [south] [west]
 
 Choose a direction:
-Prince Aidan of Khanduras(1) vs Fallen
-Prince Aidan of Khanduras(1) vs Fallen
-Prince Aidan of Khanduras(1) vs Zombie
-Prince Aidan of Khanduras(1) vs Fallen
-Prince Aidan of Khanduras(2) vs Fallen
-Prince Aidan of Khanduras(2) vs Zombie
-Prince Aidan of Khanduras(2) vs Fallen
-Prince Aidan of Khanduras(3) vs Blood Raven
-Prince Aidan of Khanduras cleared the map.
+Prince Aidan(1) vs Fallen
+╔══════════╗
+║██░░░░██░░║
+║██░░██████║
+║██░░┣┫M░██║
+║██████M░██║
+║██░░░░░░░░║
+╚══════════╝
+[north] [east] [south] [west]
+
+Choose a direction:
+Prince Aidan(1) vs Zombie
+╔══════════╗
+║░░░░██░░░░║
+║░░████████║
+║░░░░┣┫██░░║
+║████M░██░░║
+║░░░░░░░░░░║
+╚══════════╝
+[north] [east] [south] [west]
+
+Choose a direction:
+Prince Aidan(1) vs Fallen
+╔══════════╗
+║░░████████║
+║░░░░░░██░░║
+║████┣┫██░░║
+║░░░░░░░░░░║
+║██████████║
+╚══════════╝
+[north] [east] [south] [west]
+
+Choose a direction:
+╔══════════╗
+║░░░░░░██░░║
+║████░░██░░║
+║░░░░┣┫░░░░║
+║██████████║
+╚══════════╝
+[north] [east] [south] [west]
+
+Choose a direction:
+╔══════════╗
+║░░░░██░░M░║
+║██░░██░░██║
+║░░░░┣┫░░M░║
+║██████████║
+╚══════════╝
+[north] [east] [south] [west]
+
+Choose a direction:
+╔══════════╗
+║░░██░░M░██║
+║░░██░░████║
+║░░░░┣┫M░░░║
+║██████████║
+╚══════════╝
+[north] [east] [south] [west]
+
+Choose a direction:
+Prince Aidan(1) vs Fallen
+╔══════════════╗
+║██████M░M░████║
+║░░██░░M░████░░║
+║░░██░░████░░░░║
+║░░░░░░┣┫░░░░░░║
+║██████████████║
+╚══════════════╝
+[north] [east] [south] [west]
+
+Choose a direction:
+╔══════════════╗
+║████████M░M░██║
+║░░░░██░░M░████║
+║██░░██░░████░░║
+║░░░░░░┣┫░░░░░░║
+║██████████████║
+╚══════════════╝
+[north] [east] [south] [west]
+
+Choose a direction:
+╔══════════════╗
+║░░██░░░░░░████║
+║████████M░M░██║
+║░░░░██░░M░████║
+║██░░██┣┫████░░║
+║░░░░░░░░░░░░░░║
+║██████████████║
+╚══════════════╝
+[north] [east] [south] [west]
+
+Choose a direction:
+╔══════════════╗
+║██████████████║
+║░░██░░░░░░████║
+║████████M░M░██║
+║░░░░██┣┫M░████║
+║██░░██░░████░░║
+║░░░░░░░░░░░░░░║
+║██████████████║
+╚══════════════╝
+[north] [east] [south] [west]
+
+Choose a direction:
+Prince Aidan(2) vs Zombie
+╔══════════════╗
+║██████████████║
+║██░░░░░░██████║
+║██████M░M░████║
+║░░██░░┣┫████░░║
+║░░██░░████░░░░║
+║░░░░░░░░░░░░░░║
+║██████████████║
+╚══════════════╝
+[north] [east] [south] [west]
+
+Choose a direction:
+Prince Aidan(2) vs Zombie
+╔══════════════════╗
+║██████████████████║
+║░░██░░░░░░██████░░║
+║████████┣┫M░████░░║
+║░░░░██░░░░████░░░░║
+║██░░██░░████░░░░██║
+║░░░░░░░░░░░░░░░░██║
+║██████████████████║
+╚══════════════════╝
+[north] [east] [south] [west]
+
+Choose a direction:
+Prince Aidan(3) vs Zombie
+Prince Aidan cleared the map.
