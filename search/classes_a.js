@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['renderer_104',['Renderer',['../classRenderer.html',1,'']]]
+  ['parseexception_104',['ParseException',['../classJSON_1_1ParseException.html',1,'JSON']]],
+  ['preparedgame_105',['PreparedGame',['../classPreparedGame.html',1,'']]]
 ];
