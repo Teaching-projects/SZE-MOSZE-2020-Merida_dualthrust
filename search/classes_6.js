@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['map_91',['Map',['../classMap.html',1,'']]],
-  ['markedmap_92',['MarkedMap',['../classMarkedMap.html',1,'']]],
-  ['monster_93',['Monster',['../classMonster.html',1,'']]]
+  ['map_92',['Map',['../classMap.html',1,'']]],
+  ['markedmap_93',['MarkedMap',['../classMarkedMap.html',1,'']]],
+  ['monster_94',['Monster',['../classMonster.html',1,'']]]
 ];
