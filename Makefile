@@ -34,6 +34,28 @@ MarkedMap.o: MarkedMap.cpp MarkedMap.h Map.h
 PreparedGame.o: PreparedGame.cpp PreparedGame.h Map.h Game.h JSON.h
 	$(COMPILER) $(COMPILERFLAGS) -c PreparedGame.cpp
 
+Renderer.o: Renderer.cpp Renderer.h
+	$(COMPILER) $(COMPILERFLAGS) -c Renderer.cpp
+
+TextRenderer.o: TextRenderer.h Renderer.h
+	$(COMPILER) $(COMPILERFLAGS) -c TextRenderer.h
+
+HeroTextRenderer.o: HeroTextRenderer.cpp HeroTextRenderer.h TextRenderer.h 
+	$(COMPILER) $(COMPILERFLAGS) -c HeroTextRenderer.cpp
+
+ObserverTextRenderer.o: ObserverTextRenderer.cpp ObserverTextRenderer.h TextRenderer.h
+	$(COMPILER) $(COMPILERFLAGS) -c ObserverTextRenderer.cpp
+
+SvgRenderer.o: SVGRenderer.h Renderer.h Game.h
+	$(COMPILER) $(COMPILERFLAGS) -c SvgRenderer.h
+
+HeroSVGRenderer.o: HeroSVGRenderer.cpp HeroSVGRenderer.h SvgRenderer.h 
+	$(COMPILER) $(COMPILERFLAGS) -c HeroSVGRenderer.cpp
+
+ObserverSVGRenderer.o: ObserverSVGRenderer.cpp ObserverSVGRenderer.h SvgRenderer.h 
+	$(COMPILER) $(COMPILERFLAGS) -c ObserverSVGRenderer.cpp
+
+
 Clean:
 	rm -rf $(OBJECTS) a.out cppcheck_results.txt results_scenario_1.txt results_scenario_2.txt
 
