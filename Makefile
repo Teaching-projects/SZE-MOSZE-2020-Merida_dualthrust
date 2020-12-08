@@ -1,4 +1,4 @@
-OBJECTS := JSON.o Monster.o Hero.o Map.o Renderer.o TextRenderer.o HeroTextRenderer.o ObserverTextRenderer.o SvgRenderer.o HeroSVGRenderer.o ObserverSVGRenderer.o Game.o main.o MarkedMap.o PreparedGame.o
+OBJECTS := JSON.o Monster.o Hero.o Map.o HeroTextRenderer.o ObserverTextRenderer.o HeroSVGRenderer.o ObserverSVGRenderer.o Game.o main.o MarkedMap.o PreparedGame.o
 COMPILERFLAGS := -std=c++17 -g -Wall -Werror -Wextra 
 COMPILER := g++
 
@@ -22,20 +22,11 @@ Hero.o: Hero.cpp Hero.h Monster.h JSON.h Damage.h
 Map.o: Map.cpp Map.h
 	$(COMPILER) $(COMPILERFLAGS) -c Map.cpp
 	
-Renderer.o: Renderer.h
-	$(COMPILER) $(COMPILERFLAGS) -c Renderer.h
-
-TextRenderer.o: TextRenderer.h Renderer.h
-	$(COMPILER) $(COMPILERFLAGS) -c TextRenderer.h
-
 HeroTextRenderer.o: HeroTextRenderer.cpp HeroTextRenderer.h TextRenderer.h Map.h
 	$(COMPILER) $(COMPILERFLAGS) -c HeroTextRenderer.cpp
 
 ObserverTextRenderer.o: ObserverTextRenderer.cpp ObserverTextRenderer.h TextRenderer.h Map.h
 	$(COMPILER) $(COMPILERFLAGS) -c ObserverTextRenderer.cpp
-
-SvgRenderer.o: SVGRenderer.h Renderer.h Game.h
-	$(COMPILER) $(COMPILERFLAGS) -c SvgRenderer.h
 
 HeroSVGRenderer.o: HeroSVGRenderer.cpp HeroSVGRenderer.h SVGRenderer.h 
 	$(COMPILER) $(COMPILERFLAGS) -c HeroSVGRenderer.cpp
