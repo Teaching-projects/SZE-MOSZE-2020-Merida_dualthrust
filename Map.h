@@ -5,9 +5,8 @@
  * 
  * This class contains basic methods for handling the map.
  * 
- * 
- * @version 1.0
- * @date 2020-11-22
+ * @version 2.0
+ * @date 2020-12-08
  * 
  */
 
@@ -30,7 +29,7 @@ class Map
          * 
          */
         std::vector<std::vector<int>> map = std::vector<std::vector<int>>();
-
+    
         int longest_row_size;
         int longest_column_size;
     public:
