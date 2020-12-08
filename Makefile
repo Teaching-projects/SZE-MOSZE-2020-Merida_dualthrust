@@ -22,18 +22,6 @@ Hero.o: Hero.cpp Hero.h Monster.h JSON.h Damage.h
 Map.o: Map.cpp Map.h
 	$(COMPILER) $(COMPILERFLAGS) -c Map.cpp
 	
-Game.o: Game.cpp Hero.h Monster.h Map.h
-	$(COMPILER) $(COMPILERFLAGS) -c Game.cpp
-
-main.o: main.cpp Monster.h Hero.h ObserverSVGRenderer.h HeroSVGRenderer.h HeroTextRenderer.h ObserverTextRenderer.h 
-	$(COMPILER) $(COMPILERFLAGS) -c main.cpp
-
-MarkedMap.o: MarkedMap.cpp MarkedMap.h Map.h
-	$(COMPILER) $(COMPILERFLAGS) -c MarkedMap.cpp
-
-PreparedGame.o: PreparedGame.cpp PreparedGame.h Map.h Game.h JSON.h
-	$(COMPILER) $(COMPILERFLAGS) -c PreparedGame.cpp
-
 Renderer.o: Renderer.cpp Renderer.h
 	$(COMPILER) $(COMPILERFLAGS) -c Renderer.cpp
 
@@ -54,6 +42,18 @@ HeroSVGRenderer.o: HeroSVGRenderer.cpp HeroSVGRenderer.h SvgRenderer.h
 
 ObserverSVGRenderer.o: ObserverSVGRenderer.cpp ObserverSVGRenderer.h SvgRenderer.h 
 	$(COMPILER) $(COMPILERFLAGS) -c ObserverSVGRenderer.cpp
+
+Game.o: Game.cpp Hero.h Monster.h Map.h
+	$(COMPILER) $(COMPILERFLAGS) -c Game.cpp
+
+main.o: main.cpp Monster.h Hero.h ObserverSVGRenderer.h HeroSVGRenderer.h HeroTextRenderer.h ObserverTextRenderer.h 
+	$(COMPILER) $(COMPILERFLAGS) -c main.cpp
+
+MarkedMap.o: MarkedMap.cpp MarkedMap.h Map.h
+	$(COMPILER) $(COMPILERFLAGS) -c MarkedMap.cpp
+
+PreparedGame.o: PreparedGame.cpp PreparedGame.h Map.h Game.h JSON.h
+	$(COMPILER) $(COMPILERFLAGS) -c PreparedGame.cpp
 
 
 Clean:
