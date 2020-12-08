@@ -2,7 +2,7 @@ OBJECTS := JSON.o Monster.o Hero.o Map.o Game.o main.o MarkedMap.o PreparedGame.
 COMPILERFLAGS := -std=c++17 -g -Wall -Werror -Wextra 
 COMPILER := g++
 
-CPPFILES := JSON.cpp Monster.cpp Hero.cpp Map.cpp Game.cpp main.cpp MarkedMap.cpp PreparedGame.cpp ObserverSVGRenderer.cpp HeroSVGRenderer.cpp HeroTextRenderer.cpp ObserverTextRenderer.cpp
+CPPFILES := JSON.cpp Monster.cpp Hero.cpp Map.cpp ObserverSVGRenderer.cpp HeroSVGRenderer.cpp HeroTextRenderer.cpp ObserverTextRenderer.cpp Game.cpp main.cpp MarkedMap.cpp PreparedGame.cpp
 
 VALGRINDFLAGS:= --leak-check=full --error-exitcode=1 --track-origins=yes --log-file="Valgrind_log"
 VALGRINDPARAMETER:=  ./a.out preparedgame.json -test
