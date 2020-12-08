@@ -169,12 +169,6 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const Monster& character);
 
 protected:
-    const std::string texture;
-
-    /**
-     * @brief Name of the unit
-     * 
-     */
     const std::string name;
 
     /**
@@ -199,6 +193,13 @@ protected:
      * 
      */
     float cooldown;
+
+    /**
+     * @brief Texture of the unit
+     * 
+     */
+    const std::string texture;
+
 
     /**
      * @brief Represents the unit's current coordinates on the game map
