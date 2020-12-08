@@ -70,7 +70,10 @@ TEST(unitTests, sufferDamage){
 }
 
 //Test for the Hero class
-
+//ALL DONE
+// It has 6 public functions
+//Hero(takes a ton of things.), getMaxHealthPoints, getLevel, getLightRadius, 
+//parse, deliverhit
 TEST(unitTests, parseHero){
     ASSERT_NO_THROW(Hero::parse("../Dark_Wanderer.json"));
 }
@@ -79,7 +82,7 @@ TEST(unitTests, levelUp){
     Hero hero = Hero("Hero",100,Damage(100,100),100,100,100,100,100,100,100,100,100,2);
     Monster enemy = Monster("Monster",100,Damage(100,100),1,1);
     hero.fightTilDeath(enemy);
-    //This levelup test also test the constructor, the fighttildeath method, as well as most of the getters.
+    //This levelup test also test the constructor, the fighttildeath method etc
     ASSERT_EQ(hero.getLevel(),2);
     ASSERT_EQ(hero.getHealthPoints(),200);
     ASSERT_EQ(hero.getAttackCoolDown(),200);
@@ -90,7 +93,8 @@ TEST(unitTests, levelUp){
 }
 
 //Test for the Damage class 
-// It has 3 public functions, +, +=, *=
+//ALL DONE
+//It has 3 public functions, +, +=, *=
 TEST(unitTests, DamageAddition)
 {
     Damage damage1 = Damage(100,100);
@@ -117,15 +121,27 @@ TEST(unitTests, DamageMultiplicationEq)
 }
 
 //Test for the Game class 
+//THESE NEED TO BE DONE
 // It has 7 public functions, 
 //Game(), ~Game(), Game(filepath), setMap(mappointer), 
 //putHero(heropointer, row, column), putMonster(monster, row, column), run(istest)
 
 //Test for the Map class 
-// It has 9 public functions, 
+// It has 9 public functions,
+//THESE NEED TO BE DONE
 //Map(), ~Map(), Map(filepath), getHeroPosition(),
 //getMonsterPositions(char), setHeroPosition(pair(first is row, second is column)), 
 //drawMap(viewrange, hero row, hero column), setTile(row, column, type)
+
+//Test for the PreparedGame class 
+// It has 3 public functions, 
+//THESE NEED TO BE DONE
+//PreparedGame(), ~PreparedGame(), PreparedGame(filepath)
+
+//Test for the MarkedMap class 
+// It has 2 public functions, 
+//THESE NEED TO BE DONE
+//~MarkedMap(), MarkedMap(filepath)
 
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
