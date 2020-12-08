@@ -1,6 +1,6 @@
-#include "CharacterSvgRenderer.h"
+#include "HeroSvgRenderer.h"
 
-void CharacterSVGRenderer::render(const Game &game) const
+void HeroSVGRenderer::render(const Game &game) const
 {
     std::ofstream svgFile;
     svgFile.open(this->filename);
