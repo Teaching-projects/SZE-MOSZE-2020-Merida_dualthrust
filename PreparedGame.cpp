@@ -4,7 +4,6 @@
 #include "PreparedGame.h"
 #include <fstream>
 
-//WTF
 Game::Game(){};
 
 PreparedGame::~PreparedGame(){
