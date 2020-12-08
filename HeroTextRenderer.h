@@ -14,7 +14,7 @@
 
 #include "TextRenderer.h"
 #include "Game.h"
-#include "map.h"
+#include "Map.h"
 
 class HeroTextRenderer : public TextRenderer
 {
