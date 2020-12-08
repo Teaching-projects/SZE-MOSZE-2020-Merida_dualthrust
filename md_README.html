@@ -72,20 +72,10 @@ Bevezető</h1>
 <p>A 'Modern szoftverfejlesztési eszközök' órára készült projekt. A kód c++ nyelven íródik, a projekt célja egy régi típusú parancssori RPG-re hasonlító játék megírása OOP alapelvek követésével és természetesen a modern szoftverfejlesztési eszközök használatával.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 A program működése</h1>
-<p>A projekt keretein belül készített program egy hős és szörnyek harcát játsza le. Harc közben hősünk felfedez egy dungeon-t ahol szörnyekkel harcol. A harc közben megszerzett tapasztalat alapján szintet is lép, amely során életereje, támadási, védekezési ereje, támadási ideje és látótávolsága változik. A játék addig tart, ameddig van szörny a pályán, vagy a hős meg nem hal. A <a class="el" href="classMarkedMap.html">MarkedMap</a> osztály segítségével be tudunk olvasni egy előre elkészített pályát txt-ből, ahol adott a hős és a szörnyek elhelyezkedése.</p>
-<h2><a class="anchor" id="autotoc_md3"></a>
-Helytelen input:</h2>
-<p>A program a parancssorba printeli a helyes sémát, majd kilép. </p>
-<h2><a class="anchor" id="autotoc_md4"></a>
-Helyes input:</h2>
-<p>A hős elindul a pályán, és megpróbálja megölni az összes szörnyet. A pályának a hős csak egy adott részét látja, amire kiterjed a látótávolsága. </p>
-<h3><a class="anchor" id="autotoc_md5"></a>
-A hős mozgása az alábbi parancsokkal irányítható a játék során:</h3>
-<p><b>north</b>; <b>south</b>; <b>west</b>; <b>east</b></p>
-<h1><a class="anchor" id="autotoc_md6"></a>
-Tesztek</h1>
-<p>Helyes unput esetben egy szkript leteszteli, hogy a kapott kimenet a valós értékeket közli-e. A program parancssorba printeli, hogy a kimenet helyes, vagy sem. További tesztek is léteznek a programhoz: memóriaszemetelés ellenőrzése; kódteszt googletest segítségével.</p>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<p>A projekt keretein belül készített program egy hős és szörnyek harcát játsza le. Harc közben a felek a megszerzett tapasztalat alapján szintet is lépnek, amely során életerejük, támadásuk ereje és támadási idejük változik. Futásához bemeneti paramétereket vár, a következő séma alapján:</p>
+<p><b>KarakterNev(string) KarakterHP(int) KarakterATK(int) KarakterACD(double) KarakterXPperSzint(int) KarakterHPperSzint(int) KarakterDMGperSzint(int) KarakterACDperSzint(float) EllensegNev(string) EllensegHP(int) EllensegATK(int) EllensegACD EllensegSzint(1) EllensegMaxHP EllensegTapasztalat(0) EllensegXPperSzint EllensegHPperSzint EllensegDMGPerSzint EllensegACDperSzint</b></p>
+<p>Helytelen input esetén a program a parancssorba printeli a helyes sémát, majd kilép. Helyes input esetén a hős és a szörnyek 'oda-vissza' módon támadják egymást, amíg egyikőjük életereje el nem fogy. Ez utóbbi esetben egy szkript leteszteli, hogy a kapott kimenet a valós értékeket közli-e. A program parancssorba printeli, hogy a kimenet helyes, vagy sem.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Csapattagok</h1>
 <p>Lapat Krisztián\ Lilik Ferenc\ Nemes Tamás</p>
 <p>Github pages dokumentáció: <a href="https://teaching-projects.github.io/SZE-MOSZE-2020-Merida_dualthrust/index.html">https://teaching-projects.github.io/SZE-MOSZE-2020-Merida_dualthrust/index.html</a> </p>
