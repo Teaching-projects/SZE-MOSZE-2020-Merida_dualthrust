@@ -105,6 +105,9 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a88a70bf77cacb36623e9af67e68b9fb3"><td class="memItemLeft" align="right" valign="top"><a id="a88a70bf77cacb36623e9af67e68b9fb3"></a>
+std::vector&lt; std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getMap</b> ()</td></tr>
+<tr class="separator:a88a70bf77cacb36623e9af67e68b9fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a958f2a0ea97f37cd48132a3bece47151"><td class="memItemLeft" align="right" valign="top">const std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a958f2a0ea97f37cd48132a3bece47151">getHeroPosition</a> ()</td></tr>
 <tr class="memdesc:a958f2a0ea97f37cd48132a3bece47151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the hero's position.  <a href="classMap.html#a958f2a0ea97f37cd48132a3bece47151">More...</a><br /></td></tr>
 <tr class="separator:a958f2a0ea97f37cd48132a3bece47151"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,6 +138,12 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:ab1eac8f9a13cc91dc9ca56e7912f2481"><td class="memItemLeft" align="right" valign="top"><a id="ab1eac8f9a13cc91dc9ca56e7912f2481"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>longest_row_size</b></td></tr>
+<tr class="separator:ab1eac8f9a13cc91dc9ca56e7912f2481"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8ae194f5402b209fb49cf15c031bdbb"><td class="memItemLeft" align="right" valign="top"><a id="af8ae194f5402b209fb49cf15c031bdbb"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>longest_column_size</b></td></tr>
+<tr class="separator:af8ae194f5402b209fb49cf15c031bdbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f827218d2ff7742f7cd39d43653fcf0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a9f827218d2ff7742f7cd39d43653fcf0">monsterPositions</a></td></tr>
 <tr class="memdesc:a9f827218d2ff7742f7cd39d43653fcf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector holding the positions of all monsters.  <a href="classMap.html#a9f827218d2ff7742f7cd39d43653fcf0">More...</a><br /></td></tr>
 <tr class="separator:a9f827218d2ff7742f7cd39d43653fcf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,18 +153,14 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:aecf8e06065d974b902bef55b2c3b8bc0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#aecf8e06065d974b902bef55b2c3b8bc0">tileString</a> [5]</td></tr>
 <tr class="memdesc:aecf8e06065d974b902bef55b2c3b8bc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the string representations of tile types.  <a href="classMap.html#aecf8e06065d974b902bef55b2c3b8bc0">More...</a><br /></td></tr>
 <tr class="separator:aecf8e06065d974b902bef55b2c3b8bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a31b69d3956820532e719739856cf76"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><b>svg</b> [5]</td></tr>
+<tr class="separator:a8a31b69d3956820532e719739856cf76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a7fbb34f989fcf03bb5717073f882080a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a7fbb34f989fcf03bb5717073f882080a">map</a> = std::vector&lt;std::vector&lt;int&gt;&gt;()</td></tr>
 <tr class="memdesc:a7fbb34f989fcf03bb5717073f882080a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data structure that contains the map.  <a href="classMap.html#a7fbb34f989fcf03bb5717073f882080a">More...</a><br /></td></tr>
 <tr class="separator:a7fbb34f989fcf03bb5717073f882080a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1eac8f9a13cc91dc9ca56e7912f2481"><td class="memItemLeft" align="right" valign="top"><a id="ab1eac8f9a13cc91dc9ca56e7912f2481"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>longest_row_size</b></td></tr>
-<tr class="separator:ab1eac8f9a13cc91dc9ca56e7912f2481"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8ae194f5402b209fb49cf15c031bdbb"><td class="memItemLeft" align="right" valign="top"><a id="af8ae194f5402b209fb49cf15c031bdbb"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>longest_column_size</b></td></tr>
-<tr class="separator:af8ae194f5402b209fb49cf15c031bdbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a41697b848ea9a5aad1910714e0196b7b"></a>
@@ -527,6 +532,27 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>longest_column_size</b
 <p>Vector holding the positions of all monsters. </p>
 <p>The vector itself holds pair type values, the first of the pair representing the row in which the monster is, the second of the pair representing the column. </p>
 
+</div>
+</div>
+<a id="a8a31b69d3956820532e719739856cf76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a31b69d3956820532e719739856cf76">&#9670;&nbsp;</a></span>svg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Map::svg[5]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">={</div>
+<div class="line">            <span class="stringliteral">&quot;./SVGs/free.svg&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;./SVGs/wall.svg&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;./SVGs/hero.svg&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;./SVGs/monster.svg&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;./SVGs/monsters.svg&quot;</span>,</div>
+<div class="line">        }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aecf8e06065d974b902bef55b2c3b8bc0"></a>
