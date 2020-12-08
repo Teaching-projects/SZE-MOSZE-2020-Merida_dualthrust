@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['cooldown_168',['cooldown',['../classMonster.html#a3299915749c117d00b28414f669197b3',1,'Monster']]],
-  ['cooldownmultiplierperlevel_169',['cooldownMultiplierPerLevel',['../classHero.html#a926246c88ed699f30992d5170eb63ff0',1,'Hero']]]
+  ['cooldown_160',['cooldown',['../classMonster.html#a3299915749c117d00b28414f669197b3',1,'Monster']]],
+  ['cooldownmultiplierperlevel_161',['cooldownMultiplierPerLevel',['../classHero.html#a926246c88ed699f30992d5170eb63ff0',1,'Hero']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hero_94',['Hero',['../classHero.html',1,'']]]
+  ['insufficientgamedatainput_91',['InsufficientGamedataInput',['../classPreparedGame_1_1InsufficientGamedataInput.html',1,'PreparedGame']]]
 ];
