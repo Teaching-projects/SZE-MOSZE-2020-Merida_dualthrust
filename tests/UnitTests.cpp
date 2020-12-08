@@ -17,7 +17,7 @@
 //setPosition(row, cloumn), getPosition(), deliverHit, fightTilDeath
 
 TEST(unitTests, parseMonster){
-    ASSERT_NO_THROW(Monster::parse("../Zombie.json"));
+    ASSERT_NO_THROW(Monster::parse("../units/Zombie.json"));
 }
 
 TEST(unitTests, MonsterCopyConstructor){
@@ -88,7 +88,7 @@ TEST(unitTests, fightTilDeath){
 //Hero(takes a ton of things.), getMaxHealthPoints, getLevel, getLightRadius, 
 //parse, deliverhit
 TEST(unitTests, parseHero){
-    ASSERT_NO_THROW(Hero::parse("../Dark_Wanderer.json"));
+    ASSERT_NO_THROW(Hero::parse("../units/Dark_Wanderer.json"));
 }
 
 TEST(unitTests, levelUp){
@@ -152,28 +152,28 @@ TEST(unitTests, DamageMultiplicationEq)
 TEST(unitTests, PutHeroFree)
 {
     Game game("../maps/map_for_test.txt");
-    Hero hero = Hero::parse("../Dark_Wanderer.json");
+    Hero hero = Hero::parse("../units/Dark_Wanderer.json");
     ASSERT_NO_THROW(game.putHero(&hero, 1, 1));
 }
 
 TEST(unitTests, PutHeroWall)
 {
     Game game("../maps/map_for_test.txt");
-    Hero hero = Hero::parse("../Dark_Wanderer.json");
+    Hero hero = Hero::parse("../units/Dark_Wanderer.json");
     ASSERT_THROW(game.putHero(&hero, 0, 0), Game::OccupiedException);
 }
 
 TEST(unitTests, PutMonsterFree)
 {
     Game game("../maps/map_for_test.txt");
-    Monster monster = Monster::parse("../Fallen.json");
+    Monster monster = Monster::parse("../units/Fallen.json");
     ASSERT_NO_THROW(game.putMonster(monster, 1, 1));
 }
 
 TEST(unitTests, PutMonsterWall)
 {
     Game game("../maps/map_for_test.txt");
-    Monster monster = Monster::parse("../Fallen.json");
+    Monster monster = Monster::parse("../units/Fallen.json");
     ASSERT_THROW(game.putMonster(monster, 0, 0), Game::OccupiedException);
 }
 
@@ -207,11 +207,11 @@ TEST(unitTests, Mapget)
 TEST(unitTests, PreparedGameEmptyConstructor)
 {    
     ASSERT_NO_THROW(PreparedGame preparedgame());
-}
+}/* 
 TEST(unitTests, PreparedGameConstructor)
 {    
-    ASSERT_NO_THROW(PreparedGame preparedgame("preparedgame.json"));
-}
+    ASSERT_NO_THROW(PreparedGame preparedgame("../preparedgame.json"));
+} */
 
 //Test for the MarkedMap class 
 // ALL DONE ASIDE FROM DESTRUCTOR
