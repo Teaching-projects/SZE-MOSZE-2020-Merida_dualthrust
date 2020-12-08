@@ -106,8 +106,16 @@ A szörny adatai szintén egy JSON fájlban vannak tárolva ***(4 különböző 
 ### Megjelenítés
 ## Tesztek
 ### In-output teszt
-Helyes input esetben egy szkript leteszteli, hogy a kapott kimenet a valós értékeket közli-e.
-A program parancssorba printeli, hogy a kimenet helyes, vagy sem.
+A játék helyes lefutásának teszteléséhez előre meghatározott teszt játékmenetet és egy ennek megfelelő teszt kimenetetet használunk: a teszt játékmenet kimenetét összehasonlítjuk a teszt kimenettel.
+### Parser tesztek
+A JSON fájlok adatainak helyes feldolgozása érdekében különböző eseteket dolgozunk fel.
+Teszt JSON fájlok típusai: 
+- Hiányzó kapcsos zárójel
+- Adatok kevert sorrendje
+- Normál eset
+- Minden adat egy sorban van
+- Felesleges space-k/tabulátorok/enter-ek az adatok között
+
 ### Unit tesztek
 A program egyes komponenseit tesztelik, googletest segítségével futtatjuk őket.
 ### Memória hibák ellenőrzése
