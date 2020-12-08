@@ -1,0 +1,5 @@
+<map id="Renderer" name="Renderer">
+<area shape="rect" id="node1" title="Renderer class." alt="" coords="83,5,164,32"/>
+<area shape="rect" id="node2" href="$classSvgRenderer.html" title="SvgRenderer class." alt="" coords="5,80,111,107"/>
+<area shape="rect" id="node3" href="$classTextRenderer.html" title="TextRenderer class." alt="" coords="135,80,243,107"/>
+</map>
