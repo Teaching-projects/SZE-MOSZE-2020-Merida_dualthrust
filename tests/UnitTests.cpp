@@ -141,7 +141,15 @@ TEST(unitTests, DamageMultiplicationEq)
 // It has 7 public functions, 
 //Game(), ~Game(), Game(filepath), setMap(mappointer), 
 //putHero(heropointer, row, column), putMonster(monster, row, column), run(istest)
-/* TEST(unitTests, PutHeroFree)
+
+/* TEST(unitTests, setMap) This test does some wonky things, not sure what the problem is
+{
+    Game game = Game();
+    Map map = Map("../maps/map_for_gametest.txt");
+    ASSERT_NO_THROW(game.setMap(&map));
+} */
+
+TEST(unitTests, PutHeroFree)
 {
     Game game("../maps/map_for_gametest.txt");
     Hero hero = Hero::parse("../Dark_Wanderer.json");
@@ -154,7 +162,7 @@ TEST(unitTests, PutHeroWall)
     Hero hero = Hero::parse("../Dark_Wanderer.json");
     ASSERT_THROW(game.putHero(&hero, 0, 0), Game::OccupiedException);
 }
- 
+
 TEST(unitTests, PutMonsterFree)
 {
     Game game("../maps/map_for_gametest.txt");
@@ -167,7 +175,7 @@ TEST(unitTests, PutMonsterWall)
     Game game("../maps/map_for_gametest.txt");
     Monster monster = Monster::parse("../Fallen.json");
     ASSERT_THROW(game.putMonster(monster, 0, 0), Game::OccupiedException);
-} */
+}
 
 //Test for the Map class 
 // It has 9 public functions,
