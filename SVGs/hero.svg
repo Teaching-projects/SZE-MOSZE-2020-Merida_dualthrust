@@ -1,0 +1,8 @@
+<svg x="Ł" y="ß" width="10" height="10" viewBox="0 0 230 230">
+  <defs>
+    <style>
+      .hero { fill:#169400; stroke: #000000; }
+    </style>
+  </defs>
+  <rect class="hero" width="230" height="230"/>
+</svg>
