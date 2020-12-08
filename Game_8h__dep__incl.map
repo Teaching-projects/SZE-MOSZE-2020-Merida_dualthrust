@@ -1,4 +1,9 @@
 <map id="Game.h" name="Game.h">
-<area shape="rect" id="node1" title="Game class." alt="" coords="34,5,107,32"/>
-<area shape="rect" id="node2" href="$PreparedGame_8h.html" title="PreparedGame class." alt="" coords="5,80,136,107"/>
+<area shape="rect" id="node1" title="Game class." alt="" coords="380,5,453,32"/>
+<area shape="rect" id="node2" href="$SVGRenderer_8h_source.html" title=" " alt="" coords="116,80,235,107"/>
+<area shape="rect" id="node5" href="$HeroTextRenderer_8h_source.html" title=" " alt="" coords="259,80,409,107"/>
+<area shape="rect" id="node6" href="$PreparedGame_8h.html" title="PreparedGame class." alt="" coords="434,80,565,107"/>
+<area shape="rect" id="node7" href="$ObserverTextRenderer_8h_source.html" title=" " alt="" coords="589,80,767,107"/>
+<area shape="rect" id="node3" href="$HeroSVGRenderer_8h_source.html" title=" " alt="" coords="5,155,156,181"/>
+<area shape="rect" id="node4" href="$ObserverSVGRenderer_8h_source.html" title=" " alt="" coords="181,155,359,181"/>
 </map>

@@ -72,81 +72,13 @@ Bevezető</h1>
 <p>A 'Modern szoftverfejlesztési eszközök' órára készült projekt. A kód c++ nyelven íródik, a projekt célja egy régi típusú parancssori RPG-re hasonlító játék megírása OOP alapelvek követésével és természetesen a modern szoftverfejlesztési eszközök használatával.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 A program működése</h1>
-<p>A projekt keretein belül készített program egy hős és szörnyek harcát játsza le. Harc közben hősünk felfedez egy dungeon-t ahol szörnyekkel harcol. A harc közben megszerzett tapasztalat alapján szintet is lép, amely során életereje, támadási, védekezési ereje, támadási ideje és látótávolsága változik. A játék addig tart, ameddig van szörny a pályán, vagy a hős meg nem hal. A program indításához szükséges egy <a class="el" href="classJSON.html" title="JSON namespace.">JSON</a> fájl, ami tartalmazza a játék lefutásához szükséges adatokat <b>Példa a fájl (preparedgame.json) tartalmára:</b> { "map" : "./maps/map_1.txt", "hero" : "./units/Dark_Wanderer.json", "monster-1" : "./units/Fallen.json", "monster-2" : "./units/Zombie.json", "monster-3" : "./units/Blood_Raven.json" } <b>Példa a játék indítására:</b> </p><div class="fragment"><div class="line">./a.out preparedgame.json</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
-Helytelen input:</h2>
-<p>A program a parancssorba printeli a helyes sémát, majd kilép. </p>
-<h2><a class="anchor" id="autotoc_md4"></a>
-Helyes input:</h2>
-<p>A hős elindul a pályán, és megpróbálja megölni az összes szörnyet. A pályának a hős csak egy adott részét látja, amire kiterjed a látótávolsága. </p>
-<h3><a class="anchor" id="autotoc_md5"></a>
-A hős mozgása az alábbi parancsokkal irányítható a játék során:</h3>
-<p><b>north</b>; <b>south</b>; <b>west</b>; <b>east</b></p>
-<h2><a class="anchor" id="autotoc_md6"></a>
-Teli térkép &lt;em&gt;&lt;strong&gt;(MarkedMap)&lt;/strong&gt;&lt;/em&gt;</h2>
-<p>Meg van adva a pálya alaprajza, azon pedig a hős és a szörnyek pozíciója <em><b>Jelölések:</b></em> </p>
-<h1><a class="anchor" id="autotoc_md7"></a>
-= Fal</h1>
-<p>szóköz = Szabad mező H = Hős pozíciója számok (1-3) = Különböző szörnyek pozíciója <em><b>Példa térkép:</b></em> </p><div class="fragment"><div class="line"><span class="preprocessor">##############</span></div>
-<div class="line"><span class="preprocessor"># H #   ###  #</span></div>
-<div class="line"><span class="preprocessor"># ####22##  #</span></div>
-<div class="line"><span class="preprocessor"># 12# 3##  #</span></div>
-<div class="line"><span class="preprocessor">###1# ##  #</span></div>
-<div class="line"><span class="preprocessor">#     1   #</span></div>
-<div class="line"><span class="preprocessor">###########</span></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md8"></a>
-Hős &lt;em&gt;&lt;strong&gt;(Hero)&lt;/strong&gt;&lt;/em&gt;</h3>
-<p>A hős adatai egy <a class="el" href="classJSON.html" title="JSON namespace.">JSON</a> fájlban vannak tárolva </p>
-<h4><a class="anchor" id="autotoc_md9"></a>
-&lt;em&gt;&lt;strong&gt;Példa:&lt;/strong&gt;&lt;/em&gt;</h4>
-<p><em><b>A hős neve:</b></em> name <em><b>Kezdeti életereje:</b></em> base_health_points <em><b>Kezdeti fizikai támadó ereje:</b></em> base_damage <em><b>Kezdeti mágikus támadó ereje:</b></em> base_magical-damage <em><b>Kezdeti védekező ereje (fizikai támadással szemben):</b></em> base_defense <em><b>Kezdeti látótávja mezőkben:</b></em> light_radius <em><b>Kezdeti támadósebessége (sec):</b></em> base_attack_cooldown <em><b>Szükséges tapasztalati egy szintlépéshez:</b></em> experience_per_level <em><b>Plusz életerő szintenként:</b></em> health_point_bonus_per_level <em><b>Plusz fizikai támadóerő szintenként:</b></em> damage_bonus_per_level <em><b>Plusz mágikus támadóerő szintenként:</b></em> magicaldamage_bonus_per_level <em><b>Plusz védekező erő szintenként:</b></em> defense_bonus_per_level <em><b>Támadósebesség szorzó szintenként:</b></em> cooldown_multiplier_per_level </p><div class="fragment"><div class="line">{</div>
-<div class="line">    &quot;name&quot; : &quot;Prince Aidan&quot;,</div>
-<div class="line">    &quot;base_health_points&quot; : 30,</div>
-<div class="line">    &quot;base_damage&quot; : 3,</div>
-<div class="line">    &quot;base_magical-damage&quot; : 2,</div>
-<div class="line">    &quot;base_defense&quot; : 1,</div>
-<div class="line">    &quot;light_radius&quot; : 2,</div>
-<div class="line">    &quot;base_attack_cooldown&quot; : 1.1,</div>
-<div class="line">    &quot;experience_per_level&quot; : 20,</div>
-<div class="line">    &quot;health_point_bonus_per_level&quot; : 5,</div>
-<div class="line">    &quot;damage_bonus_per_level&quot; : 1,</div>
-<div class="line">    &quot;magicaldamage_bonus_per_level&quot; : 1,</div>
-<div class="line">    &quot;defense_bonus_per_level&quot; : 1,</div>
-<div class="line">    &quot;cooldown_multiplier_per_level&quot;: 0.9</div>
-<div class="line">}</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md10"></a>
-Szörny &lt;em&gt;&lt;strong&gt;(Monster)&lt;/strong&gt;&lt;/em&gt;</h3>
-<p>A szörny adatai szintén egy <a class="el" href="classJSON.html" title="JSON namespace.">JSON</a> fájlban vannak tárolva <em><b>(4 különböző szörny létezik)</b></em> </p>
-<h4><a class="anchor" id="autotoc_md11"></a>
-&lt;em&gt;&lt;strong&gt;Példa:&lt;/strong&gt;&lt;/em&gt;</h4>
-<p><em><b>A szörny háttértörténete:</b></em> lore <em><b>Neve:</b></em> name <em><b>Életereje:</b></em> health_points <em><b>Védekező ereje:</b></em> defense <em><b>Fizikai támadóereje:</b></em> damage <em><b>Mágikus támadóereje:</b></em> magical-damage <em><b>Támadási sebessége (sec):</b></em> attack_cooldown <em><b>Faja:</b></em> race </p><div class="fragment"><div class="line">{</div>
-<div class="line">    &quot;lore&quot; : &quot;The lowest rank of the undead, zombies befoul much of the wilderness of the Western Kingdoms, as well as the tombs and crypts of the whole of Sanctuary. Zombies serve the darkness blindly and without thought, attacking only with their bare hands. They move slowly, but with relentless determination, seeking to consume the flesh of the living. They are simple-minded and easily outwitted, but in large groups can overwhelm the unwary.&quot;,</div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line">    &quot;name&quot; : &quot;Zombie&quot;,</div>
-<div class="line">    &quot;health_points&quot; : 10, </div>
-<div class="line">    &quot;defense&quot; : 2, </div>
-<div class="line">    &quot;damage&quot; : 1, &quot;attack_cooldown&quot; : 2.8,</div>
-<div class="line">    &quot;magical-damage&quot; : 1,</div>
-<div class="line">    &quot;race&quot; : &quot;undead&quot;</div>
-<div class="line">}</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md12"></a>
-Megjelenítés</h3>
-<h2><a class="anchor" id="autotoc_md13"></a>
-Tesztek</h2>
-<h3><a class="anchor" id="autotoc_md14"></a>
-In-output teszt</h3>
-<p>Helyes input esetben egy szkript leteszteli, hogy a kapott kimenet a valós értékeket közli-e. A program parancssorba printeli, hogy a kimenet helyes, vagy sem. </p>
-<h3><a class="anchor" id="autotoc_md15"></a>
-Unit tesztek</h3>
-<p>A program egyes komponenseit tesztelik, googletest segítségével futtatjuk őket. </p>
-<h3><a class="anchor" id="autotoc_md16"></a>
-Memória hibák ellenőrzése</h3>
-<p>Valgrind segítségével derítjük fel a memory leak-eket és az egyéb memória hibákat. Az alábbi beállításokkal használjuk a Valgrindot: </p><div class="fragment"><div class="line">valgrind -s --leak-check=full --track-origins=yes</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md17"></a>
-Csapattagok</h2>
+<p>A projekt keretein belül készített program egy hős és szörnyek harcát játsza le. Harc közben a felek a megszerzett tapasztalat alapján szintet is lépnek, amely során életerejük, támadásuk ereje és támadási idejük változik. Futásához bemeneti paramétereket vár, a következő séma alapján:</p>
+<p><b>KarakterNev(string) KarakterHP(int) KarakterATK(int) KarakterACD(double) KarakterXPperSzint(int) KarakterHPperSzint(int) KarakterDMGperSzint(int) KarakterACDperSzint(float) EllensegNev(string) EllensegHP(int) EllensegATK(int) EllensegACD EllensegSzint(1) EllensegMaxHP EllensegTapasztalat(0) EllensegXPperSzint EllensegHPperSzint EllensegDMGPerSzint EllensegACDperSzint</b></p>
+<p>Helytelen input esetén a program a parancssorba printeli a helyes sémát, majd kilép. Helyes input esetén a hős és a szörnyek 'oda-vissza' módon támadják egymást, amíg egyikőjük életereje el nem fogy. Ez utóbbi esetben egy szkript leteszteli, hogy a kapott kimenet a valós értékeket közli-e. A program parancssorba printeli, hogy a kimenet helyes, vagy sem.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Csapattagok</h1>
 <p>Lapat Krisztián\ Lilik Ferenc\ Nemes Tamás</p>
-<p>A dokumentáció Doxygen segítségével készült, Az alábbi linken elérhető: <a href="https://teaching-projects.github.io/SZE-MOSZE-2020-Merida_dualthrust/index.html">https://teaching-projects.github.io/SZE-MOSZE-2020-Merida_dualthrust/index.html</a> </p>
+<p>Github pages dokumentáció: <a href="https://teaching-projects.github.io/SZE-MOSZE-2020-Merida_dualthrust/index.html">https://teaching-projects.github.io/SZE-MOSZE-2020-Merida_dualthrust/index.html</a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
