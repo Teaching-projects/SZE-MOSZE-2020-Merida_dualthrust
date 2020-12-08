@@ -37,10 +37,10 @@ ObserverTextRenderer.o: ObserverTextRenderer.cpp ObserverTextRenderer.h TextRend
 SvgRenderer.o: SVGRenderer.h Renderer.h Game.h
 	$(COMPILER) $(COMPILERFLAGS) -c SvgRenderer.h
 
-HeroSVGRenderer.o: HeroSVGRenderer.cpp HeroSVGRenderer.h SvgRenderer.h 
+HeroSVGRenderer.o: HeroSVGRenderer.cpp HeroSVGRenderer.h SVGRenderer.h 
 	$(COMPILER) $(COMPILERFLAGS) -c HeroSVGRenderer.cpp
 
-ObserverSVGRenderer.o: ObserverSVGRenderer.cpp ObserverSVGRenderer.h SvgRenderer.h 
+ObserverSVGRenderer.o: ObserverSVGRenderer.cpp ObserverSVGRenderer.h SVGRenderer.h 
 	$(COMPILER) $(COMPILERFLAGS) -c ObserverSVGRenderer.cpp
 
 Game.o: Game.cpp Hero.h Monster.h Map.h
