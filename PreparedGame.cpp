@@ -8,7 +8,7 @@
 Game::Game(){};
 
 PreparedGame::~PreparedGame(){
-    delete hero;
+  delete hero;
 }
 
 PreparedGame::PreparedGame(std::string path){ 
@@ -32,11 +32,11 @@ PreparedGame::PreparedGame(std::string path){
               if(line[i] == 'H'){
                 putHero(new Hero(h), row, i);
               }else if(line[i]=='1'){
-                putMonster(new Monster(monster_1), row, i);
+                putMonster(Monster(monster_1), row, i);
               }else if(line[i]=='2'){
-                putMonster(new Monster(monster_2), row, i);
+                putMonster(Monster(monster_2), row, i);
               }else if(line[i]=='3'){
-                putMonster(new Monster(monster_2), row, i);
+                putMonster(Monster(monster_2), row, i);
               }
           }
           row++;

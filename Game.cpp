@@ -66,13 +66,13 @@ bool Game::anyMonstersAlive()
     return false;
 }
 
-void Game::putMonster(Monster *monster, int row, int column)
+void Game::putMonster(Monster monster, int row, int column)
 {
     if(map->get(row, column) != Map::type::Wall && map->get(row, column) != Map::type::Hero)
     {
-        monster->setPosition(row, column);
+        monster.setPosition(row, column);
         //We set the monsters pointer to a certain tile
-        monster_map[row][column].push_back(*monster);
+        monster_map[row][column].push_back(monster);
 
         //If there are MONSTERS on a certain tile we set its type to 4. If there were no monsters on the tile and now there will be ONE, we set it to 3.
         int tile = (monster_map[row][column].size()>1) ? 4 : 3;
