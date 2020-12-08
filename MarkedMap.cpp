@@ -39,4 +39,5 @@ MarkedMap::MarkedMap(std::string path)
         }
         map.push_back(map_row);
     }
+    longest_column_size = map.size();
 }

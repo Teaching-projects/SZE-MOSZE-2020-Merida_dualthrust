@@ -57,10 +57,9 @@ Map::Map(std::string path)
         {
             longest_row_size=line.length();
         }
-
         map.push_back(map_row);
     }
-
+    longest_column_size = map.size();
 }
 
 void Map::drawMap(const int viewrange, int hero_row, int hero_column) const

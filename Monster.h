@@ -38,7 +38,7 @@ public:
      * 
      * @return Monster
      */
-    Monster(const std::string&, int, Damage, int, const double);
+    Monster(const std::string&, int, Damage, int, const double, std::string);
     
     /**
      * @brief Copy construct for Monster class
@@ -47,9 +47,13 @@ public:
      * 
      * @return Monster
      */
-    Monster(const Monster &m2): name(m2.name),healthPoint(m2.healthPoint),damage(m2.damage),defense(m2.defense),cooldown(m2.cooldown)
+    Monster(const Monster &m2): name(m2.name),healthPoint(m2.healthPoint),damage(m2.damage),defense(m2.defense),cooldown(m2.cooldown),texture(m2.texture)
     {
 
+    }
+
+    std::string getTexture(){
+        return texture;
     }
 
     /**
@@ -174,10 +178,6 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const Monster& character);
 
 protected:
-    /**
-     * @brief Name of the unit
-     * 
-     */
     const std::string name;
 
     /**
@@ -202,6 +202,13 @@ protected:
      * 
      */
     float cooldown;
+
+    /**
+     * @brief Texture of the unit
+     * 
+     */
+    const std::string texture;
+
 
     /**
      * @brief Represents the unit's current coordinates on the game map

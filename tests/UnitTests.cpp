@@ -27,7 +27,7 @@ TEST(unitTests, MonsterCopyConstructor){
 }
 
 TEST(unitTests, isAlive){
-    Monster dead = Monster("Dead",0,Damage(100,100),0,0);
+    Monster dead = Monster("Dead",0,Damage(100,100),0,0,"./SVGs/monster.svg");
     ASSERT_EQ(dead.isAlive(), false);
 }
 
@@ -44,33 +44,33 @@ TEST(unitTests, getName){
 }
 
 TEST(unitTests, getHealth){
-    Monster healthy = Monster("Healthy",1000,Damage(1000,1000),1000,1000);
+    Monster healthy = Monster("Healthy",1000,Damage(1000,1000),1000,1000,"./SVGs/monster.svg");
     ASSERT_EQ(healthy.getHealthPoints(), 1000);
 }
 
 TEST(unitTests, getPhysicalDamage){
-    Monster strong = Monster("strong",1000,Damage(1000,1000),1000,1000);
+    Monster strong = Monster("strong",1000,Damage(1000,1000),1000,1000,"./SVGs/monster.svg");
     ASSERT_EQ(strong.getPhysicalDamage(), 1000);
 }
 
 TEST(unitTests, getMagicalDamage){
-    Monster stronger = Monster("stronger",1000,Damage(1000,1000),1000,1000);
+    Monster stronger = Monster("stronger",1000,Damage(1000,1000),1000,1000,"./SVGs/monster.svg");
     ASSERT_EQ(stronger.getMagicalDamage(), 1000);
 }
 
 TEST(unitTests, getDefense){
-    Monster defender = Monster("defender",1000,Damage(1000,1000),1000,1000);
+    Monster defender = Monster("defender",1000,Damage(1000,1000),1000,1000,"./SVGs/monster.svg");
     ASSERT_EQ(defender.getDefense(), 1000);
 }
 
 TEST(unitTests, getACD){
-    Monster strong = Monster("strong",1000,Damage(1000,1000),1000,1000);
+    Monster strong = Monster("strong",1000,Damage(1000,1000),1000,1000,"./SVGs/monster.svg");
     ASSERT_EQ(strong.getAttackCoolDown(), 1000);
 }
 
 TEST(unitTests, sufferDamage){
-    Monster attacker = Monster("Attacker",10,Damage(10,10),10,10);
-    Monster dead = Monster("Dead",1,Damage(100,100),1,1);
+    Monster attacker = Monster("Attacker",10,Damage(10,10),10,10,"./SVGs/monster.svg");
+    Monster dead = Monster("Dead",1,Damage(100,100),1,1,"./SVGs/monster.svg");
     dead.sufferDamage(&attacker);
     ASSERT_EQ(dead.isAlive(), false);
 }
@@ -92,8 +92,8 @@ TEST(unitTests, parseHero){
 }
 
 TEST(unitTests, levelUp){
-    Hero hero = Hero("Hero",100,Damage(100,100),100,100,100,100,100,100,100,100,100,2);
-    Monster enemy = Monster("Monster",100,Damage(100,100),1,1);
+    Hero hero = Hero("Hero",100,Damage(100,100),100,100,100,100,100,100,100,100,100,2,"./SVGs/hero.svg");
+    Monster enemy = Monster("Monster",100,Damage(100,100),1,1,"./SVGs/monster.svg");
     hero.fightTilDeath(enemy);
     //This levelup test also test the constructor, the fighttildeath method etc
     ASSERT_EQ(hero.getLevel(),2);
