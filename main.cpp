@@ -9,6 +9,10 @@
 #include <list>
 
 #include "PreparedGame.h"
+#include "ObserverTextRenderer.h"
+#include "HeroTextRenderer.h"
+#include "ObserverSVGRenderer.h"
+#include "HeroSVGRenderer.h"
 
 
 const std::map<int,std::string> error_messages = {
@@ -31,7 +35,13 @@ int main(int argc, char** argv){
 
     try { 
         PreparedGame game(argv[1]);
-        
+        //Register renderers (one of each)
+        std::ofstream observer_stream = std::ofstream("./renderer outputs/observer_text_output.txt");
+        std::ofstream hero_stream = std::ofstream("./renderer outputs/hero_text_output.txt");
+        game.registerRenderer(new ObserverTextRenderer(observer_stream));
+        game.registerRenderer(new HeroTextRenderer(hero_stream));
+        game.registerRenderer(new ObserverSVGRenderer("./renderer outputs/observer_output.svg"));
+        game.registerRenderer(new HeroSVGRenderer("./renderer outputs/character_output.svg"));
         //If there are two arguments, we passed '-test' to the program
         //In that case, the 'is test' flag is true, we pass it to the run method
        game.run(argc == 3);

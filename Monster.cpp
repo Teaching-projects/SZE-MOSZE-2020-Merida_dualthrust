@@ -5,7 +5,7 @@
 #include <string>
 
     //Constructor
-    Monster::Monster(const std::string& characterName, int characterHP, Damage dmg, int characterDEF, const double characterACD):name(characterName), healthPoint(characterHP), damage(dmg), defense(characterDEF), cooldown(characterACD)
+    Monster::Monster(const std::string& characterName, int characterHP, Damage dmg, int characterDEF, const double characterACD, const std::string texture):name(characterName), healthPoint(characterHP), damage(dmg), defense(characterDEF), cooldown(characterACD), texture(texture)
     {
 
     }
@@ -65,8 +65,8 @@
         Damage damage = Damage(data.get<int>("damage"), data.get<int>("magical-damage"));
         int def             =   std::stoi(data.get<std::string>("defense"));
         float cooldown      =   std::stof(data.get<std::string>("attack_cooldown"));
-
-        return Monster(name, healthPoints, damage, def, cooldown);
+        std::string texture =   data.get<std::string>("texture");
+        return Monster(name, healthPoints, damage, def, cooldown, texture);
     }
 
     //Convenience method for simple checking

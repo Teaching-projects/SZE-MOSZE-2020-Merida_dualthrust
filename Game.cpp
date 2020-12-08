@@ -7,7 +7,7 @@
 #include <map>
 #include <algorithm>
 #include "Game.h"
-
+#include "Renderer.h"
 
 Game::Game(std::string map_file_path)
 {
@@ -17,6 +17,23 @@ Game::Game(std::string map_file_path)
 Game::~Game()
 {
     delete map;
+
+    for(unsigned int i=0;i<renderers.size();i++){
+        delete renderers[i];
+    }
+}
+
+void Game::registerRenderer(Renderer *renderer)
+{
+    this->renderers.push_back(renderer);
+}
+
+void Game::render()
+{
+    for (auto renderer : this->renderers)
+    {
+        renderer->render(*this);
+    }
 }
 
 void Game::setMap(Map* incoming_map)
@@ -114,6 +131,7 @@ void Game::run(bool is_test)
         while (hero->isAlive() && anyMonstersAlive())
         {
             map->drawMap(hero->getLightRadius(), hero->getPosition().first, hero->getPosition().second);
+            render();
             std::cout<<"[north] [east] [south] [west]\n"<<std::endl;
             std::cout<<"Choose a direction:"<<std::endl;
 

@@ -1,0 +1,8 @@
+<svg x="Ł" y="ß" width="10" height="10" viewBox="0 0 230 230">
+  <defs>
+    <style>
+      .wall { fill: #242424; stroke: #000000; }
+    </style>
+  </defs>
+  <rect class="wall" width="230" height="230"/>
+</svg>
