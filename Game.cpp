@@ -17,6 +17,10 @@ Game::Game(std::string map_file_path)
 Game::~Game()
 {
     delete map;
+
+    for(int i=0;i<renderers.size();i++){
+        delete renderers[i];
+    }
 }
 
 void Game::registerRenderer(Renderer *renderer)
