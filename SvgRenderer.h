@@ -45,11 +45,9 @@ public:
         return content;
     }
 
-    std::string setCoords(std::string fileContent, int x, int y) const
+    std::string setCoords(std::string svg_raw, int x, int y) const
     {
-        fileContent = fileContent.replace(fileContent.find("\"Ł\""),3, "\""+std::to_string(x));
-        fileContent = fileContent.replace(fileContent.find("\"ß\""),3, "\""+std::to_string(y));
-        return fileContent;
+        return svg_raw.replace(svg_raw.find("\"Ł\""),3, "\""+std::to_string(x)).replace(svg_raw.find("\"ß\""),3, "\""+std::to_string(y));
     }
 
 };
