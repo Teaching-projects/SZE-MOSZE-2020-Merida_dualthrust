@@ -1,5 +1,4 @@
 #include "ObserverTextRenderer.h"
-#include "map.h"
 
 void ObserverTextRenderer::render(const Game &game) const
 {

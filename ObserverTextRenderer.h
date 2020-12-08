@@ -14,6 +14,7 @@
 
 #include "TextRenderer.h"
 #include "Game.h"
+#include "map.h"
 
 class ObserverTextRenderer : public TextRenderer
 {

@@ -1,5 +1,4 @@
 #include "HeroTextRenderer.h"
-#include "map.h"
 
 void HeroTextRenderer::render(const Game &game) const
 {
