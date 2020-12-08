@@ -28,10 +28,10 @@ Renderer.o: Renderer.h
 TextRenderer.o: TextRenderer.h Renderer.h
 	$(COMPILER) $(COMPILERFLAGS) -c TextRenderer.h
 
-HeroTextRenderer.o: HeroTextRenderer.cpp HeroTextRenderer.h TextRenderer.h 
+HeroTextRenderer.o: HeroTextRenderer.cpp HeroTextRenderer.h TextRenderer.h Map.h
 	$(COMPILER) $(COMPILERFLAGS) -c HeroTextRenderer.cpp
 
-ObserverTextRenderer.o: ObserverTextRenderer.cpp ObserverTextRenderer.h TextRenderer.h
+ObserverTextRenderer.o: ObserverTextRenderer.cpp ObserverTextRenderer.h TextRenderer.h Map.h
 	$(COMPILER) $(COMPILERFLAGS) -c ObserverTextRenderer.cpp
 
 SvgRenderer.o: SVGRenderer.h Renderer.h Game.h
