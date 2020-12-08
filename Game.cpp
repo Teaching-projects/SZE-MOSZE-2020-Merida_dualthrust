@@ -18,7 +18,7 @@ Game::~Game()
 {
     delete map;
 
-    for(int i=0;i<renderers.size();i++){
+    for(unsigned int i=0;i<renderers.size();i++){
         delete renderers[i];
     }
 }
