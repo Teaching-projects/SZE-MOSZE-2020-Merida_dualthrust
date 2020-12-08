@@ -151,40 +151,56 @@ TEST(unitTests, DamageMultiplicationEq)
 
 TEST(unitTests, PutHeroFree)
 {
-    Game game("../maps/map_for_gametest.txt");
+    Game game("../maps/map_for_test.txt");
     Hero hero = Hero::parse("../Dark_Wanderer.json");
     ASSERT_NO_THROW(game.putHero(&hero, 1, 1));
 }
 
 TEST(unitTests, PutHeroWall)
 {
-    Game game("../maps/map_for_gametest.txt");
+    Game game("../maps/map_for_test.txt");
     Hero hero = Hero::parse("../Dark_Wanderer.json");
     ASSERT_THROW(game.putHero(&hero, 0, 0), Game::OccupiedException);
 }
 
 TEST(unitTests, PutMonsterFree)
 {
-    Game game("../maps/map_for_gametest.txt");
+    Game game("../maps/map_for_test.txt");
     Monster monster = Monster::parse("../Fallen.json");
     ASSERT_NO_THROW(game.putMonster(monster, 1, 1));
 }
 
 TEST(unitTests, PutMonsterWall)
 {
-    Game game("../maps/map_for_gametest.txt");
+    Game game("../maps/map_for_test.txt");
     Monster monster = Monster::parse("../Fallen.json");
     ASSERT_THROW(game.putMonster(monster, 0, 0), Game::OccupiedException);
 }
 
 //Test for the Map class 
 // It has 9 public functions,
-//THESE NEED TO BE DONE
-//Map(), ~Map(), Map(filepath), getHeroPosition(),
+//Map(), ~Map(), Map(filepath), get(y,x)
+//THESE NEED TO BE DONE getHeroPosition(),
 //getMonsterPositions(char), setHeroPosition(pair(first is row, second is column)), 
 //drawMap(viewrange, hero row, hero column), setTile(row, column, type)
+TEST(unitTests, MapEmptyConstructor)
+{    
+    ASSERT_NO_THROW(Map map());
+}
+TEST(unitTests, MapConstructor)
+{    
+    Map map("../maps/map_for_test.txt");
+    ASSERT_EQ(map.get(0,0),1);
+}
+TEST(unitTests, Mapget)
+{    
+    Map map("../maps/map_for_test.txt");
+    ASSERT_EQ(map.get(0,0),1);
+    ASSERT_EQ(map.get(1,1),0);
+}
 
 //Test for the PreparedGame class 
+// ALL DONE ASIDE FROM DESTRUCTOR
 // It has 3 public functions, 
 //THESE NEED TO BE DONE
 //PreparedGame(), ~PreparedGame(), PreparedGame(filepath)
@@ -198,9 +214,16 @@ TEST(unitTests, PreparedGameConstructor)
 }
 
 //Test for the MarkedMap class 
+// ALL DONE ASIDE FROM DESTRUCTOR
 // It has 2 public functions, 
 //THESE NEED TO BE DONE
 //~MarkedMap(), MarkedMap(filepath)
+TEST(unitTests, MarkedMapConstructor)
+{    
+    MarkedMap markedmap("../maps/map_1.txt");
+    ASSERT_EQ(markedmap.get(0,0),1);
+    ASSERT_EQ(markedmap.get(0,0),1);
+}
 
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
