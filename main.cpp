@@ -12,6 +12,7 @@
 #include "Renderer.h"
 #include "ObserverTextRenderer.h"
 #include "ObserverSVGRenderer.h"
+#include "CharacterSVGRenderer.h"
 
 
 const std::map<int,std::string> error_messages = {
@@ -37,6 +38,7 @@ int main(int argc, char** argv){
         std::ofstream stream = std::ofstream("log.txt");
         game.registerRenderer(new ObserverTextRenderer(stream));
         game.registerRenderer(new ObserverSVGRenderer("observer_output.svg"));
+        game.registerRenderer(new CharacterSVGRenderer("character_output.svg"));
         //If there are two arguments, we passed '-test' to the program
         //In that case, the 'is test' flag is true, we pass it to the run method
        game.run(argc == 3);
