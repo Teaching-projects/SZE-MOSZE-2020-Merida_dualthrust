@@ -1,8 +1,10 @@
 #include "../Damage.h"
 #include "../Game.cpp"
+#include "../PreparedGame.cpp"
 #include "../Hero.cpp"
 #include "../JSON.cpp"
 #include "../Map.cpp"
+#include "../MarkedMap.cpp"
 #include "../Monster.cpp"
 #include <gtest/gtest.h>
 
