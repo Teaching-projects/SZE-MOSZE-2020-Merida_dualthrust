@@ -9,7 +9,6 @@
 #include <list>
 
 #include "PreparedGame.h"
-#include "Renderer.h"
 #include "ObserverTextRenderer.h"
 #include "HeroTextRenderer.h"
 #include "ObserverSVGRenderer.h"

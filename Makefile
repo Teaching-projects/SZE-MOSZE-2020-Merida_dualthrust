@@ -25,7 +25,7 @@ Map.o: Map.cpp Map.h
 Game.o: Game.cpp Hero.h Monster.h Map.h
 	$(COMPILER) $(COMPILERFLAGS) -c Game.cpp
 
-main.o: main.cpp Monster.h Hero.h
+main.o: main.cpp Monster.h Hero.h ObserverSVGRenderer.h HeroSVGRenderer.h HeroTextRenderer.h ObserverTextRenderer.h 
 	$(COMPILER) $(COMPILERFLAGS) -c main.cpp
 
 MarkedMap.o: MarkedMap.cpp MarkedMap.h Map.h
