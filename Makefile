@@ -1,4 +1,4 @@
-OBJECTS := JSON.o Monster.o Hero.o Map.o Game.o main.o MarkedMap.o PreparedGame.o Renderer.o TextRenderer.o HeroTextRenderer.o ObserverTextRenderer.o SvgRenderer.o HeroSVGRenderer.o ObserverSVGRenderer.o
+OBJECTS := JSON.o Monster.o Hero.o Map.o Renderer.o TextRenderer.o HeroTextRenderer.o ObserverTextRenderer.o SvgRenderer.o HeroSVGRenderer.o ObserverSVGRenderer.o Game.o main.o MarkedMap.o PreparedGame.o
 COMPILERFLAGS := -std=c++17 -g -Wall -Werror -Wextra 
 COMPILER := g++
 
