@@ -7,7 +7,7 @@ IFS=$'\n'
 
 diff results_preparedgame.txt results_correct_preparedgame.txt
 
-if [ $? -eq 0 ]
+if [ $? -eq 1 ]
 then
 echo "Test successful."
 exit 0
