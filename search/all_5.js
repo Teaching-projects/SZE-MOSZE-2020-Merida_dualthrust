@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['game_17',['Game',['../classGame.html',1,'Game'],['../classGame.html#ad59df6562a58a614fda24622d3715b65',1,'Game::Game()'],['../classGame.html#adbfa23c79bf094a7b05f8602445d678c',1,'Game::Game(std::string)']]],
+  ['game_17',['Game',['../classGame.html',1,'Game'],['../classGame.html#ad59df6562a58a614fda24622d3715b65',1,'Game::Game()'],['../classGame.html#aba2e4ed540956cf77dba5bcd4538cec7',1,'Game::Game(const Game &amp;g2)'],['../classGame.html#adbfa23c79bf094a7b05f8602445d678c',1,'Game::Game(std::string)']]],
   ['game_2eh_18',['Game.h',['../Game_8h.html',1,'']]],
   ['gamealreadystartedexception_19',['GameAlreadyStartedException',['../classGame_1_1GameAlreadyStartedException.html',1,'Game::GameAlreadyStartedException'],['../classGame_1_1GameAlreadyStartedException.html#a173b886c1b6d0adf4586974b896859bd',1,'Game::GameAlreadyStartedException::GameAlreadyStartedException()']]],
   ['get_20',['get',['../classMap.html#ac2058ec27a28ff2c4d737d48d570a165',1,'Map']]],
