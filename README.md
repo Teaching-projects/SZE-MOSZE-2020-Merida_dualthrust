@@ -2,13 +2,14 @@
 
 ## Bevezető
 A 'Modern szoftverfejlesztési eszközök' órára készült projekt.
-A kód c++ nyelven íródik, a projekt célja egy régi típusú parancssori
-RPG-re hasonlító játék megírása OOP alapelvek követésével és természetesen
-a modern szoftverfejlesztési eszközök használatával.
+A kód c++ nyelven íródik, a projekt célja egy parancssori
+RPG-re hasonlító játék megírása OOP alapelvek követésével és
+ modern szoftverfejlesztési eszközök használatával.
 
 ## A program működése
 A projekt keretein belül készített program egy hős és szörnyek harcát játsza le. Harc közben hősünk felfedez egy dungeon-t ahol szörnyekkel harcol. A harc közben megszerzett tapasztalat alapján szintet is lép, amely során életereje, támadási, védekezési ereje, támadási ideje és látótávolsága változik. A játék addig tart, ameddig van szörny a pályán, vagy a hős meg nem hal.
 A program indításához szükséges egy JSON fájl, ami tartalmazza a játék lefutásához szükséges adatokat
+
 **Példa a fájl (preparedgame.json) tartalmára:**
 {
   "map"  : "./maps/map_1.txt",
@@ -23,8 +24,10 @@ A program indításához szükséges egy JSON fájl, ami tartalmazza a játék l
 ```
 ### Helytelen input: 
 A program a parancssorba printeli a helyes sémát, majd kilép.
+
 ### Helyes input: 
 A hős elindul a pályán, és megpróbálja megölni az összes szörnyet. A pályának a hős csak egy adott részét látja, amire kiterjed a látótávolsága.
+
 #### A hős mozgása az alábbi parancsokkal irányítható a játék során:
 **north**; **south**; **west**; **east**
 
@@ -98,8 +101,6 @@ A szörny adatai szintén egy JSON fájlban vannak tárolva ***(3 különböző 
 ```json
     {
         "lore" : "The lowest rank of the undead, zombies befoul much of the wilderness of the Western Kingdoms, as well as the tombs and crypts of the whole of Sanctuary. Zombies serve the darkness blindly and without thought, attacking only with their bare hands. They move slowly, but with relentless determination, seeking to consume the flesh of the living. They are simple-minded and easily outwitted, but in large groups can overwhelm the unwary.",
-
-
         "name" : "Zombie",
         "health_points" : 10, 
         "defense" : 2, 
@@ -108,9 +109,16 @@ A szörny adatai szintén egy JSON fájlban vannak tárolva ***(3 különböző 
         "race" : "undead"
     }
 ```
+## Dokumentáció
+A dokumentáció Doxygen segítségével készült,
+Az alábbi linken elérhető:
+https://teaching-projects.github.io/SZE-MOSZE-2020-Merida_dualthrust/index.html
+
 ## Tesztek
+
 ### In-output teszt
-A játék helyes lefutásának teszteléséhez előre meghatározott teszt játékmenetet és egy ennek megfelelő teszt kimenetetet használunk: a teszt játékmenet kimenetét összehasonlítjuk a teszt kimenettel.
+A játék helyes lefutásának teszteléséhez előre meghatározott teszt játékmenetet és egy ennek megfelelő teszt kimenetetet használunk: a teszt játékmenet kimenetét összehasonlítjuk az elvárt eredménnyel.
+
 ### Parser tesztek
 A JSON fájlok adatainak helyes feldolgozása érdekében különböző eseteket dolgozunk fel.
 Teszt JSON fájlok típusai: 
@@ -120,9 +128,13 @@ Teszt JSON fájlok típusai:
 - Minden adat egy sorban van
 - Felesleges space-k/tabulátorok/enter-ek az adatok között
 
+### Statikus kódanalízis
+
+
 ### Unit tesztek
 A program egyes komponenseit tesztelik, googletest segítségével futtatjuk őket.
-### Memória hibák ellenőrzése
+
+### Memory leak ellenőrzés
 Valgrind segítségével derítjük fel a memory leak-eket és az egyéb memória hibákat.
 Az alábbi beállításokkal használjuk a Valgrindot:
 ```bash
@@ -132,7 +144,3 @@ valgrind -s --leak-check=full --track-origins=yes
 Lapat Krisztián\
 Lilik Ferenc\
 Nemes Tamás
-
-A dokumentáció Doxygen segítségével készült,
-Az alábbi linken elérhető:
-https://teaching-projects.github.io/SZE-MOSZE-2020-Merida_dualthrust/index.html
