@@ -95,9 +95,17 @@ Teli térkép &lt;em&gt;&lt;strong&gt;(MarkedMap)&lt;/strong&gt;&lt;/em&gt;</h2>
 <div class="line"><span class="preprocessor">#     1   #</span></div>
 <div class="line"><span class="preprocessor">###########</span></div>
 </div><!-- fragment --><h3><a class="anchor" id="autotoc_md8"></a>
+Megjelenítés</h3>
+<p>4 féle megjelenítési mód létezik a játékhoz:</p><ul>
+<li><a class="el" href="classHeroSVGRenderer.html">HeroSVGRenderer</a> - Hős látótávolságába eső mezők megjelenítése SVG képfájlba.</li>
+<li><a class="el" href="classHeroTextRenderer.html" title="HeroTextRenderer class.">HeroTextRenderer</a> - Hős látótávolságába eső mezőket jeleníti meg szöveges formában az adott output stream-re.</li>
+<li><a class="el" href="classObserverSVGRenderer.html" title="ObserverSVGRenderer class.">ObserverSVGRenderer</a> - Az egész pálya megjelenítése SVG képfájlba.</li>
+<li><a class="el" href="classObserverTextRenderer.html" title="ObserverTextRenderer class.">ObserverTextRenderer</a> - Az egész pálya megjelenítése szöveges formában az adott output stream-re. </li>
+</ul>
+<h3><a class="anchor" id="autotoc_md9"></a>
 Hős &lt;em&gt;&lt;strong&gt;(Hero)&lt;/strong&gt;&lt;/em&gt;</h3>
 <p>A hős adatai egy <a class="el" href="classJSON.html" title="JSON namespace.">JSON</a> fájlban vannak tárolva </p>
-<h4><a class="anchor" id="autotoc_md9"></a>
+<h4><a class="anchor" id="autotoc_md10"></a>
 &lt;em&gt;&lt;strong&gt;Példa:&lt;/strong&gt;&lt;/em&gt;</h4>
 <p><em><b>A hős neve:</b></em> name <em><b>Kezdeti életereje:</b></em> base_health_points <em><b>Kezdeti fizikai támadó ereje:</b></em> base_damage <em><b>Kezdeti mágikus támadó ereje:</b></em> base_magical-damage <em><b>Kezdeti védekező ereje (fizikai támadással szemben):</b></em> base_defense <em><b>Kezdeti látótávja mezőkben:</b></em> light_radius <em><b>Kezdeti támadósebessége (sec):</b></em> base_attack_cooldown <em><b>Szükséges tapasztalati egy szintlépéshez:</b></em> experience_per_level <em><b>Plusz életerő szintenként:</b></em> health_point_bonus_per_level <em><b>Plusz fizikai támadóerő szintenként:</b></em> damage_bonus_per_level <em><b>Plusz mágikus támadóerő szintenként:</b></em> magicaldamage_bonus_per_level <em><b>Plusz védekező erő szintenként:</b></em> defense_bonus_per_level <em><b>Támadósebesség szorzó szintenként:</b></em> cooldown_multiplier_per_level </p><div class="fragment"><div class="line">{</div>
 <div class="line">    &quot;name&quot; : &quot;Prince Aidan&quot;,</div>
@@ -114,10 +122,10 @@ Hős &lt;em&gt;&lt;strong&gt;(Hero)&lt;/strong&gt;&lt;/em&gt;</h3>
 <div class="line">    &quot;defense_bonus_per_level&quot; : 1,</div>
 <div class="line">    &quot;cooldown_multiplier_per_level&quot;: 0.9</div>
 <div class="line">}</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md10"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md11"></a>
 Szörny &lt;em&gt;&lt;strong&gt;(Monster)&lt;/strong&gt;&lt;/em&gt;</h3>
-<p>A szörny adatai szintén egy <a class="el" href="classJSON.html" title="JSON namespace.">JSON</a> fájlban vannak tárolva <em><b>(4 különböző szörny létezik)</b></em> </p>
-<h4><a class="anchor" id="autotoc_md11"></a>
+<p>A szörny adatai szintén egy <a class="el" href="classJSON.html" title="JSON namespace.">JSON</a> fájlban vannak tárolva <em><b>(3 különböző szörny létezik)</b></em> </p>
+<h4><a class="anchor" id="autotoc_md12"></a>
 &lt;em&gt;&lt;strong&gt;Példa:&lt;/strong&gt;&lt;/em&gt;</h4>
 <p><em><b>A szörny háttértörténete:</b></em> lore <em><b>Neve:</b></em> name <em><b>Életereje:</b></em> health_points <em><b>Védekező ereje:</b></em> defense <em><b>Fizikai támadóereje:</b></em> damage <em><b>Mágikus támadóereje:</b></em> magical-damage <em><b>Támadási sebessége (sec):</b></em> attack_cooldown <em><b>Faja:</b></em> race </p><div class="fragment"><div class="line">{</div>
 <div class="line">    &quot;lore&quot; : &quot;The lowest rank of the undead, zombies befoul much of the wilderness of the Western Kingdoms, as well as the tombs and crypts of the whole of Sanctuary. Zombies serve the darkness blindly and without thought, attacking only with their bare hands. They move slowly, but with relentless determination, seeking to consume the flesh of the living. They are simple-minded and easily outwitted, but in large groups can overwhelm the unwary.&quot;,</div>
@@ -130,9 +138,7 @@ Szörny &lt;em&gt;&lt;strong&gt;(Monster)&lt;/strong&gt;&lt;/em&gt;</h3>
 <div class="line">    &quot;magical-damage&quot; : 1,</div>
 <div class="line">    &quot;race&quot; : &quot;undead&quot;</div>
 <div class="line">}</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md12"></a>
-Megjelenítés</h3>
-<h2><a class="anchor" id="autotoc_md13"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md13"></a>
 Tesztek</h2>
 <h3><a class="anchor" id="autotoc_md14"></a>
 In-output teszt</h3>
