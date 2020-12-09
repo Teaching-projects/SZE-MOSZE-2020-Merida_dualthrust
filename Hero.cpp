@@ -27,7 +27,7 @@
     void Hero::levelUp()
     {
         maximumHealthPoint  +=  healthPointBonusPerLevel;
-        maximumHealthPoint  =   round(maximumHealthPoint);
+        maximumHealthPoint  =   round(getMaxHealthPoints());
         damage.physical     +=  damageBonusPerLevel;
         damage.magical      +=  magicaldamageBonusPerLevel;
         defense             +=  defenseBonusPerLevel;   
