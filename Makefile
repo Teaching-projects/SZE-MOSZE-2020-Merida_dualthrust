@@ -51,7 +51,7 @@ Clean:
 	rm -rf $(OBJECTS) a.out cppcheck_results.txt results_scenario_1.txt results_scenario_2.txt
 
 Static_code_analysis_cppcheck:
-	cppcheck $(CPPFILES) --output-file=cppcheck_results.txt && chmod +x warning_check.sh && ./warning_check.sh && chmod +x error_check.sh && ./error_check.sh
+	cppcheck $(CPPFILES) --enable=all --output-file=cppcheck_results.txt && chmod +x warning_check.sh && ./warning_check.sh && chmod +x error_check.sh && ./error_check.sh
 
 Memcheck:
 	valgrind $(VALGRINDFLAGS) $(VALGRINDPARAMETER)
