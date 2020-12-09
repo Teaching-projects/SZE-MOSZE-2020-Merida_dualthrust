@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['texture_213',['texture',['../classMonster.html#ae63045cce9374457e85c62e0893cd5d3',1,'Monster']]],
-  ['tilestring_214',['tileString',['../classMap.html#aecf8e06065d974b902bef55b2c3b8bc0',1,'Map']]]
+  ['position_217',['position',['../classMonster.html#a551f356faabfa8b0d3fd2aec0db53bf1',1,'Monster']]]
 ];
