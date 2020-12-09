@@ -4,7 +4,7 @@ COMPILER := g++
 
 CPPFILES := JSON.cpp Monster.cpp Hero.cpp Map.cpp ObserverSVGRenderer.cpp HeroSVGRenderer.cpp HeroTextRenderer.cpp ObserverTextRenderer.cpp Game.cpp main.cpp MarkedMap.cpp PreparedGame.cpp
 
-VALGRINDFLAGS:= --leak-check=full --error-exitcode=1 --track-origins=yes
+VALGRINDFLAGS:= --leak-check=full --error-exitcode=1 --track-origins=yes --log-file="valgrind_log.txt"
 VALGRINDPARAMETER:=  ./a.out preparedgame.json -test
 
 build: $(OBJECTS)

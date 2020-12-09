@@ -20,6 +20,11 @@ jobs:
         run: make build
       - name: Memory leak check
         run: make Memcheck
+      - name: Upload valgrind results
+        uses: actions/upload-artifact@v2  
+        with:
+          name: valgrind_log
+          path: valgrind_log.txt
       - name: In-out tests
         run: make In-out_tests
       - name: Upload results of test
