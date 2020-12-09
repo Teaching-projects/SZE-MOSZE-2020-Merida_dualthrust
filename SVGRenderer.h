@@ -29,8 +29,16 @@ protected:
 public:
     SvgRenderer(std::string filename) : filename(filename){};
 
+    /**
+     * @brief Render method responsible for creating SVG output based on a Game state.
+     * 
+     */
     virtual void render(const Game &) const = 0;
 
+    /**
+     * @brief Reads the raw data from a given SVG file. Used to fetch the different textures needed to draw the map.
+     * 
+     */
     std::string readSVG(const std::string path) const
     {
         std::ifstream svg_file(path);
@@ -45,6 +53,10 @@ public:
         return content;
     }
 
+    /**
+     * @brief Sets the coordinates for a given tile in the rendered SVG output.
+     * 
+     */
     std::string setCoords(std::string svg_raw, int x, int y) const
     {
         return svg_raw.replace(svg_raw.find("\"Ł\""),3, "\""+std::to_string(x)).replace(svg_raw.find("\"ß\""),3, "\""+std::to_string(y));
