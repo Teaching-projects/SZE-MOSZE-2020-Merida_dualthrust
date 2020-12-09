@@ -20,6 +20,10 @@ class ObserverTextRenderer : public TextRenderer
 {
 public:
     using TextRenderer::TextRenderer;
+    /**
+     * @brief Render method responsible for creating text output based on a Game state. Draws the whole map.
+     * 
+     */
     virtual void render(const Game &) const override;
 };
 

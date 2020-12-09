@@ -16,6 +16,10 @@ class HeroSVGRenderer : public SvgRenderer
 {
 public:
     using SvgRenderer::SvgRenderer;
+    /**
+     * @brief Render method responsible for creating SVG output based on a Game state, centered on the Hero and using it's light radius.
+     * 
+     */
     virtual void render(const Game &) const override;
 };
 
