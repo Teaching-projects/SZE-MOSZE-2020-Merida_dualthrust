@@ -39,6 +39,12 @@ class Map
         }
 
         /**
+         * @brief Copy constructor for Map
+         * 
+         */
+        Map(const Map &map2):map(map2.map), longest_row_size(map2.longest_row_size),longest_column_size(map2.longest_column_size){}
+
+        /**
          * @brief Vector holding the positions of all monsters.
          * 
          * The vector itself holds pair type values, the first of the pair representing the row in which the monster is, the second of the pair representing the column.

@@ -78,13 +78,14 @@ class Game
      * @brief Copy constructor for the Game class
      * 
      */
-    Game(const Game &g2) {monster_map=g2.monster_map;map=g2.map;hero=g2.hero;renderers=g2.renderers;} 
+    Game(const Game &g2) : monster_map(g2.monster_map),map(new Map(*g2.map)),hero(g2.hero),renderers(g2.renderers){} 
 
-    Game operator=(const Game& g2) {
+    Game & operator=(const Game& g2) {
         monster_map=g2.monster_map;
-        map=g2.map;
+        setMap(g2.map);
         hero=g2.hero;
         renderers=g2.renderers;
+        return *this;
     }
 
     /**
