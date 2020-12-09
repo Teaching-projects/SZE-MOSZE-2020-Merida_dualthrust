@@ -1,0 +1,13 @@
+<map id="Damage.h" name="Damage.h">
+<area shape="rect" id="node1" title=" " alt="" coords="461,5,551,32"/>
+<area shape="rect" id="node2" href="$Monster_8h.html" title="Monster class." alt="" coords="504,80,591,107"/>
+<area shape="rect" id="node3" href="$Hero_8h.html" title="Hero class." alt="" coords="439,155,504,181"/>
+<area shape="rect" id="node4" href="$Game_8h.html" title="Game class." alt="" coords="487,229,560,256"/>
+<area shape="rect" id="node11" href="$JSON_8h.html" title=" " alt="" coords="579,155,646,181"/>
+<area shape="rect" id="node5" href="$SVGRenderer_8h_source.html" title=" " alt="" coords="116,304,235,331"/>
+<area shape="rect" id="node8" href="$HeroTextRenderer_8h_source.html" title=" " alt="" coords="259,304,409,331"/>
+<area shape="rect" id="node9" href="$PreparedGame_8h.html" title="PreparedGame class." alt="" coords="637,304,767,331"/>
+<area shape="rect" id="node10" href="$ObserverTextRenderer_8h_source.html" title=" " alt="" coords="434,304,613,331"/>
+<area shape="rect" id="node6" href="$HeroSVGRenderer_8h_source.html" title=" " alt="" coords="5,379,156,405"/>
+<area shape="rect" id="node7" href="$ObserverSVGRenderer_8h_source.html" title=" " alt="" coords="181,379,359,405"/>
+</map>
