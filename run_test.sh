@@ -2,7 +2,7 @@
 
 IFS=$'\n'
 
-./a.out preparedgame.json -test >>output_test.txt
+./a.out preparedgame.json -test >> output_test.txt
 
 diff output_test_correct.txt output_test.txt
 
