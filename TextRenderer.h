@@ -37,7 +37,7 @@ public:
      * @brief Function for drawing the Game& we want
      * 
      */
-    virtual void render(const Game &) const = 0;
+    virtual void render(const Game &) const override = 0;
 
     /**
      * @brief Set the Output Stream object

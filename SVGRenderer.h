@@ -42,7 +42,7 @@ public:
      * @brief Render method responsible for creating SVG output based on a Game state.
      *
      */
-    virtual void render(const Game &) const = 0;
+    virtual void render(const Game &) const override = 0;
     /**
      * @brief Reading the SVG file we want to use
      * 
