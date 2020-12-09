@@ -25,5 +25,5 @@ jobs:
       - name: Upload results of test
         uses: actions/upload-artifact@v2  
         with:
-          name: results_preparedgame
-          path: results_preparedgame.txt
+          name: hero_text_output
+          path: ./renderer outputs/hero_text_output.txt
