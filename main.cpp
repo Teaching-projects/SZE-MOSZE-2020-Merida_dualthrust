@@ -42,6 +42,8 @@ int main(int argc, char** argv){
         game.registerRenderer(new HeroTextRenderer(hero_stream));
         game.registerRenderer(new ObserverSVGRenderer("./renderer outputs/observer_output.svg"));
         game.registerRenderer(new HeroSVGRenderer("./renderer outputs/character_output.svg"));
+        std::ofstream output_test_stream = std::ofstream("output_test_render.txt");
+        game.registerRenderer(new HeroTextRenderer(output_test_stream ));
         //If there are two arguments, we passed '-test' to the program
         //In that case, the 'is test' flag is true, we pass it to the run method
        game.run(argc == 3);
