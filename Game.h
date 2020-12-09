@@ -74,6 +74,12 @@ class Game
      */
     ~Game();
 
+    /**
+     * @brief Copy constructor for the Game class
+     * 
+     */
+    Game(const Game &g2) {monster_map=g2.monster_map;map=g2.map;hero=g2.hero;renderers=g2.renderers;} 
+
     void registerRenderer(Renderer *renderer);
 
     Monster getMonsterByPosition(int col, int row) const{
