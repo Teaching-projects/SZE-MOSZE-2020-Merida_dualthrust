@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['level_209',['level',['../classHero.html#a42f1236a8e4a3f8c7e47193e544ee01f',1,'Hero']]],
-  ['lightradius_210',['lightradius',['../classHero.html#aa6650f060d04d9a09cda5a5924c5d086',1,'Hero']]],
-  ['lightradiusbonusperlevel_211',['lightradiusBonusPerLevel',['../classHero.html#ae5bc52068157fd4e56da6579d08b575c',1,'Hero']]]
+  ['level_213',['level',['../classHero.html#a42f1236a8e4a3f8c7e47193e544ee01f',1,'Hero']]],
+  ['lightradius_214',['lightradius',['../classHero.html#aa6650f060d04d9a09cda5a5924c5d086',1,'Hero']]],
+  ['lightradiusbonusperlevel_215',['lightradiusBonusPerLevel',['../classHero.html#ae5bc52068157fd4e56da6579d08b575c',1,'Hero']]]
 ];
