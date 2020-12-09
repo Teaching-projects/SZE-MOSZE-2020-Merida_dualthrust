@@ -98,8 +98,8 @@ Collaboration diagram for ObserverSVGRenderer:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a053bc102f86bea94789b45253585000e"><td class="memItemLeft" align="right" valign="top"><a id="a053bc102f86bea94789b45253585000e"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>render</b> (const <a class="el" href="classGame.html">Game</a> &amp;) const override</td></tr>
+<tr class="memitem:a053bc102f86bea94789b45253585000e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObserverSVGRenderer.html#a053bc102f86bea94789b45253585000e">render</a> (const <a class="el" href="classGame.html">Game</a> &amp;) const override</td></tr>
+<tr class="memdesc:a053bc102f86bea94789b45253585000e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render method responsible for creating SVG output based on a <a class="el" href="classGame.html">Game</a> state. Draws the whole map.  <a href="classObserverSVGRenderer.html#a053bc102f86bea94789b45253585000e">More...</a><br /></td></tr>
 <tr class="separator:a053bc102f86bea94789b45253585000e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c3cc2e1679fee8b3acb0c07d042b1c5"><td class="memItemLeft" align="right" valign="top"><a id="a3c3cc2e1679fee8b3acb0c07d042b1c5"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>SvgRenderer</b> (std::string filename)</td></tr>
@@ -108,11 +108,11 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>render</b> (c
 <tr class="memitem:a3c3cc2e1679fee8b3acb0c07d042b1c5 inherit pub_methods_classSvgRenderer"><td class="memItemLeft" align="right" valign="top"><a id="a3c3cc2e1679fee8b3acb0c07d042b1c5"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>SvgRenderer</b> (std::string filename)</td></tr>
 <tr class="separator:a3c3cc2e1679fee8b3acb0c07d042b1c5 inherit pub_methods_classSvgRenderer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a312c1bb11acd0df809f9133d10d96fbf inherit pub_methods_classSvgRenderer"><td class="memItemLeft" align="right" valign="top"><a id="a312c1bb11acd0df809f9133d10d96fbf"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>readSVG</b> (const std::string path) const</td></tr>
+<tr class="memitem:a312c1bb11acd0df809f9133d10d96fbf inherit pub_methods_classSvgRenderer"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSvgRenderer.html#a312c1bb11acd0df809f9133d10d96fbf">readSVG</a> (const std::string path) const</td></tr>
+<tr class="memdesc:a312c1bb11acd0df809f9133d10d96fbf inherit pub_methods_classSvgRenderer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the raw data from a given SVG file. Used to fetch the different textures needed to draw the map.  <a href="classSvgRenderer.html#a312c1bb11acd0df809f9133d10d96fbf">More...</a><br /></td></tr>
 <tr class="separator:a312c1bb11acd0df809f9133d10d96fbf inherit pub_methods_classSvgRenderer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8a460cbf411ed4d1f0fb826fc737af3 inherit pub_methods_classSvgRenderer"><td class="memItemLeft" align="right" valign="top"><a id="ab8a460cbf411ed4d1f0fb826fc737af3"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>setCoords</b> (std::string svg_raw, int x, int y) const</td></tr>
+<tr class="memitem:ab8a460cbf411ed4d1f0fb826fc737af3 inherit pub_methods_classSvgRenderer"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSvgRenderer.html#ab8a460cbf411ed4d1f0fb826fc737af3">setCoords</a> (std::string svg_raw, int x, int y) const</td></tr>
+<tr class="memdesc:ab8a460cbf411ed4d1f0fb826fc737af3 inherit pub_methods_classSvgRenderer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the coordinates for a given tile in the rendered SVG output.  <a href="classSvgRenderer.html#ab8a460cbf411ed4d1f0fb826fc737af3">More...</a><br /></td></tr>
 <tr class="separator:ab8a460cbf411ed4d1f0fb826fc737af3 inherit pub_methods_classSvgRenderer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -125,7 +125,38 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>filename</b></
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classObserverSVGRenderer.html" title="ObserverSVGRenderer class.">ObserverSVGRenderer</a> class. </p>
 <dl class="section author"><dt>Author</dt><dd>Lilikf Created on: 2020/12/08 </dd></dl>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a053bc102f86bea94789b45253585000e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a053bc102f86bea94789b45253585000e">&#9670;&nbsp;</a></span>render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ObserverSVGRenderer::render </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGame.html">Game</a> &amp;&#160;</td>
+          <td class="paramname"><em>game</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Render method responsible for creating SVG output based on a <a class="el" href="classGame.html">Game</a> state. Draws the whole map. </p>
+
+<p>Implements <a class="el" href="classSvgRenderer.html#a6f2e2e5d8bbcf78bb4ab5988da2f82d6">SvgRenderer</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="ObserverSVGRenderer_8h_source.html">ObserverSVGRenderer.h</a></li>
 <li>ObserverSVGRenderer.cpp</li>
 </ul>
