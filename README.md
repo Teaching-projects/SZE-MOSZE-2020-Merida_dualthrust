@@ -45,7 +45,12 @@ Meg van adva a pálya alaprajza, azon pedig a hős és a szörnyek pozíciója
 #     1   #
 ###########
 ```
-
+### Megjelenítés
+4 féle megjelenítési mód létezik a játékhoz:
+- HeroSVGRenderer       - Hős látótávolságába eső mezők megjelenítése SVG képfájlba.
+- HeroTextRenderer      - Hős látótávolságába eső mezőket jeleníti meg szöveges formában az adott output stream-re.
+- ObserverSVGRenderer   - Az egész pálya megjelenítése SVG képfájlba.
+- ObserverTextRenderer  - Az egész pálya megjelenítése szöveges formában az adott output stream-re.
 ### Hős ***(Hero)***
 A hős adatai egy JSON fájlban vannak tárolva
 #### ***Példa:***
@@ -80,7 +85,7 @@ A hős adatai egy JSON fájlban vannak tárolva
     }
 ```
 ### Szörny ***(Monster)***
-A szörny adatai szintén egy JSON fájlban vannak tárolva ***(4 különböző szörny létezik)***
+A szörny adatai szintén egy JSON fájlban vannak tárolva ***(3 különböző szörny létezik)***
 #### ***Példa:***
     ***A szörny háttértörténete:***  lore
     ***Neve:***                      name
@@ -103,7 +108,6 @@ A szörny adatai szintén egy JSON fájlban vannak tárolva ***(4 különböző 
         "race" : "undead"
     }
 ```
-### Megjelenítés
 ## Tesztek
 ### In-output teszt
 A játék helyes lefutásának teszteléséhez előre meghatározott teszt játékmenetet és egy ennek megfelelő teszt kimenetetet használunk: a teszt játékmenet kimenetét összehasonlítjuk a teszt kimenettel.
