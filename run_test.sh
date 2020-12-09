@@ -2,10 +2,10 @@
 
 IFS=$'\n'
 
-./a.out preparedgame.json -test >> results_preparedgame.txt
+./a.out preparedgame.json -test
 
 
-diff results_preparedgame.txt results_correct_preparedgame.txt
+diff output_test_render_correct.txt output_test_render.txt
 
 if [ $? -eq 0 ]
 then
