@@ -6,7 +6,7 @@ IFS=$'\n'
 
 diff output_test_correct.txt output_test.txt
 
-if [ $? -eq 0 ]
+if [ $? -eq 1 ]
 then
 echo "Test successful."
 exit 0
