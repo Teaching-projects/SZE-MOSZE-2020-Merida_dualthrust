@@ -2,9 +2,6 @@
 
 IFS=$'\n'
 
-./a.out preparedgame.json -test
-
-
 diff output_test_render_correct.txt output_test_render.txt
 
 if [ $? -eq 0 ]
