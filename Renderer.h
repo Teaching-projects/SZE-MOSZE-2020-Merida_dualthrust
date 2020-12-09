@@ -16,7 +16,15 @@ class Game;
 class Renderer
 {
 public:
+    /**
+     * @brief Drawing function
+     * 
+     */
     virtual void render(const Game &) const = 0;
+    /**
+     * @brief Destructor for Renderer object
+     * 
+     */
     virtual ~Renderer(){};
 };
 

@@ -24,17 +24,31 @@
 class SvgRenderer : public Renderer
 {
 protected:
+    /**
+     * @brief Name of the output file
+     * 
+     */
     std::string filename;
 
 public:
+    /**
+     * @brief Constructor for Svg Renderer object
+     * 
+     * @param filename of the output we want to use
+     */
     SvgRenderer(const std::string& filename) : filename(filename){};
 
     /**
      * @brief Render method responsible for creating SVG output based on a Game state.
-     * 
+     *
      */
-    virtual void render(const Game &) const = 0;
-
+    virtual void render(const Game &) const override = 0;
+    /**
+     * @brief Reading the SVG file we want to use
+     * 
+     * @param path 
+     * @return std::string 
+     */
     std::string readSVG(const std::string& path) const
     {
         std::ifstream svg_file(path);
