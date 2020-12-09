@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['damage_196',['damage',['../classMonster.html#a6614cc11c092b94f39869576fb049b67',1,'Monster']]],
-  ['damagebonusperlevel_197',['damageBonusPerLevel',['../classHero.html#a6ff46be0ecde98f50f324058a1a289e4',1,'Hero']]],
-  ['defense_198',['defense',['../classMonster.html#ad867513550d7fde7e4b79806fe90ae2f',1,'Monster']]],
-  ['defensebonusperlevel_199',['defenseBonusPerLevel',['../classHero.html#a30e1bc3ac558cd7c23f62162092637bf',1,'Hero']]]
+  ['damage_192',['damage',['../classMonster.html#a6614cc11c092b94f39869576fb049b67',1,'Monster']]],
+  ['damagebonusperlevel_193',['damageBonusPerLevel',['../classHero.html#a6ff46be0ecde98f50f324058a1a289e4',1,'Hero']]],
+  ['defense_194',['defense',['../classMonster.html#ad867513550d7fde7e4b79806fe90ae2f',1,'Monster']]],
+  ['defensebonusperlevel_195',['defenseBonusPerLevel',['../classHero.html#a30e1bc3ac558cd7c23f62162092637bf',1,'Hero']]]
 ];

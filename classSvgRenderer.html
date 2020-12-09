@@ -99,15 +99,15 @@ Collaboration diagram for SvgRenderer:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3c3cc2e1679fee8b3acb0c07d042b1c5"><td class="memItemLeft" align="right" valign="top"><a id="a3c3cc2e1679fee8b3acb0c07d042b1c5"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>SvgRenderer</b> (std::string filename)</td></tr>
-<tr class="separator:a3c3cc2e1679fee8b3acb0c07d042b1c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff462036ff39e2a63954ccaf330f0e89"><td class="memItemLeft" align="right" valign="top"><a id="aff462036ff39e2a63954ccaf330f0e89"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>SvgRenderer</b> (const std::string &amp;filename)</td></tr>
+<tr class="separator:aff462036ff39e2a63954ccaf330f0e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f2e2e5d8bbcf78bb4ab5988da2f82d6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSvgRenderer.html#a6f2e2e5d8bbcf78bb4ab5988da2f82d6">render</a> (const <a class="el" href="classGame.html">Game</a> &amp;) const =0</td></tr>
 <tr class="memdesc:a6f2e2e5d8bbcf78bb4ab5988da2f82d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render method responsible for creating SVG output based on a <a class="el" href="classGame.html">Game</a> state.  <a href="classSvgRenderer.html#a6f2e2e5d8bbcf78bb4ab5988da2f82d6">More...</a><br /></td></tr>
 <tr class="separator:a6f2e2e5d8bbcf78bb4ab5988da2f82d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a312c1bb11acd0df809f9133d10d96fbf"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSvgRenderer.html#a312c1bb11acd0df809f9133d10d96fbf">readSVG</a> (const std::string path) const</td></tr>
-<tr class="memdesc:a312c1bb11acd0df809f9133d10d96fbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the raw data from a given SVG file. Used to fetch the different textures needed to draw the map.  <a href="classSvgRenderer.html#a312c1bb11acd0df809f9133d10d96fbf">More...</a><br /></td></tr>
-<tr class="separator:a312c1bb11acd0df809f9133d10d96fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a318039c9ba1050da9fba4264fc8f350f"><td class="memItemLeft" align="right" valign="top"><a id="a318039c9ba1050da9fba4264fc8f350f"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>readSVG</b> (const std::string &amp;path) const</td></tr>
+<tr class="separator:a318039c9ba1050da9fba4264fc8f350f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8a460cbf411ed4d1f0fb826fc737af3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSvgRenderer.html#ab8a460cbf411ed4d1f0fb826fc737af3">setCoords</a> (std::string svg_raw, int x, int y) const</td></tr>
 <tr class="memdesc:ab8a460cbf411ed4d1f0fb826fc737af3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the coordinates for a given tile in the rendered SVG output.  <a href="classSvgRenderer.html#ab8a460cbf411ed4d1f0fb826fc737af3">More...</a><br /></td></tr>
 <tr class="separator:ab8a460cbf411ed4d1f0fb826fc737af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,34 +123,6 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>filename</b></
 <dl class="section author"><dt>Author</dt><dd>LilikF</dd></dl>
 <p>Created on: 2020/12/08 </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a312c1bb11acd0df809f9133d10d96fbf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a312c1bb11acd0df809f9133d10d96fbf">&#9670;&nbsp;</a></span>readSVG()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string SvgRenderer::readSVG </td>
-          <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>path</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reads the raw data from a given SVG file. Used to fetch the different textures needed to draw the map. </p>
-
-</div>
-</div>
 <a id="a6f2e2e5d8bbcf78bb4ab5988da2f82d6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6f2e2e5d8bbcf78bb4ab5988da2f82d6">&#9670;&nbsp;</a></span>render()</h2>
 

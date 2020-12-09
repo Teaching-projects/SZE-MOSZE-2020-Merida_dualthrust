@@ -69,16 +69,17 @@ $(function() {
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
 Bevezető</h1>
-<p>A 'Modern szoftverfejlesztési eszközök' órára készült projekt. A kód c++ nyelven íródik, a projekt célja egy régi típusú parancssori RPG-re hasonlító játék megírása OOP alapelvek követésével és természetesen a modern szoftverfejlesztési eszközök használatával.</p>
+<p>A 'Modern szoftverfejlesztési eszközök' órára készült projekt. A kód c++ nyelven íródik, a projekt célja egy parancssori RPG-re hasonlító játék megírása OOP alapelvek követésével és modern szoftverfejlesztési eszközök használatával.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 A program működése</h1>
-<p>A projekt keretein belül készített program egy hős és szörnyek harcát játsza le. Harc közben hősünk felfedez egy dungeon-t ahol szörnyekkel harcol. A harc közben megszerzett tapasztalat alapján szintet is lép, amely során életereje, támadási, védekezési ereje, támadási ideje és látótávolsága változik. A játék addig tart, ameddig van szörny a pályán, vagy a hős meg nem hal. A program indításához szükséges egy <a class="el" href="classJSON.html" title="JSON namespace.">JSON</a> fájl, ami tartalmazza a játék lefutásához szükséges adatokat <b>Példa a fájl (preparedgame.json) tartalmára:</b> { "map" : "./maps/map_1.txt", "hero" : "./units/Dark_Wanderer.json", "monster-1" : "./units/Fallen.json", "monster-2" : "./units/Zombie.json", "monster-3" : "./units/Blood_Raven.json" } <b>Példa a játék indítására:</b> </p><div class="fragment"><div class="line">./a.out preparedgame.json</div>
+<p>A projekt keretein belül készített program egy hős és szörnyek harcát játsza le. Harc közben hősünk felfedez egy dungeon-t ahol szörnyekkel harcol. A harc közben megszerzett tapasztalat alapján szintet is lép, amely során életereje, támadási, védekezési ereje, támadási ideje és látótávolsága változik. A játék addig tart, ameddig van szörny a pályán, vagy a hős meg nem hal. A program indításához szükséges egy <a class="el" href="classJSON.html" title="JSON namespace.">JSON</a> fájl, ami tartalmazza a játék lefutásához szükséges adatokat</p>
+<p><b>Példa a fájl (preparedgame.json) tartalmára:</b> { "map" : "./maps/map_1.txt", "hero" : "./units/Dark_Wanderer.json", "monster-1" : "./units/Fallen.json", "monster-2" : "./units/Zombie.json", "monster-3" : "./units/Blood_Raven.json" } <b>Példa a játék indítására:</b> </p><div class="fragment"><div class="line">./a.out preparedgame.json</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
 Helytelen input:</h2>
-<p>A program a parancssorba printeli a helyes sémát, majd kilép. </p>
+<p>A program a parancssorba printeli a helyes sémát, majd kilép.</p>
 <h2><a class="anchor" id="autotoc_md4"></a>
 Helyes input:</h2>
-<p>A hős elindul a pályán, és megpróbálja megölni az összes szörnyet. A pályának a hős csak egy adott részét látja, amire kiterjed a látótávolsága. </p>
+<p>A hős elindul a pályán, és megpróbálja megölni az összes szörnyet. A pályának a hős csak egy adott részét látja, amire kiterjed a látótávolsága.</p>
 <h3><a class="anchor" id="autotoc_md5"></a>
 A hős mozgása az alábbi parancsokkal irányítható a játék során:</h3>
 <p><b>north</b>; <b>south</b>; <b>west</b>; <b>east</b></p>
@@ -129,8 +130,6 @@ Szörny &lt;em&gt;&lt;strong&gt;(Monster)&lt;/strong&gt;&lt;/em&gt;</h3>
 &lt;em&gt;&lt;strong&gt;Példa:&lt;/strong&gt;&lt;/em&gt;</h4>
 <p><em><b>A szörny háttértörténete:</b></em> lore <em><b>Neve:</b></em> name <em><b>Életereje:</b></em> health_points <em><b>Védekező ereje:</b></em> defense <em><b>Fizikai támadóereje:</b></em> damage <em><b>Mágikus támadóereje:</b></em> magical-damage <em><b>Támadási sebessége (sec):</b></em> attack_cooldown <em><b>Faja:</b></em> race </p><div class="fragment"><div class="line">{</div>
 <div class="line">    &quot;lore&quot; : &quot;The lowest rank of the undead, zombies befoul much of the wilderness of the Western Kingdoms, as well as the tombs and crypts of the whole of Sanctuary. Zombies serve the darkness blindly and without thought, attacking only with their bare hands. They move slowly, but with relentless determination, seeking to consume the flesh of the living. They are simple-minded and easily outwitted, but in large groups can overwhelm the unwary.&quot;,</div>
-<div class="line"> </div>
-<div class="line"> </div>
 <div class="line">    &quot;name&quot; : &quot;Zombie&quot;,</div>
 <div class="line">    &quot;health_points&quot; : 10, </div>
 <div class="line">    &quot;defense&quot; : 2, </div>
@@ -139,11 +138,14 @@ Szörny &lt;em&gt;&lt;strong&gt;(Monster)&lt;/strong&gt;&lt;/em&gt;</h3>
 <div class="line">    &quot;race&quot; : &quot;undead&quot;</div>
 <div class="line">}</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md13"></a>
+Dokumentáció</h2>
+<p>A dokumentáció Doxygen segítségével készült, Az alábbi linken elérhető: <a href="https://teaching-projects.github.io/SZE-MOSZE-2020-Merida_dualthrust/index.html">https://teaching-projects.github.io/SZE-MOSZE-2020-Merida_dualthrust/index.html</a></p>
+<h2><a class="anchor" id="autotoc_md14"></a>
 Tesztek</h2>
-<h3><a class="anchor" id="autotoc_md14"></a>
-In-output teszt</h3>
-<p>A játék helyes lefutásának teszteléséhez előre meghatározott teszt játékmenetet és egy ennek megfelelő teszt kimenetetet használunk: a teszt játékmenet kimenetét összehasonlítjuk a teszt kimenettel. </p>
 <h3><a class="anchor" id="autotoc_md15"></a>
+In-output teszt</h3>
+<p>A játék helyes lefutásának teszteléséhez előre meghatározott teszt játékmenetet és egy ennek megfelelő teszt kimenetetet használunk: a teszt játékmenet kimenetét összehasonlítjuk az elvárt eredménnyel.</p>
+<h3><a class="anchor" id="autotoc_md16"></a>
 Parser tesztek</h3>
 <p>A <a class="el" href="classJSON.html" title="JSON namespace.">JSON</a> fájlok adatainak helyes feldolgozása érdekében különböző eseteket dolgozunk fel. Teszt <a class="el" href="classJSON.html" title="JSON namespace.">JSON</a> fájlok típusai:</p><ul>
 <li>Hiányzó kapcsos zárójel</li>
@@ -152,16 +154,17 @@ Parser tesztek</h3>
 <li>Minden adat egy sorban van</li>
 <li>Felesleges space-k/tabulátorok/enter-ek az adatok között</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md16"></a>
-Unit tesztek</h3>
-<p>A program egyes komponenseit tesztelik, googletest segítségével futtatjuk őket. </p>
 <h3><a class="anchor" id="autotoc_md17"></a>
-Memória hibák ellenőrzése</h3>
+Statikus kódanalízis</h3>
+<h3><a class="anchor" id="autotoc_md18"></a>
+Unit tesztek</h3>
+<p>A program egyes komponenseit tesztelik, googletest segítségével futtatjuk őket.</p>
+<h3><a class="anchor" id="autotoc_md19"></a>
+Memory leak ellenőrzés</h3>
 <p>Valgrind segítségével derítjük fel a memory leak-eket és az egyéb memória hibákat. Az alábbi beállításokkal használjuk a Valgrindot: </p><div class="fragment"><div class="line">valgrind -s --leak-check=full --track-origins=yes</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md18"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md20"></a>
 Csapattagok</h2>
-<p>Lapat Krisztián\ Lilik Ferenc\ Nemes Tamás</p>
-<p>A dokumentáció Doxygen segítségével készült, Az alábbi linken elérhető: <a href="https://teaching-projects.github.io/SZE-MOSZE-2020-Merida_dualthrust/index.html">https://teaching-projects.github.io/SZE-MOSZE-2020-Merida_dualthrust/index.html</a> </p>
+<p>Lapat Krisztián\ Lilik Ferenc\ Nemes Tamás </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
