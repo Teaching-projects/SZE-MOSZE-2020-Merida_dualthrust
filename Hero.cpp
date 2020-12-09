@@ -43,7 +43,7 @@
         std::string name                    =   data.get<std::string>("name");
         std::string texture                 =   data.get<std::string>("texture");
         int heatlhPoints                    =   data.get<int>("base_health_points");
-        Damage damage                       = Damage(data.get<int>("base_damage"), data.get<int>("base_magical-damage"));
+        Damage damage                       =   Damage(data.get<int>("base_damage"), data.get<int>("base_magical-damage"));
         int defense                         =   data.get<int>("base_defense");
         int lightradius                     =   data.get<int>("light_radius");
         float cooldown                      =   data.get<float>("base_attack_cooldown");
@@ -55,7 +55,7 @@
         int lightradiusBonusPerLevel=1;
         if (data.count("light_radius_bonus_per_level"))
         {
-            lightradiusBonusPerLevel    =   data.get<int>("light_radius_bonus_per_level");
+            lightradiusBonusPerLevel        =   data.get<int>("light_radius_bonus_per_level");
         }
         float cooldownMultiplierPerLevel    =   data.get<float>("cooldown_multiplier_per_level");
 
