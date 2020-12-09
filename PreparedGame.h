@@ -36,7 +36,7 @@ public:
      * @brief Constructor for filled Prepared Game object
      * 
      */
-    PreparedGame(std::string);
+    explicit PreparedGame(std::string);
 
     class InsufficientGamedataInput : std::exception
 	{

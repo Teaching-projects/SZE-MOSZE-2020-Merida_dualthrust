@@ -92,7 +92,7 @@ class Game
      * @return Game 
      * 
      */
-    Game(std::string);
+    explicit Game(std::string);
 
     /**
      * @brief Sets a map in a game with no map.

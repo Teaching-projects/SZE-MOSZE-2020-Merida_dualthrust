@@ -28,7 +28,7 @@ public:
      * @brief Constructor for JSON object.
      * 
      */
-    JSON(const std::map<std::string, std::any>&);
+    explicit JSON(const std::map<std::string, std::any>&);
 
     typedef std::list<std::variant<std::string, int, double, float>> list; 
     

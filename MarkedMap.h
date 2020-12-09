@@ -44,7 +44,7 @@ public:
      * @return MarkedMap 
      * 
      */
-    MarkedMap(std::string);
+    explicit MarkedMap(std::string);
 
     /**
      * @brief Destructor for MarkedMap class.

@@ -135,7 +135,7 @@ class Map
          * @return Map 
          * 
          */
-        Map(std::string filename);
+        explicit Map(std::string filename);
 
         /**
          * @brief Gives back the type of tile based on coordinates.
