@@ -27,11 +27,11 @@ protected:
     std::string filename;
 
 public:
-    SvgRenderer(std::string filename) : filename(filename){};
+    SvgRenderer(const std::string& filename) : filename(filename){};
 
     virtual void render(const Game &) const = 0;
 
-    std::string readSVG(const std::string path) const
+    std::string readSVG(const std::string& path) const
     {
         std::ifstream svg_file(path);
         if (!svg_file.good())

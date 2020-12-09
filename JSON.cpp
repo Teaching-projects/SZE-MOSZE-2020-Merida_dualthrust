@@ -91,16 +91,16 @@ std::string JSON::removeJSONSpaces(std::string value)
 }
 
 //Delete every existing Character object given as input
-void JSON::deleteCharacters(const std::vector<Monster*>& characters) 
+/* void JSON::deleteCharacters(const std::vector<Monster*>& characters) 
 {
 
 	for (Monster* c : characters) 
     {
 		delete c;
 	}
-}
+} */
 
-std::list<std::variant<std::string, int, double, float>> JSON::listFromValues(std::string rawList){
+std::list<std::variant<std::string, int, double, float>> JSON::listFromValues(const std::string& rawList){
 	std::list<std::variant<std::string, int, double, float>> output;
 	std::vector<std::string> s = split(rawList,',');
 

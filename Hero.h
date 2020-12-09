@@ -120,7 +120,7 @@ class Hero : public Monster{
          * 
          * @return Hero
          */
-        Hero(const std::string&, int, Damage, int, int, double, const int, const int, const int, const int, const int, const int, const float, std::string);
+        Hero(const std::string&, int, Damage, int, int, double, const int, const int, const int, const int, const int, const int, const float, const std::string&);
         /**
          * @brief Getter for maximum health points of our Hero.
          * 

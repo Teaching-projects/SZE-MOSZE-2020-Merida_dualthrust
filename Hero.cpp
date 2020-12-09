@@ -6,7 +6,7 @@
 /* 
         return Hero(name, heatlhPoints, damage, defense, lightradius, cooldown, experiencePerLevel, healthPointBonusPerLevel, damageBonusPerLevel, magicaldamageBonusPerLevel, defenseBonusPerLevel, lightradiusBonusPerLevel, cooldownMultiplierPerLevel);
  */
-    Hero::Hero(const std::string& characterName, int characterHP, Damage dmg_struct, int characterDEF, int characterLIGHT, double characterACD, int XPperlevel, int HPperlevel, int DMGperlevel, int MDMGperlevel, int DEFperlevel, int LIGHTperlevel, float ACDperlevel, std::string texture) : Monster(characterName, characterHP, dmg_struct, characterDEF, characterACD, texture), level(1), maximumHealthPoint(characterHP), lightradius(characterLIGHT), experience(0), experiencePerLevel(XPperlevel), healthPointBonusPerLevel(HPperlevel), damageBonusPerLevel(DMGperlevel), magicaldamageBonusPerLevel(MDMGperlevel), defenseBonusPerLevel(DEFperlevel), lightradiusBonusPerLevel(LIGHTperlevel), cooldownMultiplierPerLevel(ACDperlevel)
+    Hero::Hero(const std::string& characterName, int characterHP, Damage dmg_struct, int characterDEF, int characterLIGHT, double characterACD, int XPperlevel, int HPperlevel, int DMGperlevel, int MDMGperlevel, int DEFperlevel, int LIGHTperlevel, float ACDperlevel, const std::string& texture) : Monster(characterName, characterHP, dmg_struct, characterDEF, characterACD, texture), level(1), maximumHealthPoint(characterHP), lightradius(characterLIGHT), experience(0), experiencePerLevel(XPperlevel), healthPointBonusPerLevel(HPperlevel), damageBonusPerLevel(DMGperlevel), magicaldamageBonusPerLevel(MDMGperlevel), defenseBonusPerLevel(DEFperlevel), lightradiusBonusPerLevel(LIGHTperlevel), cooldownMultiplierPerLevel(ACDperlevel)
     {
     }
 
