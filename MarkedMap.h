@@ -17,23 +17,6 @@
 
 class MarkedMap : public Map
 {
-private:
-    /**
-     * @brief Vector holding the positions of all monsters.
-     * 
-     * The vector itself holds pair type values, the first of the pair representing the row in which the monster is, the second of the pair representing the column.
-     * 
-     */
-    std::vector<std::pair<int,int>> monsterPositions;
-
-    /**
-     * @brief Pair type holding the hero's position.
-     * 
-     * The first of the pair represents the row in which the hero is, the second of the pair represents the column.
-     * 
-     */
-    std::pair<int,int> heroPosition;
-
 public:
 
     /**
