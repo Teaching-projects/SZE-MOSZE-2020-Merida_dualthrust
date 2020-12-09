@@ -80,6 +80,17 @@ class Game
      */
     Game(const Game &g2) {monster_map=g2.monster_map;map=g2.map;hero=g2.hero;renderers=g2.renderers;} 
 
+    Game operator=(const Game& g2) {
+        monster_map=g2.monster_map;
+        map=g2.map;
+        hero=g2.hero;
+        renderers=g2.renderers;
+    }
+
+    /**
+     * @brief Method for registering a renderer attached to a Game instance.
+     * 
+     */
     void registerRenderer(Renderer *renderer);
 
     Monster getMonsterByPosition(int col, int row) const{
