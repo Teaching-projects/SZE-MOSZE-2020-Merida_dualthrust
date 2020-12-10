@@ -4,7 +4,7 @@
     "base_damage" : 3,
     "base_magical-damage" : 2,
     "base_defense" : 1,
-    "light_radius" : 20,
+    "light_radius" : 2,
     "base_attack_cooldown" : 1.1,
     "experience_per_level" : 20,
     "health_point_bonus_per_level" : 5,
