@@ -1,5 +1,5 @@
 {
-  "map"  : "./maps/map_1.txt",
+  "map"  : "./maps/fancy_map.txt",
   "hero" : "./units/Dark_Wanderer.json",
   "monster-1" : "./units/Fallen.json",
   "monster-2" : "./units/Zombie.json",
