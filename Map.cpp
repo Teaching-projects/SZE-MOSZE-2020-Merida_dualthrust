@@ -32,6 +32,8 @@ Map::Map(std::string path)
     longest_row_size = 0;
     longest_column_size = 0;
     
+    std::cout<<"Longest row: "<<longest_row_size<<std::endl;
+
     while (std::getline(mapfile, line))
     {
         std::vector<int> map_row;
@@ -53,13 +55,16 @@ Map::Map(std::string path)
         int64_t signed_longest_row_size = longest_row_size; //Fixes signed-unsigned errors
         uint64_t unsigned_longest_row_size = static_cast<uint64_t>(signed_longest_row_size);
 
-        if(line.length() > unsigned_longest_row_size) 
+        if(line.length() > longest_row_size) 
         {
             longest_row_size=line.length();
         }
         map.push_back(map_row);
     }
     longest_column_size = map.size();
+
+    std::cout<<"Longest row: "<<longest_row_size<<std::endl;
+
 }
 
 void Map::drawMap(const int viewrange, int hero_row, int hero_column) const
