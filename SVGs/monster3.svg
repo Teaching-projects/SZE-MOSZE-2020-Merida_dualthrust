@@ -1,8 +1,8 @@
 <svg x="Ł" y="ß" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
-      .enemy { fill: #d65158; stroke: #000000; }
+      .enemy3 { fill: #961a20; stroke: #d4be00; }
     </style>
   </defs>
-  <rect class="enemy" width="230" height="230"/>
+  <rect class="enemy3" width="230" height="230"/>
 </svg>
