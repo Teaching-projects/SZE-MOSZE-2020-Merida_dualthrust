@@ -122,7 +122,7 @@ void Map::drawMap(const int viewrange, int hero_row, int hero_column) const
 
                     if(unsigned_j < map[i].size()){ 
                         std::cout <<tileString[get(i,j)];
-                    }else if(j < longest_row_size-1){
+                    }else if(unsigned_j < longest_row_size-1){
                         std::cout <<"  ";
                     }
                 }

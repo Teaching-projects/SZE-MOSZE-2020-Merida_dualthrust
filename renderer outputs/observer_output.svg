@@ -153,10 +153,10 @@
 <svg x="40" y="10" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
-      .free-1 { fill: #bfbfbf; stroke: #000000; }
+      .hero { fill:#169400; stroke: #000000; }
     </style>
   </defs>
-  <rect class="free-1" width="230" height="230"/>
+  <rect class="hero" width="230" height="230"/>
 </svg>
 <svg x="50" y="10" width="10" height="10" viewBox="0 0 230 230">
   <defs>
@@ -641,10 +641,10 @@
 <svg x="50" y="50" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
-      .free-1 { fill: #bfbfbf; stroke: #000000; }
+      .enemy { fill: #bd0000; stroke: #000000; }
     </style>
   </defs>
-  <rect class="free-1" width="230" height="230"/>
+  <rect class="enemy" width="230" height="230"/>
 </svg>
 <svg x="60" y="50" width="10" height="10" viewBox="0 0 230 230">
   <defs>
@@ -2089,10 +2089,10 @@
 <svg x="60" y="170" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
-      .free-1 { fill: #bfbfbf; stroke: #000000; }
+      .enemy { fill: #bd0000; stroke: #000000; }
     </style>
   </defs>
-  <rect class="free-1" width="230" height="230"/>
+  <rect class="enemy" width="230" height="230"/>
 </svg>
 <svg x="70" y="170" width="10" height="10" viewBox="0 0 230 230">
   <defs>
@@ -2169,10 +2169,10 @@
 <svg x="10" y="180" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
-      .free-1 { fill: #bfbfbf; stroke: #000000; }
+      .enemy { fill: #bd0000; stroke: #000000; }
     </style>
   </defs>
-  <rect class="free-1" width="230" height="230"/>
+  <rect class="enemy" width="230" height="230"/>
 </svg>
 <svg x="20" y="180" width="10" height="10" viewBox="0 0 230 230">
   <defs>
@@ -2233,10 +2233,10 @@
 <svg x="90" y="180" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
-      .free-1 { fill: #bfbfbf; stroke: #000000; }
+      .enemy { fill: #bd0000; stroke: #000000; }
     </style>
   </defs>
-  <rect class="free-1" width="230" height="230"/>
+  <rect class="enemy" width="230" height="230"/>
 </svg>
 <svg x="100" y="180" width="10" height="10" viewBox="0 0 230 230">
   <defs>
@@ -2257,10 +2257,10 @@
 <svg x="120" y="180" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
-      .hero { fill:#169400; stroke: #000000; }
+      .free-1 { fill: #bfbfbf; stroke: #000000; }
     </style>
   </defs>
-  <rect class="hero" width="230" height="230"/>
+  <rect class="free-1" width="230" height="230"/>
 </svg>
 <svg x="130" y="180" width="10" height="10" viewBox="0 0 230 230">
   <defs>
