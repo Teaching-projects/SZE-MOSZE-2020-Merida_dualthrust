@@ -24,14 +24,32 @@
 class SvgRenderer : public Renderer
 {
 protected:
+    /**
+     * @brief Name of the output file
+     * 
+     */
     std::string filename;
 
 public:
-    SvgRenderer(std::string filename) : filename(filename){};
+    /**
+     * @brief Constructor for Svg Renderer object
+     * 
+     * @param filename of the output we want to use
+     */
+    SvgRenderer(const std::string& filename) : filename(filename){};
 
-    virtual void render(const Game &) const = 0;
-
-    std::string readSVG(const std::string path) const
+    /**
+     * @brief Render method responsible for creating SVG output based on a Game state.
+     *
+     */
+    virtual void render(const Game &) const override = 0;
+    /**
+     * @brief Reading the SVG file we want to use
+     * 
+     * @param path 
+     * @return std::string 
+     */
+    std::string readSVG(const std::string& path) const
     {
         std::ifstream svg_file(path);
         if (!svg_file.good())
@@ -45,6 +63,10 @@ public:
         return content;
     }
 
+    /**
+     * @brief Sets the coordinates for a given tile in the rendered SVG output.
+     * 
+     */
     std::string setCoords(std::string svg_raw, int x, int y) const
     {
         return svg_raw.replace(svg_raw.find("\"Ł\""),3, "\""+std::to_string(x)).replace(svg_raw.find("\"ß\""),3, "\""+std::to_string(y));

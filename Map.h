@@ -5,9 +5,8 @@
  * 
  * This class contains basic methods for handling the map.
  * 
- * 
- * @version 1.0
- * @date 2020-11-22
+ * @version 2.0
+ * @date 2020-12-08
  * 
  */
 
@@ -30,13 +29,20 @@ class Map
          * 
          */
         std::vector<std::vector<int>> map = std::vector<std::vector<int>>();
+    
     public:
-        int longest_row_size;
-        int longest_column_size;
+        int longest_row_size=0;
+        int longest_column_size=0;
         
         std::vector<std::vector<int>> getMap(){
             return map;
         }
+
+        /**
+         * @brief Copy constructor for Map
+         * 
+         */
+        Map(const Map &map2):map(map2.map), longest_row_size(map2.longest_row_size),longest_column_size(map2.longest_column_size){}
 
         /**
          * @brief Vector holding the positions of all monsters.
@@ -135,7 +141,7 @@ class Map
          * @return Map 
          * 
          */
-        Map(std::string filename);
+        explicit Map(std::string filename);
 
         /**
          * @brief Gives back the type of tile based on coordinates.

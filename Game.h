@@ -6,8 +6,8 @@
  * This class contains methods used for controlling our game.
  * 
  * 
- * @version 1.0
- * @date 2020-11-22
+ * @version 2.0
+ * @date 2020-12-08
  * 
  */
 
@@ -20,8 +20,6 @@
 #include <sstream>
 #include <exception> 
 #include <list>
-// Might include useless stuff as i copied this from another header, will delete later
-
 #include "Hero.h"
 #include "MarkedMap.h"
 #include "Monster.h"
@@ -31,12 +29,24 @@
 class Game
 {
  protected:
+    /**
+     * @brief "Map" that stores our monsters by location.
+     * Each "tile" is represented by a list which holds the monsters on said tile.
+     * 
+     */
+    std::map<int,std::map<int, std::list<Monster>>> monster_map; 
 
-    std::map<int,std::map<int, std::list<Monster>>> monster_map; //"Map" that stores our monsters by location. Each "tile" is represented by a list which holds the monsters on said tile. 
+    /**
+     * @brief Pointer to our map. Sets initial value to NULL.
+     * 
+     */
+    Map* map=NULL;
 
-    Map* map=NULL; //Pointer to our map. Sets initial value to NULL.
-
-    Hero* hero=NULL; //Pointer to our hero. Sets initial value to NULL.
+    /**
+     * @brief Pointer to our hero. Sets initial value to NULL.
+     * 
+     */
+    Hero* hero=NULL;
 
     /**
      * @brief Checks if there are any monsters alive on the map
@@ -64,6 +74,24 @@ class Game
      */
     ~Game();
 
+    /**
+     * @brief Copy constructor for the Game class
+     * 
+     */
+    Game(const Game &g2) : monster_map(g2.monster_map),map(new Map(*g2.map)),hero(g2.hero),renderers(g2.renderers){} 
+
+    Game & operator=(const Game& g2) {
+        monster_map=g2.monster_map;
+        setMap(g2.map);
+        hero=g2.hero;
+        renderers=g2.renderers;
+        return *this;
+    }
+
+    /**
+     * @brief Method for registering a renderer attached to a Game instance.
+     * 
+     */
     void registerRenderer(Renderer *renderer);
 
     Monster getMonsterByPosition(int col, int row) const{
@@ -82,7 +110,7 @@ class Game
      * @return Game 
      * 
      */
-    Game(std::string);
+    explicit Game(std::string);
 
     /**
      * @brief Sets a map in a game with no map.
@@ -110,8 +138,10 @@ class Game
      * @param Pointer to a monster that has to be put somewhere.
      * @param ROW coordinate on the map.
      * @param COLUMN coordinate on the map.
+     * 
      */
     virtual void putMonster(Monster, int, int);
+
     /**
      * @brief Runs the game. Handles movement on the map, draws the map.
      * @param IS_TEST. If the -test argument is used, we will take inputs from a file.

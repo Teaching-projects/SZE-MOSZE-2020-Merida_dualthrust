@@ -2,11 +2,11 @@
 #include <gtest/gtest.h>
 
 TEST(parserTests, parseFile) {
-    ASSERT_NO_THROW(JSON::parseFromFile("../units/Tolvaj.json"));
+    ASSERT_NO_THROW(JSON::parseFromFile("../units/Fallen.json"));
 }
 
 TEST(parserTests, ParseFromStream) {
-    std::ifstream f("../units.Tolvaj.json");
+    std::ifstream f("../units/Fallen.json");
     ASSERT_NO_THROW(JSON::parseStream(f));
 }
 

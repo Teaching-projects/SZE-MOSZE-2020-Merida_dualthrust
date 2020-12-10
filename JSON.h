@@ -28,7 +28,7 @@ public:
      * @brief Constructor for JSON object.
      * 
      */
-    JSON(const std::map<std::string, std::any>&);
+    explicit JSON(const std::map<std::string, std::any>&);
 
     typedef std::list<std::variant<std::string, int, double, float>> list; 
     
@@ -111,13 +111,12 @@ public:
      */
     static JSON parseFromFile(const std::string&);
 
-    /**
+    /* 
      * @brief Delete every existing Character object given as input.
      * 
      * @param[in] Character vector
      * 
-     */
-    void deleteCharacters(const std::vector<Monster*>&);
+    void deleteCharacters(const std::vector<Monster*>&); */
 
     class ParseException : std::exception
 	{
@@ -127,7 +126,7 @@ public:
 
     protected:
     
-        static std::list<std::variant<std::string, int, double, float>> listFromValues(std::string);
+        static std::list<std::variant<std::string, int, double, float>> listFromValues(const std::string&);
 
         std::map<std::string, std::any> content;
 };

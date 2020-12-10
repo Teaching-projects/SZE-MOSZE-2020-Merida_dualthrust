@@ -4,7 +4,7 @@ COMPILER := g++
 
 CPPFILES := JSON.cpp Monster.cpp Hero.cpp Map.cpp ObserverSVGRenderer.cpp HeroSVGRenderer.cpp HeroTextRenderer.cpp ObserverTextRenderer.cpp Game.cpp main.cpp MarkedMap.cpp PreparedGame.cpp
 
-VALGRINDFLAGS:= --leak-check=full --error-exitcode=1 --track-origins=yes --log-file="Valgrind_log"
+VALGRINDFLAGS:= --leak-check=full --error-exitcode=1 --track-origins=yes --log-file="valgrind_log.txt"
 VALGRINDPARAMETER:=  ./a.out preparedgame.json -test
 
 build: $(OBJECTS)
@@ -51,7 +51,7 @@ Clean:
 	rm -rf $(OBJECTS) a.out cppcheck_results.txt results_scenario_1.txt results_scenario_2.txt
 
 Static_code_analysis_cppcheck:
-	cppcheck $(CPPFILES) --output-file=cppcheck_results.txt && chmod +x warning_check.sh && ./warning_check.sh && chmod +x error_check.sh && ./error_check.sh
+	cppcheck $(CPPFILES) --enable=all --output-file=cppcheck_results.txt && chmod +x warning_check.sh && ./warning_check.sh && chmod +x error_check.sh && ./error_check.sh
 
 Memcheck:
 	valgrind $(VALGRINDFLAGS) $(VALGRINDPARAMETER)

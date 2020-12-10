@@ -6,8 +6,8 @@
  * This class contains basic methods and data for leveling up our characters.
  * With each level-up, the maximum HP also increases, level-ups are calculated from the acquired XP.
  * 
- * @version 1.0
- * @date 2020-11-01
+ * @version 3.0
+ * @date 2020-12-08
  * 
  */
 
@@ -62,10 +62,15 @@ class Hero : public Monster{
         const int healthPointBonusPerLevel;
 
         /**
-         * @brief Extra attack damage per level.
+         * @brief Extra physical damage per level.
          * 
          */
         const int damageBonusPerLevel;
+
+        /**
+         * @brief Extra magical damage per level.
+         * 
+         */
         const int magicaldamageBonusPerLevel;
 
         /**
@@ -115,7 +120,7 @@ class Hero : public Monster{
          * 
          * @return Hero
          */
-        Hero(const std::string&, int, Damage, int, int, double, const int, const int, const int, const int, const int, const int, const float, std::string);
+        Hero(const std::string&, int, Damage, int, int, double, const int, const int, const int, const int, const int, const int, const float, const std::string&);
         /**
          * @brief Getter for maximum health points of our Hero.
          * 
@@ -130,7 +135,8 @@ class Hero : public Monster{
          * @return  int const&
          * 
          */
-        int const & getLevel(/**There's no input parameter here.*/) const;   
+        int const & getLevel(/**There's no input parameter here.*/) const;
+
         /**
          * @brief Getter for the lightrange - viewrange - of our Hero.
          * 

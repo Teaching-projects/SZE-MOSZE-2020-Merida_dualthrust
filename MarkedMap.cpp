@@ -28,14 +28,17 @@ MarkedMap::MarkedMap(std::string path)
                 map_row.push_back(type(Monster));
                 monsterPositions.push_back(std::pair<int,int>(map.size()-1,i));
             }
+            else if(line[i]=='H'){
+                map_row.push_back(type(Free));
+            }
 
         }
         
-        int64_t signed_line_length = line.length(); //Fixes signed-unsigned errors
+        int64_t signed_line_length = map_row.size()+1; //Fixes signed-unsigned errors
         
         if(signed_line_length > longest_row_size)
         {
-            longest_row_size=line.length();
+            longest_row_size=signed_line_length;
         }
         map.push_back(map_row);
     }

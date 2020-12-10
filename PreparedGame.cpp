@@ -24,7 +24,6 @@ PreparedGame::PreparedGame(std::string path){
         std::string line;
         int row = 0;
         while (std::getline(mapfile,line)){
-          std::vector<int> map_row;
           
           for(unsigned int i=0;i<line.length();i++)
           {
@@ -35,7 +34,7 @@ PreparedGame::PreparedGame(std::string path){
               }else if(line[i]=='2'){
                 putMonster(Monster(monster_2), row, i);
               }else if(line[i]=='3'){
-                putMonster(Monster(monster_2), row, i);
+                putMonster(Monster(monster_3), row, i);
               }
           }
           row++;

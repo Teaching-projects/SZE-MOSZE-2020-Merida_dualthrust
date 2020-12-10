@@ -20,9 +20,23 @@
 class PreparedGame : public Game
 {
 public:
+    /**
+     * @brief Constructor for empty Prepared Game object
+     * 
+     */
     PreparedGame();
+
+    /**
+     * @brief Destructor for Prepared Game object
+     * 
+     */
     ~PreparedGame();
-    PreparedGame(std::string);
+
+    /**
+     * @brief Constructor for filled Prepared Game object
+     * 
+     */
+    explicit PreparedGame(std::string);
 
     class InsufficientGamedataInput : std::exception
 	{

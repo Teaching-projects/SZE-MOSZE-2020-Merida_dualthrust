@@ -60,6 +60,7 @@ Map::Map(std::string path)
         map.push_back(map_row);
     }
     longest_column_size = map.size();
+
 }
 
 void Map::drawMap(const int viewrange, int hero_row, int hero_column) const
@@ -119,7 +120,6 @@ void Map::drawMap(const int viewrange, int hero_row, int hero_column) const
 
                     int64_t signed_j = j; //Fixes signed-unsigned errors
                     uint64_t unsigned_j = static_cast<uint64_t>(signed_j);
-
                     if(unsigned_j < map[i].size()){ 
                         std::cout <<tileString[get(i,j)];
                     }else if(j < longest_row_size-1){
@@ -131,7 +131,7 @@ void Map::drawMap(const int viewrange, int hero_row, int hero_column) const
 
         }
         
-        std::cout <<"║"<<std::endl;      
+        std::cout <<"║"<<std::endl;    
     }
     
     std::cout << "╚";

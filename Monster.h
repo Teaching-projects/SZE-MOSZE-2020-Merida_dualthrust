@@ -6,8 +6,8 @@
  * This class contains basic methods and data members of the Monster class.
  * Monster objects in the game can have different healthpoint/damage values and fight each other.
  * 
- * @version 1.0
- * @date 2020-10-13
+ * @version 3.0
+ * @date 2020-12-08
  * 
  */
 
@@ -57,7 +57,8 @@ public:
     }
 
     /**
-     * @brief Setter for the unit's position for the map. Evaluation logic of the move's validity happens inside the Game class.
+     * @brief Setter for the unit's position for the map.
+     * Evaluation logic of the move's validity happens inside the Game class.
      * 
      */
     void setPosition(int x, int y);
@@ -87,13 +88,21 @@ public:
     std::string const & getName(/**There's no input parameter here.*/) const;
 
     /**
-     * @brief Getter for character attack damage
+     * @brief Getter for character physical damage
      * 
      * @return int const& 
      * 
      */
     int const & getPhysicalDamage(/**There's no input parameter here.*/) const;
+
+    /**
+     * @brief Getter for character magical damage
+     * 
+     * @return int const&
+     * 
+     */
     int const & getMagicalDamage(/**There's no input parameter here.*/) const;
+
     /**
      * @brief Getter for character defense
      * 

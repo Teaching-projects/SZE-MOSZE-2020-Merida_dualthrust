@@ -106,7 +106,7 @@ void Game::run(bool is_test)
     std::vector<std::string> test_input;
     if(is_test)
     {
-        std::ifstream f("test_input.txt");
+        std::ifstream f("./tests/test_input.txt");
         std::stringstream s;
 		s << f.rdbuf();
 		std::string fileContents = s.str();
