@@ -34,11 +34,11 @@ MarkedMap::MarkedMap(std::string path)
 
         }
         
-        int64_t signed_line_length = map_row.size(); //Fixes signed-unsigned errors
+        int64_t signed_line_length = map_row.size()+1; //Fixes signed-unsigned errors
         
         if(signed_line_length > longest_row_size)
         {
-            longest_row_size=map_row.size();
+            longest_row_size=signed_line_length;
         }
         map.push_back(map_row);
     }

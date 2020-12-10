@@ -131,9 +131,7 @@ void Map::drawMap(const int viewrange, int hero_row, int hero_column) const
 
         }
         
-        std::cout <<"║";  
-        std::cout<<longest_row_size<<std::endl;
-    
+        std::cout <<"║"<<std::endl;    
     }
     
     std::cout << "╚";
