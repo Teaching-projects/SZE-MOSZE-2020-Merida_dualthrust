@@ -55,9 +55,10 @@ Map::Map(std::string path)
         int64_t signed_longest_row_size = longest_row_size; //Fixes signed-unsigned errors
         uint64_t unsigned_longest_row_size = static_cast<uint64_t>(signed_longest_row_size);
 
-        if(line.length() > longest_row_size) 
+        if(line.length() > unsigned_longest_row_size) 
         {
             longest_row_size=line.length();
+            unsigned_longest_row_size = line.length();
         }
         map.push_back(map_row);
     }
