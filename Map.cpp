@@ -47,14 +47,13 @@ Map::Map(std::string path)
             else if(line[i]==' ')
             {
                 map_row.push_back(type(Free));
-            }
-            //Nullpointereket tolunk bele, hogy fel legyen töltve hellyel
-            
+            }            
         }
 
         //uint64_t unsigned_longest_row_size = static_cast<uint64_t>(longest_row_size);
+        int signedlength = line.length();
 
-        if(static_cast<int64_t>(line.length()) > longest_row_size) 
+        if(signedlength > longest_row_size) 
         {
             longest_row_size=line.length();
         }
