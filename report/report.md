@@ -2,9 +2,9 @@
 
 | Név | Github azonosito  | Javasolt relatív érdemjegy | Becsült óra | Indoklás  | 
 | --- | ---- | --- | ------------------ | --------- |
-| Lilik Ferenc | @lilikf | +2 | 70-80 óra | A csapat húzóereje volt, feladatait, amik a projekt legnagyobb kihívást jelentő feladatai voltak, gyorsan, pontosan, igényesen végezte, valamint azonnal segítséget nyújtott a csapattársaknak probléma esetén. A projekt elkészítéséhez szükséges eszközöket ismeri, alkalmazni tudja, a feladat megoldásokat átlátja. A feladatmegoldásoknál/kódírásnál nem csak a működés volt a szempontja, de az esztétika és a memóriaoptimalizálás is. |
+| Lilik Ferenc | @lilikf | +2 | 70-80 óra | A csapat húzóereje volt, feladatait, amik a projekt legnagyobb kihívást jelentő feladatai voltak, gyorsan, pontosan, igényesen végezte, valamint azonnal segítséget nyújtott a csapattársaknak probléma esetén. A projekt elkészítéséhez szükséges eszközöket ismeri, alkalmazni tudja, a feladat megoldásokat átlátja. A feladatok megoldásánál nem csak a funkcionalitás, de az esztétika és az optimalizálás is szempontok voltak. |
 | Lapat Krisztián | @lapatkrisz | 0 | 30-40 | Részt vett a legtöbb feladat megoldásában, a rá bízott feladatokat sikerült többnyire önállóan megoldania határidőre. A többi feladat megoldását is figyelemmel kísérte, a megoldásokat és az alkalmazott eszközöket megismerte és használni is tudja. |
-| Nemes Tamás | @nemestom | +2 | 60-70 óra | Döntő szerepe volt a feladatok elosztásában a csapattársak között, és azok megoldásában is. Feladatait gyorsan, precízen végezte, a rá bízott feladatokon kívül sokat segített a többiek munkájában is. A feladatokhoz szükséges elméletet mindig értette, és sikerrel alkalmazta a gyakorlati megoldásoknál. |
+| Nemes Tamás | @nemestom | +2 | 200+ óra | Döntő szerepe volt a feladatok elosztásában a csapattársak között, és azok megoldásában is. Feladatait gyorsan, precízen végezte, a rá bízott feladatokon kívül sokat segített a többiek munkájában is. A feladatokhoz szükséges elméletet mindig értette, és sikerrel alkalmazta a gyakorlati megoldásoknál. |
 
 
 # Videók
@@ -89,12 +89,14 @@
 
 # Implicit megtanult dolgok
 Olyanok, amik nem a tárgy anyaga, de muszáj/hasznos volt elsajátítani:
- - Lilik Ferenc
+ - Lilik Ferenc:
  - 
  - Lapat Krisztián: Linux shell használata, sok szenvedéstől kímélt meg pl. a dockeres feladatnál.
  - 
  - Nemes Tamás:
  - Sok cpp funkció, adatstruktúra új volt, rá voltam kényszerülve a használatukra. OOP aktuális a félévben, segített ez a tárgy a megértésében.
+ - JSON struktúra
+ - bash scriptelés nagyon alapjai
  - ...
 
 # Feedback (optional)
@@ -103,7 +105,8 @@ Melyik részt találtátok a leghasznosabbnak, miért. Használtátok-e az itt m
 
 Lapat Krisztián: GitHub-ot most kellett először komolyabban használnom, a jövőben is jót fog tenni ez az ismeretség, a videós megoldásnak pedig kifejezetten örültem (visszanézhetőség, rugalmasság).
 
-Nemes Tamás: Nekem tetszett az online videós megoldás, a videó + konzultáció bőven jó szerintem, vissza is lehet nézni, nektek is több időtök marad.
+Nemes Tamás: Nekem tetszett az online videós megoldás, a videó + konzultáció bőven jó szerintem, vissza is lehet nézni, nektek is több időtök marad. Pont aktuális probléma volt a félév során containerek készítése egy, más-más verziójú tensorflow keras stb-t kellett összeválogatni különböző programokhoz. 
+A félév során használt vscode + wsl linux + gcc kombinációval lényegesen könnyebb dolgozni mint egy vs szerű ide-vel, ezt is a tárgynak köszönhetem.
 
 # Üzenet a jövőbe (optional)
 
@@ -113,4 +116,4 @@ Lilik Ferenc:
 
 Lapat Krisztián:
 
-Nemes Tamás:
+Nemes Tamás: Időmenedzsmentre figyelmeztetni a hallgatókat, ha mondjuk nehezebb feladatok érkeznek, vagy "dömping" van feladatokból, azokat arányosan elosztani. 
