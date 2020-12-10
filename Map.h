@@ -31,8 +31,8 @@ class Map
         std::vector<std::vector<int>> map = std::vector<std::vector<int>>();
     
     public:
-        int longest_row_size;
-        int longest_column_size;
+        int longest_row_size=0;
+        int longest_column_size=0;
         
         std::vector<std::vector<int>> getMap(){
             return map;
