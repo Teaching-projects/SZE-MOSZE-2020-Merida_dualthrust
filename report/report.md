@@ -33,7 +33,7 @@
 | defense | Merge: 11.22 | 0 | @lapatkrisz |
 | damage | Merge: 12.07 | 0 | @nemestom  |
 | markedmap(parsed game) | Merge: 12.08 | 0 | @nemestom |
-| preparedgame | nem készült el | - | -
+| preparedgame(parsed game) | Merge: 12.08 | 0 | @nemestom
 | light radius | Merge: 12.04 | 0 | @lilikf |
 | rendering | Merge: 12.08 | 0 | @nemestom |
 
@@ -60,15 +60,22 @@
 # Kód dokumentáció
 
 | Teljesen dokumentált osztályok | Részben dokumentált osztályok | Nem dokumentált osztályok |
-| --- | ... | ... | 
+| --- | --- | --- | 
 | `Monster` | ... | ... | 
 | `Hero` | ... | ... |  
+| `Damage` | ... | ... |
 | `Map` | ... | ... |  
 | `MarkedMap` | ... | ... |  
 | `Game` | ... | ... |  
 | `PreparedGame` | ... | ... |  
 | `JSON` | ... | ... |  
-| ... |
+| `Renderer` | ... | ... |
+| `TextRenderer` | ... | ... |
+| `SVGRenderer` | ... | ... |
+| `HeroTextRenderer` | ... | ... |
+| `HeroSVGRenderer` | ... | ... |
+| `ObserverTextRenderer` | ... | ... |
+| `ObserverSVGRenderer` | ... | ... |
 
 
 # Mindenféle számok
@@ -97,7 +104,6 @@ Olyanok, amik nem a tárgy anyaga, de muszáj/hasznos volt elsajátítani:
  - Sok cpp funkció, adatstruktúra új volt, rá voltam kényszerülve a használatukra. OOP aktuális a félévben, segített ez a tárgy a megértésében.
  - JSON struktúra
  - bash scriptelés nagyon alapjai
- - ...
 
 # Feedback (optional)
 
