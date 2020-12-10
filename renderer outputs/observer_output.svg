@@ -110,14 +110,6 @@
   </defs>
   <rect class="wall" width="230" height="230"/>
 </svg>
-<svg x="140" y="0" width="10" height="10" viewBox="0 0 230 230">
-  <defs>
-    <style>
-      .wall { fill: #242424; stroke: #000000; }
-    </style>
-  </defs>
-  <rect class="wall" width="230" height="230"/>
-</svg>
 <svg x="0" y="10" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
@@ -223,14 +215,6 @@
   <rect class="wall" width="230" height="230"/>
 </svg>
 <svg x="130" y="10" width="10" height="10" viewBox="0 0 230 230">
-  <defs>
-    <style>
-      .wall { fill: #242424; stroke: #000000; }
-    </style>
-  </defs>
-  <rect class="wall" width="230" height="230"/>
-</svg>
-<svg x="140" y="10" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
       .wall { fill: #242424; stroke: #000000; }
@@ -350,14 +334,6 @@
   </defs>
   <rect class="wall" width="230" height="230"/>
 </svg>
-<svg x="140" y="20" width="10" height="10" viewBox="0 0 230 230">
-  <defs>
-    <style>
-      .wall { fill: #242424; stroke: #000000; }
-    </style>
-  </defs>
-  <rect class="wall" width="230" height="230"/>
-</svg>
 <svg x="0" y="30" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
@@ -463,14 +439,6 @@
   <rect class="wall" width="230" height="230"/>
 </svg>
 <svg x="130" y="30" width="10" height="10" viewBox="0 0 230 230">
-  <defs>
-    <style>
-      .wall { fill: #242424; stroke: #000000; }
-    </style>
-  </defs>
-  <rect class="wall" width="230" height="230"/>
-</svg>
-<svg x="140" y="30" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
       .wall { fill: #242424; stroke: #000000; }
@@ -590,14 +558,6 @@
   </defs>
   <rect class="wall" width="230" height="230"/>
 </svg>
-<svg x="140" y="40" width="10" height="10" viewBox="0 0 230 230">
-  <defs>
-    <style>
-      .wall { fill: #242424; stroke: #000000; }
-    </style>
-  </defs>
-  <rect class="wall" width="230" height="230"/>
-</svg>
 <svg x="0" y="50" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
@@ -703,14 +663,6 @@
   <rect class="wall" width="230" height="230"/>
 </svg>
 <svg x="130" y="50" width="10" height="10" viewBox="0 0 230 230">
-  <defs>
-    <style>
-      .wall { fill: #242424; stroke: #000000; }
-    </style>
-  </defs>
-  <rect class="wall" width="230" height="230"/>
-</svg>
-<svg x="140" y="50" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
       .wall { fill: #242424; stroke: #000000; }
@@ -830,14 +782,6 @@
   </defs>
   <rect class="wall" width="230" height="230"/>
 </svg>
-<svg x="140" y="60" width="10" height="10" viewBox="0 0 230 230">
-  <defs>
-    <style>
-      .wall { fill: #242424; stroke: #000000; }
-    </style>
-  </defs>
-  <rect class="wall" width="230" height="230"/>
-</svg>
 <svg x="0" y="70" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
@@ -943,14 +887,6 @@
   <rect class="wall" width="230" height="230"/>
 </svg>
 <svg x="130" y="70" width="10" height="10" viewBox="0 0 230 230">
-  <defs>
-    <style>
-      .wall { fill: #242424; stroke: #000000; }
-    </style>
-  </defs>
-  <rect class="wall" width="230" height="230"/>
-</svg>
-<svg x="140" y="70" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
       .wall { fill: #242424; stroke: #000000; }
@@ -1070,14 +1006,6 @@
   </defs>
   <rect class="wall" width="230" height="230"/>
 </svg>
-<svg x="140" y="80" width="10" height="10" viewBox="0 0 230 230">
-  <defs>
-    <style>
-      .wall { fill: #242424; stroke: #000000; }
-    </style>
-  </defs>
-  <rect class="wall" width="230" height="230"/>
-</svg>
 <svg x="0" y="90" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
@@ -1183,14 +1111,6 @@
   <rect class="wall" width="230" height="230"/>
 </svg>
 <svg x="130" y="90" width="10" height="10" viewBox="0 0 230 230">
-  <defs>
-    <style>
-      .wall { fill: #242424; stroke: #000000; }
-    </style>
-  </defs>
-  <rect class="wall" width="230" height="230"/>
-</svg>
-<svg x="140" y="90" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
       .wall { fill: #242424; stroke: #000000; }
@@ -1310,14 +1230,6 @@
   </defs>
   <rect class="wall" width="230" height="230"/>
 </svg>
-<svg x="140" y="100" width="10" height="10" viewBox="0 0 230 230">
-  <defs>
-    <style>
-      .wall { fill: #242424; stroke: #000000; }
-    </style>
-  </defs>
-  <rect class="wall" width="230" height="230"/>
-</svg>
 <svg x="0" y="110" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
@@ -1423,14 +1335,6 @@
   <rect class="wall" width="230" height="230"/>
 </svg>
 <svg x="130" y="110" width="10" height="10" viewBox="0 0 230 230">
-  <defs>
-    <style>
-      .wall { fill: #242424; stroke: #000000; }
-    </style>
-  </defs>
-  <rect class="wall" width="230" height="230"/>
-</svg>
-<svg x="140" y="110" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
       .wall { fill: #242424; stroke: #000000; }
@@ -1550,14 +1454,6 @@
   </defs>
   <rect class="wall" width="230" height="230"/>
 </svg>
-<svg x="140" y="120" width="10" height="10" viewBox="0 0 230 230">
-  <defs>
-    <style>
-      .wall { fill: #242424; stroke: #000000; }
-    </style>
-  </defs>
-  <rect class="wall" width="230" height="230"/>
-</svg>
 <svg x="0" y="130" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
@@ -1663,14 +1559,6 @@
   <rect class="wall" width="230" height="230"/>
 </svg>
 <svg x="130" y="130" width="10" height="10" viewBox="0 0 230 230">
-  <defs>
-    <style>
-      .wall { fill: #242424; stroke: #000000; }
-    </style>
-  </defs>
-  <rect class="wall" width="230" height="230"/>
-</svg>
-<svg x="140" y="130" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
       .wall { fill: #242424; stroke: #000000; }
@@ -1790,14 +1678,6 @@
   </defs>
   <rect class="wall" width="230" height="230"/>
 </svg>
-<svg x="140" y="140" width="10" height="10" viewBox="0 0 230 230">
-  <defs>
-    <style>
-      .wall { fill: #242424; stroke: #000000; }
-    </style>
-  </defs>
-  <rect class="wall" width="230" height="230"/>
-</svg>
 <svg x="0" y="150" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
@@ -1903,14 +1783,6 @@
   <rect class="wall" width="230" height="230"/>
 </svg>
 <svg x="130" y="150" width="10" height="10" viewBox="0 0 230 230">
-  <defs>
-    <style>
-      .wall { fill: #242424; stroke: #000000; }
-    </style>
-  </defs>
-  <rect class="wall" width="230" height="230"/>
-</svg>
-<svg x="140" y="150" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
       .wall { fill: #242424; stroke: #000000; }
@@ -2030,14 +1902,6 @@
   </defs>
   <rect class="wall" width="230" height="230"/>
 </svg>
-<svg x="140" y="160" width="10" height="10" viewBox="0 0 230 230">
-  <defs>
-    <style>
-      .wall { fill: #242424; stroke: #000000; }
-    </style>
-  </defs>
-  <rect class="wall" width="230" height="230"/>
-</svg>
 <svg x="0" y="170" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
@@ -2143,14 +2007,6 @@
   <rect class="enemy" width="230" height="230"/>
 </svg>
 <svg x="130" y="170" width="10" height="10" viewBox="0 0 230 230">
-  <defs>
-    <style>
-      .wall { fill: #242424; stroke: #000000; }
-    </style>
-  </defs>
-  <rect class="wall" width="230" height="230"/>
-</svg>
-<svg x="140" y="170" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
       .wall { fill: #242424; stroke: #000000; }
@@ -2270,14 +2126,6 @@
   </defs>
   <rect class="wall" width="230" height="230"/>
 </svg>
-<svg x="140" y="180" width="10" height="10" viewBox="0 0 230 230">
-  <defs>
-    <style>
-      .wall { fill: #242424; stroke: #000000; }
-    </style>
-  </defs>
-  <rect class="wall" width="230" height="230"/>
-</svg>
 <svg x="0" y="190" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
@@ -2383,14 +2231,6 @@
   <rect class="wall" width="230" height="230"/>
 </svg>
 <svg x="130" y="190" width="10" height="10" viewBox="0 0 230 230">
-  <defs>
-    <style>
-      .wall { fill: #242424; stroke: #000000; }
-    </style>
-  </defs>
-  <rect class="wall" width="230" height="230"/>
-</svg>
-<svg x="140" y="190" width="10" height="10" viewBox="0 0 230 230">
   <defs>
     <style>
       .wall { fill: #242424; stroke: #000000; }

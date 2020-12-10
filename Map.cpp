@@ -32,8 +32,6 @@ Map::Map(std::string path)
     longest_row_size = 0;
     longest_column_size = 0;
     
-    std::cout<<"Longest row: "<<longest_row_size<<std::endl;
-
     while (std::getline(mapfile, line))
     {
         std::vector<int> map_row;
@@ -47,21 +45,21 @@ Map::Map(std::string path)
             else if(line[i]==' ')
             {
                 map_row.push_back(type(Free));
-            }            
+            }
+            //Nullpointereket tolunk bele, hogy fel legyen töltve hellyel
+            
         }
 
-        //uint64_t unsigned_longest_row_size = static_cast<uint64_t>(longest_row_size);
-        int signedlength = line.length();
+        int64_t signed_longest_row_size = longest_row_size; //Fixes signed-unsigned errors
+        uint64_t unsigned_longest_row_size = static_cast<uint64_t>(signed_longest_row_size);
 
-        if(signedlength > longest_row_size) 
+        if(line.length() > unsigned_longest_row_size) 
         {
             longest_row_size=line.length();
         }
         map.push_back(map_row);
     }
     longest_column_size = map.size();
-
-    std::cout<<"Longest row: "<<longest_row_size<<std::endl;
 
 }
 
