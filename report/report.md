@@ -76,7 +76,7 @@
  - Összes cpp kódsor : 1185 (kommentek és whitespace-k nélkül)
  - Egyéb kódsor (make,doxyfile,shellscript, ...) :
     - make: 48
-    - doxyfile: 
+    - doxyfile: 15
     - shellscript: 17
     - yml: 64
     - docker: 25
